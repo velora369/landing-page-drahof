@@ -14,13 +14,18 @@ export default function Podcast() {
     },
     {
       icon: "🎙️",
-      title: "Autoestima além da estética",
-      description: "Uma abordagem holística de beleza e bem-estar"
+      title: "Bate papo delas",
+      description: "Vamos abordar tópicos e temas dos mais variados e comentar sobre junto com vocês (esse é especial pra mulherada)"
     },
     {
       icon: "🎙️",
       title: "Tendências em procedimentos",
       description: "O que há de mais moderno na medicina estética"
+    },
+    {
+      icon: "🎙️",
+      title: "E muito mais...",
+      description: "Conteúdos exclusivos para expandir seu conhecimento e autoestima"
     }
   ];
 
@@ -40,11 +45,11 @@ export default function Podcast() {
             </span>
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto mt-8">
-            Aguarde o lançamento do nosso podcast. Enquanto isso, siga no Instagram <a href="https://instagram.com/drahof" className="text-[#731C13] font-bold hover:underline">@drahof</a>, onde você encontra conteúdos sobre:
+            Aguarde o lançamento do nosso podcast. Enquanto isso, siga no Instagram para ficar por dentro de todas as novidades, nos nossos encontros vamos encontrar conteúdos sobre:
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 opacity-75">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-75">
           {podcastTopics.map((topic, index) => (
             <motion.div 
               key={index}

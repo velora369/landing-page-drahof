@@ -1,9 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { GradientText } from "@/components/ui/gradient-text";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [
+    "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/foto-dra-hof-.webp",
+    "/images/foto-2-headline.jpg",
+    "/images/foto-3-headline.jpg",
+    "/images/foto-4-headline.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <section 
       className="pt-32 pb-20 px-4 md:pt-40 bg-white" 
@@ -18,7 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <GradientText>Autoestima é poder.</GradientText>
+              <GradientText>Beleza é ciência, mas autoestima é arte.</GradientText>
             </h2>
             <p className="mt-6 text-lg text-gray-700 leading-relaxed">
               A Dra. HOF transforma rostos — e vidas — com harmonização orofacial personalizada. 
@@ -50,16 +67,35 @@ export default function Hero() {
             </div>
           </motion.div>
           <motion.div 
-            className="md:w-1/2 overflow-hidden rounded-xl shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+            className="md:w-1/2 overflow-hidden rounded-xl shadow-2xl relative h-[350px] sm:h-[400px] md:h-[450px]"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <img 
-              src="https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/foto-dra-hof-.webp" 
-              alt="Dra. Jana Guimarães em atendimento" 
-              className="w-full h-auto rounded-xl" 
-            />
+            <AnimatePresence mode="wait">
+              <motion.img 
+                key={currentImageIndex}
+                src={images[currentImageIndex]} 
+                alt={`Dra. Jana Guimarães - Imagem ${currentImageIndex + 1}`} 
+                className="w-full h-full object-cover rounded-xl" 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.7 }}
+              />
+            </AnimatePresence>
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`w-2 h-2 rounded-full ${
+                    index === currentImageIndex ? "bg-[#731C13]" : "bg-white bg-opacity-60"
+                  } transition-all duration-300`}
+                  aria-label={`Ver imagem ${index + 1}`}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
