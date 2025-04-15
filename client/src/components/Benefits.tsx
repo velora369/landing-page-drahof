@@ -28,7 +28,7 @@ export default function Benefits() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-['Cormorant_Garamond'] text-4xl font-bold mb-8">
-              <span className="border-b-2 border-[#ECE0C4] pb-2">Não é sobre mudar.</span><br />
+              <span>Não é sobre mudar.</span><br />
               <span className="italic font-['Playfair_Display'] text-[#ECE0C4]">É sobre revelar sua melhor versão.</span>
             </h2>
             <p className="mt-4 text-lg leading-relaxed">

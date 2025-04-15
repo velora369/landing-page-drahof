@@ -4,7 +4,7 @@ import AuthorityVideo from "@/components/AuthorityVideo";
 import Testimonials from "@/components/Testimonials";
 import Certifications from "@/components/Certifications";
 import BeforeAfter from "@/components/BeforeAfter";
-import Blog from "@/components/Blog";
+import Podcast from "@/components/Podcast";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -21,7 +21,7 @@ export default function Home() {
       <Testimonials />
       <Certifications />
       <BeforeAfter />
-      <Blog />
+      <Podcast />
       <CallToAction />
       <Footer />
     </div>

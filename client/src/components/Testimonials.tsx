@@ -3,27 +3,27 @@ import { motion } from "framer-motion";
 export default function Testimonials() {
   const testimonials = [
     {
-      text: "Me emocionei. Pela primeira vez me reconheci no espelho. Obrigada, Dra. Jana, por respeitar minha história.",
-      name: "Débora",
-      age: "38 anos",
+      text: "Profissional excepcional! A Dra. Jana tem um olhar técnico único e conseguiu captar exatamente o que eu queria. Me emocionei quando vi o resultado - pela primeira vez me reconheci no espelho. Um trabalho que respeita a identidade e a história de cada paciente.",
+      name: "Débora Silva",
+      time: "2 meses atrás",
       initial: "D"
     },
     {
-      text: "Senti que era mais que estética... era cura emocional.",
-      name: "Vanessa",
-      age: "44 anos",
+      text: "Descobri a Dra. Jana depois de muitas decepções com outros profissionais. A diferença é nítida: ela não te vende procedimentos, ela escuta suas necessidades e propõe soluções personalizadas. Senti que era mais que estética, era cura emocional. Resultado natural e acolhimento impecável!",
+      name: "Vanessa Torres",
+      time: "3 meses atrás",
       initial: "V"
     },
     {
-      text: "A Dra. Jana vê além do rosto, ela vê a pessoa. Mudou minha relação com o espelho para sempre.",
-      name: "Carla",
-      age: "51 anos",
+      text: "Recomendo de olhos fechados! A Dra. Jana tem um dom único de ver além do rosto, ela enxerga a pessoa. Fiz preenchimento labial e harmonização do olhar, e o resultado superou todas as expectativas. Procedimentos delicados, indolores e com recuperação rápida. Mudou minha relação com o espelho para sempre.",
+      name: "Carla Mendonça",
+      time: "1 mês atrás",
       initial: "C"
     },
     {
-      text: "Finalmente encontrei uma profissional que entendeu minhas necessidades. Resultados discretos e naturais, exatamente o que eu queria!",
-      name: "Mariana",
-      age: "33 anos",
+      text: "Finalmente encontrei uma profissional que entendeu minhas necessidades. A Dra. Jana tem um olhar técnico apurado e uma sensibilidade única para entender o que cada paciente busca. Os resultados ficaram discretos e naturais, exatamente o que eu queria! Toda mulher merece esse cuidado.",
+      name: "Mariana Alves",
+      time: "2 semanas atrás",
       initial: "M"
     }
   ];
@@ -72,7 +72,14 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <h4 className="font-bold text-[#425F70]">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.age}</p>
+                  <div className="flex items-center">
+                    <div className="text-yellow-400 flex">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-xs"></i>
+                      ))}
+                    </div>
+                    <span className="ml-2 text-gray-500 text-xs">{testimonial.time}</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -136,14 +143,9 @@ export default function Testimonials() {
               </div>
               
               <div className="text-center">
-                <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Dra+Jana+Guimaraes" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#4285F4] font-medium hover:underline"
-                >
-                  Ver todas as avaliações no Google →
-                </a>
+                <p className="text-[#4285F4] font-medium">
+                  138 avaliações verificadas
+                </p>
               </div>
             </div>
           </div>

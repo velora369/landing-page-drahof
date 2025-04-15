@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
     <footer className="bg-[#425F70] text-white py-10">
@@ -12,27 +14,75 @@ export default function Footer() {
           </div>
           
           <div className="flex space-x-4">
-            <a 
+            <motion.a 
               href="https://instagram.com/drahof" 
               className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all"
               aria-label="Instagram"
+              whileHover={{ 
+                scale: 1.15, 
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                transition: { duration: 0.3 } 
+              }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ scale: 1 }}
+              animate={{ 
+                y: [0, -5, 0], 
+                transition: { 
+                  repeat: Infinity, 
+                  repeatType: "reverse", 
+                  duration: 2,
+                  delay: 0
+                }
+              }}
             >
               <i className="fab fa-instagram"></i>
-            </a>
-            <a 
+            </motion.a>
+            <motion.a 
               href="https://wa.me/5565996955300" 
               className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all"
               aria-label="WhatsApp"
+              whileHover={{ 
+                scale: 1.15, 
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                transition: { duration: 0.3 } 
+              }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ scale: 1 }}
+              animate={{ 
+                y: [0, -5, 0], 
+                transition: { 
+                  repeat: Infinity, 
+                  repeatType: "reverse", 
+                  duration: 2,
+                  delay: 0.5
+                }
+              }}
             >
               <i className="fab fa-whatsapp"></i>
-            </a>
-            <a 
+            </motion.a>
+            <motion.a 
               href="#" 
               className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all"
               aria-label="Facebook"
+              whileHover={{ 
+                scale: 1.15, 
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                transition: { duration: 0.3 } 
+              }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ scale: 1 }}
+              animate={{ 
+                y: [0, -5, 0], 
+                transition: { 
+                  repeat: Infinity, 
+                  repeatType: "reverse", 
+                  duration: 2,
+                  delay: 1
+                }
+              }}
             >
               <i className="fab fa-facebook-f"></i>
-            </a>
+            </motion.a>
           </div>
         </div>
         

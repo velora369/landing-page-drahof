@@ -47,11 +47,11 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { id: "sobre", label: "Sobre" },
+    { id: "autoridade", label: "Sobre" },
     { id: "procedimentos", label: "Procedimentos" },
     { id: "depoimentos", label: "Depoimentos" },
     { id: "antes-depois", label: "Antes & Depois" },
-    { id: "blog", label: "Blog" },
+    { id: "podcast", label: "Podcast", soon: true },
     { id: "contato", label: "Contato" }
   ];
 
@@ -82,9 +82,9 @@ export default function Navigation() {
               <li key={item.id}>
                 <button
                   onClick={() => handleNavClick(item.id)}
-                  className="font-medium text-[#425F70] hover:text-[#731C13] transition-colors"
+                  className={`font-medium ${item.soon ? 'text-gray-400' : 'text-[#425F70] hover:text-[#731C13]'} transition-colors`}
                 >
-                  {item.label}
+                  {item.label} {item.soon && <span className="text-xs opacity-50">(em breve)</span>}
                 </button>
               </li>
             ))}
@@ -106,9 +106,9 @@ export default function Navigation() {
                 <li key={item.id}>
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className="font-medium text-[#425F70] hover:text-[#731C13] transition-colors"
+                    className={`font-medium ${item.soon ? 'text-gray-400' : 'text-[#425F70] hover:text-[#731C13]'} transition-colors`}
                   >
-                    {item.label}
+                    {item.label} {item.soon && <span className="text-xs opacity-50">(em breve)</span>}
                   </button>
                 </li>
               ))}
