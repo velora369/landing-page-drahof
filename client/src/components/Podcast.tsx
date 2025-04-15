@@ -19,6 +19,11 @@ export default function Podcast() {
     },
     {
       icon: "🎙️",
+      title: "Autoestima além da estética",
+      description: "Como cuidar da beleza interior e projetar confiança além do visual"
+    },
+    {
+      icon: "🎙️",
       title: "Tendências em procedimentos",
       description: "O que há de mais moderno na medicina estética"
     },

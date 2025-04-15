@@ -25,6 +25,18 @@ export default function Testimonials() {
       name: "Mariana Alves",
       time: "2 semanas atrás",
       initial: "M"
+    },
+    {
+      text: "Aos 50 anos, estava insegura sobre fazer procedimentos estéticos. A Dra. Jana foi extremamente paciente ao esclarecer todas as minhas dúvidas e me mostrou como poderia realçar minha beleza natural sem parecer artificial. O resultado foi tão incrível que meu marido notou a diferença e disse que eu parecia mais feliz, não apenas mais jovem!",
+      name: "Luciana Campos",
+      time: "1 semana atrás",
+      initial: "L"
+    },
+    {
+      text: "Como jornalista, minha imagem é importante, mas sempre tive medo daquele resultado artificial. A Dra. Jana entendeu perfeitamente meus receios e realizou um trabalho sutil e harmonioso. Meus colegas perceberam algo diferente, mas não conseguiram identificar o que mudou - esse é o melhor elogio para quem procura naturalidade!",
+      name: "Patricia Rocha",
+      time: "3 semanas atrás",
+      initial: "P"
     }
   ];
 

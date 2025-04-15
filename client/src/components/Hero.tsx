@@ -8,9 +8,7 @@ export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
     "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/foto-dra-hof-.webp",
-    "/images/foto-2-headline.jpg",
-    "/images/foto-3-headline.jpg",
-    "/images/foto-4-headline.jpg"
+    "/images/foto-3-headline.jpg"
   ];
 
   useEffect(() => {
