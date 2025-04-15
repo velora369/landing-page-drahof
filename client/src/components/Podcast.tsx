@@ -45,7 +45,7 @@ export default function Podcast() {
             </span>
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto mt-8">
-            Aguarde o lançamento do nosso podcast. Enquanto isso, siga no Instagram para ficar por dentro de todas as novidades, nos nossos encontros vamos encontrar conteúdos sobre:
+            Aguarde o lançamento do nosso podcast. Enquanto isso, siga no Instagram para ficar por dentro de todas as novidades e não perder nada! Nos nossos encontros vamos encontrar conteúdos sobre:
           </p>
         </motion.div>
         

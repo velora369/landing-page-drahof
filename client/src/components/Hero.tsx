@@ -16,7 +16,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -81,7 +81,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 1.2 }}
               />
             </AnimatePresence>
             <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
