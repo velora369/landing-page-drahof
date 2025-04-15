@@ -28,6 +28,24 @@ export default function CallToAction() {
       setIsSubscribing(false);
     }
   };
+  
+  const handleWhatsAppRedirect = (e: React.MouseEvent) => {
+    // Only redirect if we have data
+    if (email && name) {
+      e.preventDefault();
+      
+      // Save data in API
+      handleSubscribe(e as unknown as React.FormEvent);
+      
+      // Create message text
+      const message = encodeURIComponent(
+        `Olá! Gostaria de me inscrever no canal do WhatsApp sobre o curso "Protocolo de Manejo de Intercorrência em Cirurgias da Face".\n\nNome: ${name}\nEmail: ${email}`
+      );
+      
+      // Redirect to WhatsApp with prefilled message
+      window.open(`${WHATSAPP_URL}&text=${message}`, '_blank');
+    }
+  };
 
   return (
     <section className="py-20 px-4 bg-gradient-to-r from-[#425F70] to-[#731C13] text-white" id="contato">
@@ -104,7 +122,7 @@ export default function CallToAction() {
               <ul className="space-y-2 mb-4">
                 <li className="flex items-center">
                   <i className="fas fa-laptop-code mr-2"></i>
-                  <span>Online | Acesso por 6 meses</span>
+                  <span>Online | 60 dias de acesso completo</span>
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-tag mr-2"></i>
@@ -138,12 +156,10 @@ export default function CallToAction() {
             </form>
             
             <Button 
-              asChild
+              onClick={handleWhatsAppRedirect}
               className="w-full bg-white text-[#731C13] font-bold py-4 px-6 rounded-full text-center hover:bg-opacity-90 transition-all"
             >
-              <a href={WHATSAPP_URL}>
-                <i className="fas fa-graduation-cap mr-2"></i> Inscreva-se no Canal do WhatsApp
-              </a>
+              <i className="fas fa-graduation-cap mr-2"></i> Inscreva-se no Canal do WhatsApp
             </Button>
             
             {subscribed && (

@@ -5,7 +5,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h3 className="font-['Cormorant_Garamond'] text-2xl font-bold">Dra. Jana Guimarães</h3>
+            <p className="text-[#ECE0C4]">Especialista em Dentistica Restauradora</p>
             <p className="text-[#ECE0C4]">Especialista em Harmonização Orofacial</p>
+            <p className="text-[#ECE0C4]">Especialista em Cirurgias Estéticas da Face - MEC</p>
+            <p className="text-[#ECE0C4]">MESTRE em Odontologia - FOUSP</p>
           </div>
           
           <div className="flex space-x-4">
@@ -37,7 +40,7 @@ export default function Footer() {
         
         <div className="text-center text-sm text-gray-300">
           <p>&copy; {new Date().getFullYear()} Dra. Jana Guimarães. Todos os direitos reservados.</p>
-          <p className="mt-2">CRO-XX 12345 | Responsável Técnica: Dra. Jana Guimarães</p>
+          <p className="mt-2">CROSP: 165674 | Responsável Técnica: Dra. Jana Guimarães</p>
         </div>
       </div>
     </footer>

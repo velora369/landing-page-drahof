@@ -19,6 +19,12 @@ export default function Testimonials() {
       name: "Carla",
       age: "51 anos",
       initial: "C"
+    },
+    {
+      text: "Finalmente encontrei uma profissional que entendeu minhas necessidades. Resultados discretos e naturais, exatamente o que eu queria!",
+      name: "Mariana",
+      age: "33 anos",
+      initial: "M"
     }
   ];
 
@@ -72,6 +78,76 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
+        
+        <motion.div 
+          className="mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-center font-['Cormorant_Garamond'] text-3xl font-bold mb-8 text-[#425F70]">
+            O que dizem no Google
+          </h3>
+          
+          <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+            <div className="p-2 bg-[#4285F4]"></div>
+            <div className="p-6">
+              <div className="flex items-center mb-4">
+                <img 
+                  src="https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/google-avaliacao.webp" 
+                  alt="Avaliação Google" 
+                  className="w-24 h-auto mr-4"
+                />
+                <div>
+                  <div className="flex items-center">
+                    <span className="text-[#4285F4] font-bold mr-2">Avaliação Google</span>
+                    <div className="text-yellow-400 flex">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-sm"></i>
+                      ))}
+                    </div>
+                    <span className="ml-2 text-gray-600 text-sm">5.0 (138 avaliações)</span>
+                  </div>
+                  <p className="text-sm text-gray-500">Baseado nas experiências de pacientes reais</p>
+                </div>
+              </div>
+              
+              <div className="border border-gray-200 rounded-lg p-4 mb-4">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 rounded-full bg-[#425F70] text-white flex items-center justify-center mr-3">
+                    <span className="font-bold">R</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-800">Roberta Mendes</h4>
+                    <div className="flex items-center">
+                      <div className="text-yellow-400 flex">
+                        {[...Array(5)].map((_, i) => (
+                          <i key={i} className="fas fa-star text-xs"></i>
+                        ))}
+                      </div>
+                      <span className="ml-2 text-gray-500 text-xs">3 meses atrás</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700">
+                  "Profissional extremamente competente e atenciosa. Me senti segura durante todo o procedimento. A Dra. Jana tem um olhar técnico único e conseguiu entender exatamente o que eu precisava. O resultado ficou natural e harmonioso. Super recomendo!"
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Dra+Jana+Guimaraes" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#4285F4] font-medium hover:underline"
+                >
+                  Ver todas as avaliações no Google →
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
