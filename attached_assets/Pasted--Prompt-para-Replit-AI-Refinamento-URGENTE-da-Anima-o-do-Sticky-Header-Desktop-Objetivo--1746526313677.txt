@@ -1,0 +1,38 @@
+## Prompt para Replit AI: Refinamento URGENTE da Animação do Sticky Header (Desktop)
+
+**Objetivo:** Corrigir e refinar a animação de ocultar/reexibir os itens de menu no sticky header da versão desktop do site. A animação atual está muito abrupta e precisa ser SUAVE e FLUIDA. Adicionalmente, garantir que a barra do header tenha a opacidade correta quando estiver no modo sticky.
+
+**Problema Atual Reportado pelo Usuário:**
+- Ao rolar a página (navegar), as opções de menu no cabeçalho (desktop) ainda desaparecem e reaparecem de forma muito rápida e "seca", sem uma transição suave.
+
+**Contexto e Referências:**
+- Manter a paleta de cores e a identidade visual do site.
+- O comportamento desejado é que, ao rolar para baixo, os links do menu desapareçam suavemente, e ao rolar para cima ou parar de rolar, eles reapareçam também de forma suave.
+- A barra do header, quando em modo sticky, deve ter uma leve translucidez (opacidade) para se integrar melhor ao conteúdo que passa por baixo.
+
+**Diretrizes Detalhadas para o Refinamento:**
+
+1.  **Animação Suave e Fluida para Ocultar/Reexibir Itens do Menu:**
+    *   **Prioridade Máxima:** A transição dos itens de menu (ex: "Sobre", "Procedimentos", etc.) entre visível e oculto DEVE SER SUAVE.
+    *   **Sugestões de Implementação (escolher a que proporcionar o melhor resultado visual e de performance):**
+        *   **Transição de Opacidade e Altura:** Animar a opacidade dos itens de `1` para `0` (e vice-versa) E, simultaneamente, animar a `max-height` de um valor apropriado para `0` (e vice-versa). Isso cria um efeito de "deslizar e sumir" mais elegante.
+        *   **Transição de Opacidade e Transformação (TranslateY):** Animar a opacidade dos itens de `1` para `0` (e vice-versa) E, simultaneamente, aplicar uma leve translação no eixo Y (ex: `transform: translateY(-10px)` para sumir para cima, e `transform: translateY(0px)` para reaparecer). Ajustar o valor do `translateY` para um movimento sutil.
+    *   **Duração da Transição:** A duração da animação deve ser perceptível, mas não lenta demais. Algo em torno de `0.3s` a `0.5s` (ex: `transition: all 0.4s ease-in-out;`) costuma funcionar bem. Testar para encontrar o tempo ideal.
+    *   **Timing Function:** Utilizar uma função de temporização (easing function) que contribua para a suavidade, como `ease-in-out` ou `ease`.
+
+2.  **Opacidade da Barra do Header no Modo Sticky:**
+    *   Confirmar que, quando o header se torna sticky (fixo no topo após o scroll), a barra de fundo do header aplique uma leve opacidade (ex: `opacity: 0.9;` ou `background-color: rgba(R,G,B,0.9);` usando as cores da paleta). Isso permite que o conteúdo da página seja sutilmente visível por baixo, criando um efeito mais sofisticado.
+    *   A transição para este estado de opacidade também deve ser suave, caso ainda não seja.
+
+3.  **Consistência:**
+    *   Garantir que essa animação suave e a opacidade funcionem de forma consistente em diferentes navegadores desktop.
+
+**O que NÃO fazer:**
+*   Não deixar a animação abrupta ou instantânea.
+*   Não usar animações que causem "pulos" ou repinturas excessivas na página, prejudicando a performance.
+
+**Entregável Esperado:**
+*   O sticky header no desktop com os itens de menu ocultando e reaparecendo com uma animação visivelmente suave e fluida.
+*   A barra do header no modo sticky com a opacidade correta aplicada.
+
+Por favor, aplique este refinamento com urgência. Após a implementação, informe para que o usuário possa validar o resultado no desktop.

@@ -211,18 +211,30 @@ export default function Navigation() {
       opacity: 1,
       y: 0,
       transition: {
-        staggerChildren: 0.07,
-        delayChildren: 0.2
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1], // Easing mais suave para movimento fluido
+        staggerChildren: 0.05,
+        delayChildren: 0.05
       }
     }
   };
 
   const navItemVariants = {
-    hidden: { opacity: 0, y: -15 },
+    hidden: { 
+      opacity: 0, 
+      y: -12,
+      transition: {
+        duration: 0.3,
+        ease: [0.4, 0.0, 0.2, 1] // Easing suave para saída
+      }
+    },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+      transition: { 
+        duration: 0.5, 
+        ease: [0.22, 1, 0.36, 1] // Easing suave para entrada
+      }
     }
   };
 
@@ -243,18 +255,48 @@ export default function Navigation() {
     })
   };
 
+  // Adiciona uma animação suave para mostrar/esconder os itens do menu
+  const navAnimationVariants = {
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.4, 
+        ease: [0.22, 1, 0.36, 1],
+        staggerChildren: 0.05,
+        delayChildren: 0.05
+      }
+    },
+    hidden: { 
+      opacity: 0, 
+      y: -8,
+      transition: { 
+        duration: 0.4, 
+        ease: [0.22, 1, 0.36, 1],
+        staggerChildren: 0.05,
+        staggerDirection: -1
+      }
+    }
+  };
+
   return (
     <header 
       ref={headerRef}
       className={`fixed w-full top-0 z-40 transition-all duration-500 ${
         scrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-lg" 
+          ? "backdrop-blur-md shadow-lg" 
           : "bg-transparent"
       } ${
         showFullHeader 
           ? "py-3 md:py-4" 
           : "py-2"
       }`}
+      style={{
+        backgroundImage: scrolled 
+          ? 'linear-gradient(to bottom, rgba(255,255,255,0.97), rgba(255,255,255,0.93))' 
+          : 'none',
+        transition: 'background-image 0.4s ease-in-out, padding 0.4s ease-in-out, box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out',
+      }}
     >
       <div className="container mx-auto px-4 flex justify-between items-center relative">
         {/* Logo with animation */}
@@ -307,17 +349,12 @@ export default function Navigation() {
         
         {/* Desktop navigation with refined design and animations */}
         <motion.nav 
-          className={`hidden md:block absolute right-4 transition-all duration-300 ease-in-out ${
-            showFullHeader 
-              ? "opacity-100 translate-y-0 visible" 
-              : "opacity-0 -translate-y-4 invisible pointer-events-none"
-          }`}
+          className={`hidden md:block absolute right-4`}
           variants={navContainerVariants}
           initial="hidden"
-          animate="visible"
+          animate={showFullHeader ? "visible" : "hidden"}
           style={{
-            transitionProperty: 'opacity, transform, visibility',
-            transitionDelay: showFullHeader ? '0.1s' : '0s',
+            position: 'relative', // Garante que as animações sejam precisas
           }}
         >
           <ul className="flex items-center space-x-1.5 lg:space-x-3">
