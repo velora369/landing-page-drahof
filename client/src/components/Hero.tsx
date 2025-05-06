@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Essa seção terá um novo componente de animação 3D de rede de pontos luminosos 
-// que será implementado na Etapa 2, seguindo a orientação do prompt.
-// Por enquanto, estamos removendo o componente atual para preparar a base limpa.
+// Nota: Aqui anteriormente estava o componente de animação 3D que foi removido
+// O novo componente será implementado na Etapa 2, após validação da Etapa 1
 
 export default function Hero() {
   const isMobile = useIsMobile();
@@ -102,7 +101,7 @@ export default function Hero() {
       id="hero"
       onMouseMove={handleMouseMove}
     >
-      {/* Animação de fundo 3D e elementos decorativos serão implementados na etapa 2 */}
+      {/* O espaço para animação de fundo 3D e elementos decorativos que serão implementados na etapa 2 */}
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
