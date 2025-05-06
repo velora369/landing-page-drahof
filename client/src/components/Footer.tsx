@@ -61,7 +61,7 @@ export default function Footer() {
                   <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3">
                     <i className="fas fa-phone-alt text-[#ECE0C4]"></i>
                   </div>
-                  <p>(65) 99695-5300</p>
+                  <p>(11) 98977-3944</p>
                 </div>
                 <div className="flex md:justify-center items-center">
                   <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3">
@@ -105,7 +105,7 @@ export default function Footer() {
                   <i className="fab fa-instagram text-xl"></i>
                 </motion.a>
                 <motion.a 
-                  href="https://wa.me/5565996955300" 
+                  href="https://wa.me/11989773944" 
                   className="w-12 h-12 bg-gradient-to-br from-white/20 to-white/5 rounded-xl flex items-center justify-center shadow-lg border border-white/10 hover:border-white/30 transition-all duration-300"
                   aria-label="WhatsApp"
                   whileHover={{ 
