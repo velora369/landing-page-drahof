@@ -1,0 +1,38 @@
+### Solicitação de Ajustes Finais: Preloader e Footer
+
+**Objetivo:** Aplicar refinamentos finais no Preloader e no Footer do site da Dra. Hof, conforme especificações abaixo.
+
+**Contexto:**
+Com o Footer principal implementado e validado, são necessários pequenos ajustes no Preloader para otimizar o tempo de carregamento percebido e uma adição textual no Footer.
+
+**Requisitos Detalhados:**
+
+**1. Ajustes no Preloader:**
+
+*   **1.1. Redução da Duração:**
+    *   Altere a duração total da animação do preloader para aproximadamente **2 segundos** (dois segundos).
+    *   O objetivo é tornar a entrada no site mais rápida, mantendo uma breve e elegante introdução.
+*   **1.2. Redução do Tamanho da Barra de Carregamento:**
+    *   Diminua o tamanho (comprimento e/ou espessura, conforme o design atual) da barra de carregamento.
+    *   A barra deve ser visivelmente menor, mais discreta, mas ainda funcional e esteticamente agradável dentro do novo tempo de 2 segundos.
+    *   Manter a exibição apenas do logo e da barra de carregamento, como já ajustado anteriormente.
+
+**2. Adição Textual no Footer:**
+
+*   **2.1. Texto de Suporte:**
+    *   Adicione o seguinte texto no Footer: "Support by VELORA DIGTAL"
+*   **2.2. Estilização (Opacidade e Translucidez):**
+    *   Este texto deve ser estilizado para ter **opacidade reduzida** e um efeito de **translucidez**, tornando-o sutil e discreto, mas legível.
+    *   A cor do texto deve ser consistente com a paleta do site, possivelmente um tom neutro ou uma das cores secundárias em baixa opacidade.
+    *   O posicionamento ideal seria em uma área discreta do footer, como abaixo das informações de direitos autorais ou em um dos cantos inferiores, sem competir visualmente com os elementos principais do rodapé.
+    *   O tamanho da fonte deve ser pequeno.
+
+**Instruções Gerais:**
+*   Por favor, aplique ambas as alterações (Preloader e Footer) de uma vez.
+*   Garanta que todas as alterações sejam responsivas e mantenham a consistência visual e a performance do site.
+
+**Resultado Esperado:**
+*   Um preloader mais rápido (2 segundos) com uma barra de carregamento menor e mais sutil.
+*   A inclusão discreta e elegante do texto "Support by VELORA DIGTAL" no Footer, com a devida opacidade e translucidez.
+
+Por favor, implemente estes ajustes e me informe quando estiver pronto para validação.

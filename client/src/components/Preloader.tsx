@@ -10,12 +10,12 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [isComplete, setIsComplete] = useState(false);
   const [fadeOutStarted, setFadeOutStarted] = useState(false);
   
-  // Duração total do preloader em milisegundos (3 segundos exatos)
-  const duration = 3000;
+  // Duração total do preloader em milisegundos (2 segundos exatos)
+  const duration = 2000;
   // Intervalo para atualização da barra de progresso
-  const updateInterval = 30;
+  const updateInterval = 25;
   // Margem para tornar a animação de progresso mais realista
-  const reservedProgress = 3; // 3% reservados para o "carregamento final"
+  const reservedProgress = 2; // 2% reservados para o "carregamento final"
   
   // Adiciona classe ao body para bloquear o scroll durante o preloader
   useEffect(() => {
@@ -39,14 +39,14 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         const target = 100 - reservedProgress;
         const remainingProgress = target - prevProgress;
         
-        // Calcula o incremento para garantir que termine em exatamente 3 segundos
+        // Calcula o incremento para garantir que termine em exatamente 2 segundos
         const increment = Math.max(0.2, (remainingProgress * updateInterval / duration) * 2.5);
         const nextProgress = prevProgress + increment;
         
         if (nextProgress >= target) {
           clearInterval(interval);
           
-          // Completa os últimos 3% rapidamente
+          // Completa os últimos 2% rapidamente
           setTimeout(() => {
             const finalInterval = setInterval(() => {
               setProgress(prev => {
@@ -142,20 +142,20 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             
             {/* Container da barra de progresso com animações refinadas */}
             <motion.div
-              initial={{ opacity: 0, width: "80%" }}
+              initial={{ opacity: 0, width: "60%" }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              className="w-full max-w-xs relative"
+              className="w-full max-w-[150px] relative"
             >
               {/* Barra de progresso base estilizada */}
-              <div className="h-[3px] w-full bg-[#ECE0C4] rounded-full overflow-hidden shadow-sm">
+              <div className="h-[2px] w-full bg-[#ECE0C4] rounded-full overflow-hidden shadow-sm">
                 {/* Preenchimento animado da barra com gradiente sutil */}
                 <motion.div
                   initial={{ width: "0%" }}
                   animate={{ width: `${progress}%` }}
                   className="h-full bg-gradient-to-r from-[#731C13]/90 to-[#731C13]"
                   style={{
-                    boxShadow: '0 0 8px rgba(115, 28, 19, 0.3)'
+                    boxShadow: '0 0 6px rgba(115, 28, 19, 0.25)'
                   }}
                 />
               </div>
@@ -163,9 +163,9 @@ export default function Preloader({ onComplete }: PreloaderProps) {
               {/* Marcador de porcentagem elegante */}
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
+                animate={{ opacity: 0.7 }}
                 transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
-                className="absolute -right-2 top-4 text-xs text-[#425F70] font-light"
+                className="absolute -right-2 top-3.5 text-[10px] text-[#425F70] font-light"
               >
                 {Math.ceil(progress)}%
               </motion.div>

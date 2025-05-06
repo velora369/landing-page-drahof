@@ -380,8 +380,9 @@ export default function Footer() {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
         
         <div className="flex flex-col md:flex-row justify-between items-center text-white/70 text-sm">
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 flex flex-col">
             <p>&copy; {currentYear} Dra. Jana Guimarães (Dra. HOF). Todos os direitos reservados.</p>
+            <p className="text-white/30 text-xs mt-1 font-light tracking-wide">Support by VELORA DIGITAL</p>
           </div>
           
           <div className="flex items-center space-x-6">
