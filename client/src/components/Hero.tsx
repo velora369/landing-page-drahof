@@ -287,11 +287,11 @@ export default function Hero() {
                       }}
                     />
                     
-                    {/* Efeito de luz deslizante aprimorado */}
-                    <div className="absolute inset-0 w-1/3 bg-white/10 skew-x-[35deg] group-hover:skew-x-0 -translate-x-full group-hover:translate-x-full transition-all duration-700 ease-in-out" />
+                    {/* Efeito de luz deslizante aprimorado - ajustado para respeitar o border-radius */}
+                    <div className="absolute inset-0 w-1/3 bg-white/10 skew-x-[35deg] group-hover:skew-x-0 -translate-x-full group-hover:translate-x-full transition-all duration-700 ease-in-out rounded-xl overflow-hidden" />
                     
-                    {/* Efeito de borda brilhante evoluído */}
-                    <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/30 group-hover:scale-105 transition-all duration-500" />
+                    {/* Efeito de borda brilhante evoluído - ajustado para não ultrapassar o border-radius */}
+                    <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/30 overflow-hidden transition-all duration-500" />
                     
                     {/* Efeito de partícula de brilho */}
                     <motion.div
@@ -356,8 +356,8 @@ export default function Hero() {
                       }}
                     />
                     
-                    {/* Efeito de preenchimento suave aprimorado */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#ECE0C4]/30 to-[#ECE0C4]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out rounded-xl" />
+                    {/* Efeito de preenchimento suave aprimorado - ajustado para respeitar o border-radius */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#ECE0C4]/30 to-[#ECE0C4]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out rounded-xl overflow-hidden" />
                     
                     {/* Linhas decorativas animadas */}
                     <div className="absolute top-0 left-0 w-0 h-[1px] bg-[#731C13]/60 group-hover:w-full transition-all duration-500 delay-100"></div>

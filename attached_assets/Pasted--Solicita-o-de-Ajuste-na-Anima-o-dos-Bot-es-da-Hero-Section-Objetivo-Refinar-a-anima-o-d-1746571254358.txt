@@ -1,0 +1,32 @@
+### Solicitação de Ajuste na Animação dos Botões da Hero Section
+
+**Objetivo:** Refinar a animação de clique/hover dos botões "Agendar Consulta" e "Conhecer Cursos" na Hero Section para que o efeito visual (atualmente um retângulo branco que se expande) fique estritamente contido dentro dos limites do contorno de cada botão, sem ultrapassar para fora.
+
+**Contexto:**
+Atualmente, ao interagir com os botões "Agendar Consulta" e "Conhecer Cursos" na Hero Section, uma animação é acionada. No entanto, o efeito visual dessa animação (um preenchimento ou retângulo, possivelmente branco ou de cor clara) se expande além das bordas arredondadas dos botões, criando uma aparência que não é ideal.
+
+**Requisitos Detalhados:**
+
+1.  **Restringir Animação ao Contorno:**
+    *   Modifique o CSS e/ou JavaScript responsável pela animação desses dois botões específicos.
+    *   Garanta que qualquer efeito de preenchimento, brilho, ou expansão que ocorra durante o estado de hover ou clique permaneça VISUALMENTE DENTRO dos limites exatos do contorno arredondado de cada botão.
+    *   O efeito não deve "vazar" ou "transbordar" para fora da área delimitada pelo `border-radius` do botão.
+
+2.  **Manter a Intenção da Animação:**
+    *   A ideia de ter uma resposta visual à interação é boa. O objetivo não é remover a animação, mas sim confiná-la corretamente.
+    *   Se a animação atual é um preenchimento que se expande, ajuste-a para que ela preencha o botão de dentro para fora, mas pare exatamente nas bordas.
+    *   Se for um efeito de brilho ou contorno animado, certifique-se de que ele siga precisamente o `border-radius` do botão.
+
+3.  **Consistência Visual:**
+    *   A solução deve ser aplicada de forma idêntica para ambos os botões ("Agendar Consulta" e "Conhecer Cursos") para manter a consistência visual na Hero Section.
+
+4.  **Performance:**
+    *   A animação ajustada deve continuar fluida e performática, sem causar lentidão ou travamentos.
+
+**Exemplo do Problema (Conceitual):**
+Imagine um botão com cantos arredondados. A animação atual faz um quadrado (ou um retângulo com cantos menos arredondados que o botão) aparecer e crescer, e as pontas desse quadrado ultrapassam os cantos arredondados do botão.
+
+**Resultado Esperado:**
+A animação de interação (hover/clique) nos botões "Agendar Consulta" e "Conhecer Cursos" deve ser visualmente agradável e contida estritamente dentro dos limites de cada botão, respeitando seu `border-radius` e proporcionando um acabamento mais polido e profissional.
+
+Por favor, aplique esta correção e me informe quando estiver pronto para validação.
