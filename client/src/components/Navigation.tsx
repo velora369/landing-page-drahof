@@ -76,26 +76,48 @@ export default function Navigation() {
 
   // Enhanced sticky header effect with intelligent hide/show behavior
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Check if scrolled past threshold
-    if (latest > 100) {
-      setScrolled(true);
-      
-      // Determine scroll direction
-      const isScrollingDownNow = latest > lastScrollY.current;
-      setIsScrollingDown(isScrollingDownNow);
-      
-      // Show full header when:
-      // 1. Scrolling up
-      // 2. At top of page
-      // 3. Near bottom of page (to show navigation options)
-      // 4. User stopped scrolling for a moment (implemented separately with debounce)
-      setShowFullHeader(!isScrollingDownNow || latest < 150);
-      
+    // Initial scroll check - past the threshold where header becomes sticky
+    const scrollThreshold = 80;
+    const isScrolledPastThreshold = latest > scrollThreshold;
+    
+    // Set the scrolled state for styling the sticky header
+    setScrolled(isScrolledPastThreshold);
+    
+    // Determine scroll direction by comparing current and last scroll position
+    // Using a threshold to prevent triggering on tiny movements
+    const scrollDifference = latest - lastScrollY.current;
+    const isScrollingDownNow = scrollDifference > 5; 
+    const isScrollingUpNow = scrollDifference < -5;
+    
+    // Update the scrolling direction state
+    setIsScrollingDown(isScrollingDownNow);
+    
+    // Close mobile menu when scrolling significantly in any direction
+    if (isMenuOpen && Math.abs(scrollDifference) > 30) {
+      setIsMenuOpen(false);
+      document.body.style.overflow = '';
+    }
+    
+    // Control header menu visibility logic
+    if (isScrolledPastThreshold) {
+      // When actively scrolling down, hide menu items
+      if (isScrollingDownNow) {
+        setShowFullHeader(false);
+      } 
+      // When scrolling up, show menu items
+      else if (isScrollingUpNow) {
+        setShowFullHeader(true);
+      }
+      // At the very top of the page, always show full header
+      else if (latest < 120) {
+        setShowFullHeader(true);
+      }
     } else {
-      setScrolled(false);
+      // When at the top of the page, always show full header
       setShowFullHeader(true);
     }
     
+    // Update the reference to the last scroll position
     lastScrollY.current = latest;
   });
   
@@ -105,9 +127,11 @@ export default function Navigation() {
     
     const handleScrollStop = () => {
       clearTimeout(timeoutId);
+      
+      // Show full header after user stops scrolling for a moment
       timeoutId = setTimeout(() => {
         setShowFullHeader(true);
-      }, 1500); // Show header after 1.5s of inactivity
+      }, 1000); // Reduced to 1s for better responsiveness
     };
     
     window.addEventListener('scroll', handleScrollStop);
@@ -185,19 +209,15 @@ export default function Navigation() {
         showFullHeader 
           ? "py-3 md:py-4" 
           : "py-2"
-      } ${
-        isScrollingDown && !showFullHeader
-          ? "-translate-y-1/2 md:-translate-y-0"
-          : "translate-y-0"
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 flex justify-between items-center relative">
         {/* Logo with animation */}
         <motion.div 
           variants={logoVariants}
           initial="initial"
           animate="animate"
-          className={`flex items-center ${isScrollingDown && !showFullHeader ? 'scale-90' : ''} transition-transform duration-300`}
+          className={`flex items-center ${isScrollingDown && !showFullHeader ? 'scale-95' : ''} transition-all duration-300`}
         >
           <a href="/" className="outline-none focus:ring-2 focus:ring-[#731C13]/40 rounded-lg">
             <motion.img 
@@ -242,14 +262,18 @@ export default function Navigation() {
         
         {/* Desktop navigation with refined design and animations */}
         <motion.nav 
-          className={`hidden md:block transition-all duration-500 ${
+          className={`hidden md:block absolute right-4 transition-all duration-300 ease-in-out ${
             showFullHeader 
-              ? "opacity-100 translate-y-0" 
-              : "opacity-0 -translate-y-2 pointer-events-none"
+              ? "opacity-100 translate-y-0 visible" 
+              : "opacity-0 -translate-y-4 invisible pointer-events-none"
           }`}
           variants={navContainerVariants}
           initial="hidden"
           animate="visible"
+          style={{
+            transitionProperty: 'opacity, transform, visibility',
+            transitionDelay: showFullHeader ? '0.1s' : '0s',
+          }}
         >
           <ul className="flex items-center space-x-1.5 lg:space-x-3">
             {navItems.map((item) => (

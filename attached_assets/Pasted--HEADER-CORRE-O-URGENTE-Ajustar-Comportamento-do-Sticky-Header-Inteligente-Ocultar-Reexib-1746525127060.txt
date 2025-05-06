@@ -1,0 +1,32 @@
+```
+**[HEADER - CORREÇÃO URGENTE] Ajustar Comportamento do Sticky Header Inteligente (Ocultar/Reexibir Itens de Menu)**
+
+**Contexto:** O header está configurado para ser "sticky" (fixo no topo após o scroll), o logo foi implementado e os itens de menu estão presentes. No entanto, o comportamento de "sticky header inteligente" não está funcionando como esperado.
+
+**PROBLEMA ATUAL:** Ao rolar a página para baixo, os itens de menu ("Sobre", "Procedimentos", etc.) **NÃO ESTÃO SENDO OCULTADOS**. Eles permanecem visíveis, quando deveriam desaparecer para maximizar a área de visualização do conteúdo, deixando apenas o logo (e o ícone do menu hambúrguer, se em visualização mobile) visível.
+
+**OBJETIVO DESTA CORREÇÃO:** Implementar corretamente a funcionalidade de ocultar os itens de menu do header quando o usuário rola a página para baixo, e reexibi-los suavemente quando o usuário rola para cima ou para de rolar.
+
+**--- INSTRUÇÕES DETALHADAS PARA CORREÇÃO DO STICKY HEADER ---**
+
+1.  **REVISAR LÓGICA DE OCULTAÇÃO/REEXIBIÇÃO (Item 4 do prompt `drahof_header_redesign_v1.txt`):
+    *   **Ao Rolar para Baixo:** Quando o usuário estiver rolando a página para baixo (após o header se tornar sticky), os **itens de menu** (os links de texto como "Sobre", "Procedimentos", etc., no desktop) devem ser sutilmente ocultados (ex: `opacity: 0; pointer-events: none;` ou alterando a altura do contêiner dos links para zero com `overflow: hidden;`). O logo deve permanecer visível. No mobile, se o painel do menu estiver aberto, ele deve ser fechado ou seu conteúdo ocultado de forma similar.
+    *   **Ao Rolar para Cima (ou Parar de Rolar):** Quando o usuário começar a rolar a página para cima, mesmo que minimamente, ou parar de rolar, os itens de menu completos devem reaparecer suavemente (ex: `opacity: 1; pointer-events: auto;` ou restaurando a altura do contêiner).
+    *   **Transições Suaves OBRIGATÓRIAS:** Todas as mudanças de visibilidade dos itens de menu (ocultar/reexibir) devem ocorrer com animações CSS suaves e fluidas (ex: usando `transition` para `opacity` e `transform`), sem saltos bruscos ou desaparecimentos/reaparecimentos instantâneos.
+
+2.  **ESTRUTURA DO HEADER PARA OCULTAÇÃO:**
+    *   Verifique se a estrutura HTML do header permite que os itens de menu sejam agrupados em um contêiner que possa ser facilmente manipulado (para ocultar/reexibir) via CSS ou JavaScript, sem afetar a visibilidade do logo.
+
+3.  **CONDIÇÕES PARA ATIVAÇÃO:**
+    *   A ocultação dos itens de menu só deve ocorrer **APÓS** o header se tornar sticky E o usuário estiver ativamente rolando para baixo.
+    *   A reexibição deve ocorrer quando o scroll for para cima ou cessar.
+
+4.  **TESTES EM DESKTOP E MOBILE:**
+    *   **Desktop:** O comportamento principal a ser corrigido é no desktop, onde os links de texto devem desaparecer.
+    *   **Mobile:** No mobile, o comportamento esperado é que, se o menu hambúrguer estiver aberto e o usuário rolar, o painel do menu se feche ou os itens dentro dele sejam ocultados. Se o menu estiver fechado, apenas o logo e o ícone do menu hambúrguer devem permanecer visíveis no header sticky.
+
+**Resultado Esperado para esta Correção:**
+Um header que, ao se tornar sticky e o usuário rolar para baixo, oculte elegantemente os links de navegação, deixando mais espaço para o conteúdo. Ao rolar para cima ou parar, os links devem reaparecer suavemente.
+
+Por favor, foque exclusivamente em corrigir este comportamento do sticky header. Fico no aguardo do resultado para validação.
+```
