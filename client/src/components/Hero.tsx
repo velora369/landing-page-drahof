@@ -4,6 +4,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import SimplifiedHeroAnimation from "./SimplifiedHeroAnimation";
 
 // Nota: Aqui anteriormente estava o componente de animação 3D que foi removido
 // O novo componente será implementado na Etapa 2, após validação da Etapa 1
@@ -102,7 +103,8 @@ export default function Hero() {
       id="hero"
       onMouseMove={handleMouseMove}
     >
-      {/* O espaço para animação de fundo 3D e elementos decorativos que serão implementados na etapa 2 */}
+      {/* Animação 3D de fundo com rede neural e elementos interativos */}
+      <SimplifiedHeroAnimation />
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">

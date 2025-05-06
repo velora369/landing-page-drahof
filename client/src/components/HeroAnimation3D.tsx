@@ -2,9 +2,37 @@ import { useRef, useState, useEffect, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useIsMobile } from '@/hooks/use-mobile';
 import * as THREE from 'three';
-import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
-import { KernelSize } from 'postprocessing';
 import { OrbitControls, PerspectiveCamera, useTexture } from '@react-three/drei';
+
+// Tipos para as props dos componentes
+interface ParticleProps {
+  count?: number;
+  mousePosition: {x: number; y: number};
+  isMobile: boolean;
+  accentColor?: THREE.Color;
+  baseColor?: THREE.Color;
+  highLightColor?: THREE.Color;
+}
+
+interface LinesProps {
+  mousePosition: {x: number; y: number};
+  accentColor?: THREE.Color;
+  baseColor?: THREE.Color;
+}
+
+interface AtmosphereProps {
+  color?: THREE.Color;
+  mousePosition: {x: number; y: number};
+}
+
+interface LightingProps {
+  mousePosition: {x: number; y: number};
+}
+
+interface SceneProps {
+  mousePosition: {x: number; y: number};
+  isMobile: boolean;
+}
 
 // Partículas principais da rede neural
 const ParticleNetwork = ({ 
@@ -14,7 +42,7 @@ const ParticleNetwork = ({
   accentColor = new THREE.Color('#731C13'),
   baseColor = new THREE.Color('#425F70'),
   highLightColor = new THREE.Color('#ECE0C4')
-}) => {
+}: ParticleProps) => {
   const mesh = useRef<THREE.Points>(null);
   const [hovered, setHovered] = useState(false);
   const [activationWave, setActivationWave] = useState(0);
@@ -149,21 +177,24 @@ const ParticleNetwork = ({
     if (!mesh.current) return;
     
     const time = state.clock.getElapsedTime();
+    const material = mesh.current.material as THREE.ShaderMaterial;
     
-    mesh.current.material.uniforms.uTime.value = time;
-    mesh.current.material.uniforms.uMousePosition.value.set(
-      mousePosition.x * 0.5, 
-      mousePosition.y * 0.5
-    );
-    mesh.current.material.uniforms.uHovered.value = hovered ? 1.0 : 0.0;
+    if (material.uniforms) {
+      material.uniforms.uTime.value = time;
+      material.uniforms.uMousePosition.value.set(
+        mousePosition.x * 0.5, 
+        mousePosition.y * 0.5
+      );
+      material.uniforms.uHovered.value = hovered ? 1.0 : 0.0;
+      
+      // Efeito de pulso nas partículas
+      material.uniforms.uActivationWave.value = 
+        0.2 + Math.sin(time * 0.5) * 0.1 + activationWave * 0.7;
+    }
     
     // Rotação suave do sistema
     mesh.current.rotation.y = time * 0.05;
     mesh.current.rotation.z = Math.sin(time * 0.025) * 0.1;
-    
-    // Efeito de pulso nas partículas
-    mesh.current.material.uniforms.uActivationWave.value = 
-      0.2 + Math.sin(time * 0.5) * 0.1 + activationWave * 0.7;
     
     // Atenuar o efeito de onda de ativação ao longo do tempo
     if (activationWave > 0) {
@@ -202,7 +233,7 @@ const ConnectionLines = ({
   mousePosition,
   accentColor = new THREE.Color('#731C13'),
   baseColor = new THREE.Color('#425F70')
-}) => {
+}: LinesProps) => {
   const linesRef = useRef<THREE.LineSegments>(null);
   
   // Material para as linhas com shader customizado
@@ -305,11 +336,15 @@ const ConnectionLines = ({
     if (!linesRef.current) return;
     
     const time = state.clock.getElapsedTime();
-    linesRef.current.material.uniforms.uTime.value = time;
-    linesRef.current.material.uniforms.uMousePosition.value.set(
-      mousePosition.x * 0.5, 
-      mousePosition.y * 0.5
-    );
+    const material = linesRef.current.material as THREE.ShaderMaterial;
+    
+    if (material.uniforms) {
+      material.uniforms.uTime.value = time;
+      material.uniforms.uMousePosition.value.set(
+        mousePosition.x * 0.5, 
+        mousePosition.y * 0.5
+      );
+    }
     
     // Rotação lenta das conexões
     linesRef.current.rotation.y = time * 0.03;
@@ -325,7 +360,7 @@ const ConnectionLines = ({
 };
 
 // Efeito de neblina/atmosfera para dar profundidade
-const AtmosphereEffect = ({ color = new THREE.Color('#ECE0C4'), mousePosition }) => {
+const AtmosphereEffect = ({ color = new THREE.Color('#ECE0C4'), mousePosition }: AtmosphereProps) => {
   const mesh = useRef<THREE.Mesh>(null);
   
   // Textura de ruído para efeito mais orgânico
@@ -360,7 +395,7 @@ const AtmosphereEffect = ({ color = new THREE.Color('#ECE0C4'), mousePosition })
 };
 
 // Componente de iluminação dinâmica
-const DynamicLighting = ({ mousePosition }) => {
+const DynamicLighting = ({ mousePosition }: LightingProps) => {
   const light1 = useRef<THREE.PointLight>(null);
   const light2 = useRef<THREE.PointLight>(null);
   
@@ -390,7 +425,7 @@ const DynamicLighting = ({ mousePosition }) => {
 };
 
 // A cena completa que combina todos os elementos
-const Scene = ({ mousePosition, isMobile }) => {
+const Scene = ({ mousePosition, isMobile }: SceneProps) => {
   // Cores do tema da identidade visual
   const primaryColor = new THREE.Color('#425F70');
   const accentColor = new THREE.Color('#731C13');
@@ -437,16 +472,9 @@ const Scene = ({ mousePosition, isMobile }) => {
         minPolarAngle={Math.PI / 3}
       />
       
-      {/* Efeitos de pós-processamento para melhorar a qualidade visual */}
-      <EffectComposer>
-        <Bloom 
-          intensity={0.5} 
-          luminanceThreshold={0.2}
-          luminanceSmoothing={0.9}
-          kernelSize={KernelSize.MEDIUM}
-        />
-        <Vignette offset={0.5} darkness={0.45} />
-      </EffectComposer>
+      {/* Efeitos básicos para melhorar a qualidade visual */}
+      <ambientLight intensity={0.2} />
+      <fog attach="fog" args={['#f8f7f2', 5, 15]} />
     </>
   );
 };
