@@ -463,7 +463,7 @@ export default function BeforeAfterEnhanced() {
           </h3>
         </motion.div>
         
-        {/* Galeria de thumbnails em grid - ajustada para 2 itens */}
+        {/* Galeria de thumbnails em grid - apenas com "Harmonização Facial" e "Contorno Facial" */}
         <motion.div 
           className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12"
           initial={{ opacity: 0, y: 40 }}
@@ -471,14 +471,20 @@ export default function BeforeAfterEnhanced() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {cases.map((caseItem, index) => (
-            <ThumbnailCard
-              key={caseItem.id}
-              caseItem={caseItem}
-              onClick={() => openModal(caseItem.id)}
-              index={index}
-            />
-          ))}
+          {/* Filtragem específica para manter apenas os cards de "Harmonização Facial" e "Contorno Facial" */}
+          {cases
+            .filter(caseItem => 
+              (caseItem.title === "Harmonização Facial" && caseItem.procedure === "Harmonização Completa") || 
+              (caseItem.title === "Contorno Facial" && caseItem.procedure === "Definição Mandibular")
+            )
+            .map((caseItem, index) => (
+              <ThumbnailCard
+                key={caseItem.id}
+                caseItem={caseItem}
+                onClick={() => openModal(caseItem.id)}
+                index={index}
+              />
+            ))}
         </motion.div>
         
         {/* Nota de rodapé */}

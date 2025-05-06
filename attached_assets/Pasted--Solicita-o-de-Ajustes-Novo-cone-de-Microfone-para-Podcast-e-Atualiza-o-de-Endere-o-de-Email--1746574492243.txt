@@ -1,0 +1,32 @@
+### Solicitação de Ajustes: Novo Ícone de Microfone para Podcast e Atualização de Endereço de Email
+
+**Objetivo:** Realizar duas atualizações importantes no site: 1) Substituir o ícone atual do microfone na seção "Podcast" por um design mais tradicional e reconhecível, mantendo a paleta de cores do site. 2) Atualizar o endereço de email da Dra. Jana Hof para `janadrahof@gmail.com` em todas as ocorrências no site.
+
+**Detalhes da Solicitação:**
+
+**1. Ajuste do Ícone do Microfone na Seção "Podcast":**
+    *   **Problema:** O ícone de microfone atual na seção "Podcast" (conforme imagem fornecida anteriormente) está com um design que dificulta a identificação imediata como um microfone.
+    *   **Solicitação:** Substituir o ícone existente por um design de microfone mais **tradicional, clássico e facilmente reconhecível** (ex: um microfone de estúdio/condensador ou um microfone de podcast de mesa mais comum).
+    *   **Estilo:** O novo ícone deve ser elegante e profissional, alinhado com a estética geral do site.
+    *   **Cores:** O novo ícone deve utilizar as cores da paleta do site (ex: tons de marsala/vinho, dourado sutil, tons neutros, conforme apropriado para o design do ícone e da seção).
+    *   **Contexto:** O ícone está localizado na seção "Podcast", que tem o título "Podcast" e o subtítulo "Em breve".
+
+**2. Atualização Global do Endereço de Email:**
+    *   **Email Antigo:** Identificar e localizar todas as instâncias do endereço de email antigo da Dra. Jana Hof no site.
+    *   **Novo Email:** Substituir todas as ocorrências do email antigo pelo novo endereço: `janadrahof@gmail.com`
+    *   **Locais Comuns para Verificação (Lista não exaustiva):**
+        *   Rodapé (Footer): Verificar se há texto de email ou links de email.
+        *   Seção de Contato: Verificar informações de contato textuais.
+        *   Ícones de Email: Se houver ícones clicáveis que abrem um cliente de email (`mailto:` links), garantir que o link `mailto:` seja atualizado para `mailto:janadrahof@gmail.com`.
+        *   Qualquer outra menção textual do email em qualquer página ou seção do site.
+    *   **Funcionalidade:** Garantir que todos os links de email (`mailto:`) estejam funcionando corretamente com o novo endereço.
+
+**Instruções para o Replit AI:**
+*   **Para o Microfone:** Por favor, redesenhe ou substitua o ícone do microfone na seção "Podcast" por um design mais tradicional e claramente identificável como um microfone, utilizando a paleta de cores do site.
+*   **Para o Email:** Por favor, realize uma busca global no código do site para encontrar todas as menções do endereço de email antigo e substitua-as pelo novo endereço: `janadrahof@gmail.com`. Verifique também todos os links `mailto:`.
+
+**Resultado Esperado:**
+*   Um ícone de microfone na seção "Podcast" que seja instantaneamente reconhecível e esteticamente alinhado com o site.
+*   O endereço de email `janadrahof@gmail.com` corretamente atualizado em todas as partes do site, tanto em texto visível quanto em links funcionais.
+
+Por favor, implemente estes ajustes e me informe quando estiverem prontos para validação.

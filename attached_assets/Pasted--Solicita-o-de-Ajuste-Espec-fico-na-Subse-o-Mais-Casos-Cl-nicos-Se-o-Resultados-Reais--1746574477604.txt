@@ -1,0 +1,36 @@
+### Solicitação de Ajuste Específico na Subseção "Mais Casos Clínicos" (Seção "Resultados Reais" / "Antes & Depois") - Versão 2
+
+**Objetivo:** Refinar com precisão o conteúdo da galeria de exemplos "Mais Casos Clínicos" na seção "Resultados Reais" (ou "Antes & Depois"), garantindo que APENAS DOIS cards específicos permaneçam, identificados pelos seus textos exatos.
+
+**Contexto:**
+A tentativa anterior de ajuste não removeu todos os cards indesejados. Esta versão visa fornecer critérios exatos para a seleção dos cards a serem mantidos.
+
+**Requisitos Detalhados:**
+
+1.  **Manter o Slider Interativo Principal:**
+    *   O slider principal com a funcionalidade "Arraste o divisor para visualizar o antes e depois" deve ser mantido como está.
+
+2.  **Ajustes na Subseção "Mais Casos Clínicos" (Galeria de Thumbnails/Exemplos Adicionais):**
+    *   **APENAS os SEGUINTES DOIS CARDS DEVEM PERMANECER. Todos os outros devem ser REMOVIDOS:**
+        *   **Card 1 (Textos Exatos a Procurar):** Um card que contenha os textos "Harmonização Completa" E "Harmonização Facial".
+        *   **Card 2 (Textos Exatos a Procurar):** Um card que contenha os textos "Definição Mandibular" E "Contorno Facial" E "Ver comparação".
+    *   **Remoção de Todos os Outros:** Qualquer outro card/thumbnail presente na galeria "Mais Casos Clínicos" que não corresponda exatamente aos critérios de texto acima deve ser completamente removido.
+    *   **Resultado Esperado para a Subseção:** Após o ajuste, a galeria "Mais Casos Clínicos" deverá exibir **EXCLUSIVAMENTE** os dois cards descritos acima.
+
+3.  **Consistência Visual:**
+    *   Garantir que, após a remoção dos itens e a manutenção apenas dos dois cards especificados, o layout da galeria "Mais Casos Clínicos" permaneça visualmente equilibrado e funcional. Se necessário, ajustar o layout para que os dois cards restantes sejam bem apresentados (ex: centralizados, em uma linha, etc., conforme o design permitir).
+    *   Manter a responsividade da seção em todos os dispositivos.
+
+**Instruções para o Replit AI:**
+*   Por favor, acesse a seção "Resultados Reais" (ou "Antes & Depois").
+*   Localize a subseção/galeria de exemplos adicionais denominada "Mais Casos Clínicos".
+*   **Identifique e MANTENHA APENAS os seguintes dois cards, baseando-se nos textos exatos contidos neles:**
+    1.  O card que contém "Harmonização Completa" e "Harmonização Facial".
+    2.  O card que contém "Definição Mandibular", "Contorno Facial" e "Ver comparação".
+*   **REMOVA TODOS OS OUTROS CARDS** desta galeria "Mais Casos Clínicos".
+*   Verifique e ajuste o layout da galeria para que os dois cards restantes fiquem bem dispostos e o visual continue agradável.
+
+**Resultado Esperado:**
+Uma seção "Resultados Reais" com o slider principal intacto e uma subseção "Mais Casos Clínicos" contendo **apenas e exatamente** os dois cards especificados pelos textos fornecidos.
+
+Por favor, implemente este ajuste com atenção aos detalhes dos textos e me informe quando estiver pronto para validação.
