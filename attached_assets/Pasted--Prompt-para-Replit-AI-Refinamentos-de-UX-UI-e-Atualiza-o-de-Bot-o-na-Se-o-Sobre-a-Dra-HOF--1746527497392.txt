@@ -1,0 +1,43 @@
+## Prompt para Replit AI: Refinamentos de UX/UI e Atualização de Botão na Seção "Sobre a Dra. HOF"
+
+**Objetivo:** Aprimorar significativamente a experiência do usuário (UX) e a interface do usuário (UI) da seção "Sobre a Dra. HOF", tornando-a mais impactante visualmente e interativa. Além disso, alterar o texto de um botão existente.
+
+**Contexto:**
+- A estrutura base da seção "Sobre a Dra. HOF" e a imagem principal já estão implementadas e corrigidas.
+- O prompt original para o redesign desta seção foi `drahof_about_section_redesign_v1.txt`.
+- O usuário deseja mais impacto visual e refinamentos de UX/UI nesta seção.
+
+**Diretrizes Detalhadas para os Refinamentos:**
+
+1.  **Aprimoramento Geral do Impacto Visual e UX/UI:**
+    *   **Revisão do Layout:** Avalie o layout atual. Se ele parecer muito simples, explore maneiras de torná-lo mais dinâmico e moderno, sem perder a elegância e o profissionalismo. Considere assimetrias sutis, sobreposições de elementos (com moderação) ou o uso de formas geométricas discretas no fundo para adicionar interesse visual.
+    *   **Tipografia:** Reforce a hierarquia visual através da tipografia. O título da seção deve ser proeminente. Os parágrafos devem ser de fácil leitura. Explore variações de peso e tamanho da fonte (dentro da família tipográfica do site) para criar mais contraste e interesse.
+    *   **Cores e Sombras:** Utilize a paleta de cores do site de forma estratégica para destacar elementos importantes. Adicione sombras sutis e modernas aos cards ou elementos de contêiner para criar profundidade e um visual mais sofisticado (evite sombras duras ou antiquadas).
+    *   **Espaçamento:** Verifique se o espaçamento entre os elementos (margens, paddings) está bem distribuído, proporcionando um visual "respirável" e organizado.
+
+2.  **Animações de Texto Aprimoradas:**
+    *   As animações de entrada para os textos (títulos e parágrafos) devem ser elegantes e fluidas. Se já existem, refine-as para que sejam mais suaves e menos abruptas.
+    *   Considere animações "staggered" (escalonadas) se houver múltiplos blocos de texto, para que não apareçam todos de uma vez, mas sim com um pequeno atraso entre eles, criando um efeito mais dinâmico.
+    *   Assegure que as animações não prejudiquem a performance ou a legibilidade imediata do conteúdo.
+
+3.  **Alteração do Botão "Conheça os Procedimentos":**
+    *   **Novo Texto:** Altere o texto do botão que atualmente diz "Conheça os Procedimentos" para "acesse o lattes".
+    *   **Estilo do Botão:** Mantenha o estilo visual do botão consistente com os demais CTAs do site, mas garanta que ele tenha destaque suficiente.
+    *   **Link (href):** Por enquanto, como o link final do Lattes ainda não foi fornecido, configure o atributo `href` do botão para `"#"` ou deixe-o sem link funcional. Adicione um comentário no código indicando que o link do Lattes será inserido posteriormente.
+        *   Exemplo de comentário: `<!-- TODO: Inserir link do Lattes aqui quando fornecido -->`
+
+4.  **Microinterações (Opcional, mas Recomendado):**
+    *   Adicione microinterações sutis em elementos como a imagem da Dra. Hof (um leve zoom ou brilho no hover, por exemplo) ou no próprio botão "acesse o lattes" (além do hover padrão, talvez uma pequena animação no ícone, se houver).
+    *   Essas interações devem ser discretas e adicionar um toque de refinamento à experiência.
+
+5.  **Responsividade:**
+    *   Garanta que todos os aprimoramentos de UX/UI e o botão atualizado sejam perfeitamente responsivos e funcionem bem em desktops, tablets e dispositivos móveis.
+
+**O que NÃO fazer:**
+*   Não sobrecarregar a seção com excesso de animações ou efeitos visuais que possam distrair ou tornar a navegação confusa.
+*   Não introduzir elementos que quebrem a consistência visual com o restante do site.
+
+**Entregável Esperado:**
+*   A seção "Sobre a Dra. HOF" com UX/UI visivelmente aprimorado, animações de texto refinadas e o botão atualizado para "acesse o lattes".
+
+Por favor, aplique estes refinamentos. Após a implementação, informe para que o usuário possa validar o resultado. Se tiver dúvidas ou sugestões de melhoria durante o processo, por favor, comunique.

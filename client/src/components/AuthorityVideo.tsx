@@ -124,17 +124,19 @@ export default function AuthorityVideo() {
   // Gera valores de transformação baseados na posição de scroll
   const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.95]);
   const imageBrightness = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1.05, 0.95]);
+  const textXOffset = useTransform(scrollYProgress, [0, 0.5, 1], [-5, 0, -2]);
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.02, 0.05, 0.05, 0.02]);
   
-  // Variantes de animação para texto
+  // Variantes de animação para texto com timing escalonado mais refinado
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (custom: number) => ({
       opacity: 1,
       y: 0,
       transition: { 
-        duration: 0.7, 
-        delay: custom * 0.15,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.8, 
+        delay: custom * 0.12, // Timing ligeiramente mais rápido para melhor ritmo visual
+        ease: [0.16, 1, 0.3, 1] // Curva de easing mais refinada para movimento mais natural
       }
     })
   };
@@ -145,10 +147,18 @@ export default function AuthorityVideo() {
       id="sobre"
       ref={containerRef}
     >
-      {/* Background de padrão sutil */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      {/* Background de padrão sutil com animação */}
+      <motion.div 
+        className="absolute inset-0 pointer-events-none"
+        style={{ opacity: backgroundOpacity }}
+      >
         <div className="absolute w-full h-full bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23425F70%22%20fill-opacity%3D%220.2%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
-      </div>
+      </motion.div>
+      
+      {/* Elementos decorativos extras para profundidade */}
+      <div className="absolute top-20 left-[5%] w-32 h-32 rounded-full bg-[#ECE0C4]/20 blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-40 right-[8%] w-40 h-40 rounded-full bg-[#731C13]/10 blur-3xl pointer-events-none"></div>
+      <div className="absolute -top-10 right-[15%] w-16 h-16 rounded-full bg-[#425F70]/10 blur-xl pointer-events-none"></div>
 
       <div className="container mx-auto max-w-6xl relative">
         {/* Título da seção com animação sutil */}
@@ -244,9 +254,23 @@ export default function AuthorityVideo() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="text-[#425F70]/80 text-lg md:text-xl font-light"
+                className="flex items-center space-x-2"
               >
-                @drahof — especialista em harmonização facial avançada
+                <span className="text-[#425F70] text-lg md:text-xl font-light">
+                  <span className="bg-gradient-to-r from-[#731C13] to-[#731C13]/80 bg-clip-text text-transparent font-medium">@drahof</span> — especialista em harmonização facial avançada
+                </span>
+                <motion.span 
+                  className="inline-block w-2 h-2 bg-[#731C13] rounded-full"
+                  animate={{ 
+                    opacity: [0.3, 1, 0.3],
+                    scale: [0.8, 1.2, 0.8]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
               </motion.div>
               
               {/* Parágrafos com animação sequencial */}
@@ -272,20 +296,26 @@ export default function AuthorityVideo() {
                 Na prática clínica ou nos bastidores da educação estética, a Dra. Jana é referência por onde passa. Seu olhar técnico e humano vai além do padrão: ela cuida da sua autoestima como prioridade.
               </motion.p>
               
-              {/* Citação em destaque */}
+              {/* Citação em destaque com design aprimorado */}
               <motion.div
                 custom={4}
                 variants={textVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                className="relative mt-8 p-6 bg-[#731C13]/5 rounded-lg border-l-3 border-[#731C13]"
+                className="relative mt-8 p-8 bg-gradient-to-br from-white to-[#F9F5EB]/80 rounded-xl border-l-4 border-[#731C13] shadow-sm"
+                whileHover={{ 
+                  boxShadow: "0 10px 25px -5px rgba(115, 28, 19, 0.1)",
+                  scale: 1.01,
+                  transition: { duration: 0.3 }
+                }}
               >
-                <div className="absolute -top-3 -left-2 text-4xl text-[#731C13]/20">"</div>
-                <p className="text-xl font-['Cormorant_Garamond'] italic text-[#731C13] text-center">
+                <div className="absolute -top-4 -left-2 text-5xl text-[#731C13]/20 font-serif">"</div>
+                <p className="text-xl md:text-2xl font-['Cormorant_Garamond'] italic text-[#731C13] text-center leading-relaxed">
                   Beleza é ciência, mas autoestima é arte.
                 </p>
-                <div className="absolute -bottom-3 -right-2 text-4xl text-[#731C13]/20">"</div>
+                <div className="absolute -bottom-6 -right-2 text-5xl text-[#731C13]/20 font-serif">"</div>
+                <div className="w-12 h-1 bg-gradient-to-r from-[#731C13] to-[#ECE0C4] rounded-full mx-auto mt-4"></div>
               </motion.div>
               
               {/* Lista de qualificações */}
@@ -309,7 +339,7 @@ export default function AuthorityVideo() {
                 </ul>
               </motion.div>
               
-              {/* CTA Button */}
+              {/* CTA Button - Lattes */}
               <motion.div
                 custom={6}
                 variants={textVariants}
@@ -318,16 +348,20 @@ export default function AuthorityVideo() {
                 viewport={{ once: true, margin: "-50px" }}
                 className="mt-10"
               >
+                {/* TODO: Inserir link do Lattes aqui quando fornecido */}
                 <motion.a 
-                  href="#procedimentos"
-                  className="inline-flex items-center px-6 py-3 bg-[#731C13] text-white rounded-full transition-all shadow-md hover:shadow-lg hover:bg-[#731C13]/90 active:scale-[0.98]"
-                  whileHover={{ scale: 1.03 }}
+                  href="#"
+                  className="group inline-flex items-center px-6 py-3 bg-[#731C13] text-white rounded-full transition-all shadow-md hover:shadow-lg hover:bg-[#731C13]/90 active:scale-[0.98]"
+                  whileHover={{ 
+                    scale: 1.03,
+                    boxShadow: "0 10px 25px -5px rgba(115, 28, 19, 0.2)"
+                  }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="font-medium">Conheça os Procedimentos</span>
-                  <svg className="ml-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  <svg className="mr-2 w-5 h-5 transition-transform group-hover:rotate-[-15deg]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
+                  <span className="font-medium">acesse o lattes</span>
                 </motion.a>
               </motion.div>
             </div>
