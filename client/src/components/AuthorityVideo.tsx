@@ -95,7 +95,12 @@ const FacialContourAnimation = () => {
 };
 
 // Componente para animação do item da lista de qualificações
-const QualificationItem = ({ children, delay = 0 }) => {
+interface QualificationItemProps {
+  children: React.ReactNode;
+  delay?: number;
+}
+
+const QualificationItem = ({ children, delay = 0 }: QualificationItemProps) => {
   return (
     <motion.li 
       className="relative text-[#425F70]/90 mb-3 pl-6 before:content-[''] before:absolute before:left-0 before:top-[0.5em] before:w-3 before:h-3 before:rounded-full before:bg-[#731C13]/20 before:border before:border-[#731C13]/40"
@@ -123,7 +128,7 @@ export default function AuthorityVideo() {
   // Variantes de animação para texto
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (custom) => ({
+    visible: (custom: number) => ({
       opacity: 1,
       y: 0,
       transition: { 
@@ -191,7 +196,7 @@ export default function AuthorityVideo() {
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
             >
               <img 
-                src="https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/dra-hof-perfil.jpg" 
+                src="/images/dra-hof-perfil.svg" 
                 alt="Dra. Jana Hof" 
                 className="w-full h-auto object-cover"
               />
