@@ -1,0 +1,58 @@
+```
+**Solicitação Abrangente de Redesign para o Site da Dra. Jana Hof**
+
+**Objetivo Principal:** Transformar o site da Dra. Jana Hof (especialista em harmonização facial e dentista) em uma plataforma digital de altíssimo nível, com foco em modernidade, fluidez, experiência do usuário (UI/UX) excepcional e alta conversão de leads. O novo design deve ser inspirado em sofisticação e interatividade, mantendo a paleta de cores existente e a essência profissional do site atual da Dra. Hof.
+
+**Diretrizes Gerais de Design e UI/UX:**
+
+1.  **Modernidade e Futurismo Sofisticado:**
+    *   Adotar um layout clean, elegante e intuitivo.
+    *   Utilizar tipografia moderna, legível e hierarquizada.
+    *   Incorporar microinterações sutis e fluidas para enriquecer a experiência de navegação (ex: hovers, transições suaves, carregamentos elegantes).
+    *   Garantir uma navegação clara e lógica, facilitando o acesso às informações mais importantes (serviços, agendamentos, cursos, contato).
+
+2.  **Foco em Conversão:**
+    *   Calls-to-action (CTAs) devem ser proeminentes, claros e estrategicamente posicionados em todas as seções relevantes (ex: "Agende sua Consulta", "Saiba Mais sobre o Tratamento X", "Inscreva-se no Curso Y", "Quero Garantir Minha Vaga!").
+    *   O design deve guiar o usuário naturalmente para as ações desejadas.
+    *   Formulários de contato e agendamento devem ser simplificados e otimizados para preenchimento rápido.
+
+3.  **Manutenção da Identidade Visual:**
+    *   **Paleta de Cores:** Respeitar e utilizar a paleta de cores atual do site da Dra. Hof. O novo design deve trabalhar harmoniosamente com essas cores, aplicando-as de forma moderna e equilibrada.
+    *   **Essência Profissional:** O design deve transmitir confiança, expertise e o alto padrão dos serviços oferecidos pela Dra. Hof. Evitar elementos excessivamente lúdicos ou que não condizem com a seriedade da área médica e estética.
+
+4.  **Responsividade Impecável:**
+    *   O site deve ser perfeitamente adaptável e funcional em todos os dispositivos (desktops, tablets e smartphones), com atenção especial à experiência mobile.
+
+**Implementação de Placeholders e Elementos Visuais Avançados:**
+
+O objetivo é criar seções visualmente impactantes e memoráveis, utilizando placeholders 3D interativos e outros elementos gráficos modernos, sempre alinhados com a área de atuação da Dra. Hof.
+
+1.  **Hero Section:**
+    *   **Placeholder 3D Principal:** Criar uma animação 3D interativa e sofisticada como plano de fundo ou elemento central. Sugestões temáticas:
+        *   Representação abstrata e elegante de contornos faciais ou estruturas dérmicas se harmonizando.
+        *   Visualização de partículas ou ondas suaves que remetam à tecnologia e precisão dos tratamentos.
+        *   Uma interpretação do conceito de "big data connection world" (como no MeuSiteXpress), mas adaptado à estética médica/beleza, talvez com nós representando pontos de tratamento ou resultados, conectados de forma fluida e orgânica.
+    *   **Interatividade:** Permitir que o usuário interaja sutilmente com o placeholder (ex: movimento do mouse causando reações na animação, ou a possibilidade de "tocar" ou "arrastar" elementos como já solicitado anteriormente para o MeuSiteXpress).
+    *   **Texto e CTA:** O texto principal da Hero Section e o CTA principal devem ser destacados sobre ou ao lado deste placeholder, de forma legível e impactante.
+
+2.  **Seção de Serviços/Tratamentos:**
+    *   **Ícones Animados ou Mini-Placeholders:** Para cada serviço principal listado, considerar a criação de ícones animados sutis ou pequenos placeholders 3D/gráficos que se ativam com o hover ou ao rolar a página. Estes devem ser representações conceituais e elegantes do serviço (ex: para preenchimento, algo que sugira volume e suavidade; para toxina botulínica, algo que represente relaxamento muscular ou suavização de linhas).
+    *   **Layout:** Apresentar os serviços de forma clara, com descrições concisas e CTAs individuais ("Saiba Mais" ou "Agendar Avaliação para [Nome do Serviço]").
+
+3.  **Seção "Próximo Curso" (se mantida e relevante):**
+    *   **Visual Moderno:** Se esta seção for mantida, aplicar um design que remeta à educação e inovação. Pode incluir um placeholder 2D/3D abstrato que simbolize conhecimento, crescimento ou networking profissional.
+    *   **Informações Claras:** Detalhes do curso, benefícios e CTA para inscrição ("Quero Garantir Minha Vaga!") devem ser facilmente acessíveis.
+
+4.  **Outras Seções (Ex: Sobre, Depoimentos, Contato):**
+    *   Manter a coesão visual com o restante do site.
+    *   Para a seção de Depoimentos, utilizar um design que transmita autenticidade e confiança. Evitar animações que distraiam do conteúdo dos depoimentos.
+    *   A página de Contato deve ser clara, com todas as informações necessárias (telefone, WhatsApp, endereço com mapa interativo, formulário de contato).
+
+**Instruções Adicionais para o Replit AI:**
+
+*   Priorize a performance do site. As animações e elementos 3D devem ser otimizados para não comprometer o tempo de carregamento.
+*   Garanta a acessibilidade (WCAG) em todo o site.
+*   Revise toda a estrutura de navegação e links internos para garantir uma experiência coesa.
+*   O código gerado deve ser limpo, semântico e bem organizado.
+
+Este é um projeto de redesign completo. Por favor, aplique estas diretrizes em todas as páginas e seções do site da Dra. Hof, transformando-o em uma referência de design e usabilidade no seu segmento.
