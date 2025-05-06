@@ -3,10 +3,9 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { CLINIC_ADDRESS, CLINIC_PHONE } from "@/lib/constants";
 import { contactFormSchema } from "@shared/schema";
 import { z } from "zod";
-import { CLINIC_ADDRESS, CLINIC_PHONE } from "@/lib/constants";
 
 // UI Components
 import {
@@ -44,7 +43,7 @@ export default function Contact() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const response = await apiRequest("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
