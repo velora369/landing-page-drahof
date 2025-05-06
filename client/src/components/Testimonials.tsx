@@ -41,19 +41,19 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-[#ECE0C4] bg-opacity-30" id="depoimentos">
+    <section className="py-24 px-4 bg-gradient-to-br from-[#ECE0C4]/20 to-[#ECE0C4]/40" id="depoimentos">
       <div className="container mx-auto max-w-6xl">
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="font-['Cormorant_Garamond'] text-4xl font-bold mb-4 text-[#425F70]">
+          <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl font-bold mb-6 text-[#425F70]">
             Mulheres reais. Histórias de superação.
           </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto">
+          <p className="text-gray-700 max-w-3xl mx-auto text-lg">
             Depoimentos espontâneos lotam a DM e o Google da Dra. Jana. São mães, profissionais e até jovens que encontraram nela uma profissional que escuta, acolhe e entrega o que promete: autoestima sem exageros.
           </p>
         </motion.div>
@@ -62,32 +62,32 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] border border-gray-100"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="flex items-center mb-4">
                 <div className="text-yellow-400 flex">
                   {[...Array(5)].map((_, i) => (
-                    <i key={i} className="fas fa-star"></i>
+                    <i key={i} className="fas fa-star mr-0.5"></i>
                   ))}
                 </div>
               </div>
-              <p className="text-gray-700 italic mb-6">
+              <p className="text-gray-700 italic mb-6 leading-relaxed">
                 "{testimonial.text}"
               </p>
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-[#425F70] text-white flex items-center justify-center mr-3">
-                  <span className="font-bold">{testimonial.initial}</span>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#425F70] to-[#731C13] text-white flex items-center justify-center mr-4 shadow-md">
+                  <span className="font-bold text-lg">{testimonial.initial}</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#425F70]">{testimonial.name}</h4>
+                  <h4 className="font-bold text-[#425F70] text-lg">{testimonial.name}</h4>
                   <div className="flex items-center">
                     <div className="text-yellow-400 flex">
                       {[...Array(5)].map((_, i) => (
-                        <i key={i} className="fas fa-star text-xs"></i>
+                        <i key={i} className="fas fa-star text-xs mr-0.5"></i>
                       ))}
                     </div>
                     <span className="ml-2 text-gray-500 text-xs">{testimonial.time}</span>
@@ -99,64 +99,64 @@ export default function Testimonials() {
         </div>
         
         <motion.div 
-          className="mt-16"
+          className="mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <h3 className="text-center font-['Cormorant_Garamond'] text-3xl font-bold mb-8 text-[#425F70]">
+          <h3 className="text-center font-['Cormorant_Garamond'] text-3xl md:text-4xl font-bold mb-10 text-[#425F70]">
             O que dizem no Google
           </h3>
           
-          <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
-            <div className="p-2 bg-[#4285F4]"></div>
-            <div className="p-6">
-              <div className="flex items-center mb-4">
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300">
+            <div className="h-2 bg-gradient-to-r from-[#4285F4] to-[#34A853]"></div>
+            <div className="p-8">
+              <div className="flex flex-col sm:flex-row sm:items-center mb-6 gap-4">
                 <img 
                   src="https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/google-avaliacao.webp" 
                   alt="Avaliação Google" 
-                  className="w-24 h-auto mr-4"
+                  className="w-24 h-auto"
                 />
                 <div>
-                  <div className="flex items-center">
-                    <span className="text-[#4285F4] font-bold mr-2">Avaliação Google</span>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[#4285F4] font-bold">Avaliação Google</span>
                     <div className="text-yellow-400 flex">
                       {[...Array(5)].map((_, i) => (
-                        <i key={i} className="fas fa-star text-sm"></i>
+                        <i key={i} className="fas fa-star text-sm mr-0.5"></i>
                       ))}
                     </div>
-                    <span className="ml-2 text-gray-600 text-sm">5.0 (138 avaliações)</span>
+                    <span className="text-gray-600 text-sm font-medium">5.0 (138 avaliações)</span>
                   </div>
-                  <p className="text-sm text-gray-500">Baseado nas experiências de pacientes reais</p>
+                  <p className="text-sm text-gray-500 mt-1">Baseado nas experiências de pacientes reais</p>
                 </div>
               </div>
               
-              <div className="border border-gray-200 rounded-lg p-4 mb-4">
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 rounded-full bg-[#425F70] text-white flex items-center justify-center mr-3">
-                    <span className="font-bold">R</span>
+              <div className="border border-gray-200 rounded-xl p-6 mb-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#425F70] to-[#731C13] text-white flex items-center justify-center mr-4 shadow-md">
+                    <span className="font-bold text-lg">R</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800">Roberta Mendes</h4>
+                    <h4 className="font-bold text-gray-800 text-lg">Roberta Mendes</h4>
                     <div className="flex items-center">
                       <div className="text-yellow-400 flex">
                         {[...Array(5)].map((_, i) => (
-                          <i key={i} className="fas fa-star text-xs"></i>
+                          <i key={i} className="fas fa-star text-xs mr-0.5"></i>
                         ))}
                       </div>
                       <span className="ml-2 text-gray-500 text-xs">3 meses atrás</span>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 leading-relaxed">
                   "Profissional extremamente competente e atenciosa. Me senti segura durante todo o procedimento. A Dra. Jana tem um olhar técnico único e conseguiu entender exatamente o que eu precisava. O resultado ficou natural e harmonioso. Super recomendo!"
                 </p>
               </div>
               
               <div className="text-center">
-                <p className="text-[#4285F4] font-medium">
-                  138 avaliações verificadas
+                <p className="text-[#4285F4] font-medium bg-blue-50 rounded-full py-2 px-4 inline-block">
+                  <i className="fas fa-check-circle mr-2"></i>138 avaliações verificadas
                 </p>
               </div>
             </div>
