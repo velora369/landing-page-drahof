@@ -240,13 +240,13 @@ export default function Footer() {
                 </a>
                 
                 <a 
-                  href="mailto:contato@drahof.com.br" 
+                  href="mailto:janadrahof@gmail.com" 
                   className="flex items-center group hover:bg-white/5 p-2 rounded-lg transition-colors duration-300"
                 >
                   <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center mr-3 group-hover:bg-[#731C13]/20 transition-colors duration-300 backdrop-blur-sm">
                     <i className="fas fa-envelope text-[#ECE0C4]"></i>
                   </div>
-                  <p className="text-white/90 group-hover:text-white transition-colors duration-300">contato@drahof.com.br</p>
+                  <p className="text-white/90 group-hover:text-white transition-colors duration-300">janadrahof@gmail.com</p>
                 </a>
               </div>
             </motion.div>

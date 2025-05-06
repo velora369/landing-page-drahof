@@ -89,10 +89,10 @@ export default function Contact() {
                   <div className="transition-all duration-300 hover:translate-x-1">
                     <p className="text-sm font-medium text-gray-500 mb-1">Email</p>
                     <a 
-                      href="mailto:contato@drahof.com.br"
+                      href="mailto:janadrahof@gmail.com"
                       className="text-lg text-gray-800 hover:text-[#731C13] transition-colors duration-300"
                     >
-                      contato@drahof.com.br
+                      janadrahof@gmail.com
                     </a>
                   </div>
                 </div>
