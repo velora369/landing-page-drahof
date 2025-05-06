@@ -1,0 +1,49 @@
+## Prompt para Replit AI: Redesign da Seção "Depoimentos"
+
+**Objetivo:** Criar uma seção de "Depoimentos" moderna, elegante e confiável, utilizando um carrossel para exibir os testemunhos dos pacientes e, opcionalmente, elementos decorativos sutis.
+
+**Contexto:**
+- Esta é a Fase 6 do redesign do site da Dra. Hof.
+- A seção deve inspirar confiança e apresentar os depoimentos de forma clara e atraente.
+- Manter a paleta de cores e o estilo visual sofisticado do site.
+
+**Diretrizes Detalhadas para a Seção "Depoimentos":**
+
+1.  **Layout Geral e Título:**
+    *   **Título da Seção:** Um título claro como "O que dizem nossos pacientes", "Depoimentos Reais" ou similar, com destaque e alinhado à tipografia do site.
+    *   **Introdução Curta (Opcional):** Um pequeno parágrafo introdutório, se desejar, reforçando a importância do feedback dos pacientes.
+
+2.  **Carrossel de Depoimentos:**
+    *   **Design Moderno:** Implementar um carrossel (slider) horizontal para exibir os depoimentos. O carrossel deve ser suave, responsivo e fácil de navegar.
+    *   **Navegação:** Incluir setas de navegação claras (anterior/próximo) e/ou indicadores de paginação (pontos) para o carrossel.
+    *   **Autoplay (Opcional):** O carrossel pode ter autoplay sutil, mas deve pausar no hover ou quando o usuário interagir com a navegação.
+    *   **Número de Itens Visíveis:** Definir quantos depoimentos são visíveis por vez no desktop (ex: 1 a 3, dependendo do design do card) e como isso se adapta em telas menores (geralmente 1 por vez em mobile).
+
+3.  **Design dos Cards de Depoimento:**
+    *   **Estilo Elegante e Confiável:** Os cards devem ter um design limpo, profissional e que transmita credibilidade.
+    *   **Conteúdo do Card:** Cada card de depoimento deve conter:
+        *   **Texto do Depoimento:** O testemunho em si. Utilizar uma tipografia legível e com bom contraste. Para depoimentos mais longos, considerar a exibição de um trecho com um link/botão "Leia mais" que expanda o texto ou abra um modal (se a plataforma permitir facilmente).
+        *   **Nome do Paciente:** Claramente visível, mas com menos destaque que o texto do depoimento.
+        *   **Foto do Paciente (Opcional, se fornecida e autorizada):** Se houver fotos, elas devem ser pequenas, circulares ou com cantos arredondados, e bem integradas ao design do card.
+        *   **Avaliação (Estrelas - Opcional):** Se aplicável, um sistema de avaliação por estrelas (1 a 5) pode ser incluído de forma discreta.
+    *   **Ícones Decorativos 3D Sutis (Opcional):**
+        *   Para adicionar um toque de elegância, podem ser usados ícones 3D minimalistas e temáticos como **aspas estilizadas** no início do depoimento ou um **pequeno balão de fala estilizado** próximo ao nome do paciente. Estes devem ser muito discretos e não competir com o conteúdo.
+        *   Se optar por usar, devem seguir o mesmo padrão de qualidade e sutileza dos outros elementos 3D do site.
+    *   **Fundo e Bordas do Card:** Fundo neutro (ex: #ECE0C4 ou branco), bordas arredondadas suaves e sombras sutis para profundidade.
+
+4.  **Microinterações:**
+    *   **Hover State (Card):** Feedback visual sutil ao passar o mouse sobre um card (ex: leve mudança na sombra, destaque na borda).
+    *   **Animações de Entrada:** Os cards no carrossel podem ter uma animação de entrada suave ao aparecerem.
+
+5.  **Responsividade:**
+    *   Garantir que o carrossel e os cards de depoimento sejam totalmente responsivos, com excelente legibilidade e usabilidade em todas as resoluções de tela.
+
+**O que NÃO fazer:**
+*   Não sobrecarregar os cards com muita informação ou elementos visuais.
+*   Evitar animações de carrossel muito rápidas ou abruptas.
+*   Se usar ícones decorativos, não deixá-los dominar o design do card.
+
+**Entregável Esperado:**
+*   A seção "Depoimentos" implementada com um carrossel moderno e funcional, cards de depoimento elegantes e responsivos, e, opcionalmente, ícones 3D decorativos sutis.
+
+Por favor, proceda com o redesign desta seção. Após a implementação, informe para que possamos validar o resultado.

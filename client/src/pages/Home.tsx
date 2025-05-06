@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import AuthorityVideo from "@/components/AuthorityVideo";
-import Testimonials from "@/components/Testimonials";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import Certifications from "@/components/Certifications";
 import BeforeAfter from "@/components/BeforeAfter";
 import Podcast from "@/components/Podcast";
@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <Services />
       <AuthorityVideo />
-      <Testimonials />
+      <TestimonialsCarousel />
       <Certifications />
       <BeforeAfter />
       <Podcast />
