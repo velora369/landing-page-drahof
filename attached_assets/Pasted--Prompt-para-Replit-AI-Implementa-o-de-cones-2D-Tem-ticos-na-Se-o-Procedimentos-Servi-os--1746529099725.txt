@@ -1,0 +1,52 @@
+## Prompt para Replit AI: Implementação de Ícones 2D Temáticos na Seção "Procedimentos / Serviços"
+
+**Objetivo:** Substituir os ícones atuais na seção "Procedimentos / Serviços" por ícones 2D de alta qualidade, que sejam minimalistas, elegantes, e CLARAMENTE representativos de cada procedimento médico/estético listado.
+
+**Contexto:**
+- Decidimos abandonar a abordagem de ícones 3D para esta seção devido a dificuldades de implementação em obter ícones representativos.
+- A nova direção é utilizar ícones 2D que priorizem a clareza e a fácil identificação do serviço pelo usuário.
+- Esta é uma alteração para a Fase 5 do redesign do site (Seção "Procedimentos / Serviços").
+
+**Diretrizes Detalhadas para os Ícones 2D:**
+
+1.  **Clareza e Representatividade Máxima:**
+    *   **Prioridade Absoluta:** Cada ícone 2D DEVE ser imediatamente reconhecível e diretamente associado ao procedimento que ilustra. A intuição do usuário é fundamental.
+    *   Evitar abstrações excessivas. O ícone deve comunicar o serviço de forma direta.
+
+2.  **Estilo Visual:**
+    *   **Minimalista e Elegante:** Os ícones devem ter um design limpo, com linhas finas e formas simples. Evitar detalhes excessivos ou ornamentos.
+    *   **Profissional:** O estilo deve ser profissional e adequado a um site médico/estético.
+    *   **Monocromático ou Cores Sutis da Paleta:** Preferencialmente, os ícones podem ser monocromáticos (ex: usando o tom #425F70 ou #731C13 da paleta) ou utilizar no máximo duas cores sutis da paleta do site (#731C13, #425F70, #ECE0C4) de forma harmoniosa. A cor principal do ícone deve contrastar bem com o fundo do card.
+    *   **Consistência:** Manter um estilo visual (espessura da linha, nível de detalhe, tamanho) consistente em todo o conjunto de ícones.
+
+3.  **Sugestões de Temas para Ícones 2D (Adaptar e Melhorar):**
+    *   **Botox (Toxina Botulínica):** Um ícone de uma pequena seringa médica estilizada, ou um rosto com linhas de expressão suavizadas.
+    *   **Rinomodelação:** Um contorno de perfil de nariz estilizado e elegante.
+    *   **Preenchimento Labial:** Um ícone de lábios estilizados.
+    *   **Bioestimuladores de Colágeno:** Uma representação gráfica de uma molécula de colágeno simplificada ou uma seta curva ascendente simbolizando lifting/rejuvenescimento.
+    *   **Fios de PDO:** Linhas finas e curvas que sugerem um efeito de sustentação ou lifting.
+    *   **Microagulhamento:** Um ícone de um pequeno rolo com agulhas (dermaroller) estilizado, ou uma textura pontilhada representando as microagulhas.
+    *   **Peelings Químicos:** Uma gota estilizada sobre uma forma que represente uma camada da pele.
+    *   **(Para cada outro procedimento listado):** Buscar ou criar um ícone 2D que seja igualmente temático, claro e profissional.
+
+4.  **Fontes de Ícones (Sugestão):**
+    *   Considere utilizar bibliotecas de ícones vetoriais (SVG) de alta qualidade, como Font Awesome (versão Pro, se disponível, para mais opções médicas), Material Design Icons, Flaticon (com a devida atribuição, se gratuita), The Noun Project, etc. Filtre por ícones médicos, de beleza ou bem-estar que se encaixem no estilo.
+    *   Se for criar os SVGs, garanta que sejam otimizados para a web.
+
+5.  **Implementação:**
+    *   Substituir todos os ícones atuais nos cards de procedimentos pelos novos ícones 2D.
+    *   Garantir que os ícones estejam bem alinhados e dimensionados dentro dos cards.
+    *   Manter a animação sutil no hover do card (ou do ícone, se aplicável), se já estiver implementada e funcionar bem com os ícones 2D.
+
+6.  **Responsividade:**
+    *   Os ícones devem ser nítidos e bem visualizados em todas as resoluções de tela.
+
+**O que NÃO fazer:**
+*   Não usar ícones genéricos ou que não tenham relação clara com os procedimentos.
+*   Não usar estilos de ícones muito diferentes entre si.
+*   Não usar ícones com cores que conflitem com a paleta do site.
+
+**Entregável Esperado:**
+*   A seção "Procedimentos / Serviços" com todos os cards utilizando ícones 2D minimalistas, elegantes, e CLARAMENTE representativos de cada serviço.
+
+Por favor, aplique esta nova direção para os ícones. Após a implementação, informe para que o usuário possa validar o resultado.
