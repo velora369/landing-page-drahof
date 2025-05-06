@@ -1,0 +1,40 @@
+## Prompt para Replit AI: Implementação da Introdução Animada (Preloader)
+
+**Objetivo:** Criar uma tela de introdução animada (preloader) elegante e responsiva para o site da Dra. Hof, que será exibida antes do carregamento do conteúdo principal, com duração de 4-5 segundos.
+
+**Contexto e Referências:**
+- Manter a identidade visual do site, utilizando a paleta de cores existente (#731C13, #425F70, #ECE0C4, e variações sutis).
+- O preloader deve transmitir profissionalismo e sofisticação desde o primeiro momento.
+- Link do logo a ser utilizado: `https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/drahof-logo-vermelha.png`
+
+**Diretrizes Detalhadas para a Introdução Animada:**
+
+1.  **Layout e Elementos Visuais:**
+    *   **Fundo:** A tela de preloader deve ter um fundo sólido ou com um gradiente muito sutil, utilizando uma das cores neutras da paleta (ex: #ECE0C4 ou um tom claro derivado de #425F70).
+    *   **Logo:** Exibir o logo da Dra. Hof (fornecido no link acima) de forma centralizada ou em uma posição de destaque na tela.
+    *   **Nome:** Abaixo ou ao lado do logo, exibir o nome "Dra. Jana Hof" (ou "Dra. Hof", conforme o que estiver mais alinhado com a marcação do logo e do site). Utilizar a tipografia principal do site.
+    *   **Barra de Progresso:** Implementar uma barra de progresso horizontal, fina e elegante. A barra deve ser estilizada com as cores da paleta (ex: a base da barra em um tom neutro e o preenchimento da barra com a cor #731C13 ou #425F70).
+
+2.  **Animação e Comportamento:**
+    *   **Duração:** A animação completa do preloader (incluindo o preenchimento da barra de progresso) deve durar aproximadamente 4 a 5 segundos.
+    *   **Animação da Barra:** A barra de progresso deve preencher-se suavemente da esquerda para a direita ao longo dos 4-5 segundos.
+    *   **Animação dos Elementos:** O logo e o nome podem ter uma animação de entrada sutil (ex: fade-in) no início do preloader.
+    *   **Transição de Saída:** Ao final dos 4-5 segundos (ou quando o site estiver pronto para ser exibido, o que ocorrer por último, simulando o carregamento), o preloader deve desaparecer com uma transição suave e elegante (ex: fade-out completo da tela, ou um encolhimento sutil dos elementos seguido de fade-out).
+
+3.  **Responsividade:**
+    *   Garantir que o preloader seja totalmente responsivo e se adapte perfeitamente a diferentes tamanhos de tela (desktop, tablets e smartphones), mantendo a clareza dos elementos e a fluidez da animação.
+
+4.  **Implementação Técnica:**
+    *   O preloader deve ser a primeira coisa a ser exibida quando o usuário acessa o site.
+    *   Após a conclusão da animação do preloader, o conteúdo principal do site deve ser revelado.
+    *   O código deve ser limpo, otimizado e comentado.
+
+**O que NÃO fazer:**
+*   Não criar animações excessivamente complexas ou que causem distração.
+*   Não utilizar cores ou fontes que não estejam alinhadas com a identidade visual do site.
+*   Não fazer o preloader durar mais do que o tempo estipulado (4-5 segundos), para não prejudicar a experiência do usuário.
+
+**Entregável Esperado:**
+*   A introdução animada (preloader) implementada e funcional no site.
+
+Por favor, proceda com a criação desta introdução animada. Após a implementação, informe para que possamos validar o resultado.
