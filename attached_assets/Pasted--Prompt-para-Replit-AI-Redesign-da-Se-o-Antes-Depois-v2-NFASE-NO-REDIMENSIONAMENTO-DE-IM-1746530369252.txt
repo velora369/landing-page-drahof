@@ -1,0 +1,70 @@
+## Prompt para Replit AI: Redesign da Seção "Antes & Depois" (v2 - ÊNFASE NO REDIMENSIONAMENTO DE IMAGENS)
+
+**Objetivo:** Criar uma seção "Antes & Depois" altamente interativa, visualmente limpa e profissional, que demonstre de forma eficaz os resultados dos procedimentos da Dra. Hof. A seção deve incluir um slider interativo para comparação direta, uma galeria de thumbnails para seleção de casos e um modal/lightbox para visualização ampliada. **CRÍTICO: As imagens devem ser perfeitamente redimensionadas e alinhadas.**
+
+**Contexto:**
+- Esta é a Fase 7 do redesign do site da Dra. Hof.
+- A seção é crucial para demonstrar a eficácia dos tratamentos e construir confiança.
+- O design deve ser clínico, focado nos resultados, e manter a sofisticação do site.
+- **Feedback do Usuário:** A visualização das imagens no slider "Antes & Depois" precisa de atenção especial ao redimensionamento e alinhamento para ser eficaz.
+
+**Diretrizes Detalhadas para a Seção "Antes & Depois":**
+
+1.  **Layout Geral e Título:**
+    *   **Título da Seção:** Um título claro e direto como "Resultados Reais", "Antes e Depois" ou "Transformações", com destaque e alinhado à tipografia do site.
+    *   **Introdução Curta (Opcional):** Um breve parágrafo explicando a importância de visualizar os resultados e o compromisso com a naturalidade e a individualidade de cada paciente.
+
+2.  **Galeria de Thumbnails para Seleção de Casos:**
+    *   **Apresentação:** Exibir uma grade (grid) de imagens em miniatura (thumbnails). Cada thumbnail representará um caso/procedimento diferente.
+    *   **Conteúdo do Thumbnail:**
+        *   Idealmente, o thumbnail deve mostrar uma imagem do "Depois" ou uma imagem combinada que sugira a transformação.
+        *   Um título curto ou identificação do caso/procedimento (ex: "Rinomodelação - Caso 1", "Rejuvenescimento Facial") pode aparecer abaixo ou sobreposto ao thumbnail de forma discreta no hover.
+    *   **Design dos Thumbnails:** Limpos, com bordas sutis ou sombras leves. Devem ter um estado de hover claro.
+    *   **Interação:** Ao clicar em um thumbnail, o respectivo caso (com suas imagens de antes e depois) deve ser carregado no slider interativo principal ou abrir diretamente no modal/lightbox com o slider.
+
+3.  **Slider Interativo "Antes/Depois":**
+    *   **Funcionalidade Principal:** Este é o elemento central da seção. Deve permitir que o usuário arraste uma linha divisória (vertical ou horizontal) sobre uma imagem para revelar a imagem "Antes" de um lado e a imagem "Depois" do outro.
+    *   **TRATAMENTO CRÍTICO DAS IMAGENS (NOVO - MUITA ATENÇÃO AQUI):**
+        *   **Redimensionamento Consistente e Proporcional:** TODAS as imagens "Antes" e "Depois" para um MESMO CASO devem ser processadas para terem EXATAMENTE as mesmas dimensões (largura e altura) e proporção antes de serem carregadas no slider. Isso é fundamental para que o efeito de comparação funcione corretamente.
+        *   **Alinhamento Perfeito:** As imagens "Antes" e "Depois" devem estar PERFEITAMENTE ALINHADAS pixel a pixel dentro do slider. Pontos de referência chave no rosto ou corpo do paciente (olhos, nariz, boca, etc.) devem coincidir perfeitamente ao arrastar o divisor. Se necessário, as imagens originais podem precisar de um pré-processamento (manual ou automático, se possível) para garantir esse alinhamento antes do upload.
+        *   **Preenchimento/Corte Inteligente (Se Necessário):** Se as imagens originais de um par "Antes/Depois" tiverem proporções ligeiramente diferentes, defina uma estratégia para ajustá-las ao contêiner do slider sem distorção. Isso pode envolver:
+            *   **Letterboxing/Pillarboxing:** Adicionar barras de cor neutra (ex: cor de fundo do slider) para preencher o espaço, mantendo a proporção original da imagem.
+            *   **Corte Cuidadoso (Menos Ideal, Usar com Cautela):** Se for absolutamente necessário cortar, o corte deve ser mínimo e garantir que o foco principal do resultado do procedimento seja mantido e centralizado em ambas as imagens (Antes e Depois).
+        *   **Evitar Distorções:** As imagens NÃO DEVEM ser esticadas ou espremidas para caber no contêiner. A proporção original deve ser respeitada.
+        *   **Otimização para Web:** Todas as imagens devem ser otimizadas para carregamento rápido (compressão adequada sem perda excessiva de qualidade).
+        *   **Qualidade Visual:** O processo de redimensionamento não deve degradar significativamente a nitidez ou a qualidade das imagens.
+    *   **Controles:** A linha divisória deve ter um controle (handle) claro e fácil de agarrar/arrastar.
+    *   **Labels (Opcional):** Pequenas etiquetas "Antes" e "Depois" podem ser posicionadas discretamente nas respectivas metades da imagem.
+    *   **Responsividade do Slider:** O slider deve funcionar perfeitamente em todos os dispositivos, adaptando o tamanho das imagens (já pré-processadas para consistência) e a interação ao toque em telas menores.
+
+4.  **Modal/Lightbox para Visualização Detalhada (Alternativa ou Complemento ao Slider Principal):**
+    *   **Ativação:** Ao clicar em um thumbnail ou em um botão "Ver Detalhes" associado a um caso, um modal/lightbox deve abrir.
+    *   **Conteúdo do Modal:**
+        *   O slider interativo "Antes/Depois" para o caso selecionado (com as imagens devidamente redimensionadas e alinhadas).
+        *   Título/Nome do Procedimento realizado.
+        *   Uma breve descrição do caso ou do procedimento (opcional).
+        *   Setas de navegação (anterior/próximo) se o modal permitir navegar entre diferentes casos sem fechá-lo.
+        *   Botão de fechar claro.
+    *   **Design do Modal:** Limpo, com fundo que destaque as imagens (ex: semi-transparente escuro).
+
+5.  **Design Clínico e Focado nos Resultados:**
+    *   **Paleta de Cores:** Utilizar a paleta do site, com foco em cores neutras e limpas para não distrair das imagens. A cor de destaque (#731C13 ou #425F70) pode ser usada em títulos ou elementos de interação.
+    *   **Tipografia:** Legível e profissional.
+    *   **Foco nas Imagens:** O design deve garantir que as imagens de antes e depois sejam o ponto focal.
+
+6.  **Microinterações:**
+    *   Hover states em thumbnails e controles do slider.
+    *   Transições suaves ao abrir/fechar o modal e ao carregar novas imagens no slider.
+
+7.  **Responsividade Total:**
+    *   Toda a seção, incluindo a galeria de thumbnails, o slider interativo e o modal/lightbox, deve ser perfeitamente responsiva.
+
+**O que NÃO fazer:**
+*   **Não usar imagens de baixa qualidade, mal alinhadas ou com dimensões/proporções inconsistentes no slider.**
+*   Evitar um design poluído ou com muitos elementos decorativos que tirem o foco dos resultados.
+*   Não criar uma navegação confusa entre os casos.
+
+**Entregável Esperado:**
+*   A seção "Antes & Depois" implementada com uma galeria de thumbnails funcional, um slider interativo "Antes/Depois" eficaz (COM IMAGENS CORRETAMENTE REDIMENSIONADAS E ALINHADAS), e um modal/lightbox para visualização detalhada. O design deve ser clínico, limpo, responsivo e focado na apresentação clara dos resultados.
+
+Por favor, proceda com o redesign desta seção, dando atenção especial ao tratamento das imagens. Após a implementação, informe para que possamos validar o resultado.
