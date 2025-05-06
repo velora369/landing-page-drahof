@@ -57,23 +57,23 @@ export default function Navigation() {
 
   return (
     <header 
-      className={`bg-white bg-opacity-95 backdrop-blur-sm fixed w-full top-0 z-40 transition-all duration-500 ${
-        scrolled ? "shadow-lg py-2" : "py-4"
+      className={`bg-white fixed w-full top-0 z-40 transition-all duration-300 ${
+        scrolled ? "shadow-md py-2" : "py-3"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="font-['Cormorant_Garamond'] text-2xl font-bold text-[#425F70] hover:text-[#731C13] transition-colors duration-300">
+          <h1 className="font-['Cormorant_Garamond'] text-2xl font-bold text-[#425F70]">
             Dra. Jana Guimarães
           </h1>
         </div>
         
         <button 
           onClick={toggleMenu}
-          className="md:hidden text-[#425F70] focus:outline-none focus:ring-2 focus:ring-[#731C13] focus:ring-opacity-50 p-2 rounded-lg transition-all duration-300 hover:bg-[#731C13] hover:bg-opacity-10"
+          className="md:hidden text-[#425F70] focus:outline-none"
           aria-label="Toggle menu"
         >
-          <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl transition-transform duration-300 ${isMenuOpen ? "rotate-90" : "rotate-0"}`}></i>
+          <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl`}></i>
         </button>
         
         <nav className="hidden md:block">
@@ -82,13 +82,9 @@ export default function Navigation() {
               <li key={item.id}>
                 <button
                   onClick={() => handleNavClick(item.id)}
-                  className={`font-medium px-3 py-2 rounded-lg ${
-                    item.soon 
-                      ? 'text-gray-400' 
-                      : 'text-[#425F70] hover:text-[#731C13] hover:bg-[#731C13] hover:bg-opacity-10'
-                  } transition-all duration-300`}
+                  className={`font-medium ${item.soon ? 'text-gray-400' : 'text-[#425F70] hover:text-[#731C13]'} transition-colors`}
                 >
-                  {item.label} {item.soon && <span className="text-xs opacity-50 ml-1 bg-gray-200 px-2 py-0.5 rounded-full">(em breve)</span>}
+                  {item.label} {item.soon && <span className="text-xs opacity-50">(em breve)</span>}
                 </button>
               </li>
             ))}
@@ -102,21 +98,17 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="md:hidden bg-white shadow-lg overflow-hidden rounded-b-xl"
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white shadow-md overflow-hidden"
           >
-            <ul className="flex flex-col space-y-4 p-6">
+            <ul className="flex flex-col space-y-4 p-4">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className={`font-medium w-full text-left px-4 py-3 rounded-lg ${
-                      item.soon 
-                        ? 'text-gray-400' 
-                        : 'text-[#425F70] hover:text-[#731C13] hover:bg-[#731C13] hover:bg-opacity-10'
-                    } transition-all duration-300`}
+                    className={`font-medium ${item.soon ? 'text-gray-400' : 'text-[#425F70] hover:text-[#731C13]'} transition-colors`}
                   >
-                    {item.label} {item.soon && <span className="text-xs opacity-50 ml-1 bg-gray-200 px-2 py-0.5 rounded-full">(em breve)</span>}
+                    {item.label} {item.soon && <span className="text-xs opacity-50">(em breve)</span>}
                   </button>
                 </li>
               ))}

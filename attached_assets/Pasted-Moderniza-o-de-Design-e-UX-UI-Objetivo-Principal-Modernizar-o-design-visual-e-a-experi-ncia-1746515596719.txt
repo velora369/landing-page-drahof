@@ -1,0 +1,35 @@
+Modernização de Design e UX/UI**
+
+**Objetivo Principal:** Modernizar o design visual e a experiência do usuário (UX/UI) deste site, aplicando princípios de design contemporâneos, fluidez e responsividade impecável. O objetivo é criar uma interface elegante, intuitiva e agradável de usar, independentemente do conteúdo ou nicho do site.
+
+**Diretrizes Essenciais de Design e UX/UI (Aplicar Globalmente):**
+
+1. **Estética Moderna e Limpa:**
+    - **Minimalismo:** Simplifique layouts, remova elementos desnecessários e foque no conteúdo essencial.
+    - **Espaçamento Generoso:** Utilize espaços em branco (padding, margin) de forma estratégica para criar respiro visual, melhorar a legibilidade e organizar o conteúdo.
+    - **Elementos Arredondados:** Aplique cantos arredondados (`rounded-md`, `rounded-lg`, `rounded-xl`) a botões, cards, inputs e imagens para um visual mais suave e moderno.
+    - **Sombras e Gradientes Sutis:** Use sombras suaves (`shadow-md`, `shadow-lg`) ou gradientes discretos para adicionar profundidade e destacar elementos interativos ou cards, evitando excessos.
+2. **Fluidez e Suavidade:**
+    - **Transições Suaves:** Todas as mudanças de estado (hover, focus, active) e navegação entre páginas/seções devem ter transições CSS suaves (`transition-all duration-300 ease-in-out`).
+    - **Animações de Entrada:** Implemente animações de entrada sutis (fade-in, slide-up leve) para seções ou elementos principais conforme eles entram na viewport durante o scroll. Use `Intersection Observer` ou bibliotecas como `Framer Motion` (se apropriado para o projeto).
+3. **Microinterações Significativas:**
+    - **Feedback Visual:** Elementos interativos (botões, links, cards clicáveis, inputs) DEVEM ter feedback visual claro nos estados de hover e focus (ex: mudança sutil de cor, leve scale, sombra mais pronunciada, brilho discreto). Isso melhora a usabilidade e a percepção de qualidade.
+4. **Responsividade Impecável:**
+    - **Mobile-First ou Adaptativo:** Garanta que o layout se adapte perfeitamente a todos os tamanhos de tela (mobile, tablet, desktop). Teste rigorosamente a responsividade.
+    - **Legibilidade Mobile:** Fontes, espaçamentos e áreas de clique devem ser otimizados para telas menores.
+5. **Hierarquia Visual Clara:**
+    - **Tipografia:** Utilize uma ou duas fontes modernas e legíveis (ex: Inter, Poppins, Lato, Montserrat). Estabeleça uma hierarquia clara de tamanhos e pesos (títulos grandes e impactantes, subtítulos claros, corpo de texto legível).
+    - **Contraste:** Garanta excelente contraste entre texto e fundo para acessibilidade e legibilidade (use ferramentas de verificação de contraste).
+6. **Performance:**
+    - O código gerado (HTML, CSS, JS) deve ser limpo e otimizado.
+    - Evite animações pesadas que prejudiquem o desempenho.
+
+**Instruções para a IA:**
+
+- **Analise a Estrutura Atual:** Entenda o HTML e CSS existentes.
+- **Aplique os Princípios:** Refatore o CSS (ou classes Tailwind/Bootstrap) para incorporar TODAS as diretrizes acima de forma consistente em todo o site (componentes globais, páginas específicas).
+- **Adapte Cores e Fontes:** Mantenha ou adapte a paleta de cores e fontes principais do site existente, mas aplique os princípios de contraste, hierarquia e modernidade. Se o site não tiver uma paleta definida, sugira uma paleta moderna e profissional adequada ao contexto (ex: tons neutros com uma cor de destaque).
+- **Seja Incremental (se necessário):** Se a mudança for muito grande, aplique primeiro aos elementos globais (header, footer, botões, tipografia base) e depois às seções/páginas principais.
+- **Priorize a Experiência:** O objetivo final é um site que não só pareça moderno, mas que seja extremamente agradável e intuitivo de usar.
+
+**Reporte:** Descreva as principais mudanças realizadas e confirme a aplicação dos princípios de design e UX/UI solicitados.

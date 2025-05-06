@@ -21,80 +21,74 @@ export default function Hero() {
 
   return (
     <section 
-      className="pt-36 pb-24 px-4 md:pt-44 bg-gradient-to-b from-white to-gray-50" 
+      className="pt-32 pb-20 px-4 md:pt-40 bg-white" 
       id="hero"
     >
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div 
             className="md:w-1/2 mb-10 md:mb-0"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 0.8 }}
           >
             <h2 className="font-['Cormorant_Garamond'] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               <GradientText>Beleza é ciência, mas autoestima é arte.</GradientText>
             </h2>
-            <p className="mt-8 text-lg text-gray-700 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-700 leading-relaxed">
               A Dra. HOF transforma rostos — e vidas — com harmonização orofacial personalizada. 
               Com técnica, sensibilidade e mais de 100 formações na área, Dra. Jana Guimarães
               oferece procedimentos que respeitam a beleza única de cada mulher — realçando traços, 
               suavizando o tempo e devolvendo aquilo que nenhuma cirurgia entrega: a autoconfiança.
             </p>
-            <p className="mt-6 text-lg font-medium text-[#425F70] bg-[#F5F5F5] p-4 rounded-xl border-l-4 border-[#425F70] shadow-sm">
+            <p className="mt-4 text-lg font-medium text-[#425F70]">
               Cirurgiã-dentista, educadora e referência nacional em HOF, com atendimentos humanizados e resultados naturais.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-5">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
-                className="bg-gradient-to-r from-[#425F70] to-[#731C13] hover:from-[#731C13] hover:to-[#425F70] text-white py-3 px-8 rounded-xl font-bold shadow-lg transition-all duration-300 hover:translate-y-[-3px] hover:shadow-xl"
+                className="bg-gradient-to-r from-[#425F70] to-[#731C13] hover:from-[#731C13] hover:to-[#425F70] text-white py-3 px-8 rounded-full font-bold shadow-lg transition-all hover:translate-y-[-2px] hover:shadow-xl"
               >
-                <a href={WHATSAPP_URL} className="flex items-center gap-2">
-                  <i className="fas fa-calendar-check"></i>
+                <a href={WHATSAPP_URL}>
                   Agendar Consulta
                 </a>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="bg-[#ECE0C4] text-[#731C13] py-3 px-8 rounded-xl font-bold hover:bg-opacity-90 transition-all duration-300 shadow-md border border-[#731C13] hover:shadow-lg hover:translate-y-[-2px]"
+                className="bg-[#ECE0C4] text-[#731C13] py-3 px-8 rounded-full font-bold hover:bg-opacity-80 transition-all shadow-md border border-[#731C13]"
               >
-                <a href="#cursos" className="flex items-center gap-2">
-                  <i className="fas fa-graduation-cap"></i>
+                <a href="#cursos">
                   Conhecer Cursos
                 </a>
               </Button>
             </div>
           </motion.div>
           <motion.div 
-            className="md:w-1/2 overflow-hidden rounded-2xl shadow-2xl relative h-[350px] sm:h-[450px] md:h-[500px] transition-all duration-300"
+            className="md:w-1/2 overflow-hidden rounded-xl shadow-2xl relative h-[350px] sm:h-[400px] md:h-[450px]"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AnimatePresence mode="wait">
               <motion.img 
                 key={currentImageIndex}
                 src={images[currentImageIndex]} 
                 alt={`Dra. Jana Guimarães - Imagem ${currentImageIndex + 1}`} 
-                className="w-full h-full object-cover rounded-2xl" 
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
+                className="w-full h-full object-cover rounded-xl" 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.5 }}
+                transition={{ duration: 1.2 }}
               />
             </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl pointer-events-none"></div>
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3">
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
               {images.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`w-3 h-3 rounded-full ${
-                    index === currentImageIndex 
-                      ? "bg-[#731C13] shadow-md scale-125" 
-                      : "bg-white bg-opacity-70 hover:bg-opacity-100"
+                  className={`w-2 h-2 rounded-full ${
+                    index === currentImageIndex ? "bg-[#731C13]" : "bg-white bg-opacity-60"
                   } transition-all duration-300`}
                   aria-label={`Ver imagem ${index + 1}`}
                 />
