@@ -333,29 +333,7 @@ export default function Footer() {
                   </motion.div>
                 </motion.a>
                 
-                <motion.a 
-                  href="https://linkedin.com" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center shadow-lg border border-white/10 hover:border-white/30 transition-all duration-300 group backdrop-blur-sm"
-                  aria-label="LinkedIn"
-                  whileHover={{ 
-                    scale: 1.12, 
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
-                    y: -5
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <i className="fab fa-linkedin-in text-xl text-white group-hover:text-[#ECE0C4] transition-colors duration-300"></i>
-                  <motion.div 
-                    className="absolute -top-10 bg-[#ECE0C4]/10 backdrop-blur-sm px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ y: 10, opacity: 0 }}
-                    whileHover={{ y: 0, opacity: 1 }}
-                  >
-                    LinkedIn
-                  </motion.div>
-                </motion.a>
+
               </div>
               
               <div className="mt-6 inline-block lg:ml-auto">

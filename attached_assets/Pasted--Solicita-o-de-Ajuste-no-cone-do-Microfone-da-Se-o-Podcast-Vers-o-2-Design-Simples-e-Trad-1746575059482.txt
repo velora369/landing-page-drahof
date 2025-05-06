@@ -1,0 +1,34 @@
+### Solicitação de Ajuste no Ícone do Microfone da Seção "Podcast" (Versão 2 - Design Simples e Tradicional)
+
+**Objetivo:** Substituir o ícone atual do microfone na seção "Podcast" por um design **bem mais simples, tradicional e imediatamente reconhecível** como um microfone, mantendo a paleta de cores do site.
+
+**Contexto:**
+A tentativa anterior de ajuste no ícone do microfone ainda resultou em um design que não é facilmente identificável. Esta solicitação visa um design inequivocamente claro.
+
+**Requisitos Detalhados:**
+
+1.  **Novo Design do Ícone do Microfone:**
+    *   **Simplicidade e Clareza:** O foco principal é em um design que qualquer pessoa identifique como um microfone à primeira vista. Evitar designs excessivamente estilizados ou abstratos para este ícone.
+    *   **Tipo de Microfone Sugerido:** Considerar um design baseado em:
+        *   Um microfone de mão clássico (tipo Shure SM58, por exemplo, mas simplificado).
+        *   Um microfone de estúdio/podcast de mesa simples (com uma base e a cápsula do microfone).
+        *   Um ícone de microfone 2D bem padrão e universalmente entendido.
+    *   **Remover Elementos Confusos:** O design atual parece ter elementos circulares ou outros detalhes que podem estar dificultando o reconhecimento. O novo design deve ser limpo.
+
+2.  **Estilo e Cores:**
+    *   **Estilo:** Profissional e limpo, alinhado com a estética geral do site.
+    *   **Cores:** O novo ícone deve utilizar as cores da paleta do site (ex: tons de marsala/vinho, dourado sutil, tons neutros). A cor deve ser aplicada de forma a não comprometer a clareza do formato do microfone.
+
+3.  **Contexto de Uso:**
+    *   O ícone está localizado na seção "Podcast", que tem o título "Podcast" e o subtítulo "Em breve".
+
+**Instruções para o Replit AI:**
+*   Por favor, redesenhe ou substitua o ícone do microfone na seção "Podcast".
+*   O novo design deve ser **extremamente simples, tradicional e inconfundivelmente um microfone**.
+*   Utilize a paleta de cores do site de forma apropriada.
+*   Priorize a clareza e o reconhecimento imediato do ícone.
+
+**Resultado Esperado:**
+*   Um ícone de microfone na seção "Podcast" que seja instantaneamente e facilmente reconhecível como um microfone, mantendo a estética profissional e as cores do site.
+
+Por favor, implemente este novo design para o ícone do microfone e me informe quando estiver pronto para validação.
