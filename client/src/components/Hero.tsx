@@ -223,7 +223,7 @@ export default function Hero() {
           
           {/* Carrossel moderno de fotos 2D com animações avançadas */}
           <motion.div 
-            className="md:w-1/2 overflow-hidden rounded-2xl shadow-xl relative h-[400px] sm:h-[450px] md:h-[520px] transition-all duration-300"
+            className="w-full md:w-1/2 overflow-hidden rounded-2xl shadow-xl relative h-[400px] sm:h-[450px] md:h-[520px] transition-all duration-300"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
