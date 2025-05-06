@@ -1,7 +1,7 @@
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
-// Componente de microfone com design simples, tradicional e facilmente reconhecível
+// Componente de microfone com design vintage/retrô clássico facilmente reconhecível
 const Microphone3D = () => {
   // Referência para aplicar transformações em resposta ao hover
   const mic3DRef = useRef<HTMLDivElement>(null);
@@ -15,8 +15,8 @@ const Microphone3D = () => {
     const interval = setInterval(() => {
       const time = Date.now() / 2000;
       setRotation({
-        x: Math.sin(time) * 3,
-        y: Math.cos(time) * 3
+        x: Math.sin(time) * 2.5,
+        y: Math.cos(time) * 2.5
       });
     }, 50);
     
@@ -30,7 +30,7 @@ const Microphone3D = () => {
     
   return (
     <div 
-      className="relative w-60 h-60 mx-auto my-10" 
+      className="relative w-64 h-64 mx-auto my-10" 
       ref={mic3DRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -43,100 +43,116 @@ const Microphone3D = () => {
           transition: "transform 0.3s ease-out"
         }}
       >
-        {/* Microfone de mão clássico estilo SM58 - design super reconhecível */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-30">
-          {/* Grade esférica superior - a parte mais reconhecível */}
-          <div className="w-24 h-24 bg-gradient-to-r from-[#731C13] to-[#8c2f25] rounded-full shadow-xl overflow-hidden">
-            {/* Grade metálica */}
-            <div className="absolute inset-0 bg-[#111]/30 rounded-full grid grid-cols-6 p-2">
-              {/* Linhas horizontais da grade */}
-              {[...Array(8)].map((_, i) => (
-                <div 
-                  key={`h-${i}`} 
-                  className="col-span-6 h-[1px] bg-[#ECE0C4]/30"
-                  style={{ marginTop: `${i * 2.5}px` }}
-                ></div>
-              ))}
-              
-              {/* Linhas verticais da grade */}
-              {[...Array(6)].map((_, i) => (
-                <div 
-                  key={`v-${i}`} 
-                  className="row-span-8 w-[1px] h-full bg-[#ECE0C4]/30 mx-auto"
-                ></div>
-              ))}
-            </div>
+        {/* Microfone vintage de mesa/estúdio */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center z-30">
+          {/* Base pesada do microfone */}
+          <div className="w-32 h-5 bg-gradient-to-b from-[#444] to-[#222] rounded-lg shadow-lg relative">
+            {/* Detalhes metálicos na base */}
+            <div className="absolute inset-x-2 top-1 h-[2px] bg-gradient-to-r from-[#666]/60 via-[#aaa]/60 to-[#666]/60"></div>
+            <div className="absolute bottom-1 inset-x-0 h-1 bg-[#111] rounded-b-lg"></div>
+          </div>
+          
+          {/* Haste do microfone */}
+          <div className="w-3 h-10 bg-gradient-to-b from-[#444] to-[#333] rounded-full shadow-md">
+            {/* Reflexo na haste */}
+            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#aaa]/20 rounded-l-full"></div>
+          </div>
+          
+          {/* Base do microfone - conector com o corpo */}
+          <div className="w-8 h-3 bg-[#333] rounded-t-sm relative z-20">
+            {/* Anel decorativo */}
+            <div className="absolute inset-x-0 top-1 h-[2px] bg-[#555]"></div>
+          </div>
+          
+          {/* Corpo principal do microfone - estilo vintage */}
+          <div className="w-16 h-28 rounded-lg bg-gradient-to-b from-[#731C13] to-[#5d1812] shadow-xl relative overflow-hidden">
+            {/* Contorno metálico */}
+            <div className="absolute inset-0 border-2 border-[#ECE0C4]/20 rounded-lg"></div>
             
-            {/* Logo "HOF" na grade */}
+            {/* Detalhes metálicos no corpo */}
+            <div className="absolute top-4 inset-x-0 h-1 bg-[#333] border-y border-[#555]/50"></div>
+            <div className="absolute bottom-4 inset-x-0 h-1 bg-[#333] border-y border-[#555]/50"></div>
+            
+            {/* Logo "HOF" */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-[#ECE0C4] font-bold text-lg bg-[#111]/10 px-2 rounded">
+              <div className="text-[#ECE0C4] font-bold text-lg opacity-80">
                 HOF
               </div>
             </div>
           </div>
           
-          {/* Corpo do microfone */}
-          <div className="w-20 h-36 bg-gradient-to-b from-[#731C13] to-[#5d1812] rounded-b-xl rounded-t-3xl -mt-2 flex flex-col relative shadow-lg">
-            {/* Anel decorativo */}
-            <div className="w-full h-4 bg-[#333] border-y border-[#ECE0C4]/20 mt-2"></div>
-            
-            {/* Área de grip */}
-            <div className="flex-grow px-2 pt-4">
-              {/* Linhas de grip */}
-              {[...Array(8)].map((_, i) => (
-                <div 
-                  key={`grip-${i}`} 
-                  className="w-full h-[3px] bg-[#000]/20 mb-2 rounded-full"
-                ></div>
-              ))}
+          {/* Grade superior do microfone - característica mais distintiva */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-[#999]/90 shadow-inner flex items-center justify-center z-30">
+            {/* Grade metálica com textura prateada */}
+            <div className="w-[90%] h-[90%] rounded-full bg-gradient-to-r from-[#888] to-[#bbb] flex items-center justify-center relative overflow-hidden border-4 border-[#777] shadow-inner">
+              {/* Grade interna - malha metálica */}
+              <div className="absolute inset-0 grid grid-cols-8 grid-rows-8">
+                {/* Linhas horizontais */}
+                {[...Array(8)].map((_, i) => (
+                  <div 
+                    key={`h-${i}`} 
+                    className="col-span-full h-[1px] bg-[#444]/60"
+                    style={{ marginTop: `${i * 3}px` }}
+                  ></div>
+                ))}
+                
+                {/* Linhas verticais */}
+                {[...Array(8)].map((_, i) => (
+                  <div 
+                    key={`v-${i}`} 
+                    className="row-span-full w-[1px] h-full bg-[#444]/60"
+                    style={{ marginLeft: `${i * 3}px` }}
+                  ></div>
+                ))}
+              </div>
+              
+              {/* Círculo central com o logo */}
+              <div className="w-12 h-12 rounded-full bg-[#731C13] flex items-center justify-center z-10 shadow-inner border border-[#731C13]/50">
+                <span className="text-[#ECE0C4] font-bold text-lg">HOF</span>
+              </div>
+              
+              {/* Brilho/reflexo na grade */}
+              <div className="absolute top-0 left-1/4 right-1/4 h-3 bg-white/10 blur-sm rounded-full"></div>
             </div>
-            
-            {/* Botão liga/desliga */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-8 h-4 bg-[#333] rounded-full border border-[#ECE0C4]/20">
-              <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-2 h-2 bg-[#ECE0C4] rounded-full"></div>
-            </div>
-            
-            {/* Base/conector do microfone */}
-            <div className="w-full h-6 bg-[#222] rounded-b-xl border-t border-[#ECE0C4]/20"></div>
           </div>
         </div>
         
-        {/* Ondas de áudio simples */}
-        <div className="absolute top-8 left-1/2 -translate-x-1/2 z-0">
+        {/* Ondas de áudio estilizadas */}
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-0">
           <motion.div
-            className="w-40 h-40 rounded-full border-2 border-[#ECE0C4]/20"
+            className="w-48 h-48 rounded-full border-2 border-[#ECE0C4]/15"
             animate={{ 
               scale: [1, 1.2, 1],
-              opacity: [0.2, 0.4, 0.2]
-            }}
-            transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute inset-0 w-40 h-40 rounded-full border-2 border-[#ECE0C4]/15"
-            animate={{ 
-              scale: [1, 1.3, 1],
               opacity: [0.15, 0.3, 0.15]
             }}
             transition={{ 
               duration: 2.5,
               repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute inset-0 w-48 h-48 rounded-full border-2 border-[#731C13]/10"
+            animate={{ 
+              scale: [1, 1.3, 1],
+              opacity: [0.1, 0.25, 0.1]
+            }}
+            transition={{ 
+              duration: 3,
+              repeat: Infinity,
               ease: "easeInOut",
-              delay: 0.2
+              delay: 0.3
             }}
           />
         </div>
       </motion.div>
       
-      {/* Sombra simples sob o microfone */}
+      {/* Sombra elegante sob o microfone */}
       <motion.div
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 w-24 h-3 bg-black/20 rounded-full blur-sm z-0"
+        className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 h-2 bg-black/15 rounded-full blur-md z-0"
         animate={{ 
-          width: isHovered ? 28 : 24,
-          opacity: isHovered ? 0.3 : 0.2
+          width: isHovered ? 32 : 28,
+          opacity: isHovered ? 0.25 : 0.15
         }}
         transition={{ duration: 0.3 }}
       />

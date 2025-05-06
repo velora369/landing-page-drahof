@@ -1,0 +1,42 @@
+### Solicitação de Ajuste no Ícone do Microfone da Seção "Podcast" (Versão 3 - Baseado em Referência Visual)
+
+**Objetivo:** Substituir o ícone atual do microfone na seção "Podcast" por um design **clássico, estilo vintage e imediatamente reconhecível**, inspirado na referência visual fornecida, e adaptado à paleta de cores do site.
+
+**Contexto:**
+As tentativas anteriores de ajuste no ícone do microfone ainda não alcançaram o nível de clareza e estética desejado. Esta solicitação visa um design específico, baseado em exemplos visuais de microfones clássicos.
+
+**Referência Visual Principal:**
+*   Utilizar como inspiração principal a imagem fornecida pelo usuário (anexada anteriormente, contendo diversos exemplos de microfones estilo emoji/ícone, muitos deles com design vintage/clássico com grades proeminentes e bases de mesa ou suportes curtos).
+*   Link da imagem de referência (se aplicável, para o Replit AI poder visualizar, caso o anexo não seja direto): `[Inserir aqui o link da imagem se o Replit AI puder acessá-lo, caso contrário, descrever os estilos principais da imagem]`
+*   **Estilos Preferenciais da Referência:** Focar nos modelos que se assemelham a microfones de estúdio vintage (ex: com corpo cilíndrico ou retangular arredondado e uma grade metálica proeminente, muitas vezes prateada ou cromada) ou microfones de mesa clássicos.
+
+**Requisitos Detalhados:**
+
+1.  **Novo Design do Ícone do Microfone:**
+    *   **Clareza e Reconhecimento Imediato:** O design deve ser inequivocamente um microfone. A referência visual é a chave aqui.
+    *   **Estilo:** Optar por um dos estilos mais tradicionais e icônicos presentes na imagem de referência. Um visual "retrô" ou "vintage elegante" é bem-vindo, desde que simplificado para funcionar como um ícone.
+    *   **Detalhes:**
+        *   Considerar a grade característica na parte superior do microfone.
+        *   Incluir uma base ou um pequeno suporte, conforme os exemplos da referência, para dar contexto.
+        *   Evitar designs excessivamente planos ou abstratos; um leve toque de profundidade ou sombreamento sutil (se o estilo do site permitir) pode ajudar no reconhecimento, mas a simplicidade para um ícone é crucial.
+
+2.  **Cores e Adaptação à Paleta do Site:**
+    *   **Corpo do Microfone:** Pode usar um tom neutro (cinza claro, prata sutil) ou um tom da paleta do site (ex: o marsala/vinho de forma sólida e elegante, ou um dourado discreto).
+    *   **Grade:** Se o design incluir uma grade metálica, um tom prateado ou cinza claro seria apropriado.
+    *   **Base/Suporte:** Cores neutras ou da paleta.
+    *   **Consistência:** O ícone final deve se integrar harmoniosamente à seção "Podcast" e ao design geral do site.
+
+3.  **Contexto de Uso:**
+    *   O ícone está localizado na seção "Podcast" (título "Podcast", subtítulo "Em breve").
+
+**Instruções para o Replit AI:**
+*   Por favor, observe atentamente a imagem de referência de microfones fornecida pelo usuário.
+*   Crie um novo ícone para a seção "Podcast" inspirado em um dos designs de microfone clássicos/vintage presentes na referência.
+*   O ícone deve ser **claramente reconhecível como um microfone**.
+*   Adapte as cores do ícone para que se alinhem com a paleta de cores do site da Dra. Hof.
+*   Priorize um design que seja ao mesmo tempo icônico, elegante e adequado para a seção.
+
+**Resultado Esperado:**
+*   Um ícone de microfone na seção "Podcast" que seja visualmente similar a um dos exemplos clássicos da imagem de referência, facilmente identificável, e esteticamente coeso com o site.
+
+Por favor, implemente este novo design para o ícone do microfone e me informe quando estiver pronto para validação.

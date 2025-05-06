@@ -339,31 +339,7 @@ export default function AuthorityVideo() {
                 </ul>
               </motion.div>
               
-              {/* CTA Button - Lattes */}
-              <motion.div
-                custom={6}
-                variants={textVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="mt-10"
-              >
-                {/* TODO: Inserir link do Lattes aqui quando fornecido */}
-                <motion.a 
-                  href="#"
-                  className="group inline-flex items-center px-6 py-3 bg-[#731C13] text-white rounded-full transition-all shadow-md hover:shadow-lg hover:bg-[#731C13]/90 active:scale-[0.98]"
-                  whileHover={{ 
-                    scale: 1.03,
-                    boxShadow: "0 10px 25px -5px rgba(115, 28, 19, 0.2)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <svg className="mr-2 w-5 h-5 transition-transform group-hover:rotate-[-15deg]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  <span className="font-medium">acesse o lattes</span>
-                </motion.a>
-              </motion.div>
+
             </div>
           </div>
         </div>
