@@ -4,7 +4,6 @@ import { WHATSAPP_URL } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import SimplifiedHeroAnimation from "./SimplifiedHeroAnimation";
 
 // Nota: Aqui anteriormente estava o componente de animação 3D que foi removido
 // O novo componente será implementado na Etapa 2, após validação da Etapa 1
@@ -103,8 +102,83 @@ export default function Hero() {
       id="hero"
       onMouseMove={handleMouseMove}
     >
-      {/* Animação 3D de fundo com rede neural e elementos interativos */}
-      <SimplifiedHeroAnimation />
+      {/* Fundo neutro com elementos gráficos sutis */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* Gradiente de fundo suave */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#fcfbf9] to-[#f8f7f2]"></div>
+        
+        {/* Elementos gráficos sutis - linhas e formas minimalistas */}
+        <motion.div 
+          className="absolute top-[10%] right-[5%] w-16 h-16 border-t border-r border-[#425F70]/10 rounded-tr-3xl opacity-50"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.5, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          style={{ 
+            transform: `translate3d(${mousePosition.x * 5}px, ${mousePosition.y * 5}px, 0)`,
+            transition: 'transform 0.8s ease-out'
+          }}
+        />
+        
+        <motion.div 
+          className="absolute bottom-[15%] left-[10%] w-20 h-20 border-b border-l border-[#731C13]/10 rounded-bl-3xl opacity-30"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.3, scale: 1 }}
+          transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+          style={{ 
+            transform: `translate3d(${mousePosition.x * -5}px, ${mousePosition.y * -5}px, 0)`,
+            transition: 'transform 0.8s ease-out'
+          }}
+        />
+        
+        {/* Círculos decorativos sutis */}
+        <motion.div 
+          className="absolute top-[30%] left-[20%] w-48 h-48 rounded-full bg-[#ECE0C4]/5 blur-3xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.8, ease: "easeOut" }}
+          style={{ 
+            transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -10}px, 0)`,
+            transition: 'transform 1.5s ease-out'
+          }}
+        />
+        
+        <motion.div 
+          className="absolute top-[60%] right-[15%] w-32 h-32 rounded-full bg-[#425F70]/5 blur-2xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.8, delay: 0.3, ease: "easeOut" }}
+          style={{ 
+            transform: `translate3d(${mousePosition.x * 8}px, ${mousePosition.y * 8}px, 0)`,
+            transition: 'transform 1.5s ease-out'
+          }}
+        />
+        
+        {/* Linhas decorativas diagonais */}
+        <motion.div 
+          className="absolute top-1/4 right-1/3 w-[150px] h-[1px] bg-gradient-to-r from-transparent via-[#425F70]/20 to-transparent"
+          initial={{ opacity: 0, rotate: 45, x: -50 }}
+          animate={{ opacity: 0.7, x: 0 }}
+          transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
+          style={{ 
+            transform: `rotate(45deg) translate3d(${mousePosition.x * 15}px, ${mousePosition.y * 15}px, 0)`,
+            transition: 'transform 1.2s ease-out'
+          }}
+        />
+        
+        <motion.div 
+          className="absolute bottom-1/3 left-1/4 w-[120px] h-[1px] bg-gradient-to-r from-transparent via-[#731C13]/20 to-transparent"
+          initial={{ opacity: 0, rotate: -45, x: 50 }}
+          animate={{ opacity: 0.7, x: 0 }}
+          transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
+          style={{ 
+            transform: `rotate(-45deg) translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -15}px, 0)`,
+            transition: 'transform 1.2s ease-out'
+          }}
+        />
+        
+        {/* Transição suave para a próxima seção */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f7f2] to-transparent"></div>
+      </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -175,46 +249,131 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.8 }}
             >
-              {/* Botão primário WhatsApp */}
+              {/* Botão primário WhatsApp - Aprimorado com microinterações */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 20px 30px -10px rgba(0, 0, 0, 0.15), 0 10px 15px -5px rgba(115, 28, 19, 0.1)",
+                  y: -3
+                }}
+                whileTap={{ 
+                  scale: 0.97,
+                  boxShadow: "0 10px 20px -8px rgba(0, 0, 0, 0.1)",
+                  y: 0
+                }}
+                transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
+                className="relative"
               >
                 <Button
                   asChild
-                  className="relative overflow-hidden group bg-gradient-to-r from-[#425F70] to-[#731C13] hover:from-[#731C13] hover:to-[#425F70] text-white py-6 px-8 rounded-xl font-bold shadow-lg transition-all duration-500 hover:translate-y-[-3px] hover:shadow-xl"
+                  className="relative overflow-hidden group bg-gradient-to-r from-[#425F70] to-[#731C13] hover:from-[#731C13] hover:to-[#425F70] text-white py-6 px-8 rounded-xl font-bold shadow-lg transition-all duration-500"
                 >
                   <a href={WHATSAPP_URL} className="flex items-center gap-3">
-                    {/* Efeito de luz deslizante */}
-                    <div className="absolute inset-0 w-1/2 bg-white/10 skew-x-[45deg] group-hover:skew-x-0 -translate-x-full group-hover:translate-x-full transition-all duration-700" />
+                    {/* Efeito de luz pulsante */}
+                    <motion.div
+                      className="absolute inset-0 rounded-xl bg-white/0"
+                      animate={{
+                        boxShadow: [
+                          "0 0 0 0 rgba(255, 255, 255, 0)",
+                          "0 0 0 3px rgba(255, 255, 255, 0.1)",
+                          "0 0 0 0 rgba(255, 255, 255, 0)"
+                        ]
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut"
+                      }}
+                    />
                     
-                    {/* Efeito de borda brilhante */}
-                    <div className="absolute inset-0 rounded-xl border border-white/0 group-hover:border-white/20 transition-all duration-500" />
+                    {/* Efeito de luz deslizante aprimorado */}
+                    <div className="absolute inset-0 w-1/3 bg-white/10 skew-x-[35deg] group-hover:skew-x-0 -translate-x-full group-hover:translate-x-full transition-all duration-700 ease-in-out" />
                     
-                    <i className="fab fa-whatsapp text-xl"></i>
-                    <span className="relative z-10">Agendar Consulta</span>
+                    {/* Efeito de borda brilhante evoluído */}
+                    <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/30 group-hover:scale-105 transition-all duration-500" />
+                    
+                    {/* Efeito de partícula de brilho */}
+                    <motion.div
+                      className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-white/80 opacity-0 group-hover:opacity-100"
+                      animate={{
+                        y: [0, -10, 0],
+                        x: [0, 5, 0],
+                        opacity: [0, 0.8, 0]
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        repeatType: "loop"
+                      }}
+                    />
+                    
+                    <i className="fab fa-whatsapp text-xl group-hover:animate-pulse"></i>
+                    <span className="relative z-10 group-hover:tracking-wide transition-all duration-300">Agendar Consulta</span>
                   </a>
                 </Button>
+                
+                {/* Efeito de reflexo abaixo do botão */}
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-[#731C13]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
               
-              {/* Botão secundário Cursos */}
+              {/* Botão secundário Cursos - Aprimorado com microinterações */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 15px 25px -10px rgba(0, 0, 0, 0.1), 0 8px 10px -5px rgba(236, 224, 196, 0.2)",
+                  y: -2
+                }}
+                whileTap={{ 
+                  scale: 0.97,
+                  boxShadow: "0 5px 15px -8px rgba(0, 0, 0, 0.05)",
+                  y: 0
+                }}
+                transition={{ duration: 0.2, type: "spring", stiffness: 400 }}
+                className="relative"
               >
                 <Button
                   asChild
                   variant="outline"
-                  className="relative overflow-hidden bg-white/80 text-[#731C13] py-6 px-8 rounded-xl font-bold transition-all duration-300 shadow-md border border-[#731C13]/40 hover:shadow-lg hover:translate-y-[-2px] hover:border-[#731C13]"
+                  className="relative overflow-hidden bg-white/80 text-[#731C13] py-6 px-8 rounded-xl font-bold transition-all duration-300 shadow-md border border-[#731C13]/40 hover:border-[#731C13]"
                 >
-                  <a href="#cursos" className="flex items-center gap-3">
-                    {/* Efeito de preenchimento suave */}
-                    <div className="absolute inset-0 bg-[#ECE0C4]/40 translate-y-full hover:translate-y-0 transition-transform duration-300" />
+                  <a href="#cursos" className="flex items-center gap-3 group">
+                    {/* Efeito de brilho sutil */}
+                    <motion.div
+                      className="absolute inset-0 rounded-xl bg-white/0"
+                      animate={{
+                        boxShadow: [
+                          "0 0 0 0 rgba(236, 224, 196, 0)",
+                          "0 0 0 5px rgba(236, 224, 196, 0.1)",
+                          "0 0 0 0 rgba(236, 224, 196, 0)"
+                        ]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut"
+                      }}
+                    />
                     
-                    <i className="fas fa-graduation-cap text-xl"></i>
-                    <span className="relative z-10">Conhecer Cursos</span>
+                    {/* Efeito de preenchimento suave aprimorado */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#ECE0C4]/30 to-[#ECE0C4]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out rounded-xl" />
+                    
+                    {/* Linhas decorativas animadas */}
+                    <div className="absolute top-0 left-0 w-0 h-[1px] bg-[#731C13]/60 group-hover:w-full transition-all duration-500 delay-100"></div>
+                    <div className="absolute bottom-0 right-0 w-0 h-[1px] bg-[#731C13]/60 group-hover:w-full transition-all duration-500 delay-100"></div>
+                    
+                    <motion.i 
+                      className="fas fa-graduation-cap text-xl text-[#731C13]"
+                      animate={{ rotate: [0, 5, 0, -5, 0] }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut"
+                      }}
+                    ></motion.i>
+                    <span className="relative z-10 group-hover:tracking-wide transition-all duration-300">Conhecer Cursos</span>
                   </a>
                 </Button>
               </motion.div>
@@ -255,44 +414,124 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none rounded-2xl"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent pointer-events-none rounded-2xl"></div>
               
-              {/* Setas de navegação estilizadas com microinterações */}
+              {/* Setas de navegação estilizadas com microinterações avançadas */}
               <motion.button 
                 onClick={goToPrevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all z-20 border border-white/30 shadow-lg opacity-70 hover:opacity-100"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white group transition-all z-20 border border-white/30 shadow-lg"
+                initial={{ opacity: 0.7, x: 5 }}
+                animate={{ opacity: 0.9, x: 0 }}
+                whileHover={{ 
+                  scale: 1.15, 
+                  boxShadow: "0 0 15px 2px rgba(255, 255, 255, 0.3)",
+                  backgroundColor: "rgba(255, 255, 255, 0.3)"
+                }}
+                whileTap={{ scale: 0.92 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 aria-label="Imagem anterior"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
               >
-                <i className="fas fa-chevron-left text-sm"></i>
+                {/* Efeito de brilho na borda ao passar o mouse */}
+                <div className="absolute inset-0 rounded-full border-2 border-white/0 group-hover:border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                
+                {/* Ícone com animação */}
+                <motion.i 
+                  className="fas fa-chevron-left text-sm relative z-10 group-hover:text-white transition-colors duration-300"
+                  initial={{ x: 1 }}
+                  whileHover={{ x: -1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                ></motion.i>
               </motion.button>
               
               <motion.button 
                 onClick={goToNextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all z-20 border border-white/30 shadow-lg opacity-70 hover:opacity-100"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white group transition-all z-20 border border-white/30 shadow-lg"
+                initial={{ opacity: 0.7, x: -5 }}
+                animate={{ opacity: 0.9, x: 0 }}
+                whileHover={{ 
+                  scale: 1.15, 
+                  boxShadow: "0 0 15px 2px rgba(255, 255, 255, 0.3)",
+                  backgroundColor: "rgba(255, 255, 255, 0.3)"
+                }}
+                whileTap={{ scale: 0.92 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 aria-label="Próxima imagem"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
               >
-                <i className="fas fa-chevron-right text-sm"></i>
+                {/* Efeito de brilho na borda ao passar o mouse */}
+                <div className="absolute inset-0 rounded-full border-2 border-white/0 group-hover:border-white/50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                
+                {/* Ícone com animação */}
+                <motion.i 
+                  className="fas fa-chevron-right text-sm relative z-10 group-hover:text-white transition-colors duration-300"
+                  initial={{ x: -1 }}
+                  whileHover={{ x: 1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                ></motion.i>
               </motion.button>
               
-              {/* Indicadores de imagem modernizados e interativos */}
-              <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3">
-                {images.map((_, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 transform ${
-                      index === currentImageIndex 
-                        ? "bg-white shadow-md" 
-                        : "bg-white/40 hover:bg-white/70"
-                    }`}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
-                    animate={index === currentImageIndex ? { scale: 1.25 } : { scale: 1 }}
-                    aria-label={`Ver imagem ${index + 1}`}
-                  />
-                ))}
+              {/* Indicadores de imagem modernizados e com microinterações avançadas */}
+              <div className="absolute bottom-6 left-0 right-0">
+                <div className="flex justify-center space-x-4 items-center">
+                  {images.map((_, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className="group relative"
+                      aria-label={`Ver imagem ${index + 1}`}
+                    >
+                      {/* Indicador principal com efeito de pulsação para o ativo */}
+                      <motion.div
+                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                          index === currentImageIndex 
+                            ? "bg-white shadow-lg" 
+                            : "bg-white/30"
+                        }`}
+                        whileHover={{ 
+                          scale: 1.3,
+                          backgroundColor: "rgba(255, 255, 255, 0.9)"
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                        animate={
+                          index === currentImageIndex 
+                            ? { 
+                                scale: [1, 1.2, 1], 
+                                boxShadow: [
+                                  "0 0 0 0 rgba(255, 255, 255, 0)",
+                                  "0 0 0 4px rgba(255, 255, 255, 0.2)",
+                                  "0 0 0 0 rgba(255, 255, 255, 0)"
+                                ]
+                              } 
+                            : { scale: 1 }
+                        }
+                        transition={
+                          index === currentImageIndex 
+                            ? { 
+                                duration: 2,
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                ease: "easeInOut" 
+                              } 
+                            : { duration: 0.2 }
+                        }
+                      />
+                      
+                      {/* Tooltip com número da imagem */}
+                      <motion.div
+                        className="absolute -top-7 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-md text-xs text-white opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity duration-200"
+                        initial={{ y: 5, opacity: 0 }}
+                        whileHover={{ y: 0, opacity: 1 }}
+                      >
+                        Foto {index + 1}
+                      </motion.div>
+                    </motion.button>
+                  ))}
+                </div>
+                
+                {/* Linha decorativa abaixo dos indicadores */}
+                <motion.div 
+                  className="mt-2 h-[1px] mx-auto bg-gradient-to-r from-transparent via-white/40 to-transparent w-16"
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: "4rem" }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                />
               </div>
               
               {/* Moldura sofisticada */}

@@ -1,0 +1,36 @@
+```
+**[HERO SECTION - FASE DE REFINAMENTO UX/UI] Aprimoramento de Textos, CTAs e Microinterações (Fundo Neutro)**
+
+**Contexto:** A Hero Section está com o carrossel 2D funcional e responsivo, e o fundo está limpo e neutro. Decidimos pausar a implementação de uma nova animação de fundo 3D complexa por enquanto, até definirmos o conceito temático ideal.
+
+**Objetivo Principal para esta Fase:** Refinar a experiência do usuário na Hero Section através da implementação de animações de entrada elegantes para os textos, microinterações sofisticadas nos botões de Call-to-Action (CTAs), e outros elementos sutis de design, mantendo o foco na performance e responsividade.
+
+**--- INSTRUÇÕES PARA REFINAMENTO DA HERO SECTION (SEM NOVA ANIMAÇÃO DE FUNDO 3D) ---**
+
+**LEMBRETE: O fundo da Hero Section deve permanecer neutro e limpo, como está atualmente. O carrossel de fotos 2D, os textos e os CTAs devem ser os elementos centrais desta fase de aprimoramento.**
+
+1.  **ELEMENTOS DE UX/UI FUTURISTAS E MICROINTERAÇÕES ADICIONAIS (Adaptado do prompt `drahof_hero_advanced_ux_ui_3d_v1.txt`):**
+    *   **Animação de Entrada para Textos Principais:**
+        *   O título principal ("Beleza é ciência, mas autoestima é arte.") e o parágrafo descritivo podem ter uma animação de entrada sutil e elegante quando a Hero Section carrega (ex: fade in combinado com um leve slide para cima, com cada linha aparecendo com um pequeno atraso em relação à anterior – efeito cascata sutil).
+        *   Garanta que esta animação seja fluida e não atrase a percepção do conteúdo principal.
+    *   **Microinterações Avançadas nos CTAs (Além do Hover Padrão):**
+        *   Ao passar o mouse sobre os botões "Agendar Consulta" e "Conhecer Cursos", além da mudança de cor de fundo/texto já existente, adicione um efeito sutil como um leve crescimento do botão (scale para 1.03x ou 1.05x), uma sombra que se projeta suavemente para dar um efeito de "lift", ou um brilho discreto que percorre a borda do botão.
+        *   No clique (mousedown), o botão pode ter uma animação de "pressão" (scale down momentâneo, ex: para 0.98x ou 0.97x) para dar feedback tátil.
+        *   Essas microinterações devem ser rápidas, sutis e responsivas.
+    *   **Linhas de Design e Grafismos Sutis (Opcional e Discreto):**
+        *   Se julgar apropriado para complementar o design sem sobrecarregar, considere adicionar linhas finas e elegantes (na paleta de cores do site) ou formas geométricas abstratas e translúcidas como elementos de design flutuantes muito discretos na Hero Section. Estes elementos devem ser estáticos ou ter animações mínimas (ex: fade in lento) e não devem competir com o conteúdo principal. O foco é manter a clareza e a sofisticação.
+
+2.  **TRANSIÇÃO VISUAL PARA A PRÓXIMA SEÇÃO (Se Aplicável e Simples de Implementar):**
+    *   Se houver uma forma visual elegante de indicar a transição para a próxima seção abaixo da Hero, ela pode ser feita com um gradiente suave na parte inferior da Hero Section que se mescle com a cor de fundo da próxima seção, ou um elemento gráfico minimalista (como um chevron sutil animado) que convide ao scroll.
+    *   Esta transição deve ser discreta e funcional.
+
+3.  **PERFORMANCE E OTIMIZAÇÃO (SEMPRE CRUCIAL):**
+    *   Todas as animações e microinterações implementadas DEVEM ser altamente otimizadas.
+    *   A Hero Section precisa continuar carregando rapidamente e todas as animações devem ser fluidas (idealmente 60fps) em dispositivos desktop e, crucialmente, em dispositivos móveis.
+    *   Evite qualquer coisa que possa causar lentidão, travamentos ou alto consumo de CPU/GPU.
+
+**Resultado Esperado para esta Fase:**
+Uma Hero Section ainda mais polida e profissional, com uma experiência de usuário aprimorada através de animações de texto e microinterações nos CTAs que sejam elegantes e responsivas. O fundo permanecerá neutro, aguardando a futura definição da animação 3D temática.
+
+Por favor, aplique estas diretrizes com atenção aos detalhes. Fico no aguardo do resultado para validação.
+```
