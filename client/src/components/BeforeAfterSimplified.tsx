@@ -190,6 +190,7 @@ export default function BeforeAfterSimplified() {
   const parallaxOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3]);
   
   // Casos de antes e depois - com imagens alinhadas
+  // Casos clínicos - APENAS os dois específicos solicitados: Harmonização Facial e Contorno Facial
   const cases: BeforeAfterCase[] = [
     {
       id: 1,
@@ -201,43 +202,11 @@ export default function BeforeAfterSimplified() {
     },
     {
       id: 2,
-      title: "Rejuvenescimento",
-      procedure: "Área Periocular",
-      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/paciente-durante-.webp",
-      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/pos-paciente.webp",
-      description: "Tratamento focado na região dos olhos para suavizar linhas finas e revitalizar o olhar. A técnica combina preenchimento estratégico e bioestimuladores para um resultado natural e duradouro."
-    },
-    {
-      id: 3,
       title: "Contorno Facial",
       procedure: "Definição Mandibular",
       before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
       after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/paciente-durante-.webp",
       description: "Definição do ângulo e contorno mandibular para uma expressão facial mais harmônica. O procedimento realça as características naturais da face e proporciona um equilíbrio estético personalizado."
-    },
-    {
-      id: 4,
-      title: "Volumização Labial",
-      procedure: "Preenchimento",
-      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
-      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/pos-paciente.webp",
-      description: "Preenchimento labial sutil para valorizar o volume e contorno natural dos lábios. O procedimento foi realizado com atenção às proporções faciais e características individuais da paciente."
-    },
-    {
-      id: 5,
-      title: "Lifting Não-Cirúrgico",
-      procedure: "Técnica Combinada",
-      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/paciente-durante-.webp",
-      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/pos-paciente.webp",
-      description: "Lifting facial não-cirúrgico utilizando combinação de técnicas: bioestimuladores de colágeno, fios de PDO e redefinição do terço médio da face. Resultados naturais com recuperação mínima."
-    },
-    {
-      id: 6,
-      title: "Rinomodelação",
-      procedure: "Nariz",
-      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
-      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/paciente-durante-.webp",
-      description: "Rinomodelação para harmonizar o perfil nasal sem cirurgia. O procedimento corrige pequenas imperfeições e melhora a proporção nasal em relação às demais estruturas faciais."
     }
   ];
   
@@ -373,14 +342,15 @@ export default function BeforeAfterSimplified() {
           </h3>
         </motion.div>
         
-        {/* Galeria de thumbnails em grid */}
+        {/* Galeria de thumbnails em grid - apenas 2 cards específicos */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+          {/* Renderizando apenas os 2 cards específicos - não adicionar mais nenhum */}
           {cases.map((caseItem, index) => (
             <ThumbnailCard
               key={caseItem.id}

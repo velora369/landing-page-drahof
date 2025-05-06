@@ -1,0 +1,48 @@
+### Solicitação de Novo Placeholder Interativo para Seção "Podcast" (Estilo Velora Members)
+
+**Objetivo:** Substituir completamente o conceito anterior de ícone de microfone na seção "Podcast" por um placeholder visual interativo e moderno, inspirado na referência da plataforma "Velora Members", que simule a visualização de um podcast em uma plataforma digital. Este placeholder deve ser funcional, linkando para o canal do YouTube da Dra. Hof, e utilizar a paleta de cores do site.
+
+**Contexto:**
+Esta solicitação substitui todas as tentativas anteriores de design para o ícone de microfone da seção "Podcast". A nova abordagem busca uma representação mais dinâmica e alinhada com plataformas de conteúdo digital.
+
+**Referência Visual Principal:**
+*   Utilizar como inspiração principal a imagem fornecida pelo usuário da interface da "Velora Members" (anexada anteriormente), que mostra uma simulação de uma janela de navegador/aplicativo com cards de conteúdo e elementos de UI de uma plataforma.
+*   **Elementos Chave da Referência a Adaptar:**
+    *   **Estrutura de Janela/App:** Simular uma janela de navegador ou aplicativo com uma barra de título (talvez com os botões de fechar/minimizar/maximizar estilizados ou um nome de app/site fictício como "Dra. Hof Play" ou similar) e uma área de conteúdo.
+    *   **Cards de Conteúdo Fictícios:** Dentro da área de conteúdo, exibir alguns cards ou listras que representem episódios de podcast fictícios. Estes podem ter um título de episódio placeholder (ex: "Episódio 1: Revelando Segredos da Harmonização", "Episódio 2: Mitos e Verdades"), uma pequena descrição placeholder, e talvez um ícone de "play" ou uma miniatura de imagem genérica (abstrata, na paleta de cores).
+    *   **Interatividade Sutil (Visual):** O placeholder em si não precisa ser funcional como uma plataforma real, mas pode ter elementos visuais que sugiram interatividade (ex: botões de play/pause estilizados, barras de progresso fictícias nos cards).
+    *   **Botão/Link Principal:** Um botão ou área clicável proeminente com um CTA claro, como "Assistir no YouTube", "Ouvir Agora no YouTube", ou "Acessar Canal".
+
+**Requisitos Detalhados:**
+
+1.  **Design do Placeholder Interativo:**
+    *   **Inspiração Direta:** Basear-se fortemente na estética e estrutura da referência da Velora Members.
+    *   **Adaptação à Identidade Visual da Dra. Hof:** Todas as cores, fontes e o estilo geral devem ser adaptados para a paleta de cores e a identidade visual do site da Dra. Hof (tons de marsala/vinho, dourado sutil, tons neutros sofisticados).
+    *   **Conteúdo dos Cards Fictícios:** Os textos placeholders nos cards devem ser relevantes para o universo da Dra. Hof (harmonização facial, odontologia estética, bem-estar, etc.).
+
+2.  **Funcionalidade do Link:**
+    *   O botão/link principal do placeholder deve redirecionar para o canal do YouTube da Dra. Hof: `https://www.youtube.com/janadrahof` (Confirmar se este é o link exato ou se é apenas `youtube.com/janadrahof`).
+    *   Garantir que o link abra em uma nova aba (`target="_blank"`).
+
+3.  **Textos da Seção:**
+    *   Manter o título da seção como "Podcast" (ou "Bate papo delas", conforme definido anteriormente, verificar qual é o mais atual no `todo.md`).
+    *   Manter o subtítulo "Em breve" ou ajustá-lo para algo como "Assista nossos últimos episódios" se o placeholder já simular conteúdo existente.
+    *   O texto informativo abaixo do placeholder (ex: "Aguarde o lançamento do nosso podcast...") pode ser mantido ou ajustado para complementar o novo visual.
+
+4.  **Responsividade:**
+    *   O placeholder interativo deve ser totalmente responsivo e se adaptar bem a todos os tamanhos de tela, especialmente dispositivos móveis.
+
+**Instruções para o Replit AI:**
+*   Por favor, remova completamente qualquer ícone de microfone existente na seção "Podcast".
+*   Crie um novo placeholder visual para esta seção, inspirado diretamente na imagem de referência da plataforma "Velora Members".
+*   O placeholder deve simular uma interface de plataforma digital de podcast/vídeo, contendo:
+    *   Uma estrutura de janela/aplicativo.
+    *   Cards fictícios representando episódios de podcast com títulos e descrições placeholder relevantes.
+    *   Um botão/área de CTA proeminente com o texto "Assistir no YouTube" (ou similar) que linka para `https://www.youtube.com/janadrahof` (abrir em nova aba).
+*   Adapte todo o design (cores, fontes) para a paleta e identidade visual do site da Dra. Hof.
+*   Garanta que o placeholder seja responsivo.
+
+**Resultado Esperado:**
+*   Uma seção "Podcast" com um placeholder visual moderno e interativo, semelhante à referência da Velora Members, adaptado à identidade da Dra. Hof, e com um link funcional para o canal do YouTube.
+
+Por favor, implemente esta nova abordagem para a seção Podcast e me informe quando estiver pronto para validação.
