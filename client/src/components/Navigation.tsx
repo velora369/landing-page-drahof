@@ -13,65 +13,110 @@ export default function Navigation() {
   const { scrollY } = useScroll();
   const lastScrollY = useRef(0);
 
-  // Toggle menu with animation
+  // Toggle menu with animation - Enhanced for mobile
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    // Prevent body scroll when menu is open
-    if (!isMenuOpen) {
+    const newIsMenuOpen = !isMenuOpen;
+    setIsMenuOpen(newIsMenuOpen);
+    
+    // Prevent body scroll and add additional safeguards when menu is open
+    if (newIsMenuOpen) {
+      // Lock scroll on body
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
     } else {
+      // Restore scroll position
+      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
     }
   };
 
+  // Helper function to reset body styles when closing the menu
+  const resetBodyStyles = () => {
+    // Capture current scroll position from body top style if exists
+    const scrollY = document.body.style.top;
+    
+    // Clear all applied styles
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
+    
+    // Restore scroll position
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+    }
+  }
+  
   // Close menu when clicking outside or ESC key
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (isMenuOpen && headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setIsMenuOpen(false);
-        document.body.style.overflow = '';
+        resetBodyStyles();
       }
     };
 
     const handleEscKey = (e: KeyboardEvent) => {
       if (isMenuOpen && e.key === 'Escape') {
         setIsMenuOpen(false);
-        document.body.style.overflow = '';
+        resetBodyStyles();
+      }
+    };
+
+    // Close menu if browser is resized to desktop size while mobile menu is open
+    const handleResize = () => {
+      if (isMenuOpen && window.innerWidth >= 768) { // md breakpoint is 768px
+        setIsMenuOpen(false);
+        resetBodyStyles();
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleEscKey);
+    window.addEventListener('resize', handleResize);
     
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscKey);
-      document.body.style.overflow = '';
+      window.removeEventListener('resize', handleResize);
+      resetBodyStyles(); // Safety cleanup on unmount
     };
   }, [isMenuOpen]);
 
   // Handle navigation click
   const handleNavClick = (sectionId: string) => {
     setIsMenuOpen(false);
-    document.body.style.overflow = '';
+    resetBodyStyles();
     
-    // Only attempt to scroll if we're on the homepage
-    if (location === "/") {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const offset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
+    // Small delay to allow menu closing animation to complete
+    setTimeout(() => {
+      // Only attempt to scroll if we're on the homepage
+      if (location === "/") {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - offset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      } else {
+        // Navigate to homepage with hash
+        setLocation(`/#${sectionId}`);
       }
-    } else {
-      // Navigate to homepage with hash
-      setLocation(`/#${sectionId}`);
-    }
+    }, 100);
   };
 
   // Enhanced sticky header effect with intelligent hide/show behavior
@@ -95,7 +140,7 @@ export default function Navigation() {
     // Close mobile menu when scrolling significantly in any direction
     if (isMenuOpen && Math.abs(scrollDifference) > 30) {
       setIsMenuOpen(false);
-      document.body.style.overflow = '';
+      resetBodyStyles();
     }
     
     // Control header menu visibility logic
@@ -323,7 +368,7 @@ export default function Navigation() {
         </motion.nav>
       </div>
       
-      {/* Mobile fullscreen menu with polished animations */}
+      {/* Mobile fullscreen menu with polished animations - Fixed for proper mobile display */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -331,10 +376,11 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/40 z-40 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 bg-black/40 z-50 backdrop-blur-sm md:hidden"
+            style={{ touchAction: 'none' }} // Prevent touch events from affecting page
             onClick={() => {
               setIsMenuOpen(false);
-              document.body.style.overflow = '';
+              resetBodyStyles();
             }}
           >
             <motion.div
@@ -342,33 +388,38 @@ export default function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-              className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white shadow-2xl p-6 pt-24 overflow-y-auto"
+              className="fixed right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white shadow-2xl p-6 pt-20 overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
+              style={{ 
+                maxHeight: '100vh',
+                overscrollBehavior: 'contain' // Prevent scroll chaining
+              }}
             >
-              {/* Close button in mobile menu */}
+              {/* Close button in mobile menu - now more prominent */}
               <motion.button
-                className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-[#731C13]/5 text-[#731C13]"
+                className="fixed top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-[#731C13]/10 text-[#731C13] shadow-md z-10"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  document.body.style.overflow = '';
+                  resetBodyStyles();
                 }}
-                whileHover={{ scale: 1.1, backgroundColor: "rgba(115, 28, 19, 0.1)" }}
+                whileHover={{ scale: 1.1, backgroundColor: "rgba(115, 28, 19, 0.2)" }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Fechar menu"
               >
                 <i className="fas fa-times"></i>
               </motion.button>
               
+              {/* Logo at top of mobile menu */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="mb-8"
+                transition={{ delay: 0.2, duration: 0.4 }}
+                className="mb-6"
               >
                 <img 
                   src="https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/drahof-logo-vermelha.png" 
                   alt="Logo Dra. HOF" 
-                  className="h-14 mx-auto mb-2"
+                  className="h-12 mx-auto"
                 />
               </motion.div>
               
@@ -377,68 +428,71 @@ export default function Navigation() {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="w-16 h-0.5 bg-[#731C13]/20 mx-auto mb-8 origin-center"
+                className="w-16 h-0.5 bg-[#731C13]/20 mx-auto mb-6 origin-center"
               />
               
-              <ul className="flex flex-col space-y-3">
-                {navItems.map((item, i) => (
-                  <motion.li 
-                    key={item.id}
-                    variants={{
-                      closed: { x: 20, opacity: 0 },
-                      open: { x: 0, opacity: 1 }
-                    }}
-                    initial="closed"
-                    animate="open"
-                    transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
-                    className="overflow-hidden"
-                  >
-                    <button
-                      onClick={() => handleNavClick(item.id)}
-                      className={`font-medium w-full text-left px-5 py-4 rounded-xl flex items-center ${
-                        item.soon 
-                          ? 'text-gray-400 bg-gray-50 cursor-default' 
-                          : 'text-[#425F70] bg-[#425F70]/5 hover:bg-[#731C13]/5 hover:text-[#731C13]'
-                      } transition-all duration-300`}
-                      disabled={item.soon}
+              {/* Navigation links */}
+              <div className="max-h-[60vh] overflow-y-auto pb-4 px-1 -mx-1"> 
+                <ul className="flex flex-col space-y-2">
+                  {navItems.map((item, i) => (
+                    <motion.li 
+                      key={item.id}
+                      variants={{
+                        closed: { x: 20, opacity: 0 },
+                        open: { x: 0, opacity: 1 }
+                      }}
+                      initial="closed"
+                      animate="open"
+                      transition={{ delay: 0.3 + i * 0.08, duration: 0.5 }}
                     >
-                      <div className={`w-10 h-10 flex items-center justify-center rounded-full mr-4 ${
-                        item.soon 
-                          ? 'bg-gray-200/50 text-gray-400' 
-                          : 'bg-[#731C13]/10 text-[#731C13]'
-                      }`}>
-                        <i className={`fas fa-${item.icon}`}></i>
-                      </div>
-                      <div>
-                        <div className="flex items-center">
-                          {item.label}
-                          {item.soon && (
-                            <span className="text-[10px] font-medium ml-2 bg-gray-200 px-1.5 py-0.5 rounded-full">
-                              em breve
-                            </span>
-                          )}
+                      <motion.button
+                        onClick={() => handleNavClick(item.id)}
+                        className={`font-medium w-full text-left px-4 py-3 rounded-xl flex items-center ${
+                          item.soon 
+                            ? 'text-gray-400 bg-gray-50 cursor-default' 
+                            : 'text-[#425F70] bg-[#425F70]/5 hover:bg-[#731C13]/5 hover:text-[#731C13]'
+                        } transition-all duration-300`}
+                        disabled={item.soon}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <div className={`w-9 h-9 flex items-center justify-center rounded-full mr-3 ${
+                          item.soon 
+                            ? 'bg-gray-200/50 text-gray-400' 
+                            : 'bg-[#731C13]/10 text-[#731C13]'
+                        }`}>
+                          <i className={`fas fa-${item.icon}`}></i>
                         </div>
-                      </div>
-                      
-                      {/* Animated arrow indicator for active items */}
-                      {!item.soon && (
-                        <motion.div 
-                          className="ml-auto text-[#731C13]"
-                          initial={{ opacity: 0, x: -5 }}
-                          whileHover={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <i className="fas fa-chevron-right text-xs"></i>
-                        </motion.div>
-                      )}
-                    </button>
-                  </motion.li>
-                ))}
-              </ul>
+                        <div>
+                          <div className="flex items-center">
+                            {item.label}
+                            {item.soon && (
+                              <span className="text-[10px] font-medium ml-2 bg-gray-200 px-1.5 py-0.5 rounded-full">
+                                em breve
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        
+                        {/* Animated arrow indicator for active items */}
+                        {!item.soon && (
+                          <motion.div 
+                            className="ml-auto text-[#731C13]"
+                            initial={{ opacity: 0, x: -5 }}
+                            whileHover={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <i className="fas fa-chevron-right text-xs"></i>
+                          </motion.div>
+                        )}
+                      </motion.button>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
               
               {/* Contact & Social icons */}
               <motion.div 
-                className="mt-12 flex flex-col items-center"
+                className="mt-6 flex flex-col items-center"
                 variants={{
                   closed: { y: 20, opacity: 0 },
                   open: { y: 0, opacity: 1 }
@@ -447,14 +501,14 @@ export default function Navigation() {
                 animate="open"
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
-                <p className="text-sm text-gray-600 mb-4">Conecte-se com a Dra. HOF</p>
+                <p className="text-sm text-gray-600 mb-3">Conecte-se com a Dra. HOF</p>
                 <div className="flex justify-center space-x-4">
                   <motion.a 
                     href="https://instagram.com/drahof" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#731C13]/80 to-[#731C13] text-white shadow-lg"
-                    whileHover={{ scale: 1.1, y: -3 }}
+                    className="w-11 h-11 flex items-center justify-center rounded-full bg-gradient-to-br from-[#731C13]/80 to-[#731C13] text-white shadow-lg"
+                    whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
@@ -464,8 +518,8 @@ export default function Navigation() {
                     href={WHATSAPP_URL}
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#425F70]/80 to-[#425F70] text-white shadow-lg"
-                    whileHover={{ scale: 1.1, y: -3 }}
+                    className="w-11 h-11 flex items-center justify-center rounded-full bg-gradient-to-br from-[#425F70]/80 to-[#425F70] text-white shadow-lg"
+                    whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
@@ -473,15 +527,8 @@ export default function Navigation() {
                   </motion.a>
                 </div>
                 
-                {/* Elegant curved divider */}
-                <motion.div 
-                  className="mt-10 w-full h-12 relative overflow-hidden"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7, duration: 0.5 }}
-                >
-                  <div className="absolute bottom-0 left-0 right-0 h-16 w-[150%] -ml-[25%] bg-[#ECE0C4]/20 rounded-t-[50%]"></div>
-                </motion.div>
+                {/* Simpler footer decoration */}
+                <div className="mt-8 w-full h-1 bg-gradient-to-r from-transparent via-[#731C13]/10 to-transparent" />
               </motion.div>
             </motion.div>
           </motion.div>

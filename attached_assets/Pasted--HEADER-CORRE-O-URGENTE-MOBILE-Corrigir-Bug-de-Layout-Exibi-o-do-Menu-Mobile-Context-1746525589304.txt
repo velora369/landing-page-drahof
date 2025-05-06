@@ -1,0 +1,43 @@
+```
+**[HEADER - CORREÇÃO URGENTE MOBILE] Corrigir Bug de Layout/Exibição do Menu Mobile**
+
+**Contexto:** Após as implementações no header, foi identificado um bug crítico na visualização do menu em dispositivos móveis. A imagem fornecida pelo usuário mostra que o menu (provavelmente o painel do menu hambúrguer) está com problemas de layout, possivelmente sobrepondo ou empurrando o conteúdo da página de forma incorreta.
+
+**PROBLEMA ATUAL:** O menu mobile não está funcionando/se apresentando corretamente. Ele está "bugado", causando uma má experiência de usuário.
+
+**OBJETIVO DESTA CORREÇÃO:** Garantir que o menu mobile (acionado pelo ícone hambúrguer) funcione perfeitamente: abra e feche corretamente, exiba os links de forma organizada e não cause problemas de layout com o restante da página.
+
+**--- INSTRUÇÕES DETALHADAS PARA CORREÇÃO DO MENU MOBILE ---**
+
+1.  **REVISAR FUNCIONALIDADE DO MENU HAMBÚRGUER (Item 2 do prompt `drahof_header_redesign_v1.txt`):
+    *   **Abertura e Fechamento:**
+        *   O ícone do menu hambúrguer deve abrir o painel do menu ao ser clicado.
+        *   O painel do menu deve ter uma forma clara de ser fechado (seja pelo ícone do menu se transformando em "X" e sendo clicável novamente, ou por um botão "Fechar" dedicado dentro do painel).
+    *   **Animação do Ícone e Painel:** As animações de abertura/fechamento do ícone (hambúrguer para "X") e do painel (deslizar, fade-in) devem ser suaves e sem falhas.
+
+2.  **LAYOUT E ESTILO DO PAINEL DO MENU MOBILE:**
+    *   **Posicionamento e Dimensões:** O painel do menu, quando aberto, não deve causar scroll horizontal na página nem empurrar o conteúdo principal de forma indesejada. Ele pode sobrepor o conteúdo (com um fundo que o destaque) ou empurrar o conteúdo para o lado de forma controlada, se essa for a intenção do design.
+    *   **Visibilidade dos Links:** Os links de navegação dentro do painel devem estar dispostos verticalmente, com tipografia legível, bom espaçamento e fáceis de tocar.
+    *   **Overflow:** Se o número de links for grande, o painel deve permitir scroll vertical interno, sem afetar o scroll da página principal.
+    *   **Z-index:** Verifique se o `z-index` do painel do menu está correto para que ele apareça acima de outros elementos da página quando aberto.
+
+3.  **RESOLVER CONFLITOS DE CSS/JAVASCRIPT:**
+    *   **CSS:** Inspecione o CSS relacionado ao header e ao menu mobile. Procure por:
+        *   Propriedades de `position` (`absolute`, `fixed`, `relative`) que possam estar causando o problema.
+        *   Valores de `width`, `height`, `margin`, `padding` incorretos.
+        *   Conflitos de `display` (`flex`, `grid`, `block`, `none`).
+        *   Media queries que possam estar aplicando estilos incorretos em telas menores.
+    *   **JavaScript:** Se o menu é controlado por JavaScript, depure o código para garantir que:
+        *   As classes CSS corretas estão sendo adicionadas/removidas para os estados aberto/fechado.
+        *   Não há erros de lógica que impeçam o funcionamento correto.
+
+4.  **TESTES EXAUSTIVOS EM MODO MOBILE:**
+    *   Utilize as ferramentas de desenvolvedor do navegador para simular diversos dispositivos móveis.
+    *   Teste em diferentes larguras de tela e orientações (retrato e paisagem).
+    *   Verifique a interação de abrir o menu, clicar em um link (se for âncora), e fechar o menu.
+
+**Resultado Esperado para esta Correção:**
+Um menu mobile que seja funcional, elegante e que não apresente bugs de layout. O usuário deve conseguir abrir, navegar e fechar o menu no celular sem nenhum problema, e o conteúdo da página não deve ser afetado negativamente pela interação com o menu.
+
+Por favor, foque exclusivamente em corrigir este bug do menu mobile. Fico no aguardo do resultado para validação.
+```

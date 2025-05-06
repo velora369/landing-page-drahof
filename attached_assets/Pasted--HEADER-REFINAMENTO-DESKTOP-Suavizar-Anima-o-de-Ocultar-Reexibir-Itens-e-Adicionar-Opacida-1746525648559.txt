@@ -1,0 +1,35 @@
+```
+**[HEADER - REFINAMENTO DESKTOP] Suavizar Animação de Ocultar/Reexibir Itens e Adicionar Opacidade ao Sticky Header**
+
+**Contexto:** O comportamento de ocultar/reexibir os itens de menu no sticky header desktop está funcional, mas a animação está muito abrupta. Além disso, desejamos adicionar uma leve translucidez à barra do header quando ela está no modo sticky.
+
+**PROBLEMAS ATUAIS (Desktop):**
+1.  A animação de ocultar e reexibir os itens de menu ("Sobre", "Procedimentos", etc.) no sticky header é muito rápida/seca, sem uma transição suave.
+2.  A barra do header, quando sticky, não possui nenhum efeito de opacidade/translucidez.
+
+**OBJETIVO DESTE REFINAMENTO (Desktop):**
+1.  Tornar a animação de ocultar/reexibir os itens de menu no sticky header suave, fluida e elegante.
+2.  Adicionar uma leve opacidade/translucidez à barra do header quando ela estiver no modo sticky, para um visual mais sofisticado.
+
+**--- INSTRUÇÕES DETALHADAS PARA REFINAMENTO DO STICKY HEADER (DESKTOP) ---**
+
+1.  **SUAVIZAR ANIMAÇÃO DE OCULTAR/REEXIBIR ITENS DE MENU (Desktop):
+    *   **Utilizar Transições CSS:** A melhor forma de alcançar uma animação suave é utilizando transições CSS (`transition` property).
+    *   **Propriedades para Animar:** Em vez de apenas alternar `display: none;` e `display: block;` (ou similar), combine a manipulação de `opacity` e, possivelmente, `transform: translateY()` ou `max-height` para os itens de menu ou seu contêiner.
+        *   **Para Ocultar:** Anime a `opacity` de `1` para `0`. Pode-se combinar com um `transform: translateY(-10px);` (ou um valor pequeno) para um leve movimento de subida ao desaparecer, ou animar `max-height` de um valor X para `0`.
+        *   **Para Reexibir:** Anime a `opacity` de `0` para `1`. Se usou `transform`, reverta para `transform: translateY(0);`, ou `max-height` de `0` para o valor X.
+    *   **Duração e Timing Function:** Aplique uma duração de transição adequada (ex: `transition: all 0.3s ease-in-out;` ou `transition: opacity 0.3s ease, transform 0.3s ease;`). Use timing functions como `ease-in-out` ou `ease` para um movimento natural.
+    *   **Evitar `display: none;` na Animação:** Lembre-se que `display: none;` não é animável. Use-o para remover o elemento do fluxo do layout *após* a animação de desaparecimento ter ocorrido (se necessário, usando um pequeno `setTimeout` em JavaScript para sincronizar, ou manipulando `visibility: hidden;` junto com `opacity: 0;`). Para reaparecer, defina `display` para seu valor original *antes* de iniciar a animação de `opacity` de `0` para `1`.
+
+2.  **ADICIONAR OPACIDADE/TRANSLUCIDEZ AO STICKY HEADER (Desktop):
+    *   **Aplicar ao Fundo do Header:** Quando o header estiver no modo sticky (fixo no topo), aplique uma leve opacidade ao seu fundo.
+    *   **Valor de Opacidade:** Experimente um valor como `background-color: rgba(R, G, B, 0.9);` ou `background-color: rgba(R, G, B, 0.85);` (substitua R, G, B pelas cores de fundo atuais do header). O objetivo é uma translucidez sutil que permita ver um pouco do conteúdo rolando por baixo, mas sem comprometer a legibilidade do logo e dos itens de menu (quando visíveis).
+    *   **Transição Suave (Opcional):** A mudança para o fundo com opacidade também pode ser animada suavemente quando o header se torna sticky.
+
+**FOCO DESTA TAREFA:** Estas alterações são específicas para a **visualização em DESKTOP**.
+
+**Resultado Esperado para este Refinamento (Desktop):**
+No desktop, os itens de menu do sticky header irão desaparecer e reaparecer com uma animação elegante e fluida. A barra do header, quando sticky, terá uma aparência mais sofisticada devido à leve translucidez.
+
+Por favor, aplique estas diretrizes com atenção aos detalhes. Fico no aguardo do resultado para validação.
+```
