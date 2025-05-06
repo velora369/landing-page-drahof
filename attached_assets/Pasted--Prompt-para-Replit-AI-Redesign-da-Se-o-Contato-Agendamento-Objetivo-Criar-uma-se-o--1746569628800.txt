@@ -1,0 +1,63 @@
+## Prompt para Replit AI: Redesign da Seção "Contato / Agendamento"
+
+**Objetivo:** Criar uma seção "Contato / Agendamento" funcional, elegante e intuitiva, que facilite ao máximo o contato do usuário com a clínica e transmita profissionalismo. A seção deve incluir um formulário de contato moderno, informações de contato claras e, opcionalmente, um mapa interativo estilizado.
+
+**Contexto:**
+- Esta é a Fase 9 do redesign do site da Dra. Hof.
+- Esta seção é crucial para a conversão de leads e agendamentos.
+- O design deve ser limpo, moderno e alinhado com a identidade visual sofisticada do site.
+
+**Diretrizes Detalhadas para a Seção "Contato / Agendamento":**
+
+1.  **Layout Geral e Título da Seção:**
+    *   **Título da Seção:** Um título claro e direto como "Entre em Contato", "Agende sua Consulta" ou "Fale Conosco", com destaque e alinhado à tipografia do site.
+    *   **Estrutura:** Considerar um layout de duas colunas em telas maiores (desktop), onde uma coluna apresenta as informações de contato e o mapa, e a outra o formulário. Em telas menores, os elementos devem se empilhar de forma lógica e clara.
+
+2.  **Formulário de Contato Moderno:**
+    *   **Campos Essenciais:**
+        *   Nome Completo (obrigatório)
+        *   Email (obrigatório, com validação de formato)
+        *   Telefone/WhatsApp (obrigatório, com máscara de formato se possível)
+        *   Assunto (opcional, pode ser um campo de texto ou um dropdown com opções pré-definidas como "Agendamento de Consulta", "Dúvidas sobre Procedimentos", "Outros Assuntos")
+        *   Mensagem (obrigatório, campo de texto multilinha)
+    *   **Design dos Campos:** Limpos, com placeholders claros, bordas sutis e foco visual ao serem selecionados.
+    *   **Botão de Envio:** Um botão com texto claro (ex: "Enviar Mensagem", "Solicitar Contato") e design alinhado aos CTAs do site. Deve ter um estado de hover e clique.
+    *   **Feedback Visual:**
+        *   **Sucesso no Envio:** Após o envio bem-sucedido, exibir uma mensagem clara e amigável de confirmação (ex: "Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.").
+        *   **Erro no Envio/Validação:** Se houver erros de validação nos campos ou falha no envio, destacar os campos com erro e exibir mensagens de erro específicas e úteis próximas a cada campo problemático ou uma mensagem de erro geral.
+    *   **Proteção contra Spam (Opcional, mas Recomendado):** Considerar a implementação de um reCAPTCHA sutil ou similar, se tecnicamente viável pelo Replit AI.
+
+3.  **Apresentação Clara das Informações de Contato:**
+    *   **Conteúdo:**
+        *   Endereço completo da clínica.
+        *   Telefone(s) para contato direto.
+        *   Endereço de E-mail profissional.
+        *   Link direto para WhatsApp (com ícone do WhatsApp, se for usar ícones aqui).
+    *   **Apresentação Visual:**
+        *   **Sem Ícones (Preferencial para Consistência):** Apresentar cada informação de forma textual, com rótulos claros (ex: "Endereço:", "Telefone:"), seguindo o padrão minimalista e focado na tipografia já adotado em outras seções.
+        *   **Com Ícones 2D Minimalistas (Alternativa, se o usuário preferir):** Se for decidido usar ícones, eles devem ser 2D, minimalistas, elegantes e universalmente reconhecíveis para cada tipo de informação (ex: ícone de pino para endereço, telefone para telefone, envelope para email, logo do WhatsApp).
+    *   **Interatividade:** Números de telefone e endereços de e-mail devem ser clicáveis (abrindo o discador ou o cliente de e-mail, respectivamente). O link do WhatsApp deve abrir a conversa diretamente.
+
+4.  **Integração de Mapa Interativo Estilizado (Opcional, mas Recomendado):**
+    *   **Funcionalidade:** Incorporar um mapa do Google Maps (ou similar) mostrando a localização da clínica.
+    *   **Estilização:** O mapa deve ser estilizado para se integrar ao design do site. Isso pode incluir a alteração das cores do mapa para tons mais neutros ou alinhados à paleta do site, e um marcador personalizado com o logo da clínica, se possível.
+    *   **Interatividade:** Permitir zoom e navegação básica no mapa. Ao clicar no marcador ou em um link "Ver no mapa", pode abrir o Google Maps em uma nova aba com a rota.
+
+5.  **Design e Atmosfera:**
+    *   **Profissionalismo e Confiança:** O design deve transmitir seriedade, profissionalismo e facilitar o contato.
+    *   **Paleta de Cores:** Utilizar a paleta do site de forma equilibrada.
+    *   **Tipografia:** Legível, profissional e consistente.
+
+6.  **Responsividade Total:**
+    *   Toda a seção, incluindo o formulário, as informações de contato e o mapa, deve ser perfeitamente responsiva e otimizada para desktops, tablets e smartphones.
+
+**O que NÃO fazer:**
+*   Formulários confusos ou com muitos campos desnecessários.
+*   Falta de feedback visual claro após o envio do formulário.
+*   Informações de contato difíceis de encontrar ou não clicáveis.
+*   Mapa genérico que destoe do design do site.
+
+**Entregável Esperado:**
+*   A seção "Contato / Agendamento" implementada com um formulário de contato funcional e moderno, informações de contato claras e de fácil acesso, e (opcionalmente) um mapa interativo estilizado. O design deve ser totalmente responsivo e alinhado com a identidade visual profissional e sofisticada do site.
+
+Por favor, proceda com o redesign desta seção. Após a implementação, informe para que possamos validar o resultado.

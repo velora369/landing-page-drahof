@@ -3,7 +3,9 @@ import {
   type User, 
   type InsertUser, 
   type Subscriber,
-  type InsertSubscriber
+  type InsertSubscriber,
+  type Contact,
+  type InsertContact
 } from "@shared/schema";
 
 // modify the interface with any CRUD methods
@@ -17,19 +19,27 @@ export interface IStorage {
   // Subscriber methods
   createSubscriber(subscriber: InsertSubscriber): Promise<Subscriber>;
   getSubscriberByEmail(email: string): Promise<Subscriber | undefined>;
+  
+  // Contact methods
+  createContact(contact: InsertContact): Promise<Contact>;
+  getContacts(): Promise<Contact[]>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private subscribers: Map<number, Subscriber>;
+  private contacts: Map<number, Contact>;
   currentUserId: number;
   currentSubscriberId: number;
+  currentContactId: number;
 
   constructor() {
     this.users = new Map();
     this.subscribers = new Map();
+    this.contacts = new Map();
     this.currentUserId = 1;
     this.currentSubscriberId = 1;
+    this.currentContactId = 1;
   }
 
   async getUser(id: number): Promise<User | undefined> {
@@ -62,6 +72,19 @@ export class MemStorage implements IStorage {
     const subscriber: Subscriber = { ...insertSubscriber, id, created_at };
     this.subscribers.set(id, subscriber);
     return subscriber;
+  }
+  
+  // Contact methods
+  async createContact(insertContact: InsertContact): Promise<Contact> {
+    const id = this.currentContactId++;
+    const created_at = new Date().toISOString();
+    const contact: Contact = { ...insertContact, id, created_at };
+    this.contacts.set(id, contact);
+    return contact;
+  }
+  
+  async getContacts(): Promise<Contact[]> {
+    return Array.from(this.contacts.values());
   }
 }
 
