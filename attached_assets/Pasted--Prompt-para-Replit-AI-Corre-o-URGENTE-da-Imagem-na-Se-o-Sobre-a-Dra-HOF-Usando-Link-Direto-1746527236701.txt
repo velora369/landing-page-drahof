@@ -1,0 +1,34 @@
+## Prompt para Replit AI: Correção URGENTE da Imagem na Seção "Sobre a Dra. HOF" (Usando Link Direto)
+
+**Objetivo:** Corrigir IMEDIATAMENTE a exibição da imagem da Dra. Hof na seção "Sobre a Dra. HOF", utilizando o link direto fornecido pelo usuário.
+
+**Problema Identificado:**
+- A imagem da Dra. Hof na seção "Sobre" continua não aparecendo, exibindo um ícone de interrogação (?).
+
+**Link da Imagem Correta (Fornecido pelo Usuário):**
+`https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/foto-dra-hof-.webp`
+
+**Contexto:**
+- Esta é uma tentativa de correção para a Fase 4 do redesign do site (Seção "Sobre a Dra. HOF").
+
+**Diretrizes Detalhadas para a Correção:**
+
+1.  **Localizar o Elemento da Imagem:**
+    *   Inspecione o código HTML/componente da seção "Sobre a Dra. HOF" para encontrar a tag `<img>` (ou o elemento equivalente que deveria exibir a foto da Dra. Hof).
+
+2.  **Substituir o Atributo `src`:**
+    *   **Ação Principal:** Altere o valor do atributo `src` (ou o atributo correspondente que define a fonte da imagem) do elemento da imagem para o seguinte link EXATO:
+        `https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/foto-dra-hof-.webp`
+    *   Certifique-se de que não haja erros de digitação ou caracteres extras ao colar o link.
+
+3.  **Remover Atributos Conflitantes (Se Houver):**
+    *   Se houver outros atributos como `srcset` que possam estar interferindo ou tentando carregar outras fontes de imagem para este mesmo elemento, considere removê-los ou comentá-los temporariamente para garantir que apenas o `src` com o link direto seja utilizado.
+
+4.  **Testar a Exibição:**
+    *   Após aplicar a alteração, verifique IMEDIATAMENTE se a imagem da Dra. Hof está sendo exibida corretamente na seção "Sobre".
+    *   Teste em visualizações desktop e mobile para garantir que a imagem carregue em ambas.
+
+**Entregável Esperado:**
+*   A imagem da Dra. Hof (do link fornecido) aparecendo corretamente na seção "Sobre a Dra. HOF".
+
+Por favor, aplique esta correção com máxima urgência. Esta é uma correção crítica para a visualização da seção. Após a implementação, informe para que o usuário possa validar o resultado.

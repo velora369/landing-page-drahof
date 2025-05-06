@@ -196,7 +196,7 @@ export default function AuthorityVideo() {
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
             >
               <img 
-                src="/images/dra-hof-perfil.svg" 
+                src="https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/foto-dra-hof-.webp" 
                 alt="Dra. Jana Hof" 
                 className="w-full h-auto object-cover"
               />
