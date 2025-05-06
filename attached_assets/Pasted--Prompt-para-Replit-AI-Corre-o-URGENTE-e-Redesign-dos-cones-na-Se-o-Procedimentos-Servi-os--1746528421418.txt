@@ -1,0 +1,54 @@
+## Prompt para Replit AI: Correção URGENTE e Redesign dos Ícones na Seção "Procedimentos / Serviços"
+
+**Objetivo:** Corrigir e redesenhar URGENTEMENTE os ícones utilizados nos cards da seção "Procedimentos / Serviços". Os ícones atuais não são representativos ou intuitivos para os serviços que descrevem.
+
+**Problema Identificado:**
+- Os ícones atuais nos cards de procedimentos (ex: para Botox, Rinomodelação, Preenchimento Labial) são abstratos e não permitem que o usuário identifique facilmente o serviço correspondente.
+
+**Contexto:**
+- Esta é uma correção crítica para a Fase 5 do redesign do site (Seção "Procedimentos / Serviços").
+- O prompt anterior para esta seção (`drahof_procedures_section_redesign_v1.txt`) solicitava ícones 3D minimalistas e temáticos, mas a execução não foi satisfatória.
+
+**Diretrizes Detalhadas para a Correção e Redesign dos Ícones:**
+
+1.  **Clareza e Representatividade ACIMA DE TUDO:**
+    *   **Prioridade Máxima:** Cada ícone DEVE ser CLARAMENTE representativo e intuitivamente associado ao procedimento específico que ele ilustra.
+    *   O usuário deve ser capaz de, ao olhar para o ícone, ter uma ideia imediata do serviço.
+
+2.  **Sugestões de Ícones Temáticos (Manter Estilo 3D Minimalista e Elegante):**
+    *   **Botox (Toxina Botulínica):** 
+        *   Considerar uma representação estilizada e minimalista de uma seringa com uma gota, ou um ícone que sugira o relaxamento de rugas (ex: linhas suaves se desfazendo).
+    *   **Rinomodelação:**
+        *   Um contorno de nariz elegante e estilizado, talvez com setas sutis indicando a modelagem, ou um perfil de nariz se transformando suavemente.
+    *   **Preenchimento Labial:**
+        *   Lábios estilizados e minimalistas, talvez com um leve brilho ou indicação de volume.
+    *   **Bioestimuladores de Colágeno:**
+        *   Uma representação abstrata de moléculas de colágeno se regenerando, ou uma espiral ascendente simbolizando rejuvenescimento.
+    *   **Fios de PDO:**
+        *   Linhas finas e elegantes que se entrelaçam ou criam um efeito de lifting sutil.
+    *   **Microagulhamento:**
+        *   Uma representação minimalista de um dermaroller ou agulhas muito finas de forma estilizada.
+    *   **Peelings Químicos:**
+        *   Gotas estilizadas ou uma representação de camadas da pele se renovando.
+    *   **(Para cada outro procedimento listado na seção):** Desenvolver um conceito de ícone que seja igualmente temático e intuitivo.
+
+3.  **Estilo Visual Consistente:**
+    *   **3D Minimalista e Elegante:** Todos os ícones devem seguir o estilo 3D minimalista, com formas limpas, sem excesso de detalhes, e uma aparência sofisticada.
+    *   **Paleta de Cores:** Utilizar as cores da paleta do site (#731C13, #425F70, #ECE0C4) ou tons metálicos sutis (dourado, prateado, bronze claro) que harmonizem com a paleta. Evitar cores vibrantes ou que destoem do design geral.
+    *   **Consistência:** Manter um tamanho, perspectiva e nível de detalhe consistentes entre todos os ícones para criar um conjunto harmonioso.
+
+4.  **Animação Sutil no Hover (Manter):**
+    *   A animação sutil no hover (ex: leve rotação, brilho, scale-up) para o ícone 3D, conforme solicitado no prompt anterior, deve ser mantida ou implementada se ainda não estiver presente, mas apenas após o ícone ser tematicamente correto.
+
+5.  **Revisão Completa:**
+    *   Revisar TODOS os cards de procedimentos e substituir os ícones atuais pelos novos ícones temáticos e representativos.
+
+**O que NÃO fazer:**
+*   Não utilizar ícones abstratos que não tenham uma conexão clara com o serviço.
+*   Não repetir o mesmo ícone genérico para diferentes procedimentos.
+*   Não criar ícones excessivamente complexos ou infantis.
+
+**Entregável Esperado:**
+*   A seção "Procedimentos / Serviços" com TODOS os ícones dos cards substituídos por novos ícones 3D minimalistas que sejam CLARAMENTE representativos e temáticos para cada serviço específico.
+
+Por favor, aplique esta correção e redesign dos ícones com máxima prioridade. Após a implementação, informe para que o usuário possa validar o resultado.

@@ -42,66 +42,180 @@ const ProcedureIcon3D: React.FC<Icon3DProps> = ({ icon, color, delay = 0 }) => {
           whileHover={{ scale: 1.2 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
+          {/* Botox - seringa com gota para toxina botulínica */}
           {icon === 'botox' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <path d="M7 15h10v4a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-4z" />
-              <path d="M12 4c-2.5 0-4 2-4 5v6h8V9c0-3-1.5-5-4-5z" />
-              <path d="M9 5V3" />
-              <path d="M15 5V3" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Corpo da seringa */}
+              <rect x="5" y="10" width="12" height="4" rx="1" />
+              {/* Êmbolo */}
+              <path d="M17 12h4" />
+              {/* Agulha */}
+              <path d="M3 12h2" />
+              <path d="M2 12l-1 1" />
+              <path d="M2 12l-1-1" />
+              {/* Gota da toxina */}
+              <path d="M3.5 8.5C3.5 7.5 4 6 5 6s1.5 1.5 1.5 2.5S6 11 5 11 3.5 9.5 3.5 8.5z" />
+              {/* Linhas suavizadas - efeito do botox */}
+              <path d="M7.5 16.5s2 1.5 4.5 1.5 4.5-1.5 4.5-1.5" strokeDasharray="1 1" />
+              <path d="M7.5 18.5s2 1.5 4.5 1.5 4.5-1.5 4.5-1.5" strokeDasharray="1 1" />
             </svg>
           )}
+          
+          {/* Rinomodelação - perfil com nariz sendo modelado */}
           {icon === 'rinoplastia' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <path d="M12 3c1 0 2.1.4 2.4 2l2.6 7.5c.1.5-.2 1-.6 1H8.6c-.5 0-.9-.3-.8-.9l1.8-7C9.9 3.2 11 3 12 3z" />
-              <path d="M10 13v6c0 1.1.9 2 2 2s2-.9 2-2v-6" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Perfil facial estilizado */}
+              <path d="M14 4c0 0-1-1-2-1s-2 1-3 1c-1 0-2 0-3 1s-1 2-1 2v5c0 1 0 2 1 3s2 1 3 1h4c1 0 2 0 3-1s1-2 1-3v-4" />
+              {/* Nariz antes da modelagem (pontilhado) */}
+              <path d="M9 7c0 0 1-2 3-2s2 2 2 2" strokeDasharray="1 1" />
+              {/* Nariz após modelagem (linha sólida) */}
+              <path d="M9 7c0 0 1-1 3-1s2 1 2 1" />
+              {/* Seta indicando a transformação */}
+              <path d="M11 12l2-3" />
+              <path d="M13 9l1 1" />
+              <path d="M13 9l0 2" />
             </svg>
           )}
+          
+          {/* Preenchimento Labial - lábios com efeito de volume */}
           {icon === 'preenchimento' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <path d="M8 14c-1.5 0-2.1-1-2.5-2.5c-.4-1.6-.8-1.5-1.5-3C3.4 7.1 4 5 6 5c3.5 0 5 5 8.1 5s5.1-2 5.9-2c2 0 3 1.5 2 3c-.7 1-1.3 1.5-2 3c-.7 1.5-1 2-2 2" />
-              <path d="M7 15c-1.5 0-2.7-1.2-3-3" />
-              <path d="M16 15c1.5 0 2.7-1.2 3-3" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Lábio superior */}
+              <path d="M8 11c1.5-1 3-1.5 4-1.5s2.5 0.5 4 1.5" />
+              {/* Lábio inferior */}
+              <path d="M8 13c1.5 1 3 1.5 4 1.5s2.5-0.5 4-1.5" />
+              {/* Linha central dos lábios */}
+              <path d="M8 12h8" />
+              {/* Indicação de preenchimento/volume */}
+              <path d="M7 8l2 2" />
+              <path d="M7 8l0 2" />
+              <path d="M17 8l-2 2" />
+              <path d="M17 8l0 2" />
+              <path d="M7 16l2-2" />
+              <path d="M7 16l0-2" />
+              <path d="M17 16l-2-2" />
+              <path d="M17 16l0-2" />
+              {/* Gota simbolizando o preenchimento */}
+              <path d="M12 6.5c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
             </svg>
           )}
+          
+          {/* Bioestimuladores - moléculas de colágeno regenerando */}
           {icon === 'bioestimulador' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 6v12" />
-              <path d="M8 12h8" />
-              <path d="M8 8h8" />
-              <path d="M8 16h8" />
-            </svg>
-          )}
-          {icon === 'fiosPDO' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <path d="M5 12h14" />
-              <path d="M12 5v14" />
-              <path d="M4 17l4-4" />
-              <path d="M16 17l4-4" />
-              <path d="M8 7l4 4" />
-              <path d="M12 11l4-4" />
-            </svg>
-          )}
-          {icon === 'microagulhamento' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M6 12c2 0 3-1 3-3s1-3 3-3 3 1 3 3 1 3 3 3" />
-              <path d="M6 12c2 0 3 1 3 3s1 3 3 3 3-1 3-3 1-3 3-3" />
-            </svg>
-          )}
-          {icon === 'peeling' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <path d="M17 5c-2 1-4 2-6 2s-4-1-6-2a1 1 0 0 0-1.5 1C5 10 7 14 12 16s7-6 8.5-10A1 1 0 0 0 19 5" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Moléculas/células se regenerando */}
               <circle cx="12" cy="12" r="3" />
-              <path d="M3 8a12.5 12.5 0 0 0 7.5-4.5" />
-              <path d="M13.5 3.5A12.5 12.5 0 0 0 21 8" />
+              <circle cx="7" cy="9" r="1.5" />
+              <circle cx="17" cy="9" r="1.5" />
+              <circle cx="7" cy="15" r="1.5" />
+              <circle cx="17" cy="15" r="1.5" />
+              {/* Conexões entre moléculas - estrutura do colágeno */}
+              <path d="M9 10.5l1.5 1" />
+              <path d="M13.5 10.5l1.5-1" />
+              <path d="M9 13.5l1.5-1" />
+              <path d="M13.5 13.5l1.5 1" />
+              {/* Setas simbolizando crescimento e regeneração */}
+              <path d="M12 5v1" />
+              <path d="M11 5.5l1 0.5" />
+              <path d="M13 5.5l-1 0.5" />
+              <path d="M12 19v-1" />
+              <path d="M11 18.5l1-0.5" />
+              <path d="M13 18.5l-1-0.5" />
             </svg>
           )}
+          
+          {/* Fios de PDO - linhas entrelaçadas criando efeito lifting */}
+          {icon === 'fiosPDO' && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Contorno facial estilizado */}
+              <path d="M7 6c0 0 2-2 5-2s5 2 5 2" />
+              <path d="M6 8c0 0 3-1 6-1s6 1 6 1" />
+              <path d="M5 12c0 0 3.5 0 7 0s7 0 7 0" />
+              <path d="M6 16c0 0 2.5 1 6 1s6-1 6-1" />
+              <path d="M7 18c0 0 2 2 5 2s5-2 5-2" />
+              
+              {/* Fios de PDO - linhas tensoras */}
+              <path d="M9 8l0 8" strokeDasharray="1 1" />
+              <path d="M12 7l0 10" strokeDasharray="1 1" />
+              <path d="M15 8l0 8" strokeDasharray="1 1" />
+              
+              {/* Setas indicando o efeito lifting */}
+              <path d="M7 11l1-1" />
+              <path d="M8 10l0 1" />
+              <path d="M17 11l-1-1" />
+              <path d="M16 10l0 1" />
+            </svg>
+          )}
+          
+          {/* Microagulhamento - representação de dermaroller */}
+          {icon === 'microagulhamento' && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Dermaroller */}
+              <path d="M6 12h12" />
+              <path d="M7 10v4" />
+              <path d="M17 10v4" />
+              <path d="M5 9v6" />
+              <path d="M19 9v6" />
+              
+              {/* Microagulhas */}
+              <path d="M8 8v3" strokeWidth="0.75" />
+              <path d="M10 8v3" strokeWidth="0.75" />
+              <path d="M12 8v3" strokeWidth="0.75" />
+              <path d="M14 8v3" strokeWidth="0.75" />
+              <path d="M16 8v3" strokeWidth="0.75" />
+              
+              <path d="M8 16v-3" strokeWidth="0.75" />
+              <path d="M10 16v-3" strokeWidth="0.75" />
+              <path d="M12 16v-3" strokeWidth="0.75" />
+              <path d="M14 16v-3" strokeWidth="0.75" />
+              <path d="M16 16v-3" strokeWidth="0.75" />
+              
+              {/* Pele simbolizada */}
+              <path d="M3 18c2 0 4 0 9 0s9 0 9 0" strokeDasharray="1 1" />
+            </svg>
+          )}
+          
+          {/* Peelings Químicos - camadas da pele se renovando */}
+          {icon === 'peeling' && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Camadas da pele */}
+              <path d="M4 18c2-1 5-2 8-2s6 1 8 2" />
+              <path d="M4 14c2-1 5-2 8-2s6 1 8 2" />
+              <path d="M4 10c2-1 5-2 8-2s6 1 8 2" />
+              <path d="M4 6c2-1 5-2 8-2s6 1 8 2" />
+              
+              {/* Gotas de peeling/ácido */}
+              <path d="M8 4.5c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              <path d="M15 6.5c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              
+              {/* Renovação celular */}
+              <path d="M12 15v2" />
+              <path d="M11 16h2" />
+              <path d="M10 6l2 2 2-2" strokeDasharray="0.75 0.75" />
+            </svg>
+          )}
+          
+          {/* Skinbooster - hidratação profunda */}
           {icon === 'default' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 8v8" />
-              <path d="M8 12h8" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Contorno facial estilizado */}
+              <path d="M8 5c2-1 3-1 4-1s2 0 4 1" />
+              <path d="M6 8c2-1 4-2 6-2s4 1 6 2" />
+              <path d="M5 12c2-1 4-2 7-2s5 1 7 2" />
+              <path d="M6 16c2-1 4-2 6-2s4 1 6 2" />
+              <path d="M8 19c2-1 3-1 4-1s2 0 4 1" />
+              
+              {/* Gotas de hidratação */}
+              <path d="M10 9c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              <path d="M13 13c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              <path d="M9 15c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              
+              {/* Efeito de brilho/hidratação */}
+              <path d="M14 7l1-1" />
+              <path d="M16 9l1-1" />
+              <path d="M16 15l1 1" />
+              <path d="M7 9l-1-1" />
+              <path d="M7 15l-1 1" />
             </svg>
           )}
         </motion.div>
