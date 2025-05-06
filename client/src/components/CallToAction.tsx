@@ -1,51 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { WHATSAPP_URL } from "@/lib/constants";
-import { useState } from "react";
-import { apiRequest } from "@/lib/queryClient";
 
 export default function CallToAction() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [isSubscribing, setIsSubscribing] = useState(false);
-  const [subscribed, setSubscribed] = useState(false);
-  
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!email || !name) return;
-    
-    try {
-      setIsSubscribing(true);
-      await apiRequest("POST", "/api/subscribe", { email, name });
-      setSubscribed(true);
-      setEmail("");
-      setName("");
-    } catch (error) {
-      console.error("Error subscribing:", error);
-    } finally {
-      setIsSubscribing(false);
-    }
-  };
-  
-  const handleWhatsAppRedirect = (e: React.MouseEvent) => {
-    // Only redirect if we have data
-    if (email && name) {
-      e.preventDefault();
-      
-      // Save data in API
-      handleSubscribe(e as unknown as React.FormEvent);
-      
-      // Create message text
-      const message = encodeURIComponent(
-        `Olá! Gostaria de me inscrever no canal do WhatsApp sobre o curso "Protocolo de Manejo de Intercorrência em Cirurgias da Face".\n\nNome: ${name}\nEmail: ${email}`
-      );
-      
-      // Redirect to WhatsApp with prefilled message
-      window.open(`${WHATSAPP_URL}&text=${message}`, '_blank');
-    }
-  };
 
   return (
     <section className="py-28 px-4 bg-gradient-to-br from-[#425F70] to-[#731C13] text-white relative overflow-hidden" id="contato">
@@ -146,47 +103,18 @@ export default function CallToAction() {
               </ul>
             </div>
             
-            <form onSubmit={handleSubscribe} className="mb-8">
-              <label className="block text-lg font-medium mb-3">Cadastre-se para ser avisado(a)</label>
-              <Input
-                type="email"
-                placeholder="Seu e-mail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 mb-4 shadow-inner"
-              />
-              <Input
-                type="text"
-                placeholder="Nome completo"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 shadow-inner"
-              />
-            </form>
+            <p className="text-lg mb-8 text-white/90">
+              Garanta sua vaga com bônus especial pelo nosso WhatsApp
+            </p>
             
             <Button 
-              onClick={handleWhatsAppRedirect}
+              asChild
               className="w-full bg-white text-[#731C13] hover:text-[#425F70] font-bold py-5 px-6 rounded-xl text-center hover:bg-opacity-95 transition-all duration-300 shadow-lg hover:shadow-xl hover:translate-y-[-2px] mt-auto"
-              disabled={isSubscribing}
             >
-              {isSubscribing ? (
-                <div className="flex items-center justify-center gap-2">
-                  <i className="fas fa-circle-notch fa-spin"></i> Processando...
-                </div>
-              ) : (
-                <div className="flex items-center justify-center gap-3">
-                  <i className="fas fa-graduation-cap text-xl"></i> Inscreva-se no Canal do WhatsApp
-                </div>
-              )}
+              <a href={WHATSAPP_URL} className="flex items-center justify-center gap-3">
+                <i className="fab fa-whatsapp text-xl"></i> Quero garantir minha vaga!
+              </a>
             </Button>
-            
-            {subscribed && (
-              <p className="mt-4 text-center text-white bg-green-500/30 p-3 rounded-xl border border-green-500/50 shadow-md">
-                <i className="fas fa-check-circle mr-2"></i> Obrigado! Você será notificado sobre o próximo curso.
-              </p>
-            )}
           </motion.div>
         </div>
       </div>
