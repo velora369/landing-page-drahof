@@ -5,7 +5,7 @@ import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import Certifications from "@/components/Certifications";
 import BeforeAfterSimplified from "@/components/BeforeAfterSimplified";
 import Podcast from "@/components/Podcast";
-import CallToAction from "@/components/CallToAction";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -22,7 +22,7 @@ export default function Home() {
       <Certifications />
       <BeforeAfterSimplified />
       <Podcast />
-      <CallToAction />
+      <Contact />
       <Footer />
     </div>
   );

@@ -20,7 +20,7 @@ export const contacts = pgTable("contacts", {
   name: text("name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
-  subject: text("subject"),
+  subject: text("subject").notNull().default(""),
   message: text("message").notNull(),
   created_at: text("created_at").notNull().default("now()"),
 });
@@ -48,7 +48,7 @@ export const contactFormSchema = z.object({
   name: z.string().min(3, { message: "Nome deve ter pelo menos 3 caracteres" }),
   email: z.string().email({ message: "Email inválido" }),
   phone: z.string().min(10, { message: "Telefone inválido" }),
-  subject: z.string().optional(),
+  subject: z.string().default(""),
   message: z.string().min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" }),
 });
 
