@@ -1,0 +1,51 @@
+```
+**[FASE 2 - REDESIGN HEADER/NAVEGAÇÃO PRINCIPAL] Implementação de Logo, Menu Elegante, Microinterações e Sticky Header Inteligente**
+
+**Contexto:** A Fase 1 (Hero Section) foi concluída e aprovada. Agora, focaremos na Fase 2: o redesign completo do Header e da Navegação Principal do site da Dra. Jana Hof.
+
+**Objetivo Principal para esta Fase:** Criar um header moderno, funcional e elegante que incorpore o logo da Dra. Hof, ofereça uma navegação intuitiva e fluida em desktop e mobile, e utilize microinterações e um comportamento de "sticky header" inteligente para aprimorar a experiência do usuário.
+
+**--- INSTRUÇÕES DETALHADAS PARA O HEADER / NAVEGAÇÃO PRINCIPAL ---**
+
+1.  **IMPLEMENTAÇÃO DO LOGO:**
+    *   **Substituir Texto por Logo:** Remova o texto atual "Dra. Jana Guimarães" do header.
+    *   **Inserir Logo:** No lugar do texto, insira a imagem do logo oficial. Utilize o seguinte link para o logo: `https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/drahof-logo-vermelha.png`
+    *   **Dimensionamento e Alinhamento:** Garanta que o logo seja dimensionado adequadamente para o header, mantendo sua clareza e proporções. Ele deve estar bem alinhado com os outros elementos do header (como o menu de navegação).
+    *   **Responsividade do Logo:** O logo deve se ajustar de forma responsiva em diferentes tamanhos de tela (desktop, tablet, mobile), sem perder a legibilidade ou quebrar o layout.
+
+2.  **DESIGN DO MENU ELEGANTE E FLUIDO:**
+    *   **Desktop:**
+        *   Implemente um menu de navegação horizontal que seja clean, com espaçamento adequado entre os itens.
+        *   Os itens do menu devem ser os links para as principais seções da página (ex: Sobre, Procedimentos, Depoimentos, Antes & Depois, Podcast, Contato).
+        *   A tipografia deve ser moderna e legível, consistente com a identidade visual do site.
+    *   **Mobile (Menu Hambúrguer):**
+        *   Para telas menores, o menu horizontal deve ser substituído por um ícone de menu hambúrguer (três linhas horizontais).
+        *   **Animação do Ícone:** O ícone do menu hambúrguer deve ter uma animação suave ao ser clicado (ex: as três linhas se transformam em um "X" para indicar que o menu está aberto, e voltam à forma original ao fechar).
+        *   **Painel do Menu Mobile:** Ao clicar no ícone, um painel de menu deve surgir de forma elegante (ex: deslizando da lateral da tela, ou aparecendo com um efeito de fade-in e leve expansão).
+        *   O painel deve conter os links de navegação dispostos verticalmente, com bom espaçamento para facilitar o toque.
+        *   O painel deve ter uma opção clara para ser fechado (o próprio ícone "X" ou um botão "Fechar").
+
+3.  **MICROINTERAÇÕES NOS LINKS DE NAVEGAÇÃO:**
+    *   **Desktop:** Ao passar o mouse (hover) sobre um item do menu no desktop, adicione uma microinteração sutil e elegante. Sugestões:
+        *   Um sublinhado que aparece animado (deslizando da esquerda para a direita ou do centro para as extremidades).
+        *   Uma leve mudança na cor do texto ou do fundo do item.
+        *   Um pequeno ponto ou ícone que aparece ao lado do item ativo ou em hover.
+    *   **Mobile:** No painel do menu mobile, o item selecionado (se a navegação for para uma âncora na mesma página) pode ter um destaque visual diferente (ex: cor de fundo ou texto diferente).
+
+4.  **FUNCIONALIDADE "STICKY HEADER" INTELIGENTE:**
+    *   **Comportamento Fixo:** Após o usuário rolar uma pequena quantidade da página para baixo (ex: 100px ou 150px), o header deve se tornar "sticky", ou seja, fixo no topo da janela de visualização, acompanhando o scroll.
+    *   **Ocultação/Reexibição Inteligente das Opções (Desktop e Mobile):**
+        *   **Ao Rolar para Baixo:** Quando o usuário estiver rolando a página para baixo, os itens de menu (no desktop) ou o conteúdo do painel de menu (se estiver aberto no mobile) podem ser sutilmente ocultados ou o header pode reduzir sua altura para maximizar a área de visualização do conteúdo principal. O logo e, possivelmente, o ícone do menu hambúrguer (no mobile) podem permanecer visíveis.
+        *   **Ao Rolar para Cima (ou Parar de Rolar):** Quando o usuário começar a rolar a página para cima, mesmo que minimamente, ou parar de rolar, os itens de menu completos devem reaparecer suavemente.
+        *   **Transições Suaves:** Todas as mudanças de estado do header (fixar, reduzir altura, ocultar/reexibir itens) devem ocorrer com animações suaves e fluidas, sem saltos bruscos.
+    *   **Design do Sticky Header:** O header, quando fixo, pode ter uma leve alteração no design (ex: um fundo sólido com uma sombra sutil para destacá-lo do conteúdo abaixo, ou uma leve transparência).
+
+5.  **RESPONSIVIDADE E PERFORMANCE:**
+    *   **Testes Rigorosos:** Teste o header exaustivamente em diferentes navegadores e dispositivos (desktops de várias resoluções, tablets em modo paisagem e retrato, smartphones de diferentes tamanhos).
+    *   **Performance:** Todas as animações e transições devem ser otimizadas para garantir uma performance fluida (60fps) e não impactar negativamente o tempo de carregamento da página.
+
+**Resultado Esperado para esta Fase:**
+Um header e sistema de navegação principal que seja visualmente atraente, moderno, fácil de usar em todos os dispositivos, e que incorpore o logo da Dra. Hof de forma proeminente. As microinterações e o comportamento inteligente do sticky header devem contribuir para uma experiência de usuário sofisticada e profissional.
+
+Por favor, aplique estas diretrizes com atenção aos detalhes. Fico no aguardo do resultado para validação.
+```
