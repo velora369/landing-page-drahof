@@ -1,0 +1,53 @@
+## Prompt para Replit AI: Correção URGENTÍSSIMA e Redesign ALTAMENTE PRESCRITIVO dos Ícones na Seção "Procedimentos / Serviços"
+
+**Objetivo:** Corrigir e redesenhar, com MÁXIMA URGÊNCIA e seguindo descrições VISUAIS LITERAIS, os ícones utilizados nos cards da seção "Procedimentos / Serviços". Os ícones atuais continuam não representativos.
+
+**Problema Crítico:**
+- Mesmo após instruções detalhadas, os ícones nos cards de procedimentos permanecem abstratos e não permitem que o usuário identifique facilmente o serviço correspondente. Esta é a terceira tentativa e precisamos de um resultado preciso.
+
+**Contexto:**
+- Correção crítica para a Fase 5 do redesign (Seção "Procedimentos / Serviços").
+- O prompt anterior (`drahof_procedures_icons_fix_v1.txt`) não surtiu o efeito desejado.
+
+**Diretrizes VISUAIS LITERAIS para Cada Ícone (Estilo 3D Minimalista e Elegante):**
+
+**LEIA COM ATENÇÃO: Para cada ícone abaixo, a descrição é LITERAL. Siga os elementos visuais descritos.**
+
+1.  **Botox (Toxina Botulínica):**
+    *   **Descrição Visual Literal:** Um ícone 3D minimalista de uma pequena e elegante **seringa médica**. A seringa deve estar posicionada levemente na diagonal (ex: apontando para cima e para a direita). Na ponta da agulha da seringa, deve haver **uma única gota translúcida** (cor clara, como #ECE0C4 com leve brilho) prestes a sair. O corpo da seringa pode ter um tom sutil da paleta (ex: #425F70 muito claro ou um cinza elegante). Sem outros elementos.
+
+2.  **Rinomodelação:**
+    *   **Descrição Visual Literal:** Um ícone 3D minimalista de um **contorno de perfil de nariz humano, estilizado e elegante**. O contorno deve ser formado por linhas finas e suaves. Para indicar a modelagem, adicione **duas ou três pequenas setas curvas e sutis** (cor #731C13) apontando para diferentes partes do contorno do nariz (ex: uma para a ponta, outra para o dorso), sugerindo a direção da modelagem. O nariz em si pode ser de um tom neutro (#ECE0C4).
+
+3.  **Preenchimento Labial:**
+    *   **Descrição Visual Literal:** Um ícone 3D minimalista de um par de **lábios humanos (superior e inferior) estilizados e com volume sutil**. Os lábios devem ter uma forma suave e elegante. A cor dos lábios pode ser um tom rosado muito sutil ou um tom avermelhado claro da paleta (#731C13, mas mais claro e suave). Adicionar um **pequeno brilho ou destaque de luz** em um dos cantos do lábio superior para sugerir volume e hidratação.
+
+4.  **Bioestimuladores de Colágeno:**
+    *   **Descrição Visual Literal:** Um ícone 3D minimalista representando uma **estrutura helicoidal abstrata (como uma dupla hélice de DNA, mas simplificada e elegante)**, subindo suavemente. A hélice deve ser composta por duas fitas finas entrelaçadas. Ao longo das fitas, adicione **pequenos pontos de luz ou partículas brilhantes** (cor dourada clara ou #ECE0C4 com brilho) que parecem emanar ou se mover ao longo da hélice, simbolizando regeneração. Cores da paleta para a hélice (ex: #425F70 e #731C13 em tons suaves).
+
+5.  **Fios de PDO:**
+    *   **Descrição Visual Literal:** Um ícone 3D minimalista com **três ou quatro linhas muito finas e elegantes** que se curvam suavemente para cima, como se estivessem puxando algo (efeito lifting). As pontas superiores das linhas podem ter **pequenos ganchos ou setas minúsculas** viradas para cima. As linhas devem ter uma cor sutil (ex: prateado claro ou um tom de #425F70).
+
+6.  **Microagulhamento:**
+    *   **Descrição Visual Literal:** Um ícone 3D minimalista de uma pequena seção de um **cilindro de dermaroller estilizado**. Mostre apenas uma parte do cilindro com **várias agulhas minúsculas e uniformemente espaçadas** saindo dele. As agulhas devem ser muito finas e prateadas. O cilindro pode ser de uma cor neutra da paleta.
+
+7.  **Peelings Químicos:**
+    *   **Descrição Visual Literal:** Um ícone 3D minimalista de **duas ou três gotas líquidas elegantes, de tamanhos ligeiramente diferentes**, caindo ou posicionadas lado a lado. As gotas devem ter uma aparência translúcida e suave (cor #ECE0C4 com um leve brilho ou um tom muito claro de #425F70). Abaixo das gotas, uma **superfície sutilmente ondulada** pode representar a pele se renovando.
+
+8.  **(Para cada OUTRO procedimento listado na seção):** Antes de criar, PARE e me peça uma descrição visual literal para esse procedimento específico, para evitarmos retrabalho.
+
+**Estilo Visual Consistente (Reiteração):**
+*   **TODOS os ícones devem ser 3D minimalistas**, com formas limpas, sem excesso de detalhes, e uma aparência sofisticada.
+*   **Paleta de Cores:** Estritamente as cores da paleta do site (#731C13, #425F70, #ECE0C4) ou tons metálicos sutis (dourado, prateado, bronze claro) que harmonizem.
+*   **Consistência Absoluta:** Manter um tamanho, perspectiva, iluminação e nível de detalhe consistentes entre todos os ícones.
+
+**Animação Sutil no Hover (Manter):**
+*   A animação sutil no hover para o ícone 3D deve ser mantida ou implementada.
+
+**Revisão Completa:**
+*   Substituir TODOS os ícones atuais pelos novos ícones, seguindo RIGOROSAMENTE as descrições visuais literais acima.
+
+**Entregável Esperado:**
+*   A seção "Procedimentos / Serviços" com ícones 3D minimalistas que sejam IDÊNTICOS ou EXTREMAMENTE PRÓXIMOS às descrições visuais literais fornecidas para cada serviço.
+
+Esta é uma tarefa de ALTA PRIORIDADE e PRECISA ser executada corretamente desta vez. Se houver QUALQUER dúvida sobre a descrição visual de um ícone, pergunte ANTES de implementar. Após a implementação, informe para validação.

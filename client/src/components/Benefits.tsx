@@ -45,177 +45,228 @@ const ProcedureIcon3D: React.FC<Icon3DProps> = ({ icon, color, delay = 0 }) => {
           {/* Botox - seringa com gota para toxina botulínica */}
           {icon === 'botox' && (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Corpo da seringa */}
-              <rect x="5" y="10" width="12" height="4" rx="1" />
-              {/* Êmbolo */}
-              <path d="M17 12h4" />
-              {/* Agulha */}
-              <path d="M3 12h2" />
-              <path d="M2 12l-1 1" />
-              <path d="M2 12l-1-1" />
-              {/* Gota da toxina */}
-              <path d="M3.5 8.5C3.5 7.5 4 6 5 6s1.5 1.5 1.5 2.5S6 11 5 11 3.5 9.5 3.5 8.5z" />
-              {/* Linhas suavizadas - efeito do botox */}
-              <path d="M7.5 16.5s2 1.5 4.5 1.5 4.5-1.5 4.5-1.5" strokeDasharray="1 1" />
-              <path d="M7.5 18.5s2 1.5 4.5 1.5 4.5-1.5 4.5-1.5" strokeDasharray="1 1" />
+              {/* Seringa elegante posicionada na diagonal */}
+              <g transform="rotate(25, 12, 12)">
+                {/* Corpo da seringa - tom sutil da paleta */}
+                <rect x="7" y="10" width="10" height="3" rx="0.5" stroke="#425F70" fill="#F5F5F5" />
+                {/* Êmbolo */}
+                <path d="M17 11.5h3" stroke="#425F70" />
+                {/* Agulha */}
+                <path d="M3.5 11.5h3.5" stroke="#425F70" />
+                {/* Gota translúcida prestes a sair */}
+                <path d="M3.5 10.5c0-0.8 0.2-1.5 0.5-1.5s0.5 0.7 0.5 1.5-0.2 1-0.5 1-0.5-0.2-0.5-1z" fill="#ECE0C4" strokeOpacity="0.5" />
+                <circle cx="3.5" cy="10.5" r="0.5" fill="white" stroke="none" />
+              </g>
             </svg>
           )}
           
-          {/* Rinomodelação - perfil com nariz sendo modelado */}
+          {/* Rinomodelação - contorno de perfil de nariz estilizado */}
           {icon === 'rinoplastia' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Perfil facial estilizado */}
-              <path d="M14 4c0 0-1-1-2-1s-2 1-3 1c-1 0-2 0-3 1s-1 2-1 2v5c0 1 0 2 1 3s2 1 3 1h4c1 0 2 0 3-1s1-2 1-3v-4" />
-              {/* Nariz antes da modelagem (pontilhado) */}
-              <path d="M9 7c0 0 1-2 3-2s2 2 2 2" strokeDasharray="1 1" />
-              {/* Nariz após modelagem (linha sólida) */}
-              <path d="M9 7c0 0 1-1 3-1s2 1 2 1" />
-              {/* Seta indicando a transformação */}
-              <path d="M11 12l2-3" />
-              <path d="M13 9l1 1" />
-              <path d="M13 9l0 2" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Contorno de perfil de nariz elegante */}
+              <path d="M9 7c0 0 1.5-3 3-3s3 1 4 3c1 2 0 5-1 7s-2 3-3 3" stroke="#ECE0C4" fill="none" />
+              
+              {/* Setas curvas e sutis indicando a modelagem */}
+              {/* Seta para a ponta do nariz */}
+              <path d="M8 10c0.5 0.5 1 0.8 1.5 0.2" stroke="#731C13" fill="none" />
+              <path d="M8 10l0.5-0.5" stroke="#731C13" fill="none" />
+              <path d="M8 10l0.5 0.5" stroke="#731C13" fill="none" />
+              
+              {/* Seta para o dorso */}
+              <path d="M14 8c0.5-0.5 1-0.8 1.5-0.2" stroke="#731C13" fill="none" />
+              <path d="M14 8l0.5-0.5" stroke="#731C13" fill="none" />
+              <path d="M14 8l0.5 0.5" stroke="#731C13" fill="none" />
+              
+              {/* Seta para a base do nariz */}
+              <path d="M11 16c0.5 0.5 1 0.8 1.5 0.2" stroke="#731C13" fill="none" />
+              <path d="M11 16l0.5-0.5" stroke="#731C13" fill="none" />
+              <path d="M11 16l0.5 0.5" stroke="#731C13" fill="none" />
             </svg>
           )}
           
-          {/* Preenchimento Labial - lábios com efeito de volume */}
+          {/* Preenchimento Labial - lábios estilizados com volume */}
           {icon === 'preenchimento' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Lábio superior */}
-              <path d="M8 11c1.5-1 3-1.5 4-1.5s2.5 0.5 4 1.5" />
-              {/* Lábio inferior */}
-              <path d="M8 13c1.5 1 3 1.5 4 1.5s2.5-0.5 4-1.5" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Lábio superior com volume sutil */}
+              <path d="M7 10c1.5-1 4-1.3 5-1.3s3.5 0.3 5 1.3" stroke="#731C13" strokeOpacity="0.7" fill="#F8D4D4" />
+              {/* Lábio inferior com volume sutil */}
+              <path d="M7 14c1.5 1 4 1.3 5 1.3s3.5-0.3 5-1.3" stroke="#731C13" strokeOpacity="0.7" fill="#F8D4D4" />
               {/* Linha central dos lábios */}
-              <path d="M8 12h8" />
-              {/* Indicação de preenchimento/volume */}
-              <path d="M7 8l2 2" />
-              <path d="M7 8l0 2" />
-              <path d="M17 8l-2 2" />
-              <path d="M17 8l0 2" />
-              <path d="M7 16l2-2" />
-              <path d="M7 16l0-2" />
-              <path d="M17 16l-2-2" />
-              <path d="M17 16l0-2" />
-              {/* Gota simbolizando o preenchimento */}
-              <path d="M12 6.5c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              <path d="M7 12h10" stroke="#731C13" strokeOpacity="0.8" />
+              
+              {/* Brilho/destaque no lábio superior para sugerir volume */}
+              <circle cx="15" cy="9.5" r="0.5" fill="white" stroke="none" />
+              <circle cx="14" cy="9.8" r="0.3" fill="white" stroke="none" />
+              
+              {/* Curvatura do arco de cupido */}
+              <path d="M11.5 10.2C11.5 10 12 9.5 12.5 9.5s1 0.5 1 0.7" stroke="#731C13" strokeOpacity="0.8" strokeWidth="0.75" />
             </svg>
           )}
           
-          {/* Bioestimuladores - moléculas de colágeno regenerando */}
+          {/* Bioestimuladores - estrutura helicoidal com partículas brilhantes */}
           {icon === 'bioestimulador' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Moléculas/células se regenerando */}
-              <circle cx="12" cy="12" r="3" />
-              <circle cx="7" cy="9" r="1.5" />
-              <circle cx="17" cy="9" r="1.5" />
-              <circle cx="7" cy="15" r="1.5" />
-              <circle cx="17" cy="15" r="1.5" />
-              {/* Conexões entre moléculas - estrutura do colágeno */}
-              <path d="M9 10.5l1.5 1" />
-              <path d="M13.5 10.5l1.5-1" />
-              <path d="M9 13.5l1.5-1" />
-              <path d="M13.5 13.5l1.5 1" />
-              {/* Setas simbolizando crescimento e regeneração */}
-              <path d="M12 5v1" />
-              <path d="M11 5.5l1 0.5" />
-              <path d="M13 5.5l-1 0.5" />
-              <path d="M12 19v-1" />
-              <path d="M11 18.5l1-0.5" />
-              <path d="M13 18.5l-1-0.5" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Estrutura helicoidal simplificada (dupla hélice) */}
+              <path d="M8 18c0-6 2-12 2-12" stroke="#425F70" fill="none" strokeDasharray="0 2.1" strokeWidth="1.2" />
+              <path d="M14 6c0 6 2 12 2 12" stroke="#425F70" fill="none" strokeDasharray="0 2.1" strokeWidth="1.2" />
+              
+              {/* Linha fina da hélice 1 */}
+              <path d="M8 18c0-6 2-12 2-12" stroke="#425F70" fill="none" />
+              {/* Linha fina da hélice 2 */}
+              <path d="M14 6c0 6 2 12 2 12" stroke="#425F70" fill="none" />
+              
+              {/* Conexões entre as hélices */}
+              <path d="M10 6l4 0" stroke="#425F70" strokeWidth="0.75" />
+              <path d="M9 9l6 0" stroke="#425F70" strokeWidth="0.75" />
+              <path d="M8 12l8 0" stroke="#425F70" strokeWidth="0.75" />
+              <path d="M9 15l6 0" stroke="#425F70" strokeWidth="0.75" />
+              <path d="M10 18l4 0" stroke="#425F70" strokeWidth="0.75" />
+              
+              {/* Partículas brilhantes/pontos de luz ao longo da hélice */}
+              <circle cx="10" cy="6" r="0.6" fill="#ECE0C4" stroke="none" />
+              <circle cx="14" cy="6" r="0.6" fill="#ECE0C4" stroke="none" />
+              <circle cx="9" cy="9" r="0.6" fill="#ECE0C4" stroke="none" />
+              <circle cx="15" cy="9" r="0.5" fill="#ECE0C4" stroke="none" />
+              <circle cx="8" cy="12" r="0.7" fill="#ECE0C4" stroke="none" />
+              <circle cx="16" cy="12" r="0.5" fill="#ECE0C4" stroke="none" />
+              <circle cx="9" cy="15" r="0.5" fill="#ECE0C4" stroke="none" />
+              <circle cx="15" cy="15" r="0.6" fill="#ECE0C4" stroke="none" />
+              <circle cx="10" cy="18" r="0.6" fill="#ECE0C4" stroke="none" />
+              <circle cx="14" cy="18" r="0.6" fill="#ECE0C4" stroke="none" />
+              
+              {/* Brilhos extras para efeito de regeneração */}
+              <circle cx="12" cy="6" r="0.3" fill="white" stroke="none" />
+              <circle cx="12" cy="12" r="0.4" fill="white" stroke="none" />
+              <circle cx="12" cy="18" r="0.3" fill="white" stroke="none" />
             </svg>
           )}
           
-          {/* Fios de PDO - linhas entrelaçadas criando efeito lifting */}
+          {/* Fios de PDO - linhas finas curvas que se elevam */}
           {icon === 'fiosPDO' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Contorno facial estilizado */}
-              <path d="M7 6c0 0 2-2 5-2s5 2 5 2" />
-              <path d="M6 8c0 0 3-1 6-1s6 1 6 1" />
-              <path d="M5 12c0 0 3.5 0 7 0s7 0 7 0" />
-              <path d="M6 16c0 0 2.5 1 6 1s6-1 6-1" />
-              <path d="M7 18c0 0 2 2 5 2s5-2 5-2" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Três ou quatro linhas muito finas e elegantes que se curvam suavemente para cima */}
+              <path d="M7 18c0 0 0.5-5 0.5-10S9 6 9 6" stroke="#425F70" fill="none" />
+              <path d="M11 18c0 0 0.5-6 0.5-10S13 6 13 6" stroke="#425F70" fill="none" />
+              <path d="M15 18c0 0 0.5-5 0.5-10S17 6 17 6" stroke="#425F70" fill="none" />
+              <path d="M9 18c0 0 0.5-7 0.5-11S11 5 11 5" stroke="#425F70" fill="none" strokeOpacity="0.5" />
               
-              {/* Fios de PDO - linhas tensoras */}
-              <path d="M9 8l0 8" strokeDasharray="1 1" />
-              <path d="M12 7l0 10" strokeDasharray="1 1" />
-              <path d="M15 8l0 8" strokeDasharray="1 1" />
+              {/* Pequenos ganchos ou setas minúsculas viradas para cima */}
+              <path d="M9 6l-0.5-0.5" stroke="#425F70" fill="none" />
+              <path d="M9 6l0.5-0.5" stroke="#425F70" fill="none" />
               
-              {/* Setas indicando o efeito lifting */}
-              <path d="M7 11l1-1" />
-              <path d="M8 10l0 1" />
-              <path d="M17 11l-1-1" />
-              <path d="M16 10l0 1" />
+              <path d="M13 6l-0.5-0.5" stroke="#425F70" fill="none" />
+              <path d="M13 6l0.5-0.5" stroke="#425F70" fill="none" />
+              
+              <path d="M17 6l-0.5-0.5" stroke="#425F70" fill="none" />
+              <path d="M17 6l0.5-0.5" stroke="#425F70" fill="none" />
+              
+              <path d="M11 5l-0.5-0.5" stroke="#425F70" fill="none" strokeOpacity="0.5" />
+              <path d="M11 5l0.5-0.5" stroke="#425F70" fill="none" strokeOpacity="0.5" />
+              
+              {/* Indicação sutil do efeito lifting */}
+              <path d="M7 16c1 0 2-1 3-1s2 1 4 1 3-1 4-1" stroke="#425F70" strokeOpacity="0.3" fill="none" />
+              <path d="M7 14c1 0 2-1 3-1s2 1 4 1 3-1 4-1" stroke="#425F70" strokeOpacity="0.3" fill="none" strokeDasharray="1 1" />
             </svg>
           )}
           
-          {/* Microagulhamento - representação de dermaroller */}
+          {/* Microagulhamento - cilindro de dermaroller estilizado */}
           {icon === 'microagulhamento' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Dermaroller */}
-              <path d="M6 12h12" />
-              <path d="M7 10v4" />
-              <path d="M17 10v4" />
-              <path d="M5 9v6" />
-              <path d="M19 9v6" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Cilindro principal do dermaroller (parte central) */}
+              <path d="M6 12h12" stroke="#AAAAAA" />
+              <path d="M18 10v4" stroke="#AAAAAA" />
+              <path d="M6 10v4" stroke="#AAAAAA" />
               
-              {/* Microagulhas */}
-              <path d="M8 8v3" strokeWidth="0.75" />
-              <path d="M10 8v3" strokeWidth="0.75" />
-              <path d="M12 8v3" strokeWidth="0.75" />
-              <path d="M14 8v3" strokeWidth="0.75" />
-              <path d="M16 8v3" strokeWidth="0.75" />
+              {/* Partes extremas do cilindro (cabo) */}
+              <path d="M4 11v2" stroke="#AAAAAA" />
+              <path d="M20 11v2" stroke="#AAAAAA" />
+              <path d="M4 12h2" stroke="#AAAAAA" />
+              <path d="M18 12h2" stroke="#AAAAAA" />
               
-              <path d="M8 16v-3" strokeWidth="0.75" />
-              <path d="M10 16v-3" strokeWidth="0.75" />
-              <path d="M12 16v-3" strokeWidth="0.75" />
-              <path d="M14 16v-3" strokeWidth="0.75" />
-              <path d="M16 16v-3" strokeWidth="0.75" />
+              {/* Agulhas minúsculas e uniformemente espaçadas - coluna 1 */}
+              <path d="M8 8v4" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M8 8l-0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M8 8l0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
               
-              {/* Pele simbolizada */}
-              <path d="M3 18c2 0 4 0 9 0s9 0 9 0" strokeDasharray="1 1" />
+              {/* Agulhas coluna 2 */}
+              <path d="M10 8v4" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M10 8l-0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M10 8l0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              
+              {/* Agulhas coluna 3 */}
+              <path d="M12 8v4" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M12 8l-0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M12 8l0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              
+              {/* Agulhas coluna 4 */}
+              <path d="M14 8v4" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M14 8l-0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M14 8l0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              
+              {/* Agulhas coluna 5 */}
+              <path d="M16 8v4" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M16 8l-0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              <path d="M16 8l0.2 -0.5" stroke="#C0C0C0" strokeWidth="0.6" />
+              
+              {/* Reflexos de luz no cilindro */}
+              <path d="M8 11h8" stroke="#FFFFFF" strokeWidth="0.75" strokeOpacity="0.5" />
+              <path d="M8 13h8" stroke="#888888" strokeWidth="0.5" strokeOpacity="0.3" />
             </svg>
           )}
           
-          {/* Peelings Químicos - camadas da pele se renovando */}
+          {/* Peelings Químicos - gotas líquidas e superfície ondulada */}
           {icon === 'peeling' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Camadas da pele */}
-              <path d="M4 18c2-1 5-2 8-2s6 1 8 2" />
-              <path d="M4 14c2-1 5-2 8-2s6 1 8 2" />
-              <path d="M4 10c2-1 5-2 8-2s6 1 8 2" />
-              <path d="M4 6c2-1 5-2 8-2s6 1 8 2" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Três gotas líquidas elegantes de tamanhos ligeiramente diferentes */}
+              {/* Gota 1 - maior */}
+              <path d="M9 13c0-2.5 1.5-4 1.5-4s1.5 1.5 1.5 4-1.5 3-1.5 3-1.5-0.5-1.5-3z" fill="#ECE0C4" fillOpacity="0.6" stroke="#425F70" strokeOpacity="0.6" />
               
-              {/* Gotas de peeling/ácido */}
-              <path d="M8 4.5c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
-              <path d="M15 6.5c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              {/* Gota 2 - média */}
+              <path d="M14 11c0-1.5 1-2.5 1-2.5s1 1 1 2.5-1 2-1 2-1-0.5-1-2z" fill="#ECE0C4" fillOpacity="0.7" stroke="#425F70" strokeOpacity="0.6" />
               
-              {/* Renovação celular */}
-              <path d="M12 15v2" />
-              <path d="M11 16h2" />
-              <path d="M10 6l2 2 2-2" strokeDasharray="0.75 0.75" />
+              {/* Gota 3 - menor */}
+              <path d="M6 10c0-1 0.7-1.5 0.7-1.5s0.7 0.5 0.7 1.5-0.7 1.2-0.7 1.2-0.7-0.2-0.7-1.2z" fill="#ECE0C4" fillOpacity="0.8" stroke="#425F70" strokeOpacity="0.6" />
+              
+              {/* Brilho nas gotas */}
+              <circle cx="10.5" cy="10" r="0.3" fill="white" stroke="none" />
+              <circle cx="14.5" cy="9.5" r="0.25" fill="white" stroke="none" />
+              <circle cx="6.5" cy="9" r="0.15" fill="white" stroke="none" />
+              
+              {/* Superfície sutilmente ondulada representando a pele se renovando */}
+              <path d="M5 18c1-0.5 2-0.7 3.5-0.7s3 0.5 4.5 0.7 3 0 4.5-0.5 1.5-0.5 2.5-0.3" stroke="#425F70" strokeOpacity="0.7" fill="none" />
+              <path d="M5 16c1-0.5 2-0.7 3.5-0.7s3 0.5 4.5 0.7 3 0 4.5-0.5 1.5-0.5 2.5-0.3" stroke="#425F70" strokeOpacity="0.4" fill="none" strokeDasharray="0.75 0.75" />
             </svg>
           )}
           
           {/* Skinbooster - hidratação profunda */}
           {icon === 'default' && (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-              {/* Contorno facial estilizado */}
-              <path d="M8 5c2-1 3-1 4-1s2 0 4 1" />
-              <path d="M6 8c2-1 4-2 6-2s4 1 6 2" />
-              <path d="M5 12c2-1 4-2 7-2s5 1 7 2" />
-              <path d="M6 16c2-1 4-2 6-2s4 1 6 2" />
-              <path d="M8 19c2-1 3-1 4-1s2 0 4 1" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              {/* Contorno facial estilizado com aparência hidratada */}
+              <path d="M8 5c0 0 2-1 4-1s4 1 4 1" stroke="#425F70" strokeOpacity="0.5" />
+              <path d="M7 8c0 0 2.5-2 5-2s5 2 5 2" stroke="#425F70" strokeOpacity="0.5" />
+              <path d="M6 12c0 0 3-2 6-2s6 2 6 2" stroke="#425F70" strokeOpacity="0.5" />
+              <path d="M7 16c0 0 2.5-2 5-2s5 2 5 2" stroke="#425F70" strokeOpacity="0.5" />
+              <path d="M8 19c0 0 2-1 4-1s4 1 4 1" stroke="#425F70" strokeOpacity="0.5" />
               
-              {/* Gotas de hidratação */}
-              <path d="M10 9c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
-              <path d="M13 13c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
-              <path d="M9 15c0-0.5 0.2-1 0.5-1s0.5 0.5 0.5 1-0.2 1-0.5 1-0.5-0.5-0.5-1z" />
+              {/* Várias gotas de água elegantes para hidratação */}
+              <path d="M8 10c0-1.5 0.8-2 0.8-2s0.8 0.5 0.8 2-0.8 1.5-0.8 1.5-0.8-0.5-0.8-1.5z" fill="#ECE0C4" fillOpacity="0.6" stroke="#425F70" strokeOpacity="0.4" />
+              <path d="M12 8c0-1.5 1-2.5 1-2.5s1 1 1 2.5-1 2-1 2-1-0.5-1-2z" fill="#ECE0C4" fillOpacity="0.8" stroke="#425F70" strokeOpacity="0.4" />
+              <path d="M15.5 10c0-1 0.5-1.5 0.5-1.5s0.5 0.5 0.5 1.5-0.5 1-0.5 1-0.5-0.3-0.5-1z" fill="#ECE0C4" fillOpacity="0.7" stroke="#425F70" strokeOpacity="0.4" />
+              <path d="M10 14c0-1.2 0.7-2 0.7-2s0.7 0.8 0.7 2-0.7 1.5-0.7 1.5-0.7-0.5-0.7-1.5z" fill="#ECE0C4" fillOpacity="0.7" stroke="#425F70" strokeOpacity="0.4" />
+              <path d="M14 15c0-1 0.5-1.5 0.5-1.5s0.5 0.5 0.5 1.5-0.5 1-0.5 1-0.5-0.3-0.5-1z" fill="#ECE0C4" fillOpacity="0.6" stroke="#425F70" strokeOpacity="0.4" />
               
-              {/* Efeito de brilho/hidratação */}
-              <path d="M14 7l1-1" />
-              <path d="M16 9l1-1" />
-              <path d="M16 15l1 1" />
-              <path d="M7 9l-1-1" />
-              <path d="M7 15l-1 1" />
+              {/* Brilhos nas gotas para efeito de hidratação */}
+              <circle cx="8.8" cy="8.8" r="0.2" fill="white" stroke="none" />
+              <circle cx="13" cy="7" r="0.25" fill="white" stroke="none" />
+              <circle cx="16" cy="9.3" r="0.15" fill="white" stroke="none" />
+              <circle cx="10.7" cy="13" r="0.2" fill="white" stroke="none" />
+              <circle cx="14.5" cy="14.3" r="0.15" fill="white" stroke="none" />
+              
+              {/* Efeitos luminosos adicionais */}
+              <path d="M7 7l0.5-0.5" stroke="#ECE0C4" strokeOpacity="0.8" />
+              <path d="M17 7l-0.5-0.5" stroke="#ECE0C4" strokeOpacity="0.8" />
+              <path d="M7 17l0.5 0.5" stroke="#ECE0C4" strokeOpacity="0.8" />
+              <path d="M17 17l-0.5 0.5" stroke="#ECE0C4" strokeOpacity="0.8" />
             </svg>
           )}
         </motion.div>
