@@ -1,0 +1,52 @@
+## Prompt para Replit AI: Criação do Placeholder para Seção "Podcast" (v2 - Texto Atualizado)
+
+**Objetivo:** Criar um placeholder visualmente impactante e informativo para a futura seção "Podcast" do site da Dra. Hof, com texto atualizado conforme solicitação. A seção deve gerar expectativa e se integrar harmoniosamente ao design sofisticado e moderno do site.
+
+**Contexto:**
+- Esta é a Fase 8 do redesign do site.
+- O podcast ainda não está disponível, então esta seção servirá como um "Em Breve".
+- Manter a paleta de cores (#731C13, #425F70, #ECE0C4) e o estilo visual geral do site.
+- **Atualização Importante:** O texto descritivo para um possível destaque ou card dentro desta seção, chamado "Bate papo delas", foi refinado.
+
+**Diretrizes Detalhadas para o Placeholder da Seção "Podcast":**
+
+1.  **Layout Geral e Título da Seção:**
+    *   **Título da Seção:** Um título claro como "Podcast Dra. Hof", "Nosso Podcast" ou similar, com destaque e alinhado à tipografia do site.
+    *   **Altura da Seção:** A seção deve ter uma altura considerável para acomodar o placeholder visual e o texto de forma equilibrada, sem ser excessivamente grande.
+
+2.  **Placeholder Visual Impactante (Elemento Central):**
+    *   **Conceito:** O objetivo é criar um elemento visual que remeta a áudio/podcast de forma elegante e moderna. Algumas ideias (escolher UMA ou propor uma similar que se encaixe melhor):
+        *   **Ideia 1 (Microfone 3D Futurista):** Um modelo 3D de um microfone de estúdio com design futurista e minimalista. O microfone pode ter uma animação sutil (ex: um leve brilho pulsante, ou pequenas partículas de luz emanando dele). Cores da paleta ou tons metálicos sutis.
+        *   **Ideia 2 (Ondas Sonoras 3D Abstratas):** Uma representação artística de ondas sonoras em 3D, com formas fluidas e elegantes. As ondas podem ter uma animação suave de movimento ou pulsação. Cores da paleta, talvez com gradientes sutis.
+        *   **Ideia 3 (Headphone Estilizado com Logo):** Um headphone de alta qualidade, estilizado e minimalista, talvez com o logo da Dra. Hof sutilmente incorporado, e um fundo que sugira um estúdio ou ambiente de gravação de forma abstrata.
+    *   **Posicionamento:** O elemento visual deve ser o ponto focal da seção, centralizado ou posicionado de forma a criar um layout interessante com o texto.
+    *   **Qualidade:** Se for um elemento 3D, deve ter alta qualidade de modelagem e renderização, alinhado com os outros elementos 3D do site (se houver).
+
+3.  **Texto Informativo Claro:**
+    *   **Mensagem Principal "Em Breve":** Um texto claro indicando que o podcast está a caminho. Exemplos:
+        *   "Podcast da Dra. Hof: Em Breve!"
+        *   "Fique ligado! Nosso podcast sobre saúde, beleza e bem-estar está chegando."
+        *   "Aguarde! Dicas e insights exclusivos no Podcast da Dra. Hof."
+    *   **Destaque para "Bate papo delas" (NOVO TEXTO):**
+        *   Se houver um elemento, card ou subtítulo específico chamado "Bate papo delas" dentro desta seção placeholder, ou se for para criar um, utilize EXATAMENTE a seguinte descrição para ele:
+            **"Um espaço para explorar temas relevantes do cotidiano feminino com leveza e profundidade."**
+        *   Este texto deve ser apresentado de forma elegante, talvez com um pouco menos de destaque que a mensagem principal de "Em Breve", mas ainda claramente legível e integrado ao design.
+    *   **Tipografia:** Utilizar a tipografia do site, garantindo excelente legibilidade e hierarquia (título da seção, mensagem principal, descrição do "Bate papo delas").
+    *   **Chamada para Ação (Opcional e Futuro):** Poderia haver um espaço reservado ou uma sugestão para, no futuro, adicionar um campo de inscrição para ser notificado sobre o lançamento do podcast. Por enquanto, focar no "Em Breve" e na descrição acima.
+
+4.  **Design e Atmosfera:**
+    *   **Sofisticação e Modernidade:** O design geral deve ser sofisticado, moderno e gerar uma sensação de antecipação positiva.
+    *   **Fundo da Seção:** Pode ser um fundo neutro da paleta, um gradiente sutil ou uma textura muito discreta que complemente o placeholder visual.
+
+5.  **Responsividade:**
+    *   Garantir que o placeholder visual e todo o texto (incluindo a nova descrição) se adaptem perfeitamente a todas as resoluções de tela (desktop, tablets e smartphones), mantendo o impacto visual e a legibilidade.
+
+**O que NÃO fazer:**
+*   Não usar imagens ou elementos visuais genéricos de "Em Breve".
+*   Evitar um design que pareça uma página de erro ou construção básica.
+*   Não sobrecarregar a seção com muitos elementos; o foco é no placeholder visual e na mensagem clara.
+
+**Entregável Esperado:**
+*   A seção "Podcast (Em Breve)" implementada com um placeholder visual impactante, texto informativo claro (incluindo a descrição atualizada para "Bate papo delas"), e design totalmente responsivo e alinhado com a identidade visual do site.
+
+Por favor, proceda com a criação/atualização desta seção placeholder. Após a implementação, informe para que possamos validar o resultado.

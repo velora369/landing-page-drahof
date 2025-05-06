@@ -157,7 +157,7 @@ export default function Podcast() {
     {
       icon: "comments",
       title: "Bate papo delas",
-      description: "Tópicos variados comentados com vocês (especial para mulherada)",
+      description: "Um espaço para explorar temas relevantes do cotidiano feminino com leveza e profundidade.",
       color: "#5D4037"
     },
     {
