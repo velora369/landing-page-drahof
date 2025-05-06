@@ -1,0 +1,39 @@
+### Solicitação de Ajuste Urgente e Preciso na Subseção "Mais Casos Clínicos" (Seção "Resultados Reais") - Versão 3
+
+**Objetivo:** Garantir a remoção definitiva de todos os cards indesejados da galeria "Mais Casos Clínicos", mantendo **exclusivamente e apenas dois cards específicos**, identificados pelos seus textos exatos. Esta é uma tentativa de correção, pois as versões anteriores não foram suficientes.
+
+**Contexto:**
+Apesar das tentativas anteriores (v1 e v2), a galeria "Mais Casos Clínicos" ainda exibe cards que deveriam ter sido removidos. É crucial que desta vez a remoção seja completa e precisa, deixando apenas os dois cards corretos.
+
+**Requisitos Detalhados e Imperativos:**
+
+1.  **Slider Interativo Principal:**
+    *   Este componente deve permanecer **INTACTO** e funcional.
+
+2.  **Ajustes na Subseção "Mais Casos Clínicos" (Galeria de Thumbnails/Exemplos Adicionais):**
+    *   **APENAS OS SEGUINTES DOIS (2) CARDS DEVEM PERMANECER. TODOS OS DEMAIS, SEM EXCEÇÃO, DEVEM SER REMOVIDOS DESTA GALERIA:**
+        *   **Card a ser MANTIDO 1 (Identificado pelos textos exatos):** O card que contém os textos "Harmonização Completa" E "Harmonização Facial".
+        *   **Card a ser MANTIDO 2 (Identificado pelos textos exatos):** O card que contém os textos "Definição Mandibular" E "Contorno Facial" E "Ver comparação".
+    *   **AÇÃO CRÍTICA: REMOÇÃO TOTAL DOS DEMAIS CARDS.** Qualquer outro card/thumbnail presente na galeria "Mais Casos Clínicos" que não corresponda EXATAMENTE aos critérios de texto dos dois cards acima deve ser **COMPLETAMENTE REMOVIDO**.
+    *   **Verificação:** Ao final da tarefa, a galeria "Mais Casos Clínicos" deve conter **APENAS E SOMENTE** os dois cards especificados. Se houver mais de dois cards, ou se um dos cards especificados estiver faltando, a tarefa não foi concluída corretamente.
+
+3.  **Layout e Consistência Visual:**
+    *   Após a remoção dos itens indesejados e a manutenção exclusiva dos dois cards corretos, o layout da galeria "Mais Casos Clínicos" deve ser ajustado, se necessário, para que os dois cards restantes sejam apresentados de forma equilibrada e esteticamente agradável (ex: centralizados, ocupando o espaço de forma harmoniosa, etc.).
+    *   A responsividade da seção em todos os dispositivos deve ser mantida.
+
+**Instruções Estratégicas para o Replit AI (Dada a Dificuldade Anterior):**
+*   Acesse a seção "Resultados Reais" (ou "Antes & Depois").
+*   Localize a subseção/galeria "Mais Casos Clínicos".
+*   **Prioridade Máxima na Identificação Correta:**
+    1.  Primeiro, tente identificar os DOIS cards a serem MANTIDOS usando os textos exatos fornecidos.
+    2.  Em seguida, **REMOVA TODOS OS OUTROS CARDS** que não são esses dois.
+*   **Se a Identificação por Texto Falhar Novamente:**
+    *   Por favor, tente inspecionar o código HTML/CSS dos cards na galeria.
+    *   Procure por classes CSS, IDs, atributos `data-*`, ou qualquer outro identificador único que possa distinguir os cards a serem MANTIDOS dos cards a serem REMOVIDOS.
+    *   Se possível, antes de remover, liste os cards que você identificou para remoção ou descreva a sua estratégia de identificação e remoção para que possamos entender melhor o processo caso o problema persista.
+*   Ajuste o layout da galeria para os dois cards restantes, se necessário.
+
+**Resultado Esperado (Não Negociável):**
+Uma seção "Resultados Reais" com o slider principal intacto e uma subseção "Mais Casos Clínicos" contendo **EXATAMENTE DOIS (2) CARDS**: o card de "Harmonização Completa/Facial" e o card de "Definição Mandibular/Contorno Facial/Ver comparação". Nenhum outro card deve estar presente nesta galeria.
+
+Por favor, implemente este ajuste com máxima atenção e precisão. Esta correção é prioritária. Informe quando estiver pronto para validação.
