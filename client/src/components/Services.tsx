@@ -188,38 +188,38 @@ export default function Services() {
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent className="max-w-xl bg-white/95 backdrop-blur-sm">
           {selectedProcedure !== null && (
-            <AnimatePresence>
-              <DialogHeader>
-                <DialogTitle className="font-['Cormorant_Garamond'] text-2xl font-bold text-[#731C13]">
-                  {procedures[selectedProcedure].title}
-                </DialogTitle>
-                <DialogDescription>
-                  <div className="mt-4 mb-2 h-[1px] w-32 bg-[#731C13]/20"></div>
-                  <motion.p 
-                    className="text-base text-gray-700 leading-relaxed mt-4"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
+              <div className="procedure-details">
+                <DialogHeader>
+                  <DialogTitle className="font-['Cormorant_Garamond'] text-2xl font-bold text-[#731C13]">
+                    {procedures[selectedProcedure].title}
+                  </DialogTitle>
+                  <DialogDescription>
+                    <div className="mt-4 mb-2 h-[1px] w-32 bg-[#731C13]/20"></div>
+                    <motion.p 
+                      className="text-base text-gray-700 leading-relaxed mt-4"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      {procedures[selectedProcedure].detailedDescription}
+                    </motion.p>
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-6 flex justify-between items-center">
+                  <div className="text-sm text-gray-500">
+                    <svg className="w-5 h-5 inline-block mr-1 text-[#731C13]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Procedimento personalizado de acordo com cada caso
+                  </div>
+                  <Button 
+                    className="bg-[#731C13] hover:bg-[#731C13]/90 text-white"
+                    onClick={() => setOpenDialog(false)}
                   >
-                    {procedures[selectedProcedure].detailedDescription}
-                  </motion.p>
-                </DialogDescription>
-              </DialogHeader>
-              <div className="mt-6 flex justify-between items-center">
-                <div className="text-sm text-gray-500">
-                  <svg className="w-5 h-5 inline-block mr-1 text-[#731C13]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Procedimento personalizado de acordo com cada caso
+                    Fechar
+                  </Button>
                 </div>
-                <Button 
-                  className="bg-[#731C13] hover:bg-[#731C13]/90 text-white"
-                  onClick={() => setOpenDialog(false)}
-                >
-                  Fechar
-                </Button>
               </div>
-            </AnimatePresence>
           )}
         </DialogContent>
       </Dialog>

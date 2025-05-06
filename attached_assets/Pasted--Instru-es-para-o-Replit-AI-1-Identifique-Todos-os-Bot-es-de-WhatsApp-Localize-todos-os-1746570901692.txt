@@ -1,0 +1,25 @@
+**Instruções para o Replit AI:**
+
+1.  **Identifique Todos os Botões de WhatsApp:** Localize todos os botões no site que têm como função redirecionar o usuário para o WhatsApp. Isso inclui, mas não se limita a, o botão "Quero garantir minha vaga!" e o botão "Agendar pelo WhatsApp".
+
+2.  **Ajuste da Cor de Fundo do Botão:**
+    *   Altere a cor de fundo desses botões para uma cor que ofereça um contraste significativamente maior em relação ao fundo da seção onde estão inseridos (atualmente um tom avermelhado/marrom, conforme a imagem).
+    *   A nova cor deve ainda pertencer ou harmonizar com a paleta de cores existente do site da Dra. Hof, mantendo a identidade visual profissional.
+    *   Considere opções como um tom mais vibrante da paleta atual, um tom claro que se destaque no fundo escuro, ou uma cor complementar que seja visualmente agradável e acessível.
+
+3.  **Ajuste da Cor do Texto do Botão:**
+    *   Garanta que a cor do texto (e do ícone do WhatsApp, se presente dentro do botão) tenha um alto contraste com a nova cor de fundo do botão.
+    *   Se o botão ficar mais escuro, o texto deve ser claro (ex: branco ou um tom pastel muito claro da paleta). Se o botão ficar mais claro, o texto deve ser escuro.
+
+4.  **Consistência nos Estados do Botão:**
+    *   Aplique essas melhorias de contraste para todos os estados dos botões (normal, hover, focus, active), garantindo que o botão permaneça destacado e legível durante a interação do usuário.
+
+5.  **Verificação de Acessibilidade:**
+    *   Após a alteração, verifique se as novas combinações de cores atendem aos critérios de contraste recomendados pelas diretrizes de acessibilidade (WCAG AA ou AAA, se possível).
+
+**Exemplo de Foco (baseado na imagem):**
+*   O botão "Quero garantir minha vaga!" atualmente tem um fundo azul-acinzentado sobre um fundo da página vermelho-escuro/marrom. O texto do botão é claro.
+*   **Ação Sugerida:** Tornar o fundo do botão mais claro e/ou mais vibrante para se destacar do fundo da página, e garantir que o texto do botão continue altamente legível contra esse novo fundo.
+
+Por favor, aplique esta melhoria de contraste em todos os botões de WhatsApp do site para otimizar a experiência do usuário e potencializar as conversões.
+```
