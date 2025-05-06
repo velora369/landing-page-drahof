@@ -1,0 +1,34 @@
+## Prompt para Replit AI: Correção URGENTE da Imagem na Seção "Sobre a Dra. HOF"
+
+**Objetivo:** Corrigir a exibição da imagem da Dra. Hof na seção "Sobre a Dra. HOF". Atualmente, a imagem não está aparecendo e um ícone de interrogação (?) é exibido em seu lugar.
+
+**Problema Identificado:**
+- A imagem da Dra. Hof na seção "Sobre" não está sendo carregada, provavelmente devido a um caminho de arquivo (src) incorreto ou à ausência do arquivo de imagem no local esperado.
+
+**Contexto:**
+- Esta correção é para a Fase 4 do redesign do site (Seção "Sobre a Dra. HOF").
+- O prompt original para o redesign desta seção (`drahof_about_section_redesign_v1.txt`) já foi enviado e estava sendo implementado.
+
+**Diretrizes Detalhadas para a Correção:**
+
+1.  **Verificar o Caminho da Imagem (Atributo `src`):**
+    *   Inspecione o código HTML/componente da seção "Sobre a Dra. HOF" para localizar a tag `<img>` (ou equivalente) responsável por exibir a foto da Dra. Hof.
+    *   Verifique cuidadosamente o valor do atributo `src` desta imagem.
+    *   Confirme se o caminho especificado no `src` aponta para o local correto onde a imagem da Dra. Hof está armazenada no projeto (por exemplo, `/images/dra-hof.jpg`, `/assets/images/dra-jana-hof.png`, etc.).
+
+2.  **Confirmar a Existência e Nome do Arquivo:**
+    *   Verifique se o arquivo de imagem da Dra. Hof realmente existe no caminho especificado.
+    *   Confirme se o nome do arquivo (incluindo a extensão .jpg, .png, .webp, etc.) está escrito exatamente da mesma forma no código e no sistema de arquivos (sensível a maiúsculas e minúsculas em alguns ambientes).
+
+3.  **Corrigir o Caminho ou o Arquivo:**
+    *   Se o caminho no atributo `src` estiver incorreto, atualize-o para o caminho correto.
+    *   Se o nome do arquivo estiver incorreto no código, corrija-o.
+    *   Se o arquivo de imagem estiver faltando no projeto, ele precisa ser adicionado ao local correto. Se você não tiver a imagem, por favor, informe para que possamos providenciá-la. (Para este prompt, assuma que a imagem deveria estar disponível no projeto conforme o design original).
+
+4.  **Testar a Exibição:**
+    *   Após a correção, verifique se a imagem da Dra. Hof está sendo exibida corretamente na seção "Sobre", tanto em visualizações desktop quanto mobile.
+
+**Entregável Esperado:**
+*   A imagem da Dra. Hof aparecendo corretamente na seção "Sobre a Dra. HOF".
+
+Por favor, aplique esta correção com urgência. Após a implementação, informe para que o usuário possa validar o resultado.
