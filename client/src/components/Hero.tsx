@@ -16,8 +16,9 @@ export default function Hero() {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   
   const images = [
-    "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/foto-dra-hof-.webp",
-    "/images/foto-2-headline.jpg"
+    "/images/foto-2-headline.jpg",
+    "/images/foto-3-headline.jpg",
+    "/images/foto-4-headline.jpg"
   ];
 
   // Lidar com a troca automática de imagens do carrossel

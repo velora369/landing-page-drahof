@@ -1,0 +1,26 @@
+**[AÇÃO CORRETIVA URGENTE - ETAPA 1.1 HERO SECTION] Restaurar Visualização das Imagens do Carrossel 2D e Limpeza Final do Fundo**
+
+**Contexto Crítico:** Após a tentativa de remoção do fundo 3D inadequado (ETAPA 1 anterior), as imagens do carrossel de fotos 2D da Hero Section deixaram de ser exibidas. O Replit AI também mencionou a possibilidade de erros de referência a componentes removidos. É IMPERATIVO que o carrossel volte a funcionar corretamente ANTES de qualquer outra modificação.
+
+**OBJETIVO DESTA SUB-ETAPA 1.1: Garantir que o carrossel de fotos 2D da Hero Section esteja VISÍVEL, FUNCIONAL e que o fundo 3D anterior tenha sido COMPLETAMENTE REMOVIDO sem erros residuais.**
+
+**NÃO FAÇA NADA ALÉM DO DESCRITO NESTA SUB-ETAPA 1.1 ATÉ QUE ELA SEJA CONCLUÍDA E VALIDADA.**
+
+1.  **RESTAURAR IMAGENS DO CARROSSEL 2D:**
+    *   **Investigar e Corrigir Erros:** Verifique o arquivo do componente da Hero Section (provavelmente `Hero.tsx` ou similar) e o console do navegador em busca de erros que estejam impedindo o carregamento ou a exibição das imagens no carrossel 2D.
+    *   **Fontes das Imagens:** Confirme se os caminhos para as imagens do carrossel estão corretos e se as imagens existem nos locais esperados.
+    *   **Lógica do Carrossel:** Revise a lógica do componente do carrossel para garantir que ele esteja buscando e renderizando as imagens corretamente.
+    *   **Resultado Esperado:** As fotos da Dra. Jana Guimarães devem voltar a ser exibidas normalmente no carrossel da Hero Section.
+
+2.  **CONFIRMAR REMOÇÃO COMPLETA DO FUNDO 3D ANTERIOR E AUSÊNCIA DE ERROS:**
+    *   Reconfirme que todos os scripts, elementos HTML ou estilos CSS responsáveis pela ANTERIOR animação/imagem de fundo 3D (a que era inadequada) foram completamente removidos.
+    *   Verifique o console do navegador para garantir que não há erros de JavaScript relacionados a componentes ou referências que foram removidos (como `NetworkAnimation` ou `DecorativeLines` se esses eram os nomes dos componentes problemáticos).
+    *   O fundo da Hero Section deve estar neutro ou como estava antes da tentativa de adicionar o 3D inadequado.
+
+3.  **FUNCIONALIDADE BÁSICA DO CARROSSEL 2D:**
+    *   Além de exibir as imagens, garanta que a navegação básica do carrossel (se já existiam setas ou indicadores) esteja minimamente funcional. A modernização visual virá DEPOIS, mas ele precisa funcionar.
+
+**AO CONCLUIR ESTA SUB-ETAPA 1.1, PARE E AGUARDE VALIDAÇÃO. Precisamos ver as imagens do carrossel funcionando e o fundo limpo antes de prosseguir para a modernização visual do carrossel e, posteriormente, para a ETAPA 2 (nova animação 3D).**
+
+Por favor, concentre-se exclusivamente em fazer as imagens do carrossel aparecerem novamente e em garantir que não há erros ou resquícios do fundo 3D anterior.
+```
