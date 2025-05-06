@@ -1,0 +1,72 @@
+```
+**[AÇÃO URGENTE E EM ETAPAS] Correção Crítica e Implementação da HERO SECTION para o Site da Dra. Jana Hof**
+
+**ATENÇÃO: Este comando é EXTREMAMENTE PRESCRITIVO e deve ser seguido À RISCA, em ETAPAS. A falha em seguir as etapas resultará em retrabalho. O objetivo é corrigir problemas persistentes e implementar o design desejado para a Hero Section.**
+
+**PROBLEMA GRAVÍSSIMO:** As instruções anteriores para a Hero Section não foram corretamente implementadas. Uma imagem 3D aleatória e não relacionada foi adicionada como fundo, e o carrossel de fotos 2D existente NÃO FOI CORRIGIDO (a funcionalidade "Ver em 3D" persiste e o design não foi modernizado).
+
+**INSTRUÇÃO GERAL:** Execute as seguintes etapas NA ORDEM APRESENTADA. NÃO avance para a próxima etapa sem que a anterior esteja completamente implementada e correta.
+
+**--- ETAPA 1: CORREÇÃO TOTAL E MODERNIZAÇÃO DO CARROSSEL DE FOTOS 2D (PRIORIDADE ABSOLUTA) ---**
+
+**NÃO FAÇA NADA ALÉM DO DESCRITO NESTA ETAPA 1 ATÉ QUE ELA SEJA CONCLUÍDA E VALIDADA.**
+
+1.  **REMOÇÃO IMEDIATA E COMPLETA DA FUNCIONALIDADE "VER EM 3D":**
+    *   Localize o carrossel de fotos existente na Hero Section (que atualmente exibe fotos da Dra. Jana Guimarães).
+    *   Elimine QUALQUER botão, link, toggle, opção ou lógica de código que permita ou sugira uma visualização "Ver em 3D" para este carrossel. As fotos devem ser exibidas **ESTRITAMENTE em 2D**.
+    *   Confirme que não há mais nenhum vestígio dessa funcionalidade "Ver em 3D" no código ou na interface.
+
+2.  **MODERNIZAÇÃO VISUAL DO CARROSSEL DE FOTOS 2D:**
+    *   **Design dos Controles:**
+        *   **Setas de Navegação (Direita/Esquerda):** Devem ser minimalistas, elegantes e posicionadas de forma intuitiva sobre o carrossel ou nas laterais. Use ícones de seta simples e modernos (ex: estilo chevron fino). A cor das setas deve ter bom contraste com as imagens do carrossel e com o fundo da Hero Section.
+        *   **Indicadores de Slide (Bolinhas/Pontos):** Devem ser pequenos, discretos e posicionados abaixo do carrossel. O indicador do slide ativo deve ter uma cor de destaque sutil (da paleta do site), enquanto os inativos devem ser mais neutros. A transição entre os indicadores ativos deve ser suave.
+    *   **Contêiner do Carrossel:** O frame ou contêiner do carrossel deve ter um design limpo. Se houver bordas, devem ser finas e discretas. Cantos podem ser levemente arredondados para um toque moderno.
+    *   **Transições entre Fotos:** As transições ao mudar de foto devem ser suaves e rápidas (ex: fade sutil ou slide horizontal rápido e elegante). Evite transições complexas ou lentas.
+    *   **Estilo Geral:** O visual deve ser inspirado na sofisticação e minimalismo da referência: Fincore - Fintech Landing Page (https://dribbble.com/shots/23887551-Fincore-Fintech-Landing-Page), adaptado para um carrossel de imagens.
+
+3.  **RESPONSIVIDADE IMPECÁVEL DO CARROSSEL 2D:**
+    *   O carrossel DEVE ser perfeitamente funcional e visualmente correto em TODAS as larguras de tela: desktops grandes, laptops, tablets (vertical e horizontal) e smartphones (várias larguras comuns).
+    *   As imagens devem redimensionar adequadamente sem distorção ou corte excessivo.
+    *   Os controles de navegação (setas, indicadores) devem permanecer acessíveis e fáceis de usar em telas menores.
+
+4.  **REMOÇÃO DO INDICADOR "CONHEÇA MAIS":**
+    *   Localize e remova completamente o elemento de texto "Conheça mais" e seu ícone de scroll associado, que atualmente aparece abaixo do conteúdo principal da Hero Section. Este elemento não é mais necessário.
+
+5.  **CONTEÚDO DA HERO SECTION (TEXTOS E CTAS - MANTER POSICIONAMENTO RELATIVO):**
+    *   Os textos principais da Hero Section ("Beleza é ciência, mas autoestima é arte.", a descrição da Dra. HOF, o card sobre "Cirurgiã-dentista...") e os botões de CTA ("Agendar Consulta", "Conhecer Cursos") devem permanecer visíveis e legíveis. Nesta ETAPA 1, não se preocupe em integrá-los com a animação de fundo 3D (que virá na Etapa 2). Apenas garanta que eles não sejam quebrados ou sobrepostos incorretamente pelo carrossel corrigido.
+
+**AO CONCLUIR A ETAPA 1, PARE E AGUARDE VALIDAÇÃO ANTES DE PROSSEGUIR PARA A ETAPA 2.**
+
+**--- ETAPA 2: IMPLEMENTAÇÃO DA NOVA ANIMAÇÃO DE FUNDO 3D (SOMENTE APÓS APROVAÇÃO DA ETAPA 1) ---**
+
+**NÃO INICIE ESTA ETAPA ATÉ QUE A ETAPA 1 ESTEJA CORRETA E APROVADA.**
+
+1.  **CRIAÇÃO DA ANIMAÇÃO DE FUNDO 3D (ELEMENTO NOVO E DISTINTO):**
+    *   Esta animação será um **NOVO ELEMENTO** que servirá como plano de fundo para a Hero Section. Ela **NÃO** tem relação com o carrossel de fotos 2D.
+    *   **Descrição Literal da Animação:**
+        *   **Composição:** Crie uma cena 3D composta por uma **rede de pequenos pontos/esferas luminosas**. Utilize uma cor clara e brilhante da paleta do site para esses pontos (ex: #ECE0C4 ou um branco levemente amarelado).
+        *   **Conexões:** Os pontos devem ser conectados por **linhas finas e translúcidas**. A cor dessas linhas deve ser um tom sutil da paleta (ex: um cinza claro ou um tom muito claro de #425F70, com alta transparência).
+        *   **Movimento Principal:** A rede inteira (pontos e linhas) deve **girar LENTAMENTE e continuamente no eixo Z** (profundidade) ou em múltiplos eixos de forma orgânica e suave.
+        *   **Movimento Secundário:** Os pontos luminosos individuais devem **pulsar suavemente** (aumentar e diminuir levemente de brilho ou tamanho) de forma assíncrona.
+        *   **Partículas (Opcional, se não sobrecarregar):** Pequenas partículas de luz, como poeira estelar (usando a mesma cor dos pontos ou uma cor complementar sutil da paleta), podem fluir LENTAMENTE ao longo das linhas de conexão ou flutuar suavemente no espaço da animação.
+        *   **Estilo:** A animação deve ser **ABSTRATA, ELEGANTE, MINIMALISTA e FUTURISTA**. Não deve representar objetos reconhecíveis, apenas formas geométricas e luzes em movimento harmonioso.
+    *   **Posicionamento:** A animação deve ocupar o **fundo da Hero Section**, atrás do carrossel de fotos 2D (corrigido na Etapa 1), dos textos e dos CTAs.
+    *   **Interatividade Sutil:** Ao mover o mouse sobre a Hero Section, a animação de fundo 3D pode ter uma leve reação de parallax (mover-se sutilmente em direção oposta ao mouse) ou os pontos mais próximos ao cursor podem brilhar um pouco mais intensamente. A interação deve ser discreta.
+    *   **Performance:** A animação DEVE ser altamente otimizada para não impactar negativamente o tempo de carregamento da página ou a performance de navegação, especialmente em dispositivos móveis.
+
+2.  **INTEGRAÇÃO COM O CONTEÚDO DA HERO SECTION:**
+    *   Garanta que o carrossel de fotos 2D (corrigido na Etapa 1), os textos e os CTAs fiquem claramente visíveis e legíveis SOBRE ou EM FRENTE à nova animação de fundo 3D.
+    *   A animação de fundo não deve, de forma alguma, obstruir ou dificultar a leitura ou interação com os elementos principais da Hero Section.
+
+3.  **RESPONSIVIDADE DA HERO SECTION COMPLETA:**
+    *   Verifique novamente a responsividade de TODA a Hero Section (carrossel 2D + animação de fundo 3D + textos + CTAs) em todas as resoluções, com atenção especial ao mobile.
+
+**Resultado Final Esperado para a Hero Section (Após Ambas as Etapas):**
+Uma Hero Section coesa e impactante, combinando:
+    a) Um carrossel de fotos 2D da Dra. Hof, corrigido, moderno e funcional.
+    b) Uma animação de fundo 3D (rede de pontos luminosos) abstrata, elegante e sutilmente interativa.
+    c) Textos e CTAs claros, bem posicionados, com design moderno e excelente legibilidade sobre o fundo animado.
+    d) Perfeita funcionalidade e visualização em todos os dispositivos.
+
+Por favor, siga estas instruções com MÁXIMA ATENÇÃO e na ORDEM ESPECIFICADA. Confirme a conclusão de cada etapa antes de prosseguir.
+```

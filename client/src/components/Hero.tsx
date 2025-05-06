@@ -5,140 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Componente da animação de fundo 3D abstrata
-const BackgroundAnimation = ({ mousePosition }: { mousePosition: { x: number, y: number } }) => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Grade de pontos conectados que reagem ao mouse */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-40"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        {/* Partículas animadas */}
-        {Array.from({ length: 15 }).map((_, index) => {
-          const x = 10 + (index % 5) * 20 + (mousePosition.x * 5);
-          const y = 10 + Math.floor(index / 5) * 20 + (mousePosition.y * 5);
-          const radius = 0.8 + Math.sin(Date.now() * 0.001 + index) * 0.2;
-          
-          return (
-            <circle
-              key={`particle-${index}`}
-              cx={x}
-              cy={y}
-              r={radius}
-              fill={index % 3 === 0 ? "#731C13" : index % 3 === 1 ? "#425F70" : "#ECE0C4"}
-              opacity={0.3 + Math.sin(Date.now() * 0.002 + index) * 0.2}
-              style={{
-                animation: `pulse-${index % 4} 4s infinite ease-in-out`,
-                animationDelay: `${index * 0.2}s`,
-              }}
-            />
-          );
-        })}
-
-        {/* Linhas de conexão */}
-        {Array.from({ length: 20 }).map((_, index) => {
-          const startPoint = {
-            x: 5 + Math.sin(index * 0.5) * 40 + (mousePosition.x * 3),
-            y: 10 + Math.cos(index * 0.8) * 40 + (mousePosition.y * 3)
-          };
-          
-          const endPoint = {
-            x: 50 + Math.cos(index * 0.7) * 45 + (mousePosition.x * -4),
-            y: 50 + Math.sin(index * 0.9) * 45 + (mousePosition.y * -4)
-          };
-          
-          const controlPoint1 = {
-            x: startPoint.x + (endPoint.x - startPoint.x) * 0.3 + Math.sin(index) * 15,
-            y: startPoint.y + (endPoint.y - startPoint.y) * 0.4 + Math.cos(index) * 15
-          };
-          
-          const controlPoint2 = {
-            x: startPoint.x + (endPoint.x - startPoint.x) * 0.7 + Math.cos(index) * 15,
-            y: startPoint.y + (endPoint.y - startPoint.y) * 0.6 + Math.sin(index) * 15
-          };
-          
-          return (
-            <path
-              key={`connection-${index}`}
-              d={`M ${startPoint.x} ${startPoint.y} C ${controlPoint1.x} ${controlPoint1.y}, ${controlPoint2.x} ${controlPoint2.y}, ${endPoint.x} ${endPoint.y}`}
-              fill="none"
-              stroke={index % 3 === 0 ? "#731C13" : index % 3 === 1 ? "#425F70" : "#ECE0C4"}
-              strokeWidth="0.2"
-              opacity={0.15 + Math.sin(Date.now() * 0.001 + index) * 0.05}
-              strokeDasharray={index % 2 === 0 ? "0.5 2" : "0"}
-              style={{
-                animation: `flow-${index % 5} 8s infinite ease-in-out`,
-                animationDelay: `${index * 0.1}s`,
-              }}
-            />
-          );
-        })}
-      </svg>
-
-      {/* Blocos de gradiente fluidos */}
-      <div 
-        className="absolute top-0 right-0 w-1/3 h-1/3 bg-[#ECE0C4]/10 rounded-full blur-3xl" 
-        style={{ 
-          transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px)`,
-          transition: 'transform 0.3s ease-out'
-        }}
-      />
-      <div 
-        className="absolute bottom-20 left-20 w-64 h-64 bg-[#731C13]/5 rounded-full blur-3xl animate-pulse"
-        style={{ 
-          transform: `translate(${mousePosition.x * 15}px, ${mousePosition.y * 15}px)`,
-          transition: 'transform 0.5s ease-out'
-        }}
-      />
-      <div 
-        className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#425F70]/10 rounded-full blur-3xl" 
-      />
-      
-      {/* Estilos de animação */}
-      <style jsx>{`
-        @keyframes pulse-0 {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.5); }
-        }
-        @keyframes pulse-1 {
-          0%, 100% { transform: scale(1.2); }
-          50% { transform: scale(0.8); }
-        }
-        @keyframes pulse-2 {
-          0%, 100% { transform: scale(0.9); }
-          50% { transform: scale(1.4); }
-        }
-        @keyframes pulse-3 {
-          0%, 100% { transform: scale(1.1); }
-          50% { transform: scale(0.7); }
-        }
-        @keyframes flow-0 {
-          0%, 100% { stroke-dashoffset: 0; }
-          50% { stroke-dashoffset: 10; }
-        }
-        @keyframes flow-1 {
-          0%, 100% { stroke-dashoffset: 10; }
-          50% { stroke-dashoffset: 0; }
-        }
-        @keyframes flow-2 {
-          0%, 100% { stroke-dashoffset: 5; }
-          50% { stroke-dashoffset: 15; }
-        }
-        @keyframes flow-3 {
-          0%, 100% { stroke-dashoffset: 15; }
-          50% { stroke-dashoffset: 5; }
-        }
-        @keyframes flow-4 {
-          0%, 100% { stroke-dashoffset: 20; }
-          50% { stroke-dashoffset: 0; }
-        }
-      `}</style>
-    </div>
-  );
-};
-
 export default function Hero() {
   const isMobile = useIsMobile();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -210,21 +76,6 @@ export default function Hero() {
     }
   };
 
-  // Animação automática em dispositivos móveis ou sem mouse
-  useEffect(() => {
-    if (isMobile) {
-      const autoAnimate = setInterval(() => {
-        const time = Date.now() / 3000;
-        setMousePosition({
-          x: Math.sin(time) * 0.2,
-          y: Math.cos(time) * 0.2
-        });
-      }, 50);
-      
-      return () => clearInterval(autoAnimate);
-    }
-  }, [isMobile]);
-
   return (
     <section 
       ref={heroRef}
@@ -232,9 +83,6 @@ export default function Hero() {
       id="hero"
       onMouseMove={handleMouseMove}
     >
-      {/* Animação de fundo 3D interativa */}
-      <BackgroundAnimation mousePosition={mousePosition} />
-      
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <motion.div 
@@ -312,18 +160,13 @@ export default function Hero() {
           
           {/* Carrossel moderno de fotos 2D */}
           <motion.div 
-            className="md:w-1/2 overflow-hidden rounded-[28px] shadow-2xl relative h-[400px] sm:h-[450px] md:h-[520px] transition-all duration-300 bg-white/80"
+            className="md:w-1/2 overflow-hidden rounded-2xl shadow-xl relative h-[400px] sm:h-[450px] md:h-[520px] transition-all duration-300"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            style={{ 
-              // Efeito sutil de profundidade que reage ao mouse
-              transform: `perspective(1000px) rotateY(${mousePosition.x * 3}deg) rotateX(${-mousePosition.y * 3}deg)`,
-              transition: 'transform 0.5s ease-out'
-            }}
           >
             {/* Carrossel de imagens */}
-            <div className="absolute inset-0 z-10 overflow-hidden rounded-[28px]">
+            <div className="absolute inset-0 z-10 overflow-hidden rounded-2xl">
               <AnimatePresence mode="wait">
                 <motion.img 
                   key={currentImageIndex}
@@ -338,33 +181,32 @@ export default function Hero() {
               </AnimatePresence>
               
               {/* Overlay de gradiente elegante */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none rounded-[28px]"></div>
-              <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent pointer-events-none rounded-[28px]"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none rounded-2xl"></div>
               
               {/* Setas de navegação estilizadas */}
               <button 
                 onClick={goToPrevImage}
-                className="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all z-20 border border-white/30 shadow-lg opacity-70 hover:opacity-100"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all z-20 border border-white/30 shadow-lg opacity-70 hover:opacity-100"
                 aria-label="Imagem anterior"
               >
-                <i className="fas fa-chevron-left"></i>
+                <i className="fas fa-chevron-left text-sm"></i>
               </button>
               
               <button 
                 onClick={goToNextImage}
-                className="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all z-20 border border-white/30 shadow-lg opacity-70 hover:opacity-100"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all z-20 border border-white/30 shadow-lg opacity-70 hover:opacity-100"
                 aria-label="Próxima imagem"
               >
-                <i className="fas fa-chevron-right"></i>
+                <i className="fas fa-chevron-right text-sm"></i>
               </button>
               
               {/* Indicadores de imagem modernizados e reposicionados */}
-              <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-4">
+              <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3">
                 {images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 transform ${
+                    className={`w-2 h-2 rounded-full transition-all duration-300 transform ${
                       index === currentImageIndex 
                         ? "bg-white shadow-md scale-125" 
                         : "bg-white/40 hover:bg-white/70"
@@ -373,41 +215,10 @@ export default function Hero() {
                   />
                 ))}
               </div>
-              
-              {/* Decoração de cantos e bordas */}
-              <div className="absolute inset-0 border border-white/30 rounded-[28px] pointer-events-none"></div>
-              <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-white/50 rounded-tl-[28px] pointer-events-none"></div>
-              <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-white/50 rounded-tr-[28px] pointer-events-none"></div>
-              <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-white/50 rounded-bl-[28px] pointer-events-none"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-white/50 rounded-br-[28px] pointer-events-none"></div>
             </div>
           </motion.div>
         </div>
       </div>
-      
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-[#425F70]/80"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 1 }}
-      >
-        <p className="text-sm mb-2 font-medium">Conheça mais</p>
-        <div className="w-6 h-12 border-2 border-[#425F70]/30 rounded-full flex justify-center p-1">
-          <motion.div 
-            className="w-2.5 h-2.5 bg-[#425F70]/70 rounded-full"
-            animate={{ 
-              y: [0, 20, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut"
-            }}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }
