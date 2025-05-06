@@ -1,0 +1,36 @@
+## Prompt para Replit AI: Refinamento da Seção "Conhecimento que transforma"
+
+**Objetivo:** Refinar a seção "Conhecimento que transforma", removendo TODOS os ícones e emojis atualmente presentes nos cards e focando exclusivamente na força da tipografia para apresentar as informações. O design deve seguir o padrão minimalista, elegante e profissional já estabelecido em outras seções do site (como a seção de "Procedimentos / Serviços" após o último ajuste).
+
+**Contexto:**
+- Esta é uma etapa de refinamento para garantir consistência visual e sofisticação em todo o site da Dra. Hof.
+- A abordagem de focar na tipografia, sem ícones, foi bem-sucedida e aprovada em outras seções.
+
+**Diretrizes Detalhadas para o Refinamento:**
+
+1.  **Remoção Completa de Ícones/Emojis:**
+    *   **Ação Principal:** Remover TODOS os ícones e emojis que atualmente acompanham cada item/card na seção "Conhecimento que transforma" (ex: o ícone de capelo, o ícone de DNA, o ícone de globo, o ícone de livros).
+    *   **Resultado Esperado:** Os cards devem conter apenas texto.
+
+2.  **Foco na Tipografia e Layout do Texto:**
+    *   **Hierarquia Visual:** Garantir que o texto dentro de cada card (ex: "+100 certificados", "na área de Harmonização Orofacial") tenha uma hierarquia clara. O número ou a informação principal pode ter um destaque maior (tamanho, peso da fonte) em relação ao texto complementar.
+    *   **Alinhamento e Espaçamento:** O texto deve estar bem alinhado (ex: centralizado ou alinhado à esquerda, de forma consistente em todos os cards) e com espaçamento adequado para garantir excelente legibilidade e um visual limpo.
+    *   **Consistência com Outras Seções:** O estilo tipográfico (fontes, tamanhos, cores) deve ser consistente com o que foi aplicado na seção "Procedimentos / Serviços" após a remoção dos ícones.
+
+3.  **Design dos Cards (Sem Ícones):**
+    *   **Minimalismo:** Os cards devem ser minimalistas, com bordas sutis ou sombras leves, se já existentes e aprovadas no design atual. O foco é no conteúdo textual.
+    *   **Responsividade:** Garantir que os cards e o texto se ajustem perfeitamente a todas as resoluções de tela, mantendo a legibilidade e o design elegante.
+
+4.  **Manter a Estrutura Geral da Seção:**
+    *   O título da seção ("Conhecimento que transforma") e o texto introdutório ("Currículo que impressiona...") devem permanecer como estão, a menos que haja instrução específica para alterá-los (o que não é o caso neste prompt).
+    *   A frase de fechamento ("Quando você escolhe a Dra. Jana...") também deve ser mantida.
+
+**O que NÃO fazer:**
+*   Não deixar nenhum resquício dos ícones ou emojis.
+*   Não introduzir novos elementos gráficos nos cards; o foco é 100% no texto.
+*   Não alterar a estrutura principal da seção, apenas o conteúdo e design dos cards informativos.
+
+**Entregável Esperado:**
+*   A seção "Conhecimento que transforma" com os cards de informação redesenhados SEM NENHUM ÍCONE OU EMOJI, apresentando o conteúdo de forma clara e elegante, utilizando apenas tipografia e mantendo a responsividade e consistência visual com o restante do site.
+
+Por favor, proceda com este refinamento. Após a implementação, informe para que possamos validar o resultado.
