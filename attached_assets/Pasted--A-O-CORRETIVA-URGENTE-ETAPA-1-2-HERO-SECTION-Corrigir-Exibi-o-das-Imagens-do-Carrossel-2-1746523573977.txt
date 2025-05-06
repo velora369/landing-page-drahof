@@ -1,0 +1,25 @@
+```
+**[AÇÃO CORRETIVA URGENTE - ETAPA 1.2 HERO SECTION] Corrigir Exibição das Imagens do Carrossel 2D em Dispositivos Móveis**
+
+**Contexto Crítico:** Após a ETAPA 1.1, as imagens do carrossel da Hero Section estão visíveis no desktop, mas **NÃO ESTÃO APARECENDO EM DISPOSITIVOS MÓVEIS**. Isso é um bloqueador para prosseguirmos.
+
+**OBJETIVO DESTA SUB-ETAPA 1.2: Garantir que as imagens do carrossel de fotos 2D da Hero Section sejam CORRETAMENTE EXIBIDAS e que o carrossel seja FUNCIONAL em TODAS as larguras de tela, especialmente em dispositivos móveis.**
+
+**NÃO FAÇA NADA ALÉM DO DESCRITO NESTA SUB-ETAPA 1.2 ATÉ QUE ELA SEJA CONCLUÍDA E VALIDADA.**
+
+1.  **INVESTIGAR E CORRIGIR PROBLEMA DE RESPONSIVIDADE DO CARROSSEL:**
+    *   **Inspeção Específica para Mobile:** Utilize as ferramentas de desenvolvedor do navegador para simular visualizações mobile (iPhone, Android, etc.) e identifique por que as imagens não estão sendo renderizadas.
+    *   **CSS e Media Queries:** Verifique se há estilos CSS (especialmente `display: none;`, `visibility: hidden;`, problemas de `overflow`, `z-index`, ou dimensões incorretas como `height: 0;` ou `width: 0;`) ou media queries que estejam ocultando as imagens ou o contêiner do carrossel em telas menores.
+    *   **JavaScript Específico para Mobile:** Se o carrossel usa JavaScript, verifique se há alguma lógica condicional baseada no tamanho da tela que possa estar falhando ou impedindo a inicialização/renderização correta do carrossel no mobile.
+    *   **Caminhos de Imagem e Carregamento:** Embora as imagens apareçam no desktop, reconfirme se não há problemas de carregamento tardio ou caminhos que possam ser interpretados de forma diferente em contextos mobile (pouco provável se funciona no desktop, mas vale a checagem).
+    *   **Estrutura HTML do Carrossel:** Garanta que a estrutura HTML do carrossel e de seus slides/imagens seja robusta e compatível com layouts responsivos.
+
+2.  **GARANTIR VISUALIZAÇÃO E FUNCIONALIDADE EM MOBILE:**
+    *   **Imagens Visíveis:** O principal é que as FOTOS da Dra. Jana Guimarães dentro do carrossel apareçam claramente em telas de celular.
+    *   **Navegação Funcional:** As setas de navegação e os indicadores de slide (pontos) devem estar visíveis e funcionais também no mobile.
+    *   **Layout Correto:** O carrossel não deve estar quebrado, transbordando ou com elementos sobrepostos incorretamente na visualização mobile.
+
+**AO CONCLUIR ESTA SUB-ETAPA 1.2, PARE E AGUARDE VALIDAÇÃO. Precisamos ver as imagens do carrossel funcionando perfeitamente no mobile antes de considerar a ETAPA 1 totalmente concluída e prosseguir para a ETAPA 2 (nova animação 3D).**
+
+Por favor, foque em resolver este problema de exibição das imagens do carrossel no mobile. Este é o único objetivo desta sub-etapa.
+```
