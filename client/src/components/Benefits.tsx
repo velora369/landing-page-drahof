@@ -305,20 +305,7 @@ export default function Benefits() {
         </motion.div>
       </div>
       
-      {/* CSS for glass effects */}
-      <style jsx global>{`
-        .glass-card {
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          transition: all 0.5s ease;
-        }
-        .glass-card:hover {
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-        }
-      `}</style>
+
     </section>
   );
 }
