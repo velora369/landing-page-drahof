@@ -1,0 +1,38 @@
+### Solicitação de Ajuste na Subseção "Mais Casos Clínicos" (Seção "Resultados Reais" / "Antes & Depois")
+
+**Objetivo:** Refinar o conteúdo da galeria de exemplos "Mais Casos Clínicos" na seção "Resultados Reais" (ou "Antes & Depois"), mantendo apenas os casos mais relevantes e removendo os demais para simplificar e focar a apresentação.
+
+**Contexto:**
+A seção "Resultados Reais" possui um slider interativo principal e uma subseção com thumbnails/links para "Mais Casos Clínicos". Esta solicitação visa ajustar o conteúdo desta subseção de exemplos adicionais.
+
+**Requisitos Detalhados:**
+
+1.  **Manter o Slider Interativo Principal:**
+    *   O slider principal com a funcionalidade "Arraste o divisor para visualizar o antes e depois" deve ser mantido como está, sem alterações nesta etapa.
+
+2.  **Ajustes na Subseção "Mais Casos Clínicos" (Galeria de Thumbnails/Exemplos Adicionais):**
+    *   **Casos a SEREM MANTIDOS:**
+        *   Contorno Facial
+        *   Harmonização Facial
+    *   **Casos a SEREM REMOVIDOS:**
+        *   Rejuvenescimento
+        *   Volumização Facial
+        *   Lifting Não-Cirúrgico
+        *   Rinomodelação
+    *   **Resultado Esperado para a Subseção:** Após o ajuste, a galeria "Mais Casos Clínicos" deverá exibir APENAS os thumbnails/links para os exemplos de "Contorno Facial" e "Harmonização Facial". Todos os outros exemplos listados para remoção não devem mais aparecer nesta galeria.
+
+3.  **Consistência Visual:**
+    *   Garantir que, após a remoção dos itens, o layout da galeria "Mais Casos Clínicos" permaneça visualmente equilibrado e funcional.
+    *   Manter a responsividade da seção em todos os dispositivos.
+
+**Instruções para o Replit AI:**
+*   Por favor, acesse a seção "Resultados Reais" (ou "Antes & Depois").
+*   Localize a subseção/galeria de exemplos adicionais denominada "Mais Casos Clínicos".
+*   Remova os seguintes itens/thumbnails desta galeria: Rejuvenescimento, Volumização Facial, Lifting Não-Cirúrgico e Rinomodelação.
+*   Certifique-se de que apenas os itens "Contorno Facial" e "Harmonização Facial" permaneçam visíveis e funcionais nesta galeria.
+*   Verifique se o layout da galeria continua adequado após a remoção dos itens.
+
+**Resultado Esperado:**
+Uma seção "Resultados Reais" com o slider principal intacto e uma subseção "Mais Casos Clínicos" contendo apenas os exemplos de "Contorno Facial" e "Harmonização Facial".
+
+Por favor, implemente este ajuste e me informe quando estiver pronto para validação.
