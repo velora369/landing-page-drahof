@@ -1,0 +1,29 @@
+**[AÇÃO FOCADA E EM ETAPAS PARA HERO SECTION] Remoção de Fundo Inadequado e Implementação de Design Avançado**
+
+**Contexto Urgente:** A Hero Section atualmente possui um fundo 3D que não corresponde ao design planejado e precisa ser removido IMEDIATAMENTE. Após a remoção, aplicaremos as diretrizes avançadas de UX/UI e a animação 3D correta, conforme detalhado anteriormente.
+
+**--- ETAPA 1: REMOÇÃO IMEDIATA DO FUNDO 3D ATUAL DA HERO SECTION (PRIORIDADE ABSOLUTA) ---**
+
+**NÃO FAÇA NADA ALÉM DO DESCRITO NESTA ETAPA 1 ATÉ QUE ELA SEJA CONCLUÍDA E VALIDADA.**
+
+1.  **REMOÇÃO COMPLETA DO FUNDO 3D EXISTENTE:**
+    *   Identifique e remova completamente qualquer script, elemento HTML, ou estilo CSS responsável pela atual animação/imagem de fundo 3D na Hero Section que não seja a "rede de pontos luminosos" que planejamos.
+    *   O objetivo é deixar a Hero Section com um fundo neutro ou com o fundo que estava antes dessa última tentativa de implementação 3D inadequada, para que possamos aplicar a animação correta sobre uma base limpa.
+    *   O carrossel de fotos 2D (já corrigido anteriormente) e os textos/CTAs devem permanecer intactos e visíveis.
+
+**AO CONCLUIR A ETAPA 1, PARE E AGUARDE VALIDAÇÃO ANTES DE PROSSEGUIR PARA A ETAPA 2.**
+
+**--- ETAPA 2: IMPLEMENTAÇÃO DA ANIMAÇÃO 3D CORRETA E UX/UI AVANÇADO (Conforme Prompt `drahof_hero_advanced_ux_ui_3d_v1.txt`) ---**
+
+**NÃO INICIE ESTA ETAPA ATÉ QUE A ETAPA 1 ESTEJA CORRETA E APROVADA.**
+
+1.  **APLICAÇÃO DAS DIRETRIZES AVANÇADAS:**
+    *   Agora, com a base da Hero Section limpa, implemente TODAS as diretrizes detalhadas no prompt `drahof_hero_advanced_ux_ui_3d_v1.txt`. Isso inclui:
+        *   **REFINAMENTO E EXPANSÃO DA ANIMAÇÃO DE FUNDO 3D (Conceito da Rede de Pontos Luminosos APRIMORADO):** Profundidade, múltiplas camadas, detalhes dos elementos da rede, movimento aprimorado, efeitos de partículas avançados, iluminação dinâmica sutil, interatividade aprimorada com o mouse.
+        *   **ELEMENTOS DE UX/UI FUTURISTAS E MICROINTERAÇÕES ADICIONAIS:** Animação de entrada para textos, microinterações avançadas nos CTAs, linhas de design e grafismos sutis.
+        *   **TRANSIÇÃO PARA A PRÓXIMA SEÇÃO (Se Aplicável).**
+        *   **PERFORMANCE E OTIMIZAÇÃO (CRUCIAL).**
+    *   **LEMBRETE:** O carrossel de fotos 2D (corrigido anteriormente), os textos e os CTAs devem permanecer claramente visíveis e legíveis SOBRE ou EM FRENTE à nova e correta animação de fundo 3D.
+
+**Resultado Final Esperado para a Hero Section (Após Ambas as Etapas):**
+Uma Hero Section que não apenas funcione bem e tenha os elementos corretos, mas que cause um impacto visual significativo, transmitindo inovação, sofisticação e a alta qualidade dos serviços da Dra. Hof. Queremos que o usuário sinta que está em um site de ponta, com uma experiência visual rica e envolvente.
