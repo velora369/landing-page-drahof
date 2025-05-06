@@ -1,95 +1,8 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useToast } from "@/hooks/use-toast";
 import { CLINIC_ADDRESS, CLINIC_PHONE } from "@/lib/constants";
-import { contactFormSchema } from "@shared/schema";
-import { z } from "zod";
-
-// UI Components
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-type FormData = z.infer<typeof contactFormSchema>;
-
 export default function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  // Form definition with React Hook Form
-  const form = useForm<FormData>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  // Handle form submission
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-      setSubmitted(true);
-      
-      toast({
-        title: "Mensagem enviada!",
-        description: result.message || "Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.",
-        variant: "default",
-      });
-      
-      // Reset form
-      form.reset();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Erro ao enviar",
-        description: "Houve um erro ao enviar sua mensagem. Por favor, tente novamente.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  // Format phone input with mask
-  const formatPhoneNumber = (value: string) => {
-    // Remove all non-digit characters
-    const digits = value.replace(/\D/g, "");
-    
-    // Apply the mask as the user types (Brazilian format)
-    if (digits.length <= 2) {
-      return digits;
-    } else if (digits.length <= 6) {
-      return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-    } else if (digits.length <= 10) {
-      return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
-    } else {
-      return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
-    }
-  };
 
   return (
     <section id="contato" className="py-24 px-4 bg-gradient-to-b from-white to-[#F9F5EB]/30 relative overflow-hidden">
@@ -203,159 +116,60 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact Form Column */}
-          <motion.div
+          {/* Próximo Curso Card */}
+          <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="bg-white rounded-xl p-8 shadow-lg border border-[#ECE0C4]/20">
-              <h3 className="text-2xl font-bold text-[#731C13] mb-8">Envie sua mensagem</h3>
+            <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-md shadow-xl border border-white/10 flex flex-col h-full bg-gradient-to-br from-[#425F70] to-[#731C13] text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">Próximo curso</h3>
+              <div className="p-6 bg-white/15 rounded-xl mb-8 border border-white/10 shadow-lg hover:bg-white/20 transition-all duration-300">
+                <h4 className="text-xl font-bold mb-4 text-[#ECE0C4]">Protocolo de Manejo de Intercorrência em Cirurgias da Face</h4>
+                <ul className="space-y-4 mb-4">
+                  <li className="flex items-center bg-white/5 p-3 rounded-lg">
+                    <div className="w-9 h-9 bg-white/15 rounded-full flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span>Online | 60 dias de acesso completo</span>
+                  </li>
+                  <li className="flex items-center bg-white/5 p-3 rounded-lg">
+                    <div className="w-9 h-9 bg-white/15 rounded-full flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                      </svg>
+                    </div>
+                    <span>Preço acessível</span>
+                  </li>
+                  <li className="flex items-center bg-white/5 p-3 rounded-lg">
+                    <div className="w-9 h-9 bg-white/15 rounded-full flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <span>Para profissionais da área</span>
+                  </li>
+                </ul>
+              </div>
               
-              {submitted ? (
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-green-50 border border-green-200 p-6 rounded-lg text-center"
-                >
-                  <div className="w-16 h-16 bg-green-100 rounded-full mx-auto flex items-center justify-center mb-4">
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h4 className="text-xl font-bold text-green-800 mb-2">Mensagem Enviada!</h4>
-                  <p className="text-green-700">
-                    Obrigado pelo seu contato. Entraremos em contato com você o mais breve possível.
-                  </p>
-                  <Button
-                    className="mt-6 bg-green-600 hover:bg-green-700"
-                    onClick={() => setSubmitted(false)}
-                  >
-                    Enviar outra mensagem
-                  </Button>
-                </motion.div>
-              ) : (
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    {/* Nome */}
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-700">Nome Completo</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Seu nome completo" 
-                              className="border-gray-300 focus:border-[#731C13] focus:ring-[#731C13]/10"
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    {/* Email */}
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-700">Email</FormLabel>
-                          <FormControl>
-                            <Input 
-                              type="email" 
-                              placeholder="seu.email@exemplo.com" 
-                              className="border-gray-300 focus:border-[#731C13] focus:ring-[#731C13]/10"
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    {/* Telefone com formatação */}
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field: { onChange, ...rest } }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-700">Telefone / WhatsApp</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="(00) 00000-0000" 
-                              className="border-gray-300 focus:border-[#731C13] focus:ring-[#731C13]/10"
-                              onChange={(e) => {
-                                onChange(formatPhoneNumber(e.target.value));
-                              }}
-                              {...rest}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    {/* Assunto */}
-                    <FormField
-                      control={form.control}
-                      name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-700">Assunto (opcional)</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Do que se trata sua mensagem?" 
-                              className="border-gray-300 focus:border-[#731C13] focus:ring-[#731C13]/10"
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    {/* Mensagem */}
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-700">Mensagem</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Digite sua mensagem aqui..." 
-                              className="min-h-[120px] border-gray-300 focus:border-[#731C13] focus:ring-[#731C13]/10"
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <Button 
-                      type="submit" 
-                      className="w-full py-6 mt-6 bg-[#731C13] hover:bg-[#731C13]/90 text-white font-medium text-lg rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <span className="flex items-center justify-center">
-                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Enviando...
-                        </span>
-                      ) : "Enviar Mensagem"}
-                    </Button>
-                  </form>
-                </Form>
-              )}
+              <p className="text-lg mb-8 text-white/90">
+                Garanta sua vaga com bônus especial pelo nosso WhatsApp
+              </p>
+              
+              <Button 
+                asChild
+                className="w-full bg-white text-[#731C13] hover:text-[#425F70] font-bold py-5 px-6 rounded-xl text-center hover:bg-opacity-95 transition-all duration-300 shadow-lg hover:shadow-xl hover:translate-y-[-2px] mt-auto"
+              >
+                <a href="https://wa.me/11989773944" className="flex items-center justify-center gap-3">
+                  <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                  </svg>
+                  Quero garantir minha vaga!
+                </a>
+              </Button>
             </div>
           </motion.div>
         </div>

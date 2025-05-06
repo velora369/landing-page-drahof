@@ -1,0 +1,43 @@
+## Prompt para Replit AI: Substituição do Formulário de Contato por Card de Curso
+
+**Objetivo:** Na seção "Contato / Agendamento", remover a área do formulário de contato ("Envie sua mensagem") e substituí-la por um card de divulgação do "Próximo Curso" da Dra. Hof.
+
+**Contexto:**
+- Esta é uma alteração específica dentro da Fase 9 (Seção de Contato / Agendamento).
+- As outras partes da seção de Contato (como "Informações de Contato" e "Nossa Localização" com o mapa) devem permanecer INTACTAS.
+
+**Diretrizes Detalhadas para a Substituição:**
+
+1.  **Identificar e Remover a Área do Formulário:**
+    *   Localize a subseção ou a área dentro da página de Contato que atualmente contém o formulário com campos para "Nome Completo", "Email", "Mensagem", etc., geralmente sob um título como "Envie sua mensagem".
+    *   Remova COMPLETAMENTE esta área do formulário e seu título associado.
+
+2.  **Inserir o Card de Divulgação do "Próximo Curso" no Local Removido:**
+    *   No espaço exato onde o formulário foi removido, adicione um novo card com as seguintes informações:
+        *   **Título Principal do Card:** "Próximo curso"
+        *   **Nome do Curso:** "Protocolo de Manejo de Intercorrência em Cirurgias da Face"
+        *   **Detalhes do Curso (apresentar de forma clara e elegante):**
+            *   "Online | 60 dias de acesso completo"
+            *   "Preço acessível"
+            *   "Para profissionais da área"
+        *   **Chamada para Ação (Texto):** "Garanta sua vaga com bônus especial pelo nosso WhatsApp"
+        *   **Botão de Call-to-Action (CTA):**
+            *   **Texto do Botão:** "Quero garantir minha vaga!"
+            *   **Ação do Botão:** Deve redirecionar para o WhatsApp da clínica (utilizar o mesmo link de WhatsApp já presente na seção de "Informações de Contato").
+            *   **Design do Botão:** Consistente com os botões de CTA principais do site, incluindo efeitos de hover e clique.
+    *   **Design do Card:**
+        *   Deve ser visualmente atraente e integrado ao design da seção de Contato.
+        *   Utilizar a paleta de cores e tipografia do site.
+        *   Garantir excelente legibilidade.
+
+3.  **Manter Intactas as Outras Subseções:**
+    *   A subseção "Informações de Contato" (com endereço, telefone, e-mail, etc.) NÃO deve ser alterada.
+    *   A subseção "Nossa Localização" (com o mapa) NÃO deve ser alterada.
+
+4.  **Responsividade:**
+    *   O novo card do curso deve ser totalmente responsivo, adaptando-se a desktops, tablets e smartphones.
+
+**Entregável Esperado:**
+*   A seção "Contato / Agendamento" com a área do formulário "Envie sua mensagem" removida e substituída pelo card de divulgação do "Próximo Curso", conforme especificado. As demais partes da seção de Contato devem permanecer inalteradas.
+
+Por favor, execute esta substituição específica. Após a implementação, informe para validação.
