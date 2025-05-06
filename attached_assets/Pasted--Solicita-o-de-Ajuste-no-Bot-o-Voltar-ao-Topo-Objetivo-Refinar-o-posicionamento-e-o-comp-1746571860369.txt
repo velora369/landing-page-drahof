@@ -1,0 +1,34 @@
+### Solicitação de Ajuste no Botão "Voltar ao Topo"
+
+**Objetivo:** Refinar o posicionamento e o comportamento do botão flutuante "Voltar ao Topo" para melhorar a usabilidade e a estética, especialmente em relação ao botão flutuante do WhatsApp.
+
+**Contexto:**
+Atualmente, o site possui um botão flutuante para o WhatsApp e um botão "Voltar ao Topo". É necessário ajustar o botão "Voltar ao Topo" para que não haja sobreposição e para que ele tenha um comportamento mais dinâmico e integrado à experiência de navegação.
+
+**Requisitos Detalhados:**
+
+1.  **Reposicionamento do Botão "Voltar ao Topo":**
+    *   O botão "Voltar ao Topo" deve ser posicionado ligeiramente ACIMA do botão flutuante do WhatsApp.
+    *   Deve haver um espaçamento vertical adequado entre os dois botões para que não pareçam colados e para que ambos sejam facilmente clicáveis, sem risco de acionar o botão errado.
+    *   Ambos os botões geralmente ficam no canto inferior direito da tela. Mantenha essa convenção, ajustando apenas a ordem vertical e o espaçamento entre eles.
+
+2.  **Comportamento Dinâmico (Desaparecer/Reaparecer com Scroll):**
+    *   **Desaparecimento Suave Durante o Scroll:** Quando o usuário estiver ativamente rolando a página (para cima ou para baixo), o botão "Voltar ao Topo" deve desaparecer de forma suave e fluida (ex: usando uma transição de opacidade e/ou um leve movimento de saída).
+    *   **Reaparecimento Suave ao Parar o Scroll:** Assim que o usuário parar de rolar a página por um breve momento (ex: após 200-300 milissegundos de inatividade de scroll), o botão "Voltar ao Topo" deve reaparecer de forma suave e fluida (ex: transição de opacidade e/ou leve movimento de entrada para sua posição original).
+    *   **Condição de Exibição Inicial:** O botão "Voltar ao Topo" só deve aparecer inicialmente após o usuário ter rolado uma certa quantidade da página para baixo (ex: após rolar o equivalente a uma altura de viewport), para que não apareça no topo da página onde não tem função.
+
+3.  **Animações Fluidas:**
+    *   Todas as transições de desaparecimento e reaparecimento devem ser suaves e fluidas, utilizando CSS transitions ou animations para garantir uma boa performance e uma experiência visual agradável.
+    *   Evitar animações abruptas ou que causem qualquer tipo de "salto" no layout.
+
+4.  **Consistência com o Botão WhatsApp:**
+    *   O botão do WhatsApp deve permanecer visível e com seu comportamento atual (ex: efeito de pulse), a menos que seja necessário algum ajuste mínimo de posicionamento para acomodar o botão "Voltar ao Topo" acima dele.
+
+**Resultado Esperado:**
+Um botão "Voltar ao Topo" que:
+*   Esteja posicionado de forma clara e sem conflito acima do botão do WhatsApp.
+*   Ofereça uma experiência de usuário mais limpa ao desaparecer durante a rolagem ativa da página.
+*   Reapareça de forma intuitiva quando o usuário pausar a rolagem, indicando sua disponibilidade.
+*   Mantenha a funcionalidade de levar o usuário suavemente ao topo da página quando clicado.
+
+Por favor, implemente estes ajustes e me informe quando estiver pronto para validação.

@@ -1,20 +1,43 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
-
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Controla a exibição com base no scroll
   useEffect(() => {
     const checkScrollPosition = () => {
-      if (!showScrollTop && window.scrollY > 500) {
+      // Define que está rolando a página
+      setIsScrolling(true);
+      
+      // Limpa o timeout anterior se houver
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      
+      // Configura um novo timeout para considerar que o scroll parou
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 250); // 250ms para detectar que o scroll parou
+      
+      // Verifica se deve mostrar o botão com base na posição do scroll
+      if (!showScrollTop && window.scrollY > window.innerHeight / 2) {
         setShowScrollTop(true);
-      } else if (showScrollTop && window.scrollY <= 500) {
+      } else if (showScrollTop && window.scrollY <= window.innerHeight / 2) {
         setShowScrollTop(false);
       }
     };
 
     window.addEventListener("scroll", checkScrollPosition);
-    return () => window.removeEventListener("scroll", checkScrollPosition);
+    return () => {
+      window.removeEventListener("scroll", checkScrollPosition);
+      // Limpa o timeout ao desmontar o componente
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
   }, [showScrollTop]);
 
   const scrollToTop = () => {
@@ -35,26 +58,49 @@ export default function Footer() {
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#731C13]/10 blur-2xl"></div>
       <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-[#ECE0C4]/10 blur-2xl"></div>
       
-      {/* Back to top button */}
+      {/* Back to top button - Posicionado acima do botão do WhatsApp */}
       <AnimatePresence>
         {showScrollTop && (
-          <motion.button
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ 
+              opacity: isScrolling ? 0 : 1,
+              y: 0 
+            }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-br from-[#731C13] to-[#425F70] rounded-full flex items-center justify-center shadow-lg shadow-[#731C13]/20 border border-white/10 text-white"
-            aria-label="Voltar ao topo"
-            whileHover={{ 
-              scale: 1.1, 
-              boxShadow: "0 10px 25px rgba(115, 28, 19, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
+            className="fixed bottom-[88px] right-6 z-50 w-12 h-12"
           >
-            <i className="fas fa-chevron-up"></i>
-            <span className="absolute -bottom-7 text-xs bg-white/10 backdrop-blur-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">Voltar ao topo</span>
-          </motion.button>
+            {/* Efeito de pulso */}
+            <motion.div 
+              className="absolute inset-0 rounded-full bg-[#731C13]/20"
+              animate={{ 
+                scale: [1, 1.15, 1],
+                opacity: [0.2, 0.3, 0.2]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            
+            <motion.button
+              onClick={scrollToTop}
+              className="group relative w-full h-full bg-gradient-to-br from-[#731C13] to-[#425F70] rounded-full flex items-center justify-center shadow-lg shadow-[#731C13]/20 border border-white/10 text-white backdrop-blur-sm"
+              aria-label="Voltar ao topo"
+              whileHover={{ 
+                scale: 1.1, 
+                boxShadow: "0 10px 25px rgba(115, 28, 19, 0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <i className="fas fa-chevron-up text-sm"></i>
+              <span className="absolute -bottom-7 text-xs bg-white/10 backdrop-blur-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap">
+                Voltar ao topo
+              </span>
+            </motion.button>
+          </motion.div>
         )}
       </AnimatePresence>
       
