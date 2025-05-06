@@ -1,0 +1,22 @@
+Aqui está o prompt para o Replit AI atualizar a seção "Próximo curso" no site da Dra. Hof:
+
+```
+Por favor, atualize a seção "Próximo curso" no site da Dra. Hof da seguinte maneira, mantendo o design e a responsividade existentes:
+
+1.  **Identifique o card/componente referente a "Próximo curso"**. Ele atualmente contém o título "Protocolo de Manejo de Intercorrência em Cirurgias da Face", detalhes sobre o curso (Online, 60 dias, Preço acessível, Para profissionais da área), e abaixo disso, uma seção "Cadastre-se para ser avisado(a)" com campos para "Seu e-mail", "Nome completo" e um botão "Inscreva-se no Canal do WhatsApp".
+
+2.  **No card "Próximo curso", realize as seguintes alterações ABAIXO dos detalhes do curso (Online, 60 dias, etc.):**
+    a.  **Remova completamente** a seção "Cadastre-se para ser avisado(a)", incluindo o texto do título, o campo de input "Seu e-mail", o campo de input "Nome completo" e o botão "Inscreva-se no Canal do WhatsApp".
+    b.  **Adicione um novo parágrafo de texto** com o seguinte conteúdo: "Garanta sua vaga com bônus especial pelo nosso WhatsApp". Mantenha a formatação e o estilo consistentes com o restante do texto do site.
+    c.  **Adicione um novo botão** abaixo do parágrafo recém-adicionado. O texto do botão deve ser "Quero garantir minha vaga!". O estilo deste botão (cores, formato, fonte, ícone se houver) deve ser idêntico ao botão "Agendar pelo WhatsApp" que está no card "Agende sua consulta" ao lado. Este novo botão também deve redirecionar para o WhatsApp da Dra. Hof (use o mesmo link/função do botão "Agendar pelo WhatsApp" existente).
+
+3.  **NÃO FAÇA NENHUMA ALTERAÇÃO** no card "Agende sua consulta". Ele deve permanecer exatamente como está.
+
+4.  Certifique-se de que as alterações sejam aplicadas corretamente em todas as visualizações (desktop, tablet e mobile).
+
+Resumo das alterações no card "Próximo curso":
+-   Manter título e detalhes do curso.
+-   Remover formulário de e-mail/nome e botão de inscrição no canal.
+-   Adicionar texto: "Garanta sua vaga com bônus especial pelo nosso WhatsApp".
+-   Adicionar botão: "Quero garantir minha vaga!" (estilo e link do WhatsApp iguais ao botão "Agendar pelo WhatsApp" do outro card).
+```
