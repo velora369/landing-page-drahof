@@ -1,44 +1,61 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [selectedProcedure, setSelectedProcedure] = useState<number | null>(null);
   
   // Lista completa de procedimentos com suas descrições
   const procedures = [
     {
       title: "Botox (Toxina Botulínica)",
       description: "Prevenção e suavização de rugas dinâmicas com naturalidade",
+      detailedDescription: "A toxina botulínica é utilizada para relaxar temporariamente os músculos faciais responsáveis pelas rugas dinâmicas, como pés de galinha e linhas na testa. O resultado é uma pele mais lisa e uma aparência rejuvenescida, com naturalidade e preservação da expressão."
     },
     {
       title: "Rinomodelação",
       description: "Realce do nariz sem cirurgia, em minutos",
+      detailedDescription: "Procedimento não cirúrgico que utiliza preenchedores à base de ácido hialurônico para corrigir pequenas imperfeições estéticas do nariz, como a giba nasal (dorso elevado) ou a ponta caída. Proporciona um contorno nasal mais harmônico em minutos, sem necessidade de afastamento das atividades."
     },
     {
       title: "Preenchimento Labial",
       description: "Volume e definição respeitando sua harmonia facial",
+      detailedDescription: "Técnica que utiliza ácido hialurônico para aumentar o volume, definir o contorno e melhorar a hidratação dos lábios. O objetivo é realçar a beleza natural dos lábios, respeitando a harmonia facial e as proporções individuais, resultando em lábios mais atraentes e joviais."
     },
     {
       title: "Bioestimuladores de Colágeno",
       description: "Estimula produção natural de colágeno para rejuvenescimento",
+      detailedDescription: "Substâncias injetáveis que estimulam a produção natural de colágeno pelo organismo. Promovem um efeito lifting gradual, melhoram a firmeza, a elasticidade e a qualidade geral da pele, combatendo a flacidez e proporcionando um rejuvenescimento duradouro e natural."
     },
     {
       title: "Fios de PDO",
       description: "Lifting não-cirúrgico com efeito imediato e natural",
+      detailedDescription: "Filamentos biocompatíveis e absorvíveis que são inseridos na pele para promover um efeito lifting imediato e estimular a produção de colágeno a longo prazo. Indicados para tratar a flacidez facial e corporal, melhorando o contorno e a sustentação da pele de forma minimamente invasiva."
     },
     {
       title: "Microagulhamento",
       description: "Regeneração da pele e estímulo aos fatores de crescimento",
+      detailedDescription: "Técnica que utiliza um dispositivo com microagulhas para criar pequenas perfurações na pele, estimulando a regeneração celular, a produção de colágeno e elastina. É eficaz no tratamento de cicatrizes de acne, rugas finas, manchas, estrias e na melhora da textura e luminosidade da pele."
     },
     {
       title: "Peelings Químicos",
       description: "Renovação celular e melhora da textura da pele",
+      detailedDescription: "Aplicação de substâncias ácidas sobre a pele para promover a remoção controlada das camadas superficiais, médias ou profundas. Resulta na renovação celular, melhora da textura, clareamento de manchas, atenuação de rugas e tratamento da acne, revelando uma pele mais uniforme e rejuvenescida."
     },
     {
       title: "Skinbooster",
       description: "Hidratação profunda para uma pele radiante e revitalizada",
+      detailedDescription: "Tratamento que consiste na aplicação de ácido hialurônico de baixa concentração em múltiplas micropunturas na pele. Promove uma hidratação profunda e duradoura, melhora a elasticidade, o viço e a suavidade da pele, sendo ideal para revitalizar peles desidratadas ou com sinais iniciais de envelhecimento."
     }
   ];
+  
+  const handleSaibaMais = (index: number) => {
+    setSelectedProcedure(index);
+    setOpenDialog(true);
+  };
 
   return (
     <section 
@@ -120,9 +137,9 @@ export default function Services() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.05 }}
                 >
-                  <a 
-                    href="#" 
-                    className="text-[#731C13] font-medium text-sm flex items-center opacity-70 group-hover:opacity-100 transition-all duration-300"
+                  <button 
+                    onClick={() => handleSaibaMais(index)}
+                    className="text-[#731C13] font-medium text-sm flex items-center opacity-70 group-hover:opacity-100 transition-all duration-300 bg-transparent border-none cursor-pointer"
                   >
                     <span>Saiba mais</span>
                     <motion.svg 
@@ -140,7 +157,7 @@ export default function Services() {
                       <path d="M5 12h14"></path>
                       <path d="M12 5l7 7-7 7"></path>
                     </motion.svg>
-                  </a>
+                  </button>
                 </motion.div>
               </div>
             </motion.div>
@@ -166,6 +183,46 @@ export default function Services() {
           </a>
         </motion.div>
       </div>
+      
+      {/* Modal de detalhes do procedimento */}
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogContent className="max-w-xl bg-white/95 backdrop-blur-sm">
+          {selectedProcedure !== null && (
+            <AnimatePresence>
+              <DialogHeader>
+                <DialogTitle className="font-['Cormorant_Garamond'] text-2xl font-bold text-[#731C13]">
+                  {procedures[selectedProcedure].title}
+                </DialogTitle>
+                <DialogDescription>
+                  <div className="mt-4 mb-2 h-[1px] w-32 bg-[#731C13]/20"></div>
+                  <motion.p 
+                    className="text-base text-gray-700 leading-relaxed mt-4"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {procedures[selectedProcedure].detailedDescription}
+                  </motion.p>
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-6 flex justify-between items-center">
+                <div className="text-sm text-gray-500">
+                  <svg className="w-5 h-5 inline-block mr-1 text-[#731C13]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Procedimento personalizado de acordo com cada caso
+                </div>
+                <Button 
+                  className="bg-[#731C13] hover:bg-[#731C13]/90 text-white"
+                  onClick={() => setOpenDialog(false)}
+                >
+                  Fechar
+                </Button>
+              </div>
+            </AnimatePresence>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
