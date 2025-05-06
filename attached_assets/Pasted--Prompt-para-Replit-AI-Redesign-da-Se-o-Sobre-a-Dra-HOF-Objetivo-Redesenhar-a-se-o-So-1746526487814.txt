@@ -1,0 +1,51 @@
+## Prompt para Replit AI: Redesign da Seção "Sobre a Dra. HOF"
+
+**Objetivo:** Redesenhar a seção "Sobre a Dra. HOF" do site, aplicando um design elegante, moderno, com animações de texto sutis e, opcionalmente, um elemento visual 3D temático e discreto. A seção deve transmitir profissionalismo, confiança e a expertise da Dra. Hof, mantendo a identidade visual do site e garantindo total responsividade.
+
+**Contexto e Referências:**
+- Manter a paleta de cores existente (#731C13, #425F70, #ECE0C4, e variações sutis para destaques e sombras).
+- Inspirar-se na sofisticação e modernidade já aplicadas na Hero Section e no Header.
+- A seção deve ser informativa, mas também visualmente atraente e engajadora.
+
+**Diretrizes Detalhadas para a Seção "Sobre a Dra. HOF":**
+
+1.  **Layout Geral:**
+    *   Propor um layout elegante e equilibrado. Considere uma divisão em duas colunas para desktop (por exemplo, imagem da Dra. Hof em uma coluna e texto na outra) que se adapte graciosamente para uma única coluna em dispositivos móveis.
+    *   Utilizar espaçamento generoso (whitespace) para garantir legibilidade e um visual clean.
+    *   O fundo da seção deve ser neutro, podendo utilizar uma textura muito sutil ou um gradiente suave dentro da paleta de cores, para adicionar profundidade sem distrair do conteúdo principal.
+
+2.  **Imagem da Dra. Hof:**
+    *   Se houver uma imagem da Dra. Hof, ela deve ser tratada com elegância. Pode-se aplicar uma moldura sutil, um efeito de sombra suave, ou integrá-la de forma criativa ao layout.
+    *   Considerar uma leve animação de entrada para a imagem (ex: fade-in suave, leve slide-in).
+
+3.  **Conteúdo de Texto (Título e Parágrafos):**
+    *   **Título da Seção:** "Sobre a Dra. HOF" (ou similar, conforme o conteúdo existente) deve ter destaque, utilizando a tipografia principal do site com um peso que imponha importância, mas sem ser excessivo.
+    *   **Animações de Texto:** Aplicar animações de entrada sutis para os parágrafos de texto. Por exemplo, cada parágrafo pode surgir com um leve fade-in e um sutil movimento de baixo para cima (efeito "reveal"). A animação deve ser elegante e não comprometer a leitura.
+    *   **Tipografia:** Manter a consistência tipográfica com o restante do site. Garantir excelente legibilidade em todos os dispositivos.
+    *   **Destaques:** Se houver pontos chave no texto sobre a Dra. Hof (formação, especialidades, filosofia de trabalho), considerar destacá-los sutilmente, talvez com uma cor de destaque da paleta ou um leve aumento no peso da fonte, mas sem exageros.
+
+4.  **Elemento Visual 3D Sutil e Temático (Opcional e Discreto):**
+    *   **Importante:** Este elemento é opcional. Se implementado, deve ser EXTREMAMENTE SUTIL, elegante e diretamente relacionado à medicina estética ou harmonização facial. NÃO utilizar animações 3D genéricas ou que pareçam deslocadas.
+    *   **Ideias (apenas como inspiração, a execução deve ser minimalista):**
+        *   Uma representação 3D abstrata e minimalista de uma estrutura molecular (ex: ácido hialurônico) em rotação lenta e suave, posicionada discretamente no fundo de uma das colunas ou como um pequeno detalhe gráfico.
+        *   Linhas 3D finas e fluidas que se movem suavemente, sugerindo contornos faciais ou a fluidez da pele, integradas de forma quase imperceptível ao design.
+        *   O elemento NÃO deve ser o foco principal, mas sim um detalhe que adiciona um toque de sofisticação e tecnologia.
+    *   **Cores:** Utilizar cores da paleta, com preferência para tons mais claros ou metálicos sutis para o elemento 3D, garantindo que não haja conflito visual com o texto ou a imagem.
+
+5.  **Responsividade:**
+    *   Garantir que a seção seja perfeitamente responsiva e visualmente impecável em todas as resoluções (desktop, tablets e smartphones).
+    *   Testar a legibilidade do texto, o posicionamento dos elementos e a fluidez das animações em diferentes tamanhos de tela.
+
+6.  **Microinterações:**
+    *   Considerar microinterações sutis em elementos específicos, se aplicável (ex: um leve realce ao passar o mouse sobre um ícone, se houver, ou um feedback visual discreto em algum elemento interativo, se existir na seção).
+
+**O que NÃO fazer:**
+*   Não sobrecarregar a seção com muitos elementos visuais ou animações complexas.
+*   Não utilizar animações 3D que sejam pesadas, distrativas ou que não se alinhem com a estética médica e sofisticada.
+*   Não comprometer a legibilidade ou a usabilidade em prol de efeitos visuais.
+
+**Entregável Esperado:**
+*   A seção "Sobre a Dra. HOF" redesenhada e implementada no site, seguindo as diretrizes acima.
+*   Código limpo, comentado e otimizado.
+
+Por favor, proceda com o redesign desta seção. Após a implementação, informe para que possamos validar o resultado. Se tiver dúvidas ou sugestões de melhoria durante o processo, por favor, comunique.
