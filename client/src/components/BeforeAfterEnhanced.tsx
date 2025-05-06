@@ -302,7 +302,7 @@ export default function BeforeAfterEnhanced() {
   const parallaxY2 = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
   const parallaxOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3]);
   
-  // Casos de antes e depois - com imagens alinhadas
+  // Apenas os dois casos específicos: "Harmonização Facial" e "Contorno Facial"
   const cases: BeforeAfterCase[] = [
     {
       id: 1,
@@ -313,7 +313,7 @@ export default function BeforeAfterEnhanced() {
       description: "Procedimento combinado que incluiu preenchimento labial, rinomodelação e definição do contorno mandibular. Os resultados são naturais e equilibrados, preservando as características únicas da paciente."
     },
     {
-      id: 3,
+      id: 2,
       title: "Contorno Facial",
       procedure: "Definição Mandibular",
       before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
@@ -471,20 +471,15 @@ export default function BeforeAfterEnhanced() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Filtragem específica para manter apenas os cards de "Harmonização Facial" e "Contorno Facial" */}
-          {cases
-            .filter(caseItem => 
-              (caseItem.title === "Harmonização Facial" && caseItem.procedure === "Harmonização Completa") || 
-              (caseItem.title === "Contorno Facial" && caseItem.procedure === "Definição Mandibular")
-            )
-            .map((caseItem, index) => (
-              <ThumbnailCard
-                key={caseItem.id}
-                caseItem={caseItem}
-                onClick={() => openModal(caseItem.id)}
-                index={index}
-              />
-            ))}
+          {/* Exibindo apenas os dois casos específicos */}
+          {cases.map((caseItem, index) => (
+            <ThumbnailCard
+              key={caseItem.id}
+              caseItem={caseItem}
+              onClick={() => openModal(caseItem.id)}
+              index={index}
+            />
+          ))}
         </motion.div>
         
         {/* Nota de rodapé */}
