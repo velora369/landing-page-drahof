@@ -1,0 +1,59 @@
+```
+**Solicitação Abrangente de Redesign para o Site da Dra. Jana Hof (Versão Autocontida)**
+
+**Objetivo Principal:** Transformar o site da Dra. Jana Hof (especialista em harmonização facial e dentista) em uma plataforma digital de altíssimo nível. O foco é em um design moderno, sofisticado, com fluidez na navegação, uma experiência do usuário (UI/UX) excepcional e alta capacidade de conversão de leads. O novo design deve manter a paleta de cores existente e a essência profissional do site atual da Dra. Hof, mas aplicando-os de uma maneira completamente renovada e impactante.
+
+**Referência Visual Principal (Estilo Geral):**
+*   Busque inspiração no estilo visual apresentado nesta referência pública do Dribbble: **Fincore - Fintech Landing Page (https://dribbble.com/shots/23887551-Fincore-Fintech-Landing-Page)**. Observe a clareza, o uso de espaços, a tipografia moderna, os elementos gráficos sutis e a organização da informação. Adapte essa estética para o universo da saúde e beleza da Dra. Hof, utilizando a paleta de cores dela.
+
+**Diretrizes Gerais de Design e UI/UX:**
+
+1.  **Estética Moderna, Clean e Sofisticada:**
+    *   **Layout:** Adote layouts limpos, com bom uso de espaço em branco para evitar poluição visual e facilitar a leitura. A estrutura deve ser intuitiva e guiar o olhar do usuário para os pontos mais importantes.
+    *   **Tipografia:** Utilize fontes modernas, altamente legíveis e com boa hierarquia visual (títulos, subtítulos, corpo de texto, legendas). A combinação de fontes deve ser elegante e profissional.
+    *   **Microinterações:** Incorpore animações sutis e transições fluidas para elementos interativos (botões, links, cards ao passar o mouse, abertura de seções). Essas interações devem enriquecer a experiência sem distrair ou causar lentidão. Pense em fades suaves, slides discretos, e mudanças de estado (hover/focus) elegantes.
+    *   **Navegação:** O menu principal e qualquer navegação secundária devem ser claros, lógicos e de fácil acesso. O usuário deve conseguir encontrar o que procura com o mínimo de cliques.
+
+2.  **Foco em Conversão de Leads:**
+    *   **Calls-to-Action (CTAs):** Botões de CTA (ex: "Agende sua Consulta", "Saiba Mais", "Quero Garantir Minha Vaga!") devem ser visualmente destacados (bom contraste, tamanho adequado), com texto claro e direto. Posicione-os estrategicamente em todas as seções relevantes para incentivar a ação.
+    *   **Fluxo do Usuário:** O design deve conduzir o usuário de forma natural através de um funil de conversão, desde a descoberta dos serviços até o contato ou agendamento.
+    *   **Formulários:** Formulários de contato ou agendamento devem ser simples, com o mínimo de campos necessários, e visualmente agradáveis para não desencorajar o preenchimento.
+
+3.  **Manutenção e Evolução da Identidade Visual:**
+    *   **Paleta de Cores:** Utilize a paleta de cores existente do site da Dra. Hof como base. No entanto, aplique essas cores de forma moderna: explore gradientes sutis (se apropriado), tons complementares para destaque, e garanta excelente contraste entre texto e fundo para acessibilidade.
+    *   **Essência Profissional e Confiável:** O design deve transmitir expertise, confiança, cuidado e o alto padrão dos serviços médicos e estéticos oferecidos. A estética deve ser elegante e séria, mas acolhedora.
+
+4.  **Responsividade Impecável:**
+    *   O site deve ser 100% responsivo, adaptando-se perfeitamente a desktops, tablets e smartphones. A experiência mobile é prioritária e deve ser tão fluida e completa quanto a desktop.
+
+**Implementação de Placeholders e Elementos Visuais Avançados:**
+
+O objetivo é criar seções visualmente impactantes, utilizando animações 3D interativas sutis e outros elementos gráficos modernos, sempre alinhados com a área de atuação da Dra. Hof (harmonização facial, odontologia, estética avançada).
+
+1.  **Hero Section (Principal Área de Destaque):**
+    *   **Animação de Fundo 3D Interativa:** Como elemento visual principal, crie uma animação 3D abstrata e sofisticada. Esta animação deve ser sutil, elegante e não sobrecarregar a página.
+        *   **Conceito Temático:** Poderia ser uma representação artística de partículas de colágeno se reorganizando, fluxos de energia suave representando vitalidade, ou uma rede de pontos luminosos conectados que se movem organicamente, simbolizando a ciência e a precisão por trás da beleza e da saúde. As formas devem ser orgânicas e fluidas.
+        *   **Interatividade Sutil:** A animação deve reagir levemente ao movimento do mouse do usuário (efeito parallax sutil, ou os elementos da animação se deslocando ou brilhando suavemente conforme o cursor passa perto). Evite interações complexas que exijam cliques para funcionar.
+        *   **Paleta:** Use as cores da identidade visual da Dra. Hof na animação, com pontos de luz ou brilho para dar um toque futurista e sofisticado.
+    *   **Texto e CTA:** O título principal da Hero Section, o subtítulo e o CTA principal devem estar sobrepostos ou posicionados de forma proeminente em relação a esta animação de fundo, com excelente legibilidade.
+
+2.  **Seção de Serviços/Tratamentos:**
+    *   **Ícones Animados ou Elementos Gráficos Sutis:** Para cada serviço principal, em vez de fotos genéricas, considere o uso de ícones lineares elegantes e minimalistas que se animam sutilmente ao passar o mouse ou ao rolar a página até eles. Alternativamente, pequenos gráficos abstratos que remetam conceitualmente ao benefício do tratamento (ex: linhas que se suavizam, formas que ganham volume sutilmente).
+    *   **Layout:** Apresente os serviços em cards ou seções bem definidas, com descrições curtas e diretas, e um CTA claro para "Saiba Mais" ou "Agendar Avaliação".
+
+3.  **Seção "Próximo Curso" (se aplicável):**
+    *   **Visual Educacional Moderno:** Se esta seção for relevante, o design deve ser limpo e inspirador. Pode incluir um grafismo abstrato que simbolize conhecimento, inovação ou uma rede de aprendizado (linhas conectando pontos, formas geométricas que se expandem).
+
+4.  **Outras Seções (Sobre, Depoimentos, Contato):**
+    *   **Coesão Visual:** Manter a mesma linha de design moderno e sofisticado.
+    *   **Depoimentos:** Apresentar de forma que transmita autenticidade. Pode usar cards com aspas e fotos discretas dos pacientes (se autorizado), com um design que inspire confiança.
+    *   **Contato:** Página clara com todas as informações: telefone clicável, link direto para WhatsApp, endereço com mapa interativo (Google Maps embutido com estilo customizado para combinar com o site, se possível), e um formulário de contato simples.
+
+**Instruções Adicionais para o Replit AI:**
+
+*   **Performance:** Todas as animações e elementos gráficos devem ser altamente otimizados para garantir tempos de carregamento rápidos e uma experiência fluida, especialmente no mobile.
+*   **Acessibilidade (WCAG):** Siga as melhores práticas de acessibilidade, garantindo contraste adequado, navegação por teclado, e semântica HTML correta.
+*   **Estrutura do Código:** O código gerado (HTML, CSS, JavaScript) deve ser limpo, bem organizado, comentado (quando necessário) e seguir as melhores práticas de desenvolvimento web.
+
+Este é um projeto de redesign completo. Por favor, aplique estas diretrizes em todas as páginas e seções do site da Dra. Hof, com o objetivo de criar uma experiência digital que seja ao mesmo tempo bela, funcional e altamente eficaz na conversão de visitantes em pacientes ou alunos.
+```
