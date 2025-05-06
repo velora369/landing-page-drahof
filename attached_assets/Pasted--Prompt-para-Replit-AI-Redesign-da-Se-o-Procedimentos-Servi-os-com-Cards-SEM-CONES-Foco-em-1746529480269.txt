@@ -1,0 +1,47 @@
+## Prompt para Replit AI: Redesign da Seção "Procedimentos / Serviços" com Cards SEM ÍCONES (Foco em Tipografia e Conteúdo)
+
+**Objetivo:** Redesenhar a seção "Procedimentos / Serviços" utilizando um design de cards minimalista e elegante, **SEM o uso de ícones**. O foco principal será na tipografia, na clareza do conteúdo textual e no espaçamento para transmitir profissionalismo e sofisticação.
+
+**Contexto:**
+- Decidimos abandonar completamente o uso de ícones (3D ou 2D) para os cards desta seção, devido a dificuldades em obter representações claras e satisfatórias.
+- A nova direção é criar cards que se destaquem pela qualidade do design tipográfico e pela organização da informação.
+- Esta é uma alteração para a Fase 5 do redesign do site (Seção "Procedimentos / Serviços").
+
+**Diretrizes Detalhadas para os Cards SEM ÍCONES:**
+
+1.  **Layout Geral e Título da Seção:**
+    *   Manter o título da seção claro (ex: "Principais Procedimentos") e o layout geral de apresentação dos cards em grid/flexbox responsivo, conforme definido anteriormente.
+    *   O fundo da seção deve ser neutro e limpo.
+
+2.  **Design dos Cards de Procedimento/Serviço (SEM ÍCONES):**
+    *   **Estilo Minimalista e Elegante:** Os cards devem ser extremamente limpos, com foco total no conteúdo textual.
+    *   **Hierarquia Tipográfica Clara:** Este é o ponto mais CRUCIAL.
+        *   **Nome do Procedimento/Serviço:** Deve ser o elemento de maior destaque no card. Utilizar a tipografia principal do site com um peso e tamanho que o tornem proeminente e de fácil leitura. Considerar uma cor de destaque da paleta para o nome do procedimento (ex: #731C13 ou #425F70).
+        *   **Breve Descrição:** Se houver uma breve descrição, ela deve ser concisa (1-3 linhas) e utilizar uma tipografia secundária ou a principal com menor peso/tamanho, garantindo excelente legibilidade. A cor do texto da descrição deve ser neutra e contrastar bem com o fundo do card.
+    *   **Espaçamento (Padding e Margins):** Utilizar espaçamento interno (padding) generoso dentro dos cards para que o texto "respire" e não pareça apertado. As margens entre os cards também devem ser adequadas para uma boa separação visual.
+    *   **Divisores Sutis (Opcional):** Se necessário para separar visualmente o nome do procedimento da descrição, pode-se usar uma linha divisória fina e sutil (cor clara da paleta ou um cinza suave), mas apenas se agregar valor à clareza sem poluir o design.
+    *   **Botão/Link "Saiba Mais" (Opcional e Discreto):**
+        *   Se cada procedimento tiver uma página de detalhe, um pequeno link textual (ex: "Saiba mais →") ou um botão minimalista pode ser incluído na parte inferior do card.
+        *   O estilo deve ser discreto para não competir com o nome do procedimento. Pode usar a cor de destaque da paleta.
+    *   **Fundo e Bordas do Card:** O fundo do card deve ser uma cor neutra da paleta (ex: #ECE0C4 ou branco). Bordas arredondadas suaves e sombras sutis e modernas podem ser mantidas para dar profundidade e elegância.
+
+3.  **Microinterações nos Cards:**
+    *   **Hover State:** Ao passar o mouse sobre um card, ele deve ter um feedback visual sutil, mas claro. Exemplos:
+        *   Leve aumento de tamanho (scale).
+        *   Mudança sutil na sombra do card.
+        *   Alteração na cor de fundo do card para um tom ligeiramente diferente (dentro da paleta).
+        *   O texto do nome do procedimento ou do link "Saiba mais" pode mudar de cor ou ganhar um sublinhado sutil.
+    *   **Animações de Entrada:** Os cards podem ter uma animação de entrada suave ao surgirem na tela (ex: fade-in, slide-in sutil), conforme definido anteriormente.
+
+4.  **Responsividade:**
+    *   Garantir que o layout dos cards e todo o conteúdo textual sejam perfeitamente responsivos, com excelente legibilidade e apresentação em todas as resoluções de tela (desktop, tablets e smartphones).
+
+**O que NÃO fazer:**
+*   Não tentar compensar a ausência de ícones com excesso de elementos gráficos ou cores vibrantes nos cards.
+*   Não usar fontes difíceis de ler ou tamanhos de texto muito pequenos.
+*   Não deixar o conteúdo textual parecer desorganizado ou apertado dentro dos cards.
+
+**Entregável Esperado:**
+*   A seção "Procedimentos / Serviços" redesenhada com cards SEM ÍCONES, focados em tipografia de alta qualidade, clareza de conteúdo, espaçamento elegante e microinterações sutis. Os cards devem ser modernos, minimalistas e totalmente responsivos.
+
+Por favor, aplique esta nova direção para os cards da seção de procedimentos. Após a implementação, informe para que o usuário possa validar o resultado.

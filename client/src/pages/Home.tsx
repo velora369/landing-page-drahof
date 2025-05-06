@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import Benefits2D from "@/components/Benefits2D";
+import Services from "@/components/Services";
 import AuthorityVideo from "@/components/AuthorityVideo";
 import Testimonials from "@/components/Testimonials";
 import Certifications from "@/components/Certifications";
@@ -16,7 +16,7 @@ export default function Home() {
       <WhatsAppButton />
       <Navigation />
       <Hero />
-      <Benefits2D />
+      <Services />
       <AuthorityVideo />
       <Testimonials />
       <Certifications />
