@@ -69,7 +69,7 @@ export default function Footer() {
             }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-6 left-6 z-50 w-12 h-12"
+            className="fixed bottom-6 left-6 z-50 w-16 h-16"
           >
             {/* Efeito de pulso */}
             <motion.div 
@@ -87,19 +87,13 @@ export default function Footer() {
             
             <motion.button
               onClick={scrollToTop}
-              className="group relative w-full h-full bg-gradient-to-br from-[#731C13] to-[#425F70] rounded-full flex items-center justify-center shadow-lg shadow-[#731C13]/20 border border-white/10 text-white backdrop-blur-sm"
+              className="relative w-full h-full bg-gradient-to-br from-[#731C13] to-[#425F70] rounded-full flex items-center justify-center shadow-xl border-2 border-white text-white backdrop-blur-sm hover:shadow-[#731C13]/50 hover:shadow-2xl transition-all duration-300"
               aria-label="Voltar ao topo"
-              whileHover={{ 
-                scale: 1.1, 
-                boxShadow: "0 10px 25px rgba(115, 28, 19, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <i className="fas fa-chevron-up text-sm"></i>
-              <div className="absolute left-full ml-4 top-1/2 transform -translate-y-1/2 bg-white/10 text-white px-2 py-1 rounded-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs whitespace-nowrap pointer-events-none">
-                <div className="absolute left-[-8px] top-1/2 transform -translate-y-1/2 w-2 h-2 bg-white/10 backdrop-blur-sm rotate-45"></div>
-                <span className="relative z-10">Voltar ao topo</span>
-              </div>
+              <div className="absolute inset-0 bg-white opacity-30 rounded-full blur-md"></div>
+              <i className="fas fa-chevron-up text-lg relative z-10"></i>
             </motion.button>
           </motion.div>
         )}
