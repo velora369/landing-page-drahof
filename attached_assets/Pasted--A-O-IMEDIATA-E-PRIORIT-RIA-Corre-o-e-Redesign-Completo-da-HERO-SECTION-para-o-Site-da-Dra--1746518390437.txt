@@ -1,0 +1,45 @@
+```
+**[AÇÃO IMEDIATA E PRIORITÁRIA] Correção e Redesign Completo da HERO SECTION para o Site da Dra. Jana Hof**
+
+**ATENÇÃO: Este comando substitui instruções anteriores referentes APENAS à Hero Section e exige ação focada para corrigir problemas e implementar o design desejado.**
+
+**Problema Crítico a Ser Resolvido Imediatamente:**
+
+A funcionalidade "Ver em 3D" aplicada ao carrossel de fotos da Hero Section NÃO foi solicitada da forma como está, apresentou problemas graves de usabilidade e responsividade (especialmente no mobile) e deve ser **REMOVIDA COMPLETAMENTE E IMEDIATAMENTE.**
+
+**Objetivo Principal para a Hero Section (Reiteração do Redesign Autocontido):**
+
+Transformar a Hero Section em uma área de destaque visualmente impactante, moderna, fluida e profissional, seguindo as diretrizes do redesign autocontido previamente fornecido. Devemos ter DOIS elementos visuais principais trabalhando em conjunto, mas distintos:
+
+1.  **O Carrossel de Fotos 2D da Dra. Hof (EXISTENTE, PORÉM MODERNIZADO):** Este carrossel com as fotos da Dra. Jana Guimarães deve ser mantido, mas com as seguintes modificações:
+    *   **REMOÇÃO TOTAL E ABSOLUTA** de qualquer funcionalidade, botão, toggle ou lógica relacionada a "Ver em 3D". As fotos devem ser exibidas apenas em 2D.
+    *   **Modernização Visual Urgente:** O design do carrossel (contêiner, setas de navegação, indicadores de slide/bolinhas) deve ser atualizado para um estilo elegante, minimalista e moderno, alinhado com a referência visual do Dribbble: Fincore - Fintech Landing Page (https://dribbble.com/shots/23887551-Fincore-Fintech-Landing-Page). As transições entre as fotos devem ser suaves.
+    *   **Responsividade Perfeita:** O carrossel deve funcionar e ser visualizado de forma impecável em TODAS as resoluções (desktop, tablet e, crucialmente, mobile).
+
+2.  **A Nova Animação de Fundo 3D Interativa (A SER CRIADA COMO ELEMENTO SEPARADO):** Conforme o prompt de redesign autocontido, esta é uma animação 3D abstrata e sofisticada que servirá como plano de fundo ou elemento visual principal da Hero Section, ATRÁS ou AO REDOR do conteúdo principal (textos, CTAs e possivelmente o carrossel de fotos, dependendo da composição final).
+    *   **Conceito Temático:** Representação artística de partículas de colágeno, fluxos de energia suave, ou uma rede de pontos luminosos conectados se movendo organicamente. Formas orgânicas e fluidas, na paleta de cores do site.
+    *   **Interatividade Sutil:** Leve reação ao movimento do mouse (parallax sutil, brilho suave nos elementos da animação). Sem cliques necessários.
+    *   **NÃO É O CARROSSEL:** Esta animação 3D NÃO é para ser aplicada às fotos do carrossel. É um elemento de design de fundo distinto.
+
+**Conteúdo da Hero Section:**
+
+*   **Textos:** O título principal ("Beleza é ciência, mas autoestima é arte."), o parágrafo descritivo sobre a Dra. HOF, e o card informativo ("Cirurgiã-dentista, educadora e referência nacional...") devem ser mantidos, com tipografia moderna e legível, e posicionados de forma harmoniosa com o carrossel modernizado e a nova animação de fundo 3D.
+*   **Botões de CTA:** Os botões "Agendar Consulta" e "Conhecer Cursos" devem ser mantidos, com design moderno, excelente contraste e efeitos de hover sutis, conforme a referência Fincore.
+
+**Instruções Diretas para o Replit AI:**
+
+1.  **PRIORIDADE MÁXIMA:** Remova toda e qualquer menção ou funcionalidade "Ver em 3D" do carrossel de fotos da Hero Section. O carrossel deve ser puramente 2D.
+2.  Modernize o design e a responsividade do carrossel de fotos 2D existente, conforme descrito acima.
+3.  Implemente a nova animação de fundo 3D interativa (abstrata, partículas/fluxos/rede) como um elemento separado na Hero Section, conforme o conceito do redesign autocontido.
+4.  Garanta que os textos e CTAs da Hero Section estejam bem posicionados, legíveis e integrados com o carrossel modernizado e a nova animação de fundo 3D.
+5.  Verifique a responsividade de TODA a Hero Section em múltiplas resoluções, com foco especial na experiência mobile.
+
+**Resultado Esperado:**
+Uma Hero Section que combine:
+    a) Um carrossel de fotos 2D da Dra. Hof, elegante, moderno e funcional.
+    b) Uma animação de fundo 3D abstrata, sutil e interativa, que traga sofisticação.
+    c) Textos e CTAs claros, bem posicionados e com design moderno.
+    d) Perfeita funcionalidade e visualização em todos os dispositivos.
+
+Por favor, concentre-se em aplicar estas correções e implementações na Hero Section com urgência e precisão. Queremos ver uma mudança significativa e alinhada com estas diretrizes claras.
+```
