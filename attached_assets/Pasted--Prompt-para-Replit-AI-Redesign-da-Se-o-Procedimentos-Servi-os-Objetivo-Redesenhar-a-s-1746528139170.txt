@@ -1,0 +1,63 @@
+## Prompt para Replit AI: Redesign da Seção "Procedimentos / Serviços"
+
+**Objetivo:** Redesenhar a seção "Principais Procedimentos" ou "Serviços" do site, aplicando um design moderno com cards interativos, ícones 3D temáticos e animações sutis. A seção deve ser visualmente atraente, informativa, fácil de navegar e totalmente responsiva, destacando os principais serviços oferecidos pela Dra. Hof.
+
+**Contexto e Referências:**
+- Manter a paleta de cores existente (#731C13, #425F70, #ECE0C4, e variações sutis).
+- Inspirar-se na sofisticação e modernidade já aplicadas nas seções anteriores (Hero, Header, Sobre).
+- **Observação Importante do Usuário:**
+    - Verificar e adicionar ícones que estão faltando abaixo de alguns procedimentos (ex: abaixo de "Botox").
+    - Remover qualquer animação 3D de fundo que possa existir atualmente nesta seção e que não esteja alinhada com o novo design (o usuário mencionou uma animação 3D indesejada nesta seção anteriormente).
+
+**Diretrizes Detalhadas para a Seção "Procedimentos / Serviços":**
+
+1.  **Layout Geral e Título:**
+    *   **Título da Seção:** Um título claro como "Principais Procedimentos", "Nossos Serviços" ou similar, com destaque e alinhado à tipografia do site.
+    *   **Layout de Cards:** Apresentar os procedimentos/serviços em um layout de cards (grid ou flexbox). O número de colunas deve ser responsivo (ex: 3-4 colunas em desktop, 2 em tablets, 1-2 em mobile, dependendo do conteúdo e design do card).
+    *   **Fundo da Seção:** Manter um fundo neutro ou com uma textura/gradiente muito sutil da paleta, para não competir com os cards. Um placeholder de fundo 3D sutil e temático para a seção inteira é opcional e, se usado, deve ser extremamente discreto e elegante, sem prejudicar a legibilidade ou performance.
+
+2.  **Design dos Cards de Procedimento/Serviço:**
+    *   **Estilo Moderno:** Os cards devem ter um design clean, moderno e sofisticado.
+    *   **Conteúdo do Card:** Cada card deve conter:
+        *   **Ícone 3D Temático:** Um ícone 3D minimalista e elegante representando o serviço/procedimento (ver item 3).
+        *   **Nome do Procedimento/Serviço:** Texto claro e legível.
+        *   **Breve Descrição (Opcional):** Uma ou duas linhas descrevendo sucintamente o procedimento, se aplicável e se não sobrecarregar o card.
+        *   **Botão/Link "Saiba Mais" (Opcional):** Se cada procedimento tiver uma página de detalhe, um pequeno botão ou link discreto pode ser incluído.
+    *   **Sombras e Bordas:** Aplicar sombras sutis e modernas aos cards para dar profundidade. Bordas arredondadas podem contribuir para um visual mais suave.
+
+3.  **Ícones 3D Temáticos e Minimalistas:**
+    *   **Criação/Seleção:** Para cada procedimento/serviço listado, criar ou selecionar um ícone 3D que seja:
+        *   **Temático:** Diretamente relacionado ao procedimento (ex: uma seringa estilizada para preenchimentos, uma forma abstrata representando a pele para tratamentos faciais, etc.).
+        *   **Minimalista e Elegante:** Evitar ícones muito complexos ou coloridos. Utilizar formas simples e cores da paleta ou tons metálicos sutis.
+        *   **Consistente:** Manter um estilo visual consistente entre todos os ícones.
+    *   **Posicionamento:** O ícone deve ter destaque no card, geralmente posicionado acima do nome do procedimento.
+    *   **Animação Sutil no Hover (Ícone):** Ao passar o mouse sobre o card (ou sobre o ícone), o ícone 3D pode ter uma animação sutil (ex: leve rotação, um brilho suave, um pequeno scale-up).
+
+4.  **Microinterações nos Cards:**
+    *   **Hover State (Card):** Ao passar o mouse sobre um card, ele deve ter um feedback visual claro (ex: leve aumento de tamanho (scale), mudança sutil na sombra, alteração na cor de fundo ou borda).
+    *   **Animações de Entrada:** Os cards podem ter uma animação de entrada ao surgirem na tela (ex: fade-in, slide-in sutil, aparecendo em cascata).
+
+5.  **Responsividade:**
+    *   Garantir que o layout dos cards, os ícones e todo o conteúdo da seção sejam perfeitamente responsivos e se adaptem a todas as resoluções de tela, mantendo a usabilidade e a estética.
+
+6.  **Lista de Procedimentos (Exemplo - adaptar conforme o conteúdo real do site):**
+    *   Botox
+    *   Preenchimento Facial
+    *   Bioestimuladores de Colágeno
+    *   Fios de PDO
+    *   Microagulhamento
+    *   Peelings Químicos
+    *   (Listar todos os outros procedimentos que devem aparecer)
+    *   **Lembrete:** Verificar se todos os procedimentos listados possuem seus respectivos ícones e descrições (se aplicável).
+
+**O que NÃO fazer:**
+*   Não usar ícones 2D genéricos se o objetivo são ícones 3D temáticos.
+*   Não sobrecarregar os cards com muita informação.
+*   Evitar animações exageradas que prejudiquem a experiência do usuário.
+
+**Entregável Esperado:**
+*   A seção "Procedimentos / Serviços" redesenhada e implementada, com cards modernos, ícones 3D temáticos e interativos, e totalmente responsiva.
+*   Remoção de animações 3D de fundo indesejadas preexistentes na seção.
+*   Inclusão dos ícones faltantes.
+
+Por favor, proceda com o redesign desta seção. Após a implementação, informe para que possamos validar o resultado.
