@@ -1,0 +1,35 @@
+### Solicitação de Ajuste no Botão "Voltar ao Topo" (Nova Versão)
+
+**Objetivo:** Refinar o posicionamento e manter o comportamento dinâmico do botão flutuante "Voltar ao Topo" para melhorar a usabilidade e a estética da interface.
+
+**Contexto:**
+O site possui um botão flutuante para o WhatsApp no canto inferior direito. O botão "Voltar ao Topo" precisa de um posicionamento claro e distinto, mantendo sua funcionalidade dinâmica.
+
+**Requisitos Detalhados:**
+
+1.  **Novo Posicionamento do Botão "Voltar ao Topo":**
+    *   O botão "Voltar ao Topo" deve ser posicionado no **canto inferior ESQUERDO** da tela.
+    *   Ele deve estar alinhado horizontalmente (na mesma altura) com o botão flutuante do WhatsApp, que permanecerá no canto inferior DIREITO da tela.
+    *   Garantir margens adequadas das bordas da tela para ambos os botões, para que não fiquem colados nas laterais ou na base.
+
+2.  **Comportamento Dinâmico Mantido (Desaparecer/Reaparecer com Scroll):**
+    *   **Desaparecimento Suave Durante o Scroll:** Quando o usuário estiver ativamente rolando a página (para cima ou para baixo), o botão "Voltar ao Topo" deve desaparecer de forma suave e fluida (ex: usando uma transição de opacidade e/ou um leve movimento de saída).
+    *   **Reaparecimento Suave ao Parar o Scroll:** Assim que o usuário parar de rolar a página por um breve momento (ex: após 200-300 milissegundos de inatividade de scroll), o botão "Voltar ao Topo" deve reaparecer de forma suave e fluida (ex: transição de opacidade e/ou leve movimento de entrada para sua posição original no canto inferior esquerdo).
+    *   **Condição de Exibição Inicial:** O botão "Voltar ao Topo" só deve aparecer inicialmente após o usuário ter rolado uma certa quantidade da página para baixo (ex: após rolar o equivalente a uma altura de viewport), para que não apareça no topo da página onde não tem função.
+
+3.  **Animações Fluidas:**
+    *   Todas as transições de desaparecimento e reaparecimento devem ser suaves e fluidas, utilizando CSS transitions ou animations para garantir uma boa performance e uma experiência visual agradável.
+    *   Evitar animações abruptas ou que causem qualquer tipo de "salto" no layout.
+
+4.  **Botão WhatsApp:**
+    *   O botão do WhatsApp deve permanecer no canto inferior DIREITO, com seu comportamento atual (ex: efeito de pulse).
+
+**Importante - Desconsiderar Instrução Anterior:**
+*   Esta instrução SUBSTITUI qualquer instrução anterior sobre o posicionamento do botão "Voltar ao Topo" (como a que pedia para posicioná-lo acima do botão WhatsApp). A posição correta agora é no canto inferior ESQUERDO.
+
+**Resultado Esperado:**
+*   Um botão "Voltar ao Topo" posicionado no canto inferior esquerdo, alinhado horizontalmente com o botão do WhatsApp (que fica no canto inferior direito).
+*   O botão "Voltar ao Topo" mantém o comportamento dinâmico de desaparecer durante a rolagem ativa e reaparecer ao pausar a rolagem.
+*   Ambos os botões flutuantes são claramente visíveis e acessíveis sem conflito visual.
+
+Por favor, implemente estes ajustes e me informe quando estiver pronto para validação.

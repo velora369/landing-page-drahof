@@ -58,7 +58,7 @@ export default function Footer() {
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#731C13]/10 blur-2xl"></div>
       <div className="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-[#ECE0C4]/10 blur-2xl"></div>
       
-      {/* Back to top button - Posicionado acima do botão do WhatsApp */}
+      {/* Back to top button - Posicionado no canto inferior esquerdo */}
       <AnimatePresence>
         {showScrollTop && (
           <motion.div 
@@ -69,7 +69,7 @@ export default function Footer() {
             }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-[88px] right-6 z-50 w-12 h-12"
+            className="fixed bottom-6 left-6 z-50 w-12 h-12"
           >
             {/* Efeito de pulso */}
             <motion.div 
@@ -96,9 +96,10 @@ export default function Footer() {
               whileTap={{ scale: 0.95 }}
             >
               <i className="fas fa-chevron-up text-sm"></i>
-              <span className="absolute -bottom-7 text-xs bg-white/10 backdrop-blur-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap">
-                Voltar ao topo
-              </span>
+              <div className="absolute left-full ml-4 top-1/2 transform -translate-y-1/2 bg-white/10 text-white px-2 py-1 rounded-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs whitespace-nowrap pointer-events-none">
+                <div className="absolute left-[-8px] top-1/2 transform -translate-y-1/2 w-2 h-2 bg-white/10 backdrop-blur-sm rotate-45"></div>
+                <span className="relative z-10">Voltar ao topo</span>
+              </div>
             </motion.button>
           </motion.div>
         )}
