@@ -96,12 +96,17 @@ export default function Hero() {
   }, [isMobile]);
 
   return (
-    <section 
-      ref={heroRef}
-      className="relative pt-36 pb-24 px-4 md:pt-44 bg-gradient-to-b from-white via-[#fcfbf9] to-[#f8f7f2] overflow-hidden" 
-      id="hero"
-      onMouseMove={handleMouseMove}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      <section 
+        ref={heroRef}
+        className="relative pt-36 pb-24 px-4 md:pt-44 bg-gradient-to-b from-white via-[#fcfbf9] to-[#f8f7f2] overflow-hidden" 
+        id="hero"
+        onMouseMove={handleMouseMove}
+      >
       {/* Fundo neutro com elementos gráficos sutis */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         {/* Gradiente de fundo suave */}
@@ -520,5 +525,6 @@ export default function Hero() {
       </div>
 
     </section>
+    </motion.div>
   );
 }

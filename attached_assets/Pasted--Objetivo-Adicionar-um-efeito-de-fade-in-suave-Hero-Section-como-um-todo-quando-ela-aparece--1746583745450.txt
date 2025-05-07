@@ -1,0 +1,20 @@
+**Objetivo:** Adicionar um efeito de "fade in" suave à Hero Section como um todo quando ela aparece no carregamento da página.
+
+**Contexto:**
+Atualmente, a Hero Section já possui animações de entrada para seus textos e CTAs. Para aprimorar a experiência visual inicial, o usuário solicitou que a seção inteira (incluindo seu fundo, textos e botões) apareça com um efeito de transição suave de "fade in" (aparecimento gradual, de transparente para opaco) quando a página é carregada ou quando a seção se torna visível.
+
+**Instruções Detalhadas:**
+
+1.  **Alvo da Animação:** O efeito de "fade in" deve ser aplicado à Hero Section como um todo, englobando todos os seus elementos visíveis (fundo, textos, botões, etc.).
+2.  **Tipo de Efeito:** Utilizar uma transição de opacidade, começando de `opacity: 0` para `opacity: 1`.
+3.  **Suavidade e Duração:**
+    *   A transição deve ser suave e elegante.
+    *   Uma duração apropriada para o fade in seria algo entre 0.5 a 1 segundo. O Replit AI pode testar e ajustar para o melhor resultado visual.
+4.  **Timing:** O fade in deve ocorrer quando a Hero Section é carregada/renderizada inicialmente na tela.
+5.  **Não Conflitar com Animações Existentes:**
+    *   É crucial que este novo efeito de fade in para a seção inteira não conflite ou substitua as animações de entrada já existentes para os elementos de texto e CTAs dentro da Hero Section. As animações individuais dos elementos internos devem continuar funcionando como antes, possivelmente começando após ou durante o fade in da seção principal.
+    *   O ideal é que a seção apareça suavemente (fade in) e, em seguida ou em conjunto, os textos e botões realizem suas animações de entrada específicas.
+6.  **Responsividade:** O efeito deve funcionar bem em todas as resoluções de tela (desktop, tablet e mobile).
+
+**Resultado Esperado:**
+Quando a página é carregada, a Hero Section deve surgir na tela com uma animação de "fade in" elegante e suave, melhorando a primeira impressão do usuário. As animações internas dos textos e CTAs devem permanecer funcionais e coordenadas com este novo efeito global da seção.

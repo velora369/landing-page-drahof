@@ -1,0 +1,30 @@
+**Objetivo:** Ajustar o layout da seção "Procedimentos" na visualização DESKTOP para que o card "E muito mais" fique centralizado em uma nova linha, abaixo dos cards "Peelings Químicos" e "Skinbooster".
+
+**Contexto:**
+Após a adição dos cards "Lipo de Papada" e "E muito mais", o layout da seção "Procedimentos" no desktop precisa de um ajuste fino para melhor organização visual. A solicitação anterior (`drahof_procedures_desktop_grid_fix_v1.txt`) buscava eliminar buracos de forma geral. Esta nova solicitação especifica um layout particular.
+
+Atualmente, os cards são: Fios de PDO, Lipo de Papada, Microagulhamento, Peelings Químicos, Skinbooster, E muito mais.
+
+**Instruções Detalhadas para o Layout Desktop:**
+
+1.  **Foco na Visualização Desktop:** A correção é especificamente para a experiência em telas de desktop.
+2.  **Seção de Procedimentos:** O ajuste deve ser feito na grade principal que exibe todos os cards de procedimentos.
+3.  **Organização dos Cards em Linhas:**
+    *   **Linha 1:** Deve conter os cards "Fios de PDO", "Lipo de Papada" e "Microagulhamento" (3 cards).
+    *   **Linha 2:** Deve conter os cards "Peelings Químicos" e "Skinbooster" (2 cards). Estes dois cards devem estar alinhados à esquerda ou distribuídos de forma que não pareçam incompletos, preparando para a linha seguinte.
+    *   **Linha 3:** Deve conter APENAS o card "E muito mais". Este card deve estar **centralizado** horizontalmente na seção.
+4.  **Harmonia Visual:**
+    *   Garanta que o espaçamento entre as linhas e entre os cards seja consistente e agradável visualmente.
+    *   O card "E muito mais" centralizado na terceira linha deve parecer uma decisão de design intencional.
+5.  **Manter Responsividade Mobile:** Certifique-se de que qualquer alteração feita para o desktop não afete negativamente a visualização em dispositivos móveis (que já estava correta com 2x2 cards, ou conforme a última configuração validada para mobile).
+
+**Referência Visual do Problema/Objetivo (Desktop):**
+O usuário forneceu uma captura de tela (`Captura de Tela 2025-05-06 às 23.07.53.png`) mostrando o layout atual que precisa ser ajustado para esta nova configuração.
+
+**Resultado Esperado:**
+Na visualização desktop, a seção "Procedimentos" deve exibir os cards na seguinte configuração:
+*   Linha 1: Fios de PDO | Lipo de Papada | Microagulhamento
+*   Linha 2: Peelings Químicos | Skinbooster
+*   Linha 3: (Centralizado) E muito mais
+
+O layout deve ser equilibrado e esteticamente agradável.
