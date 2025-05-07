@@ -62,7 +62,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImg, afterI
   
   return (
     <motion.div 
-      className="relative w-full h-[400px] md:h-[450px] rounded-2xl shadow-xl overflow-hidden group"
+      className="relative w-full h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl shadow-xl overflow-hidden group"
       ref={containerRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -70,20 +70,30 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImg, afterI
       transition={{ duration: 0.7 }}
       whileHover={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
     >
-      {/* Imagem do resultado (depois) */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center" 
-        style={{ backgroundImage: `url(${afterImg})` }}
-      />
+      {/* Container da imagem "depois" - fica embaixo */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        <img 
+          src={afterImg} 
+          alt="Depois" 
+          className="w-full h-full object-contain md:object-cover"
+          style={{ maxHeight: "100%" }}
+        />
+      </div>
       
-      {/* Imagem inicial (antes) - visível apenas até a posição do slider */}
+      {/* Container da imagem "antes" - fica por cima mas restrita ao clipPath */}
       <div 
-        className="absolute inset-0 bg-cover bg-center" 
+        className="absolute inset-0 flex items-center justify-center overflow-hidden"
         style={{ 
-          backgroundImage: `url(${beforeImg})`,
           clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` 
         }}
-      />
+      >
+        <img 
+          src={beforeImg} 
+          alt="Antes" 
+          className="w-full h-full object-contain md:object-cover"
+          style={{ maxHeight: "100%" }}
+        />
+      </div>
       
       {/* Linha divisória do slider com alças */}
       <div 

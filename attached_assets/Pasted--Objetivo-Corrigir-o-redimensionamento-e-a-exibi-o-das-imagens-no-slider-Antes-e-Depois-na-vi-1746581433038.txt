@@ -1,0 +1,20 @@
+**Objetivo:** Corrigir o redimensionamento e a exibição das imagens no slider "Antes e Depois" na visualização DESKTOP, especificamente dentro do modal de visualização de cada caso.
+
+**Contexto:**
+O usuário observou que, ao visualizar os casos clínicos na seção "Antes e Depois" em um DESKTOP, as imagens dentro do slider interativo (que aparece no modal, como no exemplo de "Harmonização Facial") não estão sendo bem redimensionadas. Elas podem aparecer cortadas, esticadas ou desproporcionais. A visualização no mobile, no entanto, está correta.
+
+**Instruções Detalhadas:**
+
+1.  **Foco na Visualização Desktop:** A correção deve ser aplicada especificamente para a experiência em telas de desktop.
+2.  **Modal do Slider "Antes e Depois":** O problema principal ocorre dentro do modal que exibe o slider interativo de um caso clínico específico (onde o usuário arrasta o divisor para ver o antes e o depois).
+3.  **Redimensionamento Correto das Imagens:**
+    *   Garanta que as imagens de "antes" e "depois" dentro do slider sejam redimensionadas para se ajustarem ao contêiner do slider no modal de forma proporcional, sem distorções (esticar/achatar) e sem cortes que comprometam a visualização do resultado do procedimento.
+    *   As imagens devem manter sua proporção original (aspect ratio) tanto quanto possível, enquanto preenchem o espaço designado de forma inteligente.
+    *   O objetivo é que a visualização no desktop seja tão clara e bem apresentada quanto a visualização no mobile, que já está funcionando corretamente.
+4.  **Consistência:** A solução deve ser aplicada a todos os casos clínicos que utilizam este slider "Antes e Depois" no modal.
+
+**Referência Visual do Problema (Desktop):**
+O usuário forneceu uma captura de tela (`Captura de Tela 2025-05-06 às 22.27.35.png`) que ilustra o problema no modal de "Harmonização Facial" em desktop, onde as imagens não estão bem ajustadas.
+
+**Resultado Esperado:**
+No desktop, ao abrir o modal de um caso clínico na seção "Antes e Depois", as imagens no slider interativo devem ser exibidas corretamente, bem dimensionadas, com proporções mantidas e sem cortes ou distorções, proporcionando uma visualização clara e profissional dos resultados.
