@@ -1,0 +1,32 @@
+**Objetivo:** Simplificar a seção "Resultados Reais" removendo a subseção "Mais Casos Clínicos" (incluindo todos os seus cards e o placeholder de vídeo).
+
+**Contexto:**
+O usuário decidiu que a seção "Resultados Reais" deve ser mais concisa. Atualmente, abaixo do slider interativo principal de "Antes e Depois", existe uma subseção intitulada "Mais Casos Clínicos" que contém:
+*   Um card para "Harmonização Completa / Harmonização Facial".
+*   Um card para "Definição Mandibular / Contorno Facial".
+*   Um card/placeholder para um vídeo (anteriormente "Volume e Contorno / Preenchimento Labial").
+
+Todos esses elementos da subseção "Mais Casos Clínicos" devem ser removidos.
+
+**Instruções Detalhadas:**
+
+1.  **Localização:**
+    *   Identifique a seção da página principal que exibe os "Resultados Reais".
+2.  **Remoção da Subseção "Mais Casos Clínicos":**
+    *   Remova completamente toda a área/div que corresponde à subseção "Mais Casos Clínicos". Isso inclui:
+        *   O título "Mais Casos Clínicos" (se houver um título explícito para esta subparte).
+        *   O card referente a "Harmonização Completa / Harmonização Facial".
+        *   O card referente a "Definição Mandibular / Contorno Facial".
+        *   O card/placeholder de vídeo (que estava destinado ao `preenchimento.mp4` e exibia "Volume e Contorno / Preenchimento Labial").
+3.  **Estrutura a Ser Mantida na Seção "Resultados Reais":**
+    *   O título principal da seção (ex: "Resultados Reais" ou similar) deve ser mantido.
+    *   O slider interativo principal de "Antes e Depois" (o componente que permite arrastar para comparar as imagens) deve ser mantido.
+    *   O texto informativo que fica abaixo do slider principal ("Todos os casos são reais, com autorização para divulgação. Resultados personalizados conforme a anatomia de cada paciente.") deve ser mantido e posicionado logo após o slider principal.
+
+**Resultado Esperado:**
+A seção "Resultados Reais" deve conter apenas:
+1.  Seu título principal.
+2.  O slider interativo de "Antes e Depois".
+3.  O texto informativo sobre os casos reais e personalizados.
+
+Qualquer elemento que fazia parte da antiga subseção "Mais Casos Clínicos" (cards de exemplos adicionais e o placeholder do vídeo) deve ser completamente removido do código e da visualização.
