@@ -1,7 +1,7 @@
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
-// Mini placeholder de YouTube para o canal da Dra. Hof
+// Mini placeholder de YouTube para o canal da Dra. Hof no estilo janela de aplicativo/navegador
 const YoutubeChannelPlaceholder = () => {
   // Estado para animação de hover
   const [isHovered, setIsHovered] = useState(false);
@@ -18,7 +18,7 @@ const YoutubeChannelPlaceholder = () => {
           ease: "easeInOut"
         }}
       >
-        {/* Container principal - Card de YouTube */}
+        {/* Container principal - Janela de aplicativo */}
         <a 
           href="https://www.youtube.com/janadrahof" 
           target="_blank" 
@@ -35,8 +35,26 @@ const YoutubeChannelPlaceholder = () => {
             }}
             transition={{ duration: 0.3 }}
           >
+            {/* Barra superior estilo macOS */}
+            <div className="h-8 bg-gradient-to-r from-[#425F70] to-[#334959] px-3 flex items-center">
+              {/* Botões de controle da janela (vermelho, amarelo, verde) */}
+              <div className="flex space-x-1.5">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/90 transition-colors"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] hover:bg-[#ffbd2e]/90 transition-colors"></div>
+                <div className="w-3 h-3 rounded-full bg-[#27c93f] hover:bg-[#27c93f]/90 transition-colors"></div>
+              </div>
+              
+              {/* Título centralizado */}
+              <div className="flex-1 text-center">
+                <p className="text-white text-xs font-medium">Dra. HOF Play</p>
+              </div>
+              
+              {/* Espaço à direita para equilibrar */}
+              <div className="w-[42px]"></div>
+            </div>
+            
             {/* Área de thumbnail */}
-            <div className="h-36 bg-gradient-to-r from-[#731C13] to-[#a33a31] relative flex items-center justify-center">
+            <div className="h-32 bg-gradient-to-r from-[#731C13] to-[#a33a31] relative flex items-center justify-center">
               {/* Logo grande no centro do thumbnail */}
               <div className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center shadow-md">
                 <span className="font-['Cormorant_Garamond'] text-[#731C13] text-3xl font-bold">HOF</span>
@@ -56,24 +74,38 @@ const YoutubeChannelPlaceholder = () => {
               </motion.div>
             </div>
             
+            {/* Barra de navegação simulada */}
+            <div className="bg-[#f5f5f5] py-1 px-4 flex items-center justify-between border-b border-gray-200">
+              <div className="flex space-x-4 items-center">
+                <div className="w-4 h-4 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                    <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                    <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                  </svg>
+                </div>
+                <div className="text-xs text-gray-500">Início</div>
+              </div>
+              <div className="text-xs text-gray-400">janadrahof</div>
+            </div>
+            
             {/* Informações do canal */}
-            <div className="p-4">
+            <div className="p-3">
               <div className="flex items-center">
                 {/* Ícone do canal/avatar */}
-                <div className="w-10 h-10 rounded-full bg-[#731C13] flex items-center justify-center text-white text-xs font-bold mr-3 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-[#731C13] flex items-center justify-center text-white text-xs font-bold mr-3 shadow-sm">
                   HOF
                 </div>
                 
                 {/* Detalhes do canal */}
                 <div className="flex-1">
-                  <h3 className="font-medium text-[#425F70] truncate">Podcast Dra. HOF</h3>
+                  <h3 className="font-medium text-[#425F70] truncate text-sm">Podcast Dra. HOF</h3>
                   <p className="text-xs text-gray-500">Canal Oficial</p>
                 </div>
               </div>
               
               {/* Botão de inscrever-se */}
               <motion.button 
-                className="mt-3 w-full bg-[#731C13] text-white py-2 rounded-md text-sm font-medium"
+                className="mt-2 w-full bg-[#731C13] text-white py-1.5 rounded-md text-xs font-medium"
                 whileHover={{ backgroundColor: "#5d1812" }}
                 transition={{ duration: 0.2 }}
               >
