@@ -1,161 +1,216 @@
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
-// Componente de microfone com design vintage/retrô clássico facilmente reconhecível
-const Microphone3D = () => {
-  // Referência para aplicar transformações em resposta ao hover
-  const mic3DRef = useRef<HTMLDivElement>(null);
-  
-  // Estados para animações
+// Componente de placeholder de plataforma de podcast (estilo Velora Members)
+const PodcastPlayer = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [activeCard, setActiveCard] = useState(0);
   
-  // Animação suave de flutuação
+  // Episódios de podcast fictícios
+  const episodes = [
+    {
+      number: "01",
+      title: "Revelando Segredos da Harmonização",
+      description: "Descubra os principais aspectos da harmonização facial e como ela pode transformar sua autoestima.",
+      duration: "28:45",
+      thumbnail: "bg-gradient-to-br from-[#731C13]/80 to-[#731C13]/60",
+    },
+    {
+      number: "02",
+      title: "Mitos e Verdades sobre HOF",
+      description: "Desmistificamos os principais conceitos e crenças sobre a harmonização orofacial.",
+      duration: "32:12",
+      thumbnail: "bg-gradient-to-br from-[#425F70]/80 to-[#425F70]/60",
+    },
+    {
+      number: "03",
+      title: "Harmonização Natural: O Segredo",
+      description: "Como obter resultados naturais e valorizar características únicas em cada rosto.",
+      duration: "25:38",
+      thumbnail: "bg-gradient-to-br from-[#9c8051]/80 to-[#9c8051]/60",
+    }
+  ];
+  
+  // Função para alternar entre os cards a cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
-      const time = Date.now() / 2000;
-      setRotation({
-        x: Math.sin(time) * 2.5,
-        y: Math.cos(time) * 2.5
-      });
-    }, 50);
+      setActiveCard((prev) => (prev + 1) % episodes.length);
+    }, 4000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [episodes.length]);
   
-  // Efeito de hover simples
-  const transform = isHovered
-    ? `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(1.05)`
-    : `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
-    
   return (
     <div 
-      className="relative w-64 h-64 mx-auto my-10" 
-      ref={mic3DRef}
+      className="max-w-4xl mx-auto relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Container principal com efeito de perspectiva */}
+      {/* Janela de aplicativo simulada */}
       <motion.div
-        className="w-full h-full"
-        style={{ 
-          transform,
-          transition: "transform 0.3s ease-out"
+        className="rounded-xl overflow-hidden shadow-2xl bg-white border border-gray-200"
+        whileHover={{ 
+          y: -5,
+          boxShadow: "0 25px 50px -12px rgba(115, 28, 19, 0.25)"
         }}
+        transition={{ duration: 0.3 }}
       >
-        {/* Microfone vintage de mesa/estúdio */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center z-30">
-          {/* Base pesada do microfone */}
-          <div className="w-32 h-5 bg-gradient-to-b from-[#444] to-[#222] rounded-lg shadow-lg relative">
-            {/* Detalhes metálicos na base */}
-            <div className="absolute inset-x-2 top-1 h-[2px] bg-gradient-to-r from-[#666]/60 via-[#aaa]/60 to-[#666]/60"></div>
-            <div className="absolute bottom-1 inset-x-0 h-1 bg-[#111] rounded-b-lg"></div>
+        {/* Barra de navegação do player de podcast simulado */}
+        <div className="bg-gradient-to-r from-[#731C13] to-[#5d1812] p-3 flex items-center justify-between">
+          {/* Botões de janela */}
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 bg-[#ff5f57] rounded-full"></div>
+            <div className="w-3 h-3 bg-[#ffbd2e] rounded-full"></div>
+            <div className="w-3 h-3 bg-[#28c940] rounded-full"></div>
           </div>
           
-          {/* Haste do microfone */}
-          <div className="w-3 h-10 bg-gradient-to-b from-[#444] to-[#333] rounded-full shadow-md">
-            {/* Reflexo na haste */}
-            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#aaa]/20 rounded-l-full"></div>
+          {/* Nome do aplicativo simulado */}
+          <div className="flex items-center text-white font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+            </svg>
+            <span>Dra. HOF Play</span>
           </div>
           
-          {/* Base do microfone - conector com o corpo */}
-          <div className="w-8 h-3 bg-[#333] rounded-t-sm relative z-20">
-            {/* Anel decorativo */}
-            <div className="absolute inset-x-0 top-1 h-[2px] bg-[#555]"></div>
-          </div>
-          
-          {/* Corpo principal do microfone - estilo vintage */}
-          <div className="w-16 h-28 rounded-lg bg-gradient-to-b from-[#731C13] to-[#5d1812] shadow-xl relative overflow-hidden">
-            {/* Contorno metálico */}
-            <div className="absolute inset-0 border-2 border-[#ECE0C4]/20 rounded-lg"></div>
-            
-            {/* Detalhes metálicos no corpo */}
-            <div className="absolute top-4 inset-x-0 h-1 bg-[#333] border-y border-[#555]/50"></div>
-            <div className="absolute bottom-4 inset-x-0 h-1 bg-[#333] border-y border-[#555]/50"></div>
-            
-            {/* Logo "HOF" */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-[#ECE0C4] font-bold text-lg opacity-80">
-                HOF
-              </div>
-            </div>
-          </div>
-          
-          {/* Grade superior do microfone - característica mais distintiva */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-[#999]/90 shadow-inner flex items-center justify-center z-30">
-            {/* Grade metálica com textura prateada */}
-            <div className="w-[90%] h-[90%] rounded-full bg-gradient-to-r from-[#888] to-[#bbb] flex items-center justify-center relative overflow-hidden border-4 border-[#777] shadow-inner">
-              {/* Grade interna - malha metálica */}
-              <div className="absolute inset-0 grid grid-cols-8 grid-rows-8">
-                {/* Linhas horizontais */}
-                {[...Array(8)].map((_, i) => (
-                  <div 
-                    key={`h-${i}`} 
-                    className="col-span-full h-[1px] bg-[#444]/60"
-                    style={{ marginTop: `${i * 3}px` }}
-                  ></div>
-                ))}
-                
-                {/* Linhas verticais */}
-                {[...Array(8)].map((_, i) => (
-                  <div 
-                    key={`v-${i}`} 
-                    className="row-span-full w-[1px] h-full bg-[#444]/60"
-                    style={{ marginLeft: `${i * 3}px` }}
-                  ></div>
-                ))}
-              </div>
-              
-              {/* Círculo central com o logo */}
-              <div className="w-12 h-12 rounded-full bg-[#731C13] flex items-center justify-center z-10 shadow-inner border border-[#731C13]/50">
-                <span className="text-[#ECE0C4] font-bold text-lg">HOF</span>
-              </div>
-              
-              {/* Brilho/reflexo na grade */}
-              <div className="absolute top-0 left-1/4 right-1/4 h-3 bg-white/10 blur-sm rounded-full"></div>
-            </div>
+          {/* Menu de navegação */}
+          <div className="flex items-center space-x-3 text-white/80">
+            <span className="text-xs hover:text-white cursor-pointer">Início</span>
+            <span className="text-xs hover:text-white cursor-pointer">Explorar</span>
+            <span className="text-xs bg-white/20 px-2 py-1 rounded-full text-white cursor-pointer">Episódios</span>
           </div>
         </div>
         
-        {/* Ondas de áudio estilizadas */}
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-0">
-          <motion.div
-            className="w-48 h-48 rounded-full border-2 border-[#ECE0C4]/15"
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.15, 0.3, 0.15]
-            }}
-            transition={{ 
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute inset-0 w-48 h-48 rounded-full border-2 border-[#731C13]/10"
-            animate={{ 
-              scale: [1, 1.3, 1],
-              opacity: [0.1, 0.25, 0.1]
-            }}
-            transition={{ 
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.3
-            }}
-          />
+        {/* Área de conteúdo principal */}
+        <div className="p-6 bg-gradient-to-b from-[#f9f6f2] to-white">
+          {/* Apresentação do podcast */}
+          <div className="flex flex-col md:flex-row items-center mb-8">
+            {/* Arte do podcast */}
+            <div className="w-40 h-40 md:w-48 md:h-48 bg-gradient-to-br from-[#731C13] to-[#ECE0C4] rounded-xl shadow-lg flex items-center justify-center mb-5 md:mb-0 md:mr-6 relative">
+              <div className="absolute inset-[2px] bg-gradient-to-br from-[#731C13]/90 to-[#731C13]/70 rounded-[10px] flex items-center justify-center">
+                <span className="text-[#ECE0C4] font-bold text-3xl">HOF</span>
+              </div>
+              
+              {/* Ícone de reprodução sobreposto */}
+              <motion.div 
+                className="absolute inset-0 bg-black/30 rounded-xl flex items-center justify-center opacity-0"
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <motion.div 
+                  className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-[#731C13]" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                  </svg>
+                </motion.div>
+              </motion.div>
+            </div>
+            
+            {/* Detalhes do podcast */}
+            <div className="text-center md:text-left">
+              <h3 className="text-[#425F70] text-xs font-semibold uppercase tracking-wide mb-1">Podcast exclusivo</h3>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#731C13] mb-2">Bate Papo com Dra. HOF</h2>
+              <p className="text-gray-600 mb-4 max-w-md">Conversas exclusivas sobre harmonização facial, autoestima e os segredos para resultados naturais e personalizados.</p>
+              
+              {/* Estatísticas */}
+              <div className="flex items-center justify-center md:justify-start space-x-5 text-xs text-gray-500">
+                <div className="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  <span>3.2K visualizações</span>
+                </div>
+                <div className="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                  </svg>
+                  <span>42 comentários</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Separador */}
+          <div className="w-full h-[1px] bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100 my-6"></div>
+          
+          {/* Lista de episódios */}
+          <div>
+            <h3 className="text-lg font-bold text-[#425F70] mb-4">Episódios Recentes</h3>
+            
+            <div className="space-y-3">
+              {episodes.map((episode, index) => (
+                <motion.div 
+                  key={index}
+                  className={`p-4 rounded-lg border ${index === activeCard ? 'bg-gray-50 border-gray-200' : 'bg-white border-gray-100'} hover:shadow-md transition-all cursor-pointer`}
+                  animate={{ 
+                    scale: index === activeCard ? 1.02 : 1,
+                    borderColor: index === activeCard ? '#731C13' : 'rgb(229 231 235)'
+                  }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => setActiveCard(index)}
+                >
+                  <div className="flex items-center">
+                    {/* Thumbnail */}
+                    <div className={`w-16 h-16 rounded-lg shadow-md flex-shrink-0 ${episode.thumbnail} flex items-center justify-center mr-4 relative`}>
+                      <span className="text-white font-bold">{episode.number}</span>
+                      {/* Play button overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#731C13]" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Informações do episódio */}
+                    <div className="flex-grow">
+                      <h4 className="font-semibold text-[#425F70]">{episode.title}</h4>
+                      <p className="text-gray-600 text-sm line-clamp-1">{episode.description}</p>
+                      <div className="flex items-center mt-1">
+                        <span className="text-xs text-gray-500 flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {episode.duration}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Botão de download */}
+                    <button className="ml-2 p-2 rounded-full hover:bg-gray-100 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Botão CTA principal */}
+          <div className="mt-8 text-center">
+            <a 
+              href="https://www.youtube.com/janadrahof" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#731C13] to-[#a33a31] text-white rounded-full shadow-lg transition-all hover:shadow-xl hover:from-[#731C13] hover:to-[#731C13] transform hover:-translate-y-1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+              </svg>
+              <span className="font-medium">Assistir no YouTube</span>
+            </a>
+          </div>
         </div>
       </motion.div>
       
-      {/* Sombra elegante sob o microfone */}
-      <motion.div
-        className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 h-2 bg-black/15 rounded-full blur-md z-0"
-        animate={{ 
-          width: isHovered ? 32 : 28,
-          opacity: isHovered ? 0.25 : 0.15
-        }}
-        transition={{ duration: 0.3 }}
-      />
+      {/* Reflexo/sombra debaixo do player */}
+      <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-b from-black/10 to-transparent blur-xl rounded-full"></div>
     </div>
   );
 };
@@ -171,63 +226,6 @@ export default function Podcast() {
   const parallaxY1 = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const parallaxY2 = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
   const parallaxScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
-  
-  // Tópicos do podcast com ícones modernos
-  const podcastTopics = [
-    {
-      icon: "podcast",
-      title: "Mitos e verdades em HOF",
-      description: "Conversas esclarecedoras sobre harmonização facial",
-      color: "#425F70"
-    },
-    {
-      icon: "user-md",
-      title: "Entrevistas com especialistas",
-      description: "Convidados compartilham o melhor da estética avançada",
-      color: "#731C13"
-    },
-    {
-      icon: "comments",
-      title: "Bate papo delas",
-      description: "Um espaço para explorar temas relevantes do cotidiano feminino com leveza e profundidade.",
-      color: "#5D4037"
-    },
-    {
-      icon: "heart",
-      title: "Autoestima além da estética",
-      description: "Como cuidar da beleza interior e projetar confiança além do visual",
-      color: "#D81B60"
-    },
-    {
-      icon: "chart-line",
-      title: "Tendências em procedimentos",
-      description: "O que há de mais moderno na medicina estética",
-      color: "#1E88E5"
-    },
-    {
-      icon: "rocket",
-      title: "E muito mais...",
-      description: "Conteúdos exclusivos para expandir seu conhecimento e autoestima",
-      color: "#7B1FA2"
-    }
-  ];
-  
-  // Estado para animação das ondas sonoras
-  const [waveActive, setWaveActive] = useState(false);
-  
-  // Efeito para ativar as ondas sonoras periodicamente
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWaveActive(true);
-      
-      // Desativar após 5 segundos
-      setTimeout(() => {
-        setWaveActive(false);
-      }, 5000);
-    }, 10000);
-    
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section 
@@ -299,7 +297,7 @@ export default function Podcast() {
               }}
             />
             
-            {/* Título principal com badge "Em breve" */}
+            {/* Título principal */}
             <h2 className="font-['Cormorant_Garamond'] text-5xl md:text-6xl font-bold text-[#425F70] relative z-10">
               <motion.span 
                 className="relative inline-block"
@@ -312,27 +310,12 @@ export default function Podcast() {
                   ease: "easeInOut"
                 }}
               >
-                Podcast 
-                {/* Badge "Em breve" com efeito de pulsação */}
-                <motion.span 
-                  className="absolute -top-4 right-[-80px] bg-gradient-to-r from-[#731C13] to-[#a33a31] text-white text-sm px-4 py-1.5 rounded-full shadow-lg"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [5, 8, 5]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  Em breve
-                </motion.span>
+                Podcast
               </motion.span>
             </h2>
           </div>
           
-          {/* Subtítulo com animação de entrada */}
+          {/* Subtítulo atualizado */}
           <motion.p 
             className="text-gray-700 max-w-3xl mx-auto mt-8 text-xl"
             initial={{ opacity: 0, y: 20 }}
@@ -340,171 +323,20 @@ export default function Podcast() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Aguarde o lançamento do nosso podcast. Enquanto isso, siga no Instagram para ficar por dentro de todas as novidades!
+            Assista nossos últimos episódios e fique por dentro das novidades e conteúdos exclusivos.
           </motion.p>
         </motion.div>
         
-        {/* Microfone 3D animado como elemento visual central */}
+        {/* Interface de podcast interativa simulada, inspirada na referência da Velora Members */}
         <motion.div
           style={{ scale: parallaxScale }}
-          className="relative mb-20"
-        >
-          <Microphone3D />
-          
-          {/* Ondas sonoras animadas */}
-          <AnimatePresence>
-            {waveActive && (
-              <motion.div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-40"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                {/* Ondas sonoras como divs animados ao invés de SVG */}
-                <div className="relative w-full h-full">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <motion.div
-                      key={`wave-${i}`}
-                      className="absolute left-1/2 top-1/2 h-0.5 bg-[#731C13]/20 rounded-full"
-                      style={{ 
-                        width: `${(i+1) * 20}%`,
-                        translateX: '-50%',
-                        translateY: '-50%'
-                      }}
-                      animate={{
-                        scale: [1, 1.05, 1],
-                        opacity: [0.1, 0.3, 0.1]
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: 2,
-                        delay: i * 0.2,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  ))}
-                  
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <motion.div
-                      key={`wave2-${i}`}
-                      className="absolute left-1/2 top-1/2 h-0.5 bg-[#425F70]/20 rounded-full"
-                      style={{ 
-                        width: `${(i+1) * 15}%`,
-                        translateX: '-50%',
-                        translateY: '-50%'
-                      }}
-                      animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.1, 0.3, 0.1]
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: 3,
-                        delay: i * 0.15,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-        
-        {/* Grid de tópicos do podcast */}
-        <motion.div 
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
+          className="relative mb-10"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <h3 className="text-2xl font-bold text-[#425F70] mb-6">Conteúdos que virão por aí:</h3>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {podcastTopics.map((topic, index) => (
-            <motion.div 
-              key={index}
-              className="glass-card bg-white p-8 rounded-2xl transition-all duration-300 relative overflow-hidden group"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ 
-                y: -8,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-              }}
-            >
-              {/* Gradiente de fundo decorativo */}
-              <div 
-                className="absolute top-0 right-0 w-32 h-32 rounded-bl-full -translate-y-16 translate-x-16 group-hover:-translate-y-10 group-hover:translate-x-10 transition-transform duration-700 opacity-10"
-                style={{ background: `linear-gradient(135deg, ${topic.color}, transparent)` }}
-              />
-              
-              {/* Ícone do tópico com animação no hover */}
-              <div className="flex flex-col items-center">
-                <motion.div 
-                  className="text-white text-2xl mb-6 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg z-10"
-                  style={{ background: `linear-gradient(135deg, ${topic.color}, ${topic.color}bb)` }}
-                  whileHover={{ 
-                    rotate: 5,
-                    scale: 1.1,
-                  }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <i className={`fas fa-${topic.icon}`}></i>
-                </motion.div>
-                
-                {/* Título e descrição */}
-                <h3 className="text-xl font-bold text-[#425F70] mb-3 group-hover:text-[#731C13] transition-colors duration-300">
-                  {topic.title}
-                </h3>
-                <p className="text-gray-600">
-                  {topic.description}
-                </p>
-              </div>
-              
-              {/* Linha decorativa inferior que aparece no hover */}
-              <motion.div 
-                className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r"
-                style={{ 
-                  backgroundImage: `linear-gradient(to right, ${topic.color}50, transparent)`,
-                  scaleX: 0, 
-                  transformOrigin: "left" 
-                }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-          ))}
-        </div>
-        
-        {/* CTA final */}
-        <motion.div 
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <motion.div 
-            className="inline-block bg-white py-4 px-8 rounded-xl shadow-lg border border-gray-100"
-            whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-          >
-            <div className="flex items-center">
-              <div className="bg-gradient-to-br from-[#425F70] to-[#731C13] w-12 h-12 rounded-full flex items-center justify-center shadow-md mr-4">
-                <i className="fas fa-headphones-alt text-white text-xl"></i>
-              </div>
-              <div className="text-left">
-                <h4 className="text-[#425F70] font-bold text-xl">Fique ligado!</h4>
-                <p className="text-gray-600">
-                  Em breve, conhecimento e cuidado em seu melhor formato.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+          <PodcastPlayer />
         </motion.div>
       </div>
     </section>
