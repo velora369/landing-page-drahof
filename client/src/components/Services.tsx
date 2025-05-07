@@ -85,9 +85,9 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Grid de cards de procedimentos - com o último card centralizado */}
+        {/* Grid de cards de procedimentos - grid uniforme 3x2 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {procedures.slice(0, procedures.length - 1).map((procedure, index) => (
+          {procedures.map((procedure, index) => (
             <motion.div
               key={index}
               className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-[#ECE0C4]/20 group transition-all duration-300"
@@ -152,72 +152,6 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
-        </div>
-        
-        {/* Card "E muito mais" centralizado */}
-        <div className="mt-6 md:mt-8 flex justify-center">
-          <motion.div
-            className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-[#ECE0C4]/20 group transition-all duration-300 max-w-md"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            whileHover={{ 
-              y: -8,
-              backgroundColor: "#FFFCF5",
-              borderColor: "rgba(115, 28, 19, 0.1)",
-              boxShadow: "0 20px 25px -5px rgba(115, 28, 19, 0.1), 0 10px 10px -5px rgba(115, 28, 19, 0.05)"
-            }}
-          >
-            {/* Decorative top border */}
-            <div className="h-1 w-full bg-gradient-to-r from-[#731C13] to-[#425F70] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-            
-            <div className="p-8">
-              {/* Title with elegant typography */}
-              <h3 className="font-['Cormorant_Garamond'] text-2xl font-bold text-[#731C13] mb-4 group-hover:text-[#731C13] transition-colors duration-300">
-                {procedures[procedures.length - 1].title}
-              </h3>
-              
-              {/* Subtle divider */}
-              <div className="w-12 h-[1px] bg-[#731C13]/30 mb-4 transition-all duration-300 group-hover:w-16 group-hover:bg-[#731C13]/50"></div>
-              
-              {/* Description with high-quality typography */}
-              <p className="text-gray-600 font-light leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
-                {procedures[procedures.length - 1].description}
-              </p>
-              
-              {/* Call-to-action link with animation */}
-              <motion.div 
-                className="mt-6"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8 }}
-              >
-                <button 
-                  onClick={() => handleSaibaMais(procedures.length - 1)}
-                  className="text-[#731C13] font-medium text-sm flex items-center opacity-70 group-hover:opacity-100 transition-all duration-300 bg-transparent border-none cursor-pointer"
-                >
-                  <span>Saiba mais</span>
-                  <motion.svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    className="ml-1 group-hover:translate-x-1 transition-transform duration-300"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="M12 5l7 7-7 7"></path>
-                  </motion.svg>
-                </button>
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
         
         {/* Call to action */}

@@ -1,0 +1,26 @@
+**Objetivo:** Ajustar o layout da seção "Procedimentos" na visualização DESKTOP para um grid uniforme de 3 colunas e 2 linhas (3x2), com o card "E muito mais" posicionado como o terceiro item da segunda linha.
+
+**Contexto:**
+Após tentativas anteriores de ajuste, o usuário especificou um layout final desejado para a seção "Procedimentos" no desktop para eliminar espaços vazios e garantir uma organização clara e equilibrada. A ideia é ter duas linhas completas, cada uma com três cards.
+
+**Cards Atuais:** Fios de PDO, Lipo de Papada, Microagulhamento, Peelings Químicos, Skinbooster, E muito mais.
+
+**Instruções Detalhadas para o Layout Desktop (Refinamento v4 - Grid 3x2):**
+
+1.  **Foco na Visualização Desktop:** A correção é especificamente para a experiência em telas de desktop.
+2.  **Seção de Procedimentos:** O ajuste deve ser feito na grade principal que exibe todos os cards de procedimentos.
+3.  **Organização dos Cards em Grid 3x2:**
+    *   **Linha 1:** Deve conter os cards "Fios de PDO", "Lipo de Papada" e "Microagulhamento".
+    *   **Linha 2:** Deve conter os cards "Peelings Químicos", "Skinbooster" e "E muito mais".
+    *   Todos os cards em ambas as linhas devem ter larguras e alturas consistentes, e o espaçamento entre eles (horizontal e vertical) deve ser uniforme, resultando em um grid visualmente limpo e alinhado.
+4.  **Preenchimento da Largura:** As três colunas de cards devem ocupar a largura disponível da seção de forma equilibrada.
+5.  **Harmonia Visual:**
+    *   O resultado deve ser um grid 3x2 perfeitamente alinhado, sem espaços vazios inesperados ou desalinhamentos.
+6.  **Manter Responsividade Mobile:** Certifique-se de que qualquer alteração feita para o desktop não afete negativamente a visualização em dispositivos móveis (que já estava correta com 2x2 cards, ou conforme a última configuração validada para mobile).
+
+**Resultado Esperado:**
+Na visualização desktop, a seção "Procedimentos" deve exibir os cards na seguinte configuração de grid 3x2:
+*   Linha 1: Fios de PDO | Lipo de Papada | Microagulhamento
+*   Linha 2: Peelings Químicos | Skinbooster | E muito mais
+
+O layout deve ser simétrico e profissional.
