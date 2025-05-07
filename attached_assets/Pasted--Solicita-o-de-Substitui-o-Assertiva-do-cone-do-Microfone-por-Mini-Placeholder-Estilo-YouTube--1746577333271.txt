@@ -1,0 +1,54 @@
+### Solicitação de Substituição Assertiva do Ícone do Microfone por Mini Placeholder Estilo YouTube na Seção "Podcast" (Versão 3)
+
+**Objetivo Principal e Inegociável:** Substituir **EXCLUSIVAMENTE** o atual ícone de microfone (mostrado na imagem `Captura de Tela 2025-05-06 às 21.18.18.png` fornecida anteriormente pelo usuário) na seção "Podcast" por um **MINI PLACEHOLDER** que simule uma pequena visualização de um canal de YouTube. Todo o restante do conteúdo e estrutura da seção "Podcast" deve permanecer **ABSOLUTAMENTE INTACTO**.
+
+**Contexto Crítico:**
+As tentativas anteriores de modificar o visual desta seção não atingiram o objetivo preciso. Esta instrução visa corrigir e direcionar a alteração para o ponto exato: a substituição do ícone do microfone por um elemento visual específico, sem afetar o restante da seção.
+
+**Descrição Detalhada do Mini Placeholder (Substituto do Microfone):**
+
+1.  **Conceito Visual:**
+    *   O mini placeholder deve simular uma pequena "janela" ou "card" de uma plataforma como o YouTube, focada em apresentar o canal do podcast da Dra. Hof.
+    *   Deve ser compacto e proporcional ao espaço de um ícone ou pequena ilustração, para se encaixar onde o microfone está atualmente.
+
+2.  **Elementos Obrigatórios do Mini Placeholder:**
+    *   **Ícone do Canal:** Utilizar a **logo oficial da Dra. Hof** (a mesma usada no header do site) como o ícone/avatar do canal dentro deste mini placeholder.
+    *   **Nome do Canal (Placeholder):** Um texto curto como "Canal Dra. HOF" ou "Podcast Dra. HOF" ao lado ou abaixo da logo.
+    *   **Botão/Link CTA:** Um botão ou link claramente identificável com um CTA como "Ver no YouTube", "Acessar Canal", ou um ícone de play do YouTube. Este elemento deve ser o ponto focal para o clique.
+    *   **Link de Redirecionamento:** O CTA deve levar para `https://www.youtube.com/janadrahof` (abrir em nova aba: `target="_blank"`).
+
+3.  **Estilo e Paleta de Cores:**
+    *   Todo o design do mini placeholder (fundo, textos, botões, ícone da logo) deve utilizar **estritamente a paleta de cores oficial do site da Dra. Hof** (tons de marsala/vinho, dourado sutil, tons neutros sofisticados), mantendo a identidade visual.
+    *   O design deve ser clean, moderno e profissional.
+
+4.  **Tamanho e Posicionamento:**
+    *   O mini placeholder deve ser **PEQUENO**, dimensionado para substituir o atual ícone do microfone sem causar quebras de layout ou parecer desproporcional.
+    *   Deve ocupar o espaço onde o microfone está atualmente na seção "Podcast".
+
+**O Que NÃO Deve Ser Feito (Crucial):**
+*   **NÃO alterar, remover ou substituir nenhum outro elemento da seção "Podcast".** Isso inclui:
+    *   O título principal da seção ("Podcast" ou "Bate papo delas").
+    *   A tag "Em breve".
+    *   O texto descritivo principal ("Aguarde o lançamento do nosso podcast...").
+    *   A lista "Conteúdos que virão aí:" e seus itens.
+*   **NÃO transformar a seção inteira em um placeholder.** A mudança é pontual, apenas no ícone.
+
+**Instruções Diretas para o Replit AI:**
+1.  Localize a seção "Podcast" no site.
+2.  Identifique o ícone do microfone existente (conforme imagem `Captura de Tela 2025-05-06 às 21.18.18.png`).
+3.  **REMOVA APENAS o ícone do microfone.**
+4.  No exato lugar do microfone removido, insira o **MINI PLACEHOLDER** descrito acima, com as seguintes características:
+    *   Simulação de uma pequena janela/card de YouTube.
+    *   Logo da Dra. Hof como ícone do canal.
+    *   Texto placeholder para nome do canal.
+    *   Botão/Link CTA para `https://www.youtube.com/janadrahof`.
+    *   Design na paleta de cores do site.
+    *   Tamanho pequeno e proporcional.
+5.  Garanta que todo o restante da seção "Podcast" (textos, títulos, listas) permaneça INALTERADO.
+6.  Verifique a responsividade da seção após a alteração.
+
+**Resultado Esperado (Não Negociável):**
+*   A seção "Podcast" com todo o seu conteúdo original intacto.
+*   O antigo ícone do microfone substituído por um mini placeholder elegante e funcional, no estilo de uma pequena prévia de canal do YouTube, com a logo da Dra. Hof e link para seu canal, tudo em tamanho reduzido e bem integrado ao layout existente.
+
+Por favor, execute esta tarefa com máxima precisão e atenção aos detalhes. Esta é a prioridade para a seção Podcast.

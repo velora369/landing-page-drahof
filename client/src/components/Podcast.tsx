@@ -1,128 +1,94 @@
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
-// Componente de microfone com design vintage/retrô clássico facilmente reconhecível
-const Microphone3D = () => {
-  // Referência para aplicar transformações em resposta ao hover
-  const mic3DRef = useRef<HTMLDivElement>(null);
-  
-  // Estados para animações
+// Mini placeholder de YouTube para o canal da Dra. Hof
+const YoutubeChannelPlaceholder = () => {
+  // Estado para animação de hover
   const [isHovered, setIsHovered] = useState(false);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
   
-  // Animação suave de flutuação
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const time = Date.now() / 2000;
-      setRotation({
-        x: Math.sin(time) * 2.5,
-        y: Math.cos(time) * 2.5
-      });
-    }, 50);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
-  // Efeito de hover simples
-  const transform = isHovered
-    ? `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(1.05)`
-    : `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
-    
   return (
-    <div 
-      className="relative w-64 h-64 mx-auto my-10" 
-      ref={mic3DRef}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* Container principal com efeito de perspectiva */}
+    <div className="relative w-64 h-64 mx-auto my-10">
       <motion.div
-        className="w-full h-full"
-        style={{ 
-          transform,
-          transition: "transform 0.3s ease-out"
+        className="relative max-w-xs mx-auto"
+        initial={{ y: 0 }}
+        animate={{ y: [0, -5, 0] }}
+        transition={{ 
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
         }}
       >
-        {/* Microfone vintage de mesa/estúdio */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center z-30">
-          {/* Base pesada do microfone */}
-          <div className="w-32 h-5 bg-gradient-to-b from-[#444] to-[#222] rounded-lg shadow-lg relative">
-            {/* Detalhes metálicos na base */}
-            <div className="absolute inset-x-2 top-1 h-[2px] bg-gradient-to-r from-[#666]/60 via-[#aaa]/60 to-[#666]/60"></div>
-            <div className="absolute bottom-1 inset-x-0 h-1 bg-[#111] rounded-b-lg"></div>
-          </div>
-          
-          {/* Haste do microfone */}
-          <div className="w-3 h-10 bg-gradient-to-b from-[#444] to-[#333] rounded-full shadow-md">
-            {/* Reflexo na haste */}
-            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#aaa]/20 rounded-l-full"></div>
-          </div>
-          
-          {/* Base do microfone - conector com o corpo */}
-          <div className="w-8 h-3 bg-[#333] rounded-t-sm relative z-20">
-            {/* Anel decorativo */}
-            <div className="absolute inset-x-0 top-1 h-[2px] bg-[#555]"></div>
-          </div>
-          
-          {/* Corpo principal do microfone - estilo vintage */}
-          <div className="w-16 h-28 rounded-lg bg-gradient-to-b from-[#731C13] to-[#5d1812] shadow-xl relative overflow-hidden">
-            {/* Contorno metálico */}
-            <div className="absolute inset-0 border-2 border-[#ECE0C4]/20 rounded-lg"></div>
-            
-            {/* Detalhes metálicos no corpo */}
-            <div className="absolute top-4 inset-x-0 h-1 bg-[#333] border-y border-[#555]/50"></div>
-            <div className="absolute bottom-4 inset-x-0 h-1 bg-[#333] border-y border-[#555]/50"></div>
-            
-            {/* Logo "HOF" */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-[#ECE0C4] font-bold text-lg opacity-80">
-                HOF
-              </div>
-            </div>
-          </div>
-          
-          {/* Grade superior do microfone - característica mais distintiva */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-[#999]/90 shadow-inner flex items-center justify-center z-30">
-            {/* Grade metálica com textura prateada */}
-            <div className="w-[90%] h-[90%] rounded-full bg-gradient-to-r from-[#888] to-[#bbb] flex items-center justify-center relative overflow-hidden border-4 border-[#777] shadow-inner">
-              {/* Grade interna - malha metálica */}
-              <div className="absolute inset-0 grid grid-cols-8 grid-rows-8">
-                {/* Linhas horizontais */}
-                {[...Array(8)].map((_, i) => (
-                  <div 
-                    key={`h-${i}`} 
-                    className="col-span-full h-[1px] bg-[#444]/60"
-                    style={{ marginTop: `${i * 3}px` }}
-                  ></div>
-                ))}
-                
-                {/* Linhas verticais */}
-                {[...Array(8)].map((_, i) => (
-                  <div 
-                    key={`v-${i}`} 
-                    className="row-span-full w-[1px] h-full bg-[#444]/60"
-                    style={{ marginLeft: `${i * 3}px` }}
-                  ></div>
-                ))}
-              </div>
-              
-              {/* Círculo central com o logo */}
-              <div className="w-12 h-12 rounded-full bg-[#731C13] flex items-center justify-center z-10 shadow-inner border border-[#731C13]/50">
-                <span className="text-[#ECE0C4] font-bold text-lg">HOF</span>
-              </div>
-              
-              {/* Brilho/reflexo na grade */}
-              <div className="absolute top-0 left-1/4 right-1/4 h-3 bg-white/10 blur-sm rounded-full"></div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Ondas de áudio estilizadas */}
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-0">
-          <motion.div
-            className="w-48 h-48 rounded-full border-2 border-[#ECE0C4]/15"
+        {/* Container principal - Card de YouTube */}
+        <a 
+          href="https://www.youtube.com/janadrahof" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <motion.div 
+            className="bg-white rounded-xl overflow-hidden shadow-lg border border-[#ECE0C4]/30"
             animate={{ 
-              scale: [1, 1.2, 1],
+              scale: isHovered ? 1.05 : 1,
+              boxShadow: isHovered ? "0 10px 25px -5px rgba(115, 28, 19, 0.25)" : "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Área de thumbnail */}
+            <div className="h-36 bg-gradient-to-r from-[#731C13] to-[#a33a31] relative flex items-center justify-center">
+              {/* Logo grande no centro do thumbnail */}
+              <div className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center shadow-md">
+                <span className="font-['Cormorant_Garamond'] text-[#731C13] text-3xl font-bold">HOF</span>
+              </div>
+              
+              {/* Ícone de play sobreposto */}
+              <motion.div 
+                className="absolute inset-0 flex items-center justify-center"
+                initial={{ opacity: 0.7 }}
+                animate={{ opacity: isHovered ? 1 : 0.7 }}
+              >
+                <div className="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#731C13" className="w-6 h-6">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Informações do canal */}
+            <div className="p-4">
+              <div className="flex items-center">
+                {/* Ícone do canal/avatar */}
+                <div className="w-10 h-10 rounded-full bg-[#731C13] flex items-center justify-center text-white text-xs font-bold mr-3 shadow-sm">
+                  HOF
+                </div>
+                
+                {/* Detalhes do canal */}
+                <div className="flex-1">
+                  <h3 className="font-medium text-[#425F70] truncate">Podcast Dra. HOF</h3>
+                  <p className="text-xs text-gray-500">Canal Oficial</p>
+                </div>
+              </div>
+              
+              {/* Botão de inscrever-se */}
+              <motion.button 
+                className="mt-3 w-full bg-[#731C13] text-white py-2 rounded-md text-sm font-medium"
+                whileHover={{ backgroundColor: "#5d1812" }}
+                transition={{ duration: 0.2 }}
+              >
+                Ver no YouTube
+              </motion.button>
+            </div>
+          </motion.div>
+        </a>
+        
+        {/* Ondas de áudio estilizadas ao redor do card */}
+        <div className="absolute -inset-4 -z-10">
+          <motion.div
+            className="w-full h-full rounded-full border-2 border-[#ECE0C4]/15"
+            animate={{ 
+              scale: [0.9, 1, 0.9],
               opacity: [0.15, 0.3, 0.15]
             }}
             transition={{ 
@@ -132,9 +98,9 @@ const Microphone3D = () => {
             }}
           />
           <motion.div
-            className="absolute inset-0 w-48 h-48 rounded-full border-2 border-[#731C13]/10"
+            className="absolute inset-0 w-full h-full rounded-full border-2 border-[#731C13]/10"
             animate={{ 
-              scale: [1, 1.3, 1],
+              scale: [0.95, 1.05, 0.95],
               opacity: [0.1, 0.25, 0.1]
             }}
             transition={{ 
@@ -146,16 +112,6 @@ const Microphone3D = () => {
           />
         </div>
       </motion.div>
-      
-      {/* Sombra elegante sob o microfone */}
-      <motion.div
-        className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 h-2 bg-black/15 rounded-full blur-md z-0"
-        animate={{ 
-          width: isHovered ? 32 : 28,
-          opacity: isHovered ? 0.25 : 0.15
-        }}
-        transition={{ duration: 0.3 }}
-      />
     </div>
   );
 };
@@ -344,12 +300,12 @@ export default function Podcast() {
           </motion.p>
         </motion.div>
         
-        {/* Microfone 3D animado como elemento visual central */}
+        {/* Mini YouTube Channel Placeholder como elemento visual central */}
         <motion.div
           style={{ scale: parallaxScale }}
           className="relative mb-20"
         >
-          <Microphone3D />
+          <YoutubeChannelPlaceholder />
           
           {/* Ondas sonoras animadas */}
           <AnimatePresence>
