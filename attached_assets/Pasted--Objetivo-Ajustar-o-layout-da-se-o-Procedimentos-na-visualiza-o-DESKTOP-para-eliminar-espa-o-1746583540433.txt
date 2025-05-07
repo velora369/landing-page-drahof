@@ -1,0 +1,23 @@
+**Objetivo:** Ajustar o layout da seção "Procedimentos" na visualização DESKTOP para eliminar espaços vazios (buracos) e garantir uma distribuição harmoniosa dos cards.
+
+**Contexto:**
+Após a adição dos cards "Lipo de Papada" e "E muito mais", a seção "Procedimentos", quando visualizada em DESKTOP, apresenta um espaço vazio no final da grade de cards, pois o número atual de cards (6 no total: Fios de PDO, Lipo de Papada, Microagulhamento, Peelings Químicos, Skinbooster, E muito mais) não preenche completamente uma grade de, por exemplo, 4 colunas, deixando um "buraco".
+
+**Instruções Detalhadas:**
+
+1.  **Foco na Visualização Desktop:** A correção é especificamente para a experiência em telas de desktop.
+2.  **Seção de Procedimentos:** O ajuste deve ser feito na grade principal que exibe todos os cards de procedimentos.
+3.  **Eliminar Espaços Vazios e Harmonizar o Grid:**
+    *   Ajuste o layout dos cards de procedimentos no desktop para que não haja espaços vazios ou "buracos" visuais.
+    *   **Sugestões de Abordagem (o Replit AI pode escolher a melhor ou combinar):**
+        *   **Ajustar o número de colunas:** Se o grid atual for, por exemplo, de 4 colunas e há 6 itens, ele naturalmente deixará 2 espaços vazios na última linha. Considere se um grid de 3 colunas ficaria melhor preenchido (2 linhas de 3 cards) ou se os cards podem ser levemente redimensionados para que 4 cards caibam de forma mais compacta, ou se 2 cards podem ocupar mais espaço na última linha de forma centralizada ou justificada.
+        *   **Redimensionamento/Flexibilidade dos Cards:** Permita que os cards na última linha (se ela não estiver completa) se expandam para preencher o espaço disponível de forma equilibrada, ou ajuste o espaçamento entre eles para ocupar a largura da seção.
+        *   **Centralização da Última Linha:** Se a última linha tiver menos cards que as anteriores, centralize esses cards para um visual mais equilibrado.
+    *   O objetivo é que a seção de procedimentos no desktop pareça intencionalmente desenhada, sem que a grade pareça "quebrada" ou incompleta.
+4.  **Manter Responsividade Mobile:** Certifique-se de que qualquer alteração feita para o desktop não afete negativamente a visualização em dispositivos móveis (que já estava correta com 2x2 cards).
+
+**Referência Visual do Problema (Desktop):**
+O usuário forneceu uma captura de tela (`Captura de Tela 2025-05-06 às 23.02.55.png`) que ilustra o problema do espaço vazio na seção de Procedimentos em desktop.
+
+**Resultado Esperado:**
+Na visualização desktop, a seção "Procedimentos" deve exibir todos os cards de forma harmoniosa, sem espaços vazios ou "buracos" no final da grade. O layout deve parecer completo e bem distribuído.

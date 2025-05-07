@@ -105,8 +105,8 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Grid de cards de procedimentos - foco em tipografia e conteúdo */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        {/* Grid de cards de procedimentos - layout equilibrado com 3 colunas */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {procedures.map((procedure, index) => (
             <motion.div
               key={index}
