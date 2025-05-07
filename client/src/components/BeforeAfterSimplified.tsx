@@ -200,32 +200,40 @@ export default function BeforeAfterSimplified() {
   const parallaxOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3]);
   
   // Casos de antes e depois - com imagens alinhadas
-  // Utilizando apenas imagens de exemplo genéricas
-  const cases: BeforeAfterCase[] = [{
-    id: 1,
-    title: "Procedimento Facial",
-    procedure: "Tratamento Estético",
-    before: "https://via.placeholder.com/800x600?text=Antes",
-    after: "https://via.placeholder.com/800x600?text=Depois",
-    description: "Procedimento estético realizado para demonstrar a funcionalidade do slider antes/depois. Esta seção pode ser personalizada conforme necessário."
-  }];
+  // Casos clínicos: Harmonização Facial, Contorno Facial e o novo caso com vídeo
+  const cases: BeforeAfterCase[] = [
+    {
+      id: 1,
+      title: "Harmonização Facial",
+      procedure: "Harmonização Completa",
+      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
+      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/pos-paciente.webp",
+      description: "Procedimento combinado que incluiu preenchimento labial, rinomodelação e definição do contorno mandibular. Os resultados são naturais e equilibrados, preservando as características únicas da paciente."
+    },
+    {
+      id: 2,
+      title: "Contorno Facial",
+      procedure: "Definição Mandibular",
+      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
+      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/paciente-durante-.webp",
+      description: "Definição do ângulo e contorno mandibular para uma expressão facial mais harmônica. O procedimento realça as características naturais da face e proporciona um equilíbrio estético personalizado."
+    },
+    {
+      id: 3,
+      title: "Preenchimento Labial",
+      procedure: "Volume e Contorno",
+      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp", // Reusando imagem por enquanto
+      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/pos-paciente.webp", // Reusando imagem por enquanto
+      description: "Preenchimento labial realizado com técnica especializada para garantir naturalidade e equilíbrio. O procedimento proporciona volume adequado e definição do contorno, respeitando a anatomia original dos lábios."
+    }
+  ];
   
   // Estados para controle de modal e visualização
   const [selectedCase, setSelectedCase] = useState<number>(1);
   const [modalOpen, setModalOpen] = useState(false);
   
-  // Definir um caso padrão para garantir que sempre tenhamos valores
-  const defaultCase: BeforeAfterCase = {
-    id: 0,
-    title: "Exemplo",
-    procedure: "Demonstração",
-    before: "https://via.placeholder.com/800x600?text=Antes",
-    after: "https://via.placeholder.com/800x600?text=Depois",
-    description: "Exemplo de procedimento estético para demonstração."
-  };
-  
-  // Referência ao caso atualmente selecionado com fallback para caso padrão
-  const currentCase = cases.length > 0 ? (cases.find(c => c.id === selectedCase) || cases[0]) : defaultCase;
+  // Referência ao caso atualmente selecionado
+  const currentCase = cases.find(c => c.id === selectedCase) || cases[0];
   
   // Abrir modal com caso específico
   const openModal = (caseId: number) => {
@@ -339,7 +347,20 @@ export default function BeforeAfterSimplified() {
           </motion.div>
         </div>
         
-        {/* Galeria de thumbnails em grid - apenas com cards de antes/depois */}
+        {/* Título da galeria de casos */}
+        <motion.div
+          className="text-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="font-['Cormorant_Garamond'] text-2xl md:text-3xl font-bold text-[#425F70]">
+            Mais Casos Clínicos
+          </h3>
+        </motion.div>
+        
+        {/* Galeria de thumbnails em grid - agora com 3 cards */}
         <motion.div 
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12"
           initial={{ opacity: 0, y: 40 }}
@@ -347,8 +368,8 @@ export default function BeforeAfterSimplified() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Renderizando casos como cards */}
-          {cases.map((caseItem, index) => (
+          {/* Renderizando os primeiros 2 casos como cards normais */}
+          {cases.slice(0, 2).map((caseItem, index) => (
             <ThumbnailCard
               key={caseItem.id}
               caseItem={caseItem}
@@ -356,6 +377,69 @@ export default function BeforeAfterSimplified() {
               index={index}
             />
           ))}
+          
+          {/* Card de vídeo especial para o terceiro caso */}
+          <motion.div
+            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
+            whileHover={{ y: -5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <div className="h-[300px] relative overflow-hidden">
+              {/* Vídeo de fundo */}
+              <video 
+                className="absolute inset-0 object-cover w-full h-full"
+                src="/videos/preenchimento.mp4"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                onError={(e) => console.error("Erro ao carregar o vídeo:", e)}
+              >
+                Seu navegador não suporta vídeos HTML5.
+              </video>
+              
+              {/* Gradiente overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+              
+              {/* Tipo de procedimento */}
+              <div className="absolute top-3 left-3 px-2 py-1 bg-white/80 backdrop-blur-sm rounded text-xs font-medium text-[#425F70] z-10">
+                Volume e Contorno
+              </div>
+              
+              {/* Ícone de vídeo no centro */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div 
+                  className="h-16 w-16 bg-white/25 backdrop-blur-sm rounded-full flex items-center justify-center"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <motion.div 
+                    className="h-12 w-12 bg-[#731C13] rounded-full flex items-center justify-center"
+                    initial={{ scale: 1 }}
+                    animate={{ scale: [1, 1.08, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                    </svg>
+                  </motion.div>
+                </motion.div>
+              </div>
+              
+              {/* Título do caso como overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                <h3 className="text-white font-semibold text-lg drop-shadow-md">
+                  Preenchimento Labial
+                </h3>
+                <p className="text-white/80 text-sm mt-1">
+                  Assista ao procedimento e resultado
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
         
         {/* Nota de rodapé */}
