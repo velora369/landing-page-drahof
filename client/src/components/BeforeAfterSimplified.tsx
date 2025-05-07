@@ -381,12 +381,13 @@ export default function BeforeAfterSimplified() {
               {/* Vídeo de fundo */}
               <video 
                 className="absolute inset-0 object-cover w-full h-full"
+                src="/videos/preenchimento.mp4"
                 autoPlay 
                 loop 
                 muted 
                 playsInline
+                onError={(e) => console.error("Erro ao carregar o vídeo:", e)}
               >
-                <source src="/videos/preenchimento.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos HTML5.
               </video>
               
