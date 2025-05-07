@@ -155,9 +155,14 @@ export default function Testimonials() {
               </div>
               
               <div className="text-center">
-                <p className="text-[#4285F4] font-medium bg-blue-50 rounded-full py-2 px-4 inline-block">
-                  <i className="fas fa-check-circle mr-2"></i>138 avaliações verificadas
-                </p>
+                <motion.button
+                  className="text-[#4285F4] font-medium bg-blue-50 rounded-full py-2 px-4 inline-flex items-center hover:bg-blue-100 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <i className="fas fa-check-circle mr-2"></i>
+                  <span>138 avaliações verificadas</span>
+                </motion.button>
               </div>
             </div>
           </div>

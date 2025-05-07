@@ -1,0 +1,26 @@
+**Objetivo:** Ajustar o design do placeholder da seção Podcast para que ele se assemelhe a uma janela de aplicativo ou navegador, mantendo o tamanho atual e o link para o YouTube.
+
+**Contexto:**
+O placeholder atual da seção Podcast (que substituiu o ícone do microfone) tem o tamanho correto e o link funcional para `youtube.com/janadrahof`. No entanto, precisamos refinar sua estética para que ele simule melhor uma visualização de plataforma de conteúdo, conforme as referências visuais fornecidas (Captura de Tela 2025-05-06 às 21.27.52.png para a "casca" da janela e Captura de Tela 2025-05-06 às 21.28.07.png para o conteúdo interno).
+
+**Instruções Detalhadas:**
+
+1.  **Manter Conteúdo e Estrutura da Seção:** A seção Podcast deve continuar com seu título ("Podcast" ou "Bate papo delas"), texto descritivo ("Aguarde o lançamento..."), tag "Em breve", e a lista de "Conteúdos que virão aí". A alteração é APENAS no placeholder.
+2.  **Manter Tamanho e Link do Placeholder:** O placeholder deve manter o mesmo tamanho proporcional que foi aprovado anteriormente (visível na imagem `Captura de Tela 2025-05-06 às 21.28.07.png`) e o link deve continuar direcionando para `youtube.com/janadrahof`.
+3.  **Adicionar Estética de Janela de Aplicativo/Navegador:**
+    *   **Barra Superior (Header da Janela):** Adicione uma barra superior ao placeholder, similar à apresentada na imagem de referência `Captura de Tela 2025-05-06 às 21.27.52.png`.
+        *   No canto esquerdo desta barra, inclua os três botões de controle de janela coloridos, no estilo macOS (vermelho para fechar, amarelo para minimizar, verde para expandir).
+        *   Ao lado desses botões, ou centralizado na barra, pode haver um título como "Dra. HOF Play" ou o nome do canal "Podcast Dra. HOF", utilizando a fonte e cores da identidade visual do site.
+        *   Opcionalmente, à direita do título ou na extremidade direita da barra, podem ser adicionados elementos que simulem abas ou menus de navegação, como "Início", "Explorar", "Episódios". Estes seriam apenas visuais, não funcionais, para compor a estética de uma janela de aplicativo.
+    *   **Conteúdo Interno do Placeholder:** O conteúdo visual dentro do placeholder (abaixo da barra superior) deve continuar representando o canal da Dra. Hof, possivelmente com a logo dela e o botão "Ver no YouTube", como já está no design atual (visível na imagem `Captura de Tela 2025-05-06 às 21.28.07.png`), mas agora contido dentro desta "janela".
+4.  **Cores:** Utilize a paleta de cores do site da Dra. Hof para todos os novos elementos gráficos da "janela".
+5.  **Responsividade:** Garantir que o placeholder, com sua nova estética de janela, continue responsivo e bem visualizado em dispositivos móveis.
+
+**Referência Visual Principal para a Barra Superior e Estilo de Janela:**
+Utilize a imagem `Captura de Tela 2025-05-06 às 21.27.52.png` como guia principal para o design da barra superior com os botões de controle e a simulação de abas/navegação.
+
+**Referência Visual para o Conteúdo Interno (a ser mantido e adaptado dentro da nova "janela")**:
+Utilize a imagem `Captura de Tela 2025-05-06 às 21.28.07.png` como guia para o conteúdo que deve aparecer *dentro* da nova "janela" do placeholder.
+
+**Resultado Esperado:**
+Um placeholder que, no mesmo tamanho do atual, pareça uma miniatura de uma janela de aplicativo de podcast/vídeo, com controles de janela e uma prévia do canal, mantendo a identidade visual da Dra. Hof e o link funcional.

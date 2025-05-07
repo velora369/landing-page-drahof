@@ -293,18 +293,12 @@ export default function TestimonialsCarousel() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <a 
-                    href="https://www.google.com/maps" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
                     className="text-[#4285F4] font-medium bg-blue-50 rounded-full py-2 px-6 inline-flex items-center hover:bg-blue-100 transition-colors duration-300"
                   >
                     <i className="fas fa-check-circle mr-2"></i>
                     <span>138 avaliações verificadas</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                  </button>
                 </motion.div>
               </div>
             </div>
