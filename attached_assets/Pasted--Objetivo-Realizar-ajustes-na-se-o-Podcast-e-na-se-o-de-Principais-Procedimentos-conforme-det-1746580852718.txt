@@ -1,0 +1,26 @@
+**Objetivo:** Realizar ajustes na seção Podcast e na seção de Principais Procedimentos, conforme detalhado abaixo.
+
+**Contexto:**
+O usuário solicitou modificações específicas em duas seções do site: Podcast e Principais Procedimentos.
+
+**Instruções Detalhadas:**
+
+**1. Ajuste na Seção Podcast:**
+    *   **Item Específico:** Placeholder interativo da seção Podcast (que simula uma janela de aplicativo/navegador).
+    *   **Ação:** Remover o link de redirecionamento para o YouTube que está atualmente associado a este placeholder. O placeholder deve permanecer visualmente como está (com a estética de janela de aplicativo, incluindo controles de janela e simulação de conteúdo do canal), mas não deve mais levar o usuário a nenhum URL ao ser clicado. Deve ser apenas um elemento visual interativo (por exemplo, com efeitos de hover, se já existentes, mas sem ação de clique).
+
+**2. Ajustes na Seção "Principais Procedimentos":**
+    *   **Adição de Novo Procedimento:**
+        *   Adicione um novo card de procedimento com o título: "Lipo de Papada".
+        *   Para este novo procedimento, crie um texto breve e informativo para ser exibido no "Saiba mais" (modal ou expansão). O texto deve descrever sucintamente o que é a Lipo de Papada e seus benefícios. Exemplo de texto para o "Saiba mais" (sinta-se à vontade para refinar ou usar um texto mais apropriado, se disponível):
+            *   "A Lipo de Papada é um procedimento minimamente invasivo que visa eliminar o excesso de gordura localizada abaixo do queixo, melhorando o contorno facial e proporcionando uma aparência mais definida e rejuvenescida. Ideal para quem busca reduzir o chamado 'queixo duplo' e realçar a beleza natural do rosto."
+    *   **Layout e Responsividade dos Cards de Procedimentos:**
+        *   **Mobile:** Garanta que os cards de procedimentos (incluindo o novo "Lipo de Papada") sejam exibidos em um layout de grade 2x2 (duas colunas, com dois cards por linha) em dispositivos móveis.
+        *   **Preenchimento de Grid (Mobile e Desktop):**
+            *   Se, após adicionar "Lipo de Papada", o número total de cards de procedimentos resultar em uma linha incompleta no grid 2x2 mobile (ou seja, se sobrar um espaço vazio), adicione um card placeholder adicional com o texto "E muito mais". Este card "E muito mais" deve ter um design consistente com os outros cards de procedimento, mas pode ter um visual que sugira a existência de outros serviços, sem um "Saiba mais" específico.
+            *   O objetivo é evitar "buracos" no layout, tanto no mobile (grid 2x2) quanto no desktop. No desktop, o layout deve se ajustar para que todos os cards (incluindo "Lipo de Papada" e, se necessário, "E muito mais") sejam exibidos de forma harmoniosa, preenchendo o espaço disponível adequadamente, sem deixar linhas com apenas um card se o total for ímpar, por exemplo. A ideia é que a seção termine visualmente completa.
+        *   **Consistência Visual:** Todos os cards devem manter a mesma estética e funcionalidades (como o "Saiba mais") dos cards de procedimentos existentes.
+
+**Resultado Esperado:**
+*   Seção Podcast com o placeholder interativo, mas sem link externo.
+*   Seção Principais Procedimentos atualizada com o novo procedimento "Lipo de Papada" (com seu respectivo "Saiba mais"), e com o layout dos cards ajustado para ser responsivo (2x2 no mobile) e visualmente completo em todas as resoluções, utilizando um card "E muito mais" se for preciso para preencher o grid.

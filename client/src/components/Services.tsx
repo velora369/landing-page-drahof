@@ -36,6 +36,11 @@ export default function Services() {
       detailedDescription: "Filamentos biocompatíveis e absorvíveis que são inseridos na pele para promover um efeito lifting imediato e estimular a produção de colágeno a longo prazo. Indicados para tratar a flacidez facial e corporal, melhorando o contorno e a sustentação da pele de forma minimamente invasiva."
     },
     {
+      title: "Lipo de Papada",
+      description: "Definição do contorno mandibular e refinamento facial",
+      detailedDescription: "A Lipo de Papada é um procedimento minimamente invasivo que visa eliminar o excesso de gordura localizada abaixo do queixo, melhorando o contorno facial e proporcionando uma aparência mais definida e rejuvenescida. Ideal para quem busca reduzir o chamado 'queixo duplo' e realçar a beleza natural do rosto."
+    },
+    {
       title: "Microagulhamento",
       description: "Regeneração da pele e estímulo aos fatores de crescimento",
       detailedDescription: "Técnica que utiliza um dispositivo com microagulhas para criar pequenas perfurações na pele, estimulando a regeneração celular, a produção de colágeno e elastina. É eficaz no tratamento de cicatrizes de acne, rugas finas, manchas, estrias e na melhora da textura e luminosidade da pele."
@@ -49,6 +54,11 @@ export default function Services() {
       title: "Skinbooster",
       description: "Hidratação profunda para uma pele radiante e revitalizada",
       detailedDescription: "Tratamento que consiste na aplicação de ácido hialurônico de baixa concentração em múltiplas micropunturas na pele. Promove uma hidratação profunda e duradoura, melhora a elasticidade, o viço e a suavidade da pele, sendo ideal para revitalizar peles desidratadas ou com sinais iniciais de envelhecimento."
+    },
+    {
+      title: "E muito mais",
+      description: "Descubra todo o potencial da medicina estética personalizada",
+      detailedDescription: "Além dos procedimentos listados, a Dra. Jana Hof oferece uma ampla gama de tratamentos estéticos avançados, todos realizados com técnicas de ponta e abordagem personalizada. Cada procedimento é cuidadosamente adaptado às necessidades individuais, garantindo resultados naturais e harmônicos que realçam sua beleza única."
     }
   ];
   

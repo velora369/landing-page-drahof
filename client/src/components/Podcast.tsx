@@ -18,11 +18,8 @@ const YoutubeChannelPlaceholder = () => {
           ease: "easeInOut"
         }}
       >
-        {/* Container principal - Janela de aplicativo */}
-        <a 
-          href="https://www.youtube.com/janadrahof" 
-          target="_blank" 
-          rel="noopener noreferrer"
+        {/* Container principal - Janela de aplicativo - sem link de redirecionamento */}
+        <div 
           className="block"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -103,17 +100,17 @@ const YoutubeChannelPlaceholder = () => {
                 </div>
               </div>
               
-              {/* Botão de inscrever-se */}
-              <motion.button 
-                className="mt-2 w-full bg-[#731C13] text-white py-1.5 rounded-md text-xs font-medium"
+              {/* Botão visual (sem ação) */}
+              <motion.div 
+                className="mt-2 w-full bg-[#731C13] text-white py-1.5 rounded-md text-xs font-medium text-center cursor-default"
                 whileHover={{ backgroundColor: "#5d1812" }}
                 transition={{ duration: 0.2 }}
               >
-                Ver no YouTube
-              </motion.button>
+                Acompanhe em breve
+              </motion.div>
             </div>
           </motion.div>
-        </a>
+        </div>
         
         {/* Ondas de áudio estilizadas ao redor do card */}
         <div className="absolute -inset-4 -z-10">
