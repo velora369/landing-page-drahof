@@ -358,10 +358,8 @@ export default function Footer() {
             <p className="text-white/30 text-xs mt-1 font-light tracking-wide">Support by VELORA DIGITAL</p>
           </div>
           
-          <div className="flex items-center space-x-6">
-            <a href="#" className="text-white/70 hover:text-[#ECE0C4] transition-colors duration-300">Política de Privacidade</a>
-            <a href="#" className="text-white/70 hover:text-[#ECE0C4] transition-colors duration-300">Termos de Uso</a>
-            <a href="#" className="text-white/70 hover:text-[#ECE0C4] transition-colors duration-300">Mapa do Site</a>
+          <div className="flex items-center">
+            {/* Links removidos conforme solicitado: "Política de Privacidade", "Termos de Uso", "Mapa do Site" */}
           </div>
         </div>
       </div>

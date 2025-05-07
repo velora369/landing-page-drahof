@@ -1,0 +1,27 @@
+### Solicitação de Ajustes Combinados: Remoção de Links no Footer e Modificação do Botão de Avaliações
+
+**Objetivo:** Implementar duas alterações específicas no site: remover determinados links do rodapé (footer) e modificar o comportamento do botão de avaliações na seção "Avaliação no Google".
+
+**Detalhes da Solicitação:**
+
+**1. Ajustes no Footer (Rodapé):**
+    *   **Ação Requerida:** Remover completamente os seguintes links de texto do rodapé do site:
+        *   "Política de Privacidade"
+        *   "Termos de Uso"
+        *   "Mapa do Site"
+    *   **Resultado Esperado:** O rodapé não deve mais exibir estes três links. Os demais elementos do rodapé devem permanecer intactos e com seu layout preservado.
+
+**2. Ajustes na Seção "Avaliação no Google":**
+    *   **Elemento Alvo:** O botão/link que atualmente exibe o texto "138 avaliações verificadas" (ou similar, referente ao número de avaliações).
+    *   **Ação Requerida:**
+        *   **Manter Interatividade Visual:** O botão deve continuar tendo um efeito visual ao passar o mouse sobre ele (hover effect), como já pode existir ou um novo efeito sutil (ex: leve mudança de cor de fundo, sublinhado no texto, etc.).
+        *   **Remover Redirecionamento:** O botão **NÃO DEVE MAIS REDIRECIONAR** para nenhuma página ou link externo quando clicado. O clique não deve ter nenhuma ação de navegação.
+    *   **Resultado Esperado:** Um botão visualmente interativo na seção de avaliações que não leva a lugar nenhum ao ser clicado, servindo apenas como um elemento informativo com feedback visual no hover.
+
+**Instruções Gerais para o Replit AI:**
+*   Acesse o rodapé (footer) do site e remova os três links textuais especificados ("Política de Privacidade", "Termos de Uso", "Mapa do Site").
+*   Localize a seção "Avaliação no Google" e o botão referente às avaliações verificadas.
+*   Modifique o comportamento deste botão para que ele não tenha mais uma ação de clique (remova o atributo `href` ou a funcionalidade de redirecionamento JavaScript associada), mas mantenha ou adicione um efeito de hover para feedback visual.
+*   Garanta que estas alterações não afetem negativamente a responsividade ou o layout das seções envolvidas.
+
+Por favor, implemente estas duas alterações e informe quando estiverem prontas para validação.
