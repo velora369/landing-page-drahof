@@ -200,40 +200,32 @@ export default function BeforeAfterSimplified() {
   const parallaxOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3]);
   
   // Casos de antes e depois - com imagens alinhadas
-  // Casos clínicos: Harmonização Facial, Contorno Facial e o novo caso com vídeo
-  const cases: BeforeAfterCase[] = [
-    {
-      id: 1,
-      title: "Harmonização Facial",
-      procedure: "Harmonização Completa",
-      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
-      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/pos-paciente.webp",
-      description: "Procedimento combinado que incluiu preenchimento labial, rinomodelação e definição do contorno mandibular. Os resultados são naturais e equilibrados, preservando as características únicas da paciente."
-    },
-    {
-      id: 2,
-      title: "Contorno Facial",
-      procedure: "Definição Mandibular",
-      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp",
-      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/paciente-durante-.webp",
-      description: "Definição do ângulo e contorno mandibular para uma expressão facial mais harmônica. O procedimento realça as características naturais da face e proporciona um equilíbrio estético personalizado."
-    },
-    {
-      id: 3,
-      title: "Preenchimento Labial",
-      procedure: "Volume e Contorno",
-      before: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/antes-paciente--7.webp", // Reusando imagem por enquanto
-      after: "https://yungwizzeprod2.wordpress.com/wp-content/uploads/2025/04/pos-paciente.webp", // Reusando imagem por enquanto
-      description: "Preenchimento labial realizado com técnica especializada para garantir naturalidade e equilíbrio. O procedimento proporciona volume adequado e definição do contorno, respeitando a anatomia original dos lábios."
-    }
-  ];
+  // Utilizando apenas imagens de exemplo genéricas
+  const cases: BeforeAfterCase[] = [{
+    id: 1,
+    title: "Procedimento Facial",
+    procedure: "Tratamento Estético",
+    before: "https://via.placeholder.com/800x600?text=Antes",
+    after: "https://via.placeholder.com/800x600?text=Depois",
+    description: "Procedimento estético realizado para demonstrar a funcionalidade do slider antes/depois. Esta seção pode ser personalizada conforme necessário."
+  }];
   
   // Estados para controle de modal e visualização
   const [selectedCase, setSelectedCase] = useState<number>(1);
   const [modalOpen, setModalOpen] = useState(false);
   
-  // Referência ao caso atualmente selecionado
-  const currentCase = cases.find(c => c.id === selectedCase) || cases[0];
+  // Definir um caso padrão para garantir que sempre tenhamos valores
+  const defaultCase: BeforeAfterCase = {
+    id: 0,
+    title: "Exemplo",
+    procedure: "Demonstração",
+    before: "https://via.placeholder.com/800x600?text=Antes",
+    after: "https://via.placeholder.com/800x600?text=Depois",
+    description: "Exemplo de procedimento estético para demonstração."
+  };
+  
+  // Referência ao caso atualmente selecionado com fallback para caso padrão
+  const currentCase = cases.length > 0 ? (cases.find(c => c.id === selectedCase) || cases[0]) : defaultCase;
   
   // Abrir modal com caso específico
   const openModal = (caseId: number) => {
