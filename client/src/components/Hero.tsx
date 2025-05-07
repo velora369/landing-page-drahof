@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button";
 import { GradientText } from "@/components/ui/gradient-text";
 import { WHATSAPP_URL } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Nota: Aqui anteriormente estava o componente de animação 3D que foi removido
-// O novo componente será implementado na Etapa 2, após validação da Etapa 1
+// Importação lazy do componente de animação 3D para otimizar performance
+const HeroBackground3D = lazy(() => import("@/components/HeroBackground3D"));
 
 export default function Hero() {
   const isMobile = useIsMobile();
@@ -107,11 +107,16 @@ export default function Hero() {
         {/* Gradiente de fundo suave */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-[#fcfbf9] to-[#f8f7f2]"></div>
         
-        {/* Elementos gráficos sutis - linhas e formas minimalistas */}
+        {/* Animação 3D temática - Partículas de Luz e Estruturas Moleculares */}
+        <Suspense fallback={null}>
+          <HeroBackground3D mousePosition={mousePosition} />
+        </Suspense>
+        
+        {/* Elementos gráficos sutis - mantidos para transição suave */}
         <motion.div 
-          className="absolute top-[10%] right-[5%] w-16 h-16 border-t border-r border-[#425F70]/10 rounded-tr-3xl opacity-50"
+          className="absolute top-[10%] right-[5%] w-16 h-16 border-t border-r border-[#425F70]/10 rounded-tr-3xl opacity-20"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 0.5, scale: 1 }}
+          animate={{ opacity: 0.2, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           style={{ 
             transform: `translate3d(${mousePosition.x * 5}px, ${mousePosition.y * 5}px, 0)`,
@@ -120,9 +125,9 @@ export default function Hero() {
         />
         
         <motion.div 
-          className="absolute bottom-[15%] left-[10%] w-20 h-20 border-b border-l border-[#731C13]/10 rounded-bl-3xl opacity-30"
+          className="absolute bottom-[15%] left-[10%] w-20 h-20 border-b border-l border-[#731C13]/10 rounded-bl-3xl opacity-20"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 0.3, scale: 1 }}
+          animate={{ opacity: 0.2, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
           style={{ 
             transform: `translate3d(${mousePosition.x * -5}px, ${mousePosition.y * -5}px, 0)`,
@@ -130,54 +135,8 @@ export default function Hero() {
           }}
         />
         
-        {/* Círculos decorativos sutis */}
-        <motion.div 
-          className="absolute top-[30%] left-[20%] w-48 h-48 rounded-full bg-[#ECE0C4]/5 blur-3xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.8, ease: "easeOut" }}
-          style={{ 
-            transform: `translate3d(${mousePosition.x * -10}px, ${mousePosition.y * -10}px, 0)`,
-            transition: 'transform 1.5s ease-out'
-          }}
-        />
-        
-        <motion.div 
-          className="absolute top-[60%] right-[15%] w-32 h-32 rounded-full bg-[#425F70]/5 blur-2xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.8, delay: 0.3, ease: "easeOut" }}
-          style={{ 
-            transform: `translate3d(${mousePosition.x * 8}px, ${mousePosition.y * 8}px, 0)`,
-            transition: 'transform 1.5s ease-out'
-          }}
-        />
-        
-        {/* Linhas decorativas diagonais */}
-        <motion.div 
-          className="absolute top-1/4 right-1/3 w-[150px] h-[1px] bg-gradient-to-r from-transparent via-[#425F70]/20 to-transparent"
-          initial={{ opacity: 0, rotate: 45, x: -50 }}
-          animate={{ opacity: 0.7, x: 0 }}
-          transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
-          style={{ 
-            transform: `rotate(45deg) translate3d(${mousePosition.x * 15}px, ${mousePosition.y * 15}px, 0)`,
-            transition: 'transform 1.2s ease-out'
-          }}
-        />
-        
-        <motion.div 
-          className="absolute bottom-1/3 left-1/4 w-[120px] h-[1px] bg-gradient-to-r from-transparent via-[#731C13]/20 to-transparent"
-          initial={{ opacity: 0, rotate: -45, x: 50 }}
-          animate={{ opacity: 0.7, x: 0 }}
-          transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
-          style={{ 
-            transform: `rotate(-45deg) translate3d(${mousePosition.x * -15}px, ${mousePosition.y * -15}px, 0)`,
-            transition: 'transform 1.2s ease-out'
-          }}
-        />
-        
         {/* Transição suave para a próxima seção */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f7f2] to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#f8f7f2] to-transparent z-10"></div>
       </div>
       
       <div className="container mx-auto max-w-6xl relative z-10">

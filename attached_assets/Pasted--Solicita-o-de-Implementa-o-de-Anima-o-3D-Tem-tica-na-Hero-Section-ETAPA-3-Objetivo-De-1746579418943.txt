@@ -1,0 +1,54 @@
+### Solicitação de Implementação de Animação 3D Temática na Hero Section (ETAPA 3)
+
+**Objetivo:** Desenvolver e implementar uma animação 3D de fundo sofisticada e temática para a Hero Section do site da Dra. Hof, substituindo o fundo estático atual e alinhando-se com a identidade visual moderna, futurista e focada em medicina estética/harmonização facial.
+
+**Contexto:**
+A Hero Section é o primeiro impacto visual do site. A animação 3D de fundo deve ser sutil, elegante e relevante, sem sobrecarregar o conteúdo principal (textos, CTAs, carrossel de imagens 2D, se houver).
+
+**Conceitos Preferenciais (Escolher UM ou combinar elementos de forma coesa):**
+
+1.  **"Partículas de Luz com Efeito Skincare":**
+    *   **Descrição Visual:** Uma animação de fundo com partículas de luz suaves e etéreas que se movem lentamente, talvez subindo gentilmente pela tela ou flutuando de forma orgânica.
+    *   **Efeito "Skincare":** As partículas podem ter um brilho sutil, uma leve efervescência ou um efeito translúcido que remeta à pureza, hidratação e tecnologia de cuidados com a pele.
+    *   **Cores:** Utilizar tons da paleta do site (brancos, dourados sutis, talvez toques da cor marsala/vinho de forma muito leve e difusa, se aplicável) para as partículas e seus brilhos.
+    *   **Movimento:** Lento, fluido e relaxante. Evitar movimentos rápidos ou caóticos.
+    *   **Profundidade:** Criar uma sensação de profundidade, com algumas partículas parecendo mais próximas e outras mais distantes.
+
+2.  **"Estruturas Moleculares Estilizadas":**
+    *   **Descrição Visual:** Representações 3D abstratas e elegantes de estruturas moleculares relevantes para a área de skincare ou medicina estética (ex: colágeno, ácido hialurônico, etc., de forma estilizada e não literal/científica demais).
+    *   **Estilo:** Minimalista, com linhas finas e conexões delicadas. As estruturas podem girar lentamente ou pulsar sutilmente.
+    *   **Cores:** Utilizar tons metálicos sutis (prata, ouro rosé claro) ou cores translúcidas da paleta do site.
+    *   **Integração:** As estruturas podem estar dispersas no fundo, movendo-se lentamente, ou formar um padrão de fundo dinâmico e sutil.
+    *   **Abstração:** O foco é na estética e na sugestão temática, não na precisão científica da representação molecular.
+
+**Requisitos Detalhados para a Animação Escolhida:**
+
+1.  **Sutileza e Elegância:**
+    *   A animação deve ser um elemento de fundo, não o foco principal. Ela deve complementar e realçar o conteúdo da Hero Section (textos, CTAs, imagens), não competir com ele.
+    *   Deve transmitir sofisticação, modernidade e ser visualmente agradável.
+
+2.  **Performance e Otimização:**
+    *   A animação deve ser leve e otimizada para não impactar negativamente o tempo de carregamento da página ou a performance de navegação.
+    *   Deve ser fluida em diferentes dispositivos e navegadores.
+
+3.  **Consistência Visual:**
+    *   Manter a paleta de cores e o estilo visual geral do site.
+
+4.  **Responsividade:**
+    *   A animação deve se adaptar bem a diferentes tamanhos de tela (desktop, tablet, mobile), mantendo sua estética e funcionalidade sem quebrar o layout.
+
+5.  **Looping Contínuo e Suave:**
+    *   A animação deve ter um loop contínuo e imperceptível, sem "saltos" ou reinícios bruscos.
+
+6.  **Não Obstrutiva:**
+    *   Garantir que a animação não dificulte a leitura dos textos ou a interação com os botões e outros elementos da Hero Section. O contraste entre o texto e o fundo animado deve ser adequado.
+
+**Instruções para o Replit AI:**
+*   Por favor, escolha um dos conceitos acima (Partículas de Luz ou Estruturas Moleculares) ou proponha uma combinação elegante deles.
+*   Desenvolva a animação 3D de fundo para a Hero Section seguindo todos os requisitos detalhados.
+*   Priorize a performance e a sutileza visual.
+
+**Resultado Esperado:**
+Uma Hero Section visualmente impactante, com uma animação 3D de fundo temática, elegante e performática, que eleve a percepção de modernidade e sofisticação do site da Dra. Hof.
+
+Por favor, implemente esta animação e me informe quando estiver pronta para validação.
