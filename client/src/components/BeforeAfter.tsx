@@ -498,32 +498,6 @@ export default function BeforeAfter() {
                 </div>
               </div>
             </div>
-            
-            {/* Navegação entre casos */}
-            <div className="flex justify-between border-t border-gray-100 p-4">
-              <button 
-                className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors text-[#425F70] flex items-center space-x-2"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  const prevCase = activeCase > 1 ? activeCase - 1 : cases.length;
-                  setActiveCase(prevCase);
-                }}
-              >
-                <i className="fas fa-chevron-left"></i>
-                <span>Anterior</span>
-              </button>
-              <button 
-                className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors text-[#425F70] flex items-center space-x-2"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  const nextCase = activeCase < cases.length ? activeCase + 1 : 1;
-                  setActiveCase(nextCase);
-                }}
-              >
-                <span>Próximo</span>
-                <i className="fas fa-chevron-right"></i>
-              </button>
-            </div>
           </motion.div>
         </motion.div>
       )}
