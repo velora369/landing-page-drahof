@@ -341,7 +341,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-white/70 text-sm">
           <div className="mb-4 md:mb-0 flex flex-col">
             <p>&copy; {currentYear} Dra. Jana Guimarães (Dra. HOF). Todos os direitos reservados.</p>
-            <p className="text-white/30 text-xs mt-1 font-light tracking-wide">Support by VELORA DIGITAL</p>
+            <a 
+              href="https://medgrowthmkt.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/40 text-xs mt-1 font-light tracking-wide hover:text-white/60 transition-colors duration-300"
+            >
+              Desenvolvido por MedGrowth
+            </a>
           </div>
           
           <div className="flex items-center">
