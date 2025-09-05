@@ -3,7 +3,7 @@ import Services from "@/components/Services";
 import AuthorityVideo from "@/components/AuthorityVideo";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import Certifications from "@/components/Certifications";
-import BeforeAfterSimplified from "@/components/BeforeAfterSimplified";
+import BeforeAfter from "@/components/BeforeAfter";
 import Podcast from "@/components/Podcast";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -20,7 +20,7 @@ export default function Home() {
       <AuthorityVideo />
       <TestimonialsCarousel />
       <Certifications />
-      <BeforeAfterSimplified />
+      <BeforeAfter />
       <Podcast />
       <Contact />
       <Footer />
