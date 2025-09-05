@@ -117,20 +117,6 @@ export default function Footer() {
                 />
               </div>
               
-              <div className="backdrop-blur-sm border border-white/10 rounded-xl p-5 bg-white/5">
-                <p className="text-[#ECE0C4] mb-1 flex items-center text-sm">
-                  <i className="fas fa-certificate text-xs mr-2"></i>
-                  Especialista em Harmonização Orofacial
-                </p>
-                <p className="text-[#ECE0C4] mb-1 flex items-center text-sm">
-                  <i className="fas fa-certificate text-xs mr-2"></i>
-                  Especialista em Cirurgias Estéticas da Face
-                </p>
-                <p className="text-[#ECE0C4] flex items-center text-sm">
-                  <i className="fas fa-award text-xs mr-2"></i>
-                  MESTRE em Odontologia - FOUSP
-                </p>
-              </div>
               
               <div className="mt-5 text-sm text-white/80">
                 <p>CROSP: 165674 | Responsável Técnica: Dra. Jana Guimarães</p>
