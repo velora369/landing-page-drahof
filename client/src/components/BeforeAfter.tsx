@@ -1,10 +1,11 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
-// Componente para o slider interativo antes/depois
+// Componente moderno para comparação antes/depois
 const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; afterImg: string; title: string }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   // Função para lidar com o movimento do mouse
@@ -56,59 +57,161 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
   
   return (
     <motion.div 
-      className="relative w-full h-[400px] md:h-[450px] rounded-2xl shadow-xl overflow-hidden group"
+      className="relative w-full aspect-[16/10] max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden group bg-gray-100"
       ref={containerRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      whileHover={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+      whileHover={{ boxShadow: "0 30px 60px -12px rgba(0, 0, 0, 0.3)" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Imagem do resultado (depois) */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center" 
-        style={{ backgroundImage: `url(${afterImg})` }}
-      />
+      {/* Imagem de fundo (depois) */}
+      <div className="absolute inset-0">
+        <img 
+          src={afterImg} 
+          alt="Resultado após procedimento"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
       
-      {/* Imagem inicial (antes) - visível apenas até a posição do slider */}
+      {/* Imagem sobreposta (antes) - cortada pela posição do slider */}
       <div 
-        className="absolute inset-0 bg-cover bg-center" 
-        style={{ 
-          backgroundImage: `url(${beforeImg})`,
-          clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` 
-        }}
-      />
+        className="absolute inset-0 overflow-hidden"
+        style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
+      >
+        <img 
+          src={beforeImg} 
+          alt="Antes do procedimento"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
       
-      {/* Linha divisória do slider com alças */}
-      <div 
-        className="absolute inset-y-0 w-1 bg-white shadow-md"
+      {/* Linha divisória interativa */}
+      <motion.div 
+        className="absolute inset-y-0 w-0.5 bg-white shadow-2xl cursor-ew-resize z-20"
         style={{ left: `${sliderPosition}%` }}
+        animate={{ opacity: isDragging || isHovered ? 1 : 0.8 }}
         onMouseDown={startDragging}
         onTouchStart={startDragging}
       >
-        {/* Alça do slider */}
-        <div 
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer z-10 border-2 border-[#731C13] group-hover:scale-110 transition-transform duration-300"
+        {/* Handle do slider */}
+        <motion.div 
+          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center cursor-ew-resize border-4 border-white"
           style={{ left: '50%' }}
+          animate={{ 
+            scale: isDragging ? 1.1 : isHovered ? 1.05 : 1,
+            boxShadow: isDragging 
+              ? "0 20px 40px -8px rgba(0, 0, 0, 0.4)" 
+              : "0 10px 30px -8px rgba(0, 0, 0, 0.3)"
+          }}
+          transition={{ duration: 0.2 }}
         >
-          <div className="flex items-center justify-center text-[#731C13]">
-            <i className="fas fa-arrows-alt-h"></i>
+          <div className="bg-gradient-to-r from-[#731C13] to-[#425F70] p-3 rounded-full">
+            <svg 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              className="text-white"
+            >
+              <path 
+                d="M8 12L12 8L16 12" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                transform="rotate(90 12 12)"
+              />
+              <path 
+                d="M8 12L12 16L16 12" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                transform="rotate(90 12 12)"
+              />
+            </svg>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       
-      {/* Labels "Antes" e "Depois" */}
-      <div className="absolute top-4 left-4 bg-[#425F70]/80 backdrop-blur-sm text-white px-3 py-1 rounded-md text-sm font-medium">
-        Antes
-      </div>
-      <div className="absolute top-4 right-4 bg-[#731C13]/80 backdrop-blur-sm text-white px-3 py-1 rounded-md text-sm font-medium">
-        Depois
-      </div>
+      {/* Labels animadas "Antes" e "Depois" */}
+      <AnimatePresence>
+        <motion.div 
+          className="absolute top-6 left-6 bg-[#425F70] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <span className="text-sm font-semibold flex items-center">
+            <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+            Antes
+          </span>
+        </motion.div>
+        
+        <motion.div 
+          className="absolute top-6 right-6 bg-[#731C13] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.7 }}
+        >
+          <span className="text-sm font-semibold flex items-center">
+            <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+            Depois
+          </span>
+        </motion.div>
+      </AnimatePresence>
+      
+      {/* Indicador de interação */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div 
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+          >
+            <span className="text-sm flex items-center">
+              <svg 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                className="mr-2"
+              >
+                <path 
+                  d="M8 12L12 8L16 12" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  transform="rotate(90 12 12)"
+                />
+                <path 
+                  d="M8 12L12 16L16 12" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  transform="rotate(90 12 12)"
+                />
+              </svg>
+              Arraste para comparar
+            </span>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Título do caso */}
-      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent pt-10 pb-4 px-6">
-        <h4 className="text-white text-lg font-semibold">{title}</h4>
-      </div>
+      {title && (
+        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12 pb-6 px-6">
+          <h4 className="text-white text-xl font-bold text-center">{title}</h4>
+        </div>
+      )}
     </motion.div>
   );
 };
@@ -218,20 +321,47 @@ export default function BeforeAfter() {
             afterImg={cases[0].after}
             title={cases[0].title}
           />
-          <motion.p 
-            className="text-center mt-4 text-[#425F70] italic"
+          <motion.div 
+            className="text-center mt-6 flex flex-col items-center space-y-2"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            ➡️ Arraste o divisor para comparar o antes e depois
-          </motion.p>
+            <div className="flex items-center text-[#425F70] font-medium">
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                className="mr-3 text-[#731C13]"
+              >
+                <path 
+                  d="M8 12L12 8L16 12" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  transform="rotate(90 12 12)"
+                />
+                <path 
+                  d="M8 12L12 16L16 12" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  transform="rotate(90 12 12)"
+                />
+              </svg>
+              Arraste horizontalmente para comparar o antes e depois
+            </div>
+            <p className="text-sm text-gray-600">Passe o mouse sobre a imagem e arraste o controle central</p>
+          </motion.div>
         </div>
         
-        {/* Galeria de thumbnails */}
+        {/* Galeria de casos moderna */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -240,32 +370,53 @@ export default function BeforeAfter() {
           {cases.map((caseItem, index) => (
             <motion.div
               key={caseItem.id}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
-              whileHover={{ y: -5 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer group relative"
+              whileHover={{ y: -8, scale: 1.02 }}
               onClick={() => openModal(caseItem.id)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
             >
-              <div className="h-48 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: `url(${caseItem.after})` }}>
-                {/* Gradiente overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Container da imagem com aspect ratio fixo */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img 
+                  src={caseItem.after} 
+                  alt={caseItem.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
                 
-                {/* Label "Ver detalhes" que aparece no hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="flex items-center justify-center bg-white/20 backdrop-blur-sm text-white rounded-lg py-2 space-x-2">
-                    <i className="fas fa-search-plus"></i>
-                    <span>Ver detalhes</span>
+                {/* Overlay gradiente */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Indicador de antes/depois */}
+                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-[#425F70] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Antes & Depois
+                </div>
+                
+                {/* Botão de visualização */}
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="bg-white/20 backdrop-blur-md text-white rounded-xl py-3 px-4 flex items-center justify-center space-x-2 border border-white/30">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-white">
+                      <path d="M15 12L9 8V16L15 12Z" fill="currentColor" />
+                    </svg>
+                    <span className="font-medium">Ver Comparação</span>
                   </div>
                 </div>
               </div>
               
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-[#425F70] group-hover:text-[#731C13] transition-colors duration-300">
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-[#425F70] group-hover:text-[#731C13] transition-colors duration-300 mb-2">
                   {caseItem.title}
                 </h3>
-                <p className="text-gray-600 text-sm mt-1">{caseItem.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{caseItem.description}</p>
+                
+                {/* Indicador visual */}
+                <div className="mt-4 flex items-center text-[#731C13] text-sm font-medium">
+                  <div className="w-1 h-1 bg-[#731C13] rounded-full mr-2"></div>
+                  Clique para comparar
+                </div>
               </div>
             </motion.div>
           ))}
@@ -318,19 +469,34 @@ export default function BeforeAfter() {
               </button>
             </div>
             
-            {/* Slider dentro do modal */}
-            <div className="p-6">
-              <BeforeAfterSlider 
-                beforeImg={cases.find(c => c.id === activeCase)?.before || ""}
-                afterImg={cases.find(c => c.id === activeCase)?.after || ""}
-                title=""
-              />
+            {/* Slider otimizado dentro do modal */}
+            <div className="p-6 space-y-6">
+              <div className="max-w-4xl mx-auto">
+                <BeforeAfterSlider 
+                  beforeImg={cases.find(c => c.id === activeCase)?.before || ""}
+                  afterImg={cases.find(c => c.id === activeCase)?.after || ""}
+                  title=""
+                />
+              </div>
               
-              <div className="mt-6 bg-gray-50 p-4 rounded-xl">
-                <h4 className="font-semibold text-[#425F70] mb-2">Detalhes do procedimento:</h4>
-                <p className="text-gray-700">
-                  {cases.find(c => c.id === activeCase)?.description}
-                </p>
+              {/* Informações do procedimento */}
+              <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-2xl border border-gray-200">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-[#731C13] p-2 rounded-xl">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white">
+                      <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-[#425F70] text-lg mb-3">Detalhes do Procedimento</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      {cases.find(c => c.id === activeCase)?.description}
+                    </p>
+                    <div className="mt-4 text-sm text-gray-600">
+                      <p className="italic">Resultado individual. Consulte a Dra. Jana para uma avaliação personalizada.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             
