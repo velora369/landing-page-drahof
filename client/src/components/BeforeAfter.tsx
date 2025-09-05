@@ -413,22 +413,6 @@ export default function BeforeAfter() {
             onOpenModal={() => openModal(cases[0].id)}
           />
           
-          <motion.div 
-            className="text-center mt-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <div className="bg-gradient-to-r from-[#425F70]/5 to-[#731C13]/5 rounded-2xl p-6 border border-gray-200">
-              <p className="text-gray-700 font-medium mb-2">
-                🎯 Resultados reais e personalizados
-              </p>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Cada transformação é única. Clique na imagem acima para explorar interativamente os resultados antes e depois desta {cases[0].title.toLowerCase()}.
-              </p>
-            </div>
-          </motion.div>
         </div>
         
         
