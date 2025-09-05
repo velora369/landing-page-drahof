@@ -148,7 +148,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
   
   return (
     <motion.div 
-      className="relative w-full aspect-[16/10] max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden group bg-gray-100"
+      className="relative w-full aspect-[4/3] max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden group bg-gray-100"
       ref={containerRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
         <img 
           src={afterImg} 
           alt="Resultado após procedimento"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           loading="lazy"
         />
       </div>
@@ -176,7 +176,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
         <img 
           src={beforeImg} 
           alt="Antes do procedimento"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           loading="lazy"
         />
       </div>
@@ -431,68 +431,6 @@ export default function BeforeAfter() {
           </motion.div>
         </div>
         
-        {/* Galeria de casos moderna */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {cases.map((caseItem, index) => (
-            <motion.div
-              key={caseItem.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer group relative"
-              whileHover={{ y: -8, scale: 1.02 }}
-              onClick={() => openModal(caseItem.id)}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
-            >
-              {/* Container da imagem com aspect ratio fixo */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img 
-                  src={caseItem.after} 
-                  alt={caseItem.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
-                
-                {/* Overlay gradiente */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Indicador de antes/depois */}
-                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-[#425F70] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Antes & Depois
-                </div>
-                
-                {/* Botão de visualização */}
-                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="bg-white/20 backdrop-blur-md text-white rounded-xl py-3 px-4 flex items-center justify-center space-x-2 border border-white/30">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-white">
-                      <path d="M15 12L9 8V16L15 12Z" fill="currentColor" />
-                    </svg>
-                    <span className="font-medium">Ver Comparação</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-[#425F70] group-hover:text-[#731C13] transition-colors duration-300 mb-2">
-                  {caseItem.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{caseItem.description}</p>
-                
-                {/* Indicador visual */}
-                <div className="mt-4 flex items-center text-[#731C13] text-sm font-medium">
-                  <div className="w-1 h-1 bg-[#731C13] rounded-full mr-2"></div>
-                  Clique para comparar
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
         
         {/* Nota de rodapé */}
         <motion.div 
@@ -505,7 +443,7 @@ export default function BeforeAfter() {
           <div className="inline-block bg-white py-3 px-6 rounded-full shadow-md border border-gray-100">
             <p className="text-[#425F70] flex items-center justify-center">
               <i className="fas fa-info-circle mr-2 text-[#731C13]"></i>
-              Todos os casos são reais, com autorização para divulgação. Resultados personalizados conforme a anatomia e objetivos da paciente.
+              Esse é um caso real, com autorização para divulgação. Resultado personalizado conforme a anatomia e objetivos da paciente.
             </p>
           </div>
         </motion.div>
