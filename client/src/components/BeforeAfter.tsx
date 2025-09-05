@@ -84,10 +84,6 @@ const BeforeAfterPreview = ({ beforeImg, afterImg, title, onOpenModal }: {
         Preview
       </div>
       
-      {/* Título no rodapé */}
-      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent pt-12 pb-6 px-6">
-        <h4 className="text-white text-lg font-bold text-center opacity-80">{title}</h4>
-      </div>
     </motion.div>
   );
 };
