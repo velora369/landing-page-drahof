@@ -1,7 +1,98 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
-// Componente moderno para comparação antes/depois
+// Componente principal com overlay e CTA
+const BeforeAfterPreview = ({ beforeImg, afterImg, title, onOpenModal }: { 
+  beforeImg: string; 
+  afterImg: string; 
+  title: string; 
+  onOpenModal: () => void; 
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <motion.div 
+      className="relative w-full aspect-[16/10] max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden group cursor-pointer"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      whileHover={{ scale: 1.02 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={onOpenModal}
+    >
+      {/* Imagem de fundo borrada */}
+      <div className="absolute inset-0">
+        <img 
+          src={afterImg} 
+          alt="Preview da transformação"
+          className="w-full h-full object-cover filter blur-[3px] grayscale-[30%]"
+          loading="lazy"
+        />
+        
+        {/* Overlay escuro */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        {/* Gradient overlay para melhor legibilidade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+      </div>
+      
+      {/* Call-to-Action Card Central */}
+      <motion.div 
+        className="absolute inset-0 flex items-center justify-center p-8"
+        animate={{ scale: isHovered ? 1.05 : 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl p-8 text-center shadow-2xl border border-white/20 max-w-md">
+          <motion.div 
+            className="w-16 h-16 bg-gradient-to-r from-[#731C13] to-[#425F70] rounded-full mx-auto mb-4 flex items-center justify-center"
+            animate={{ rotate: isHovered ? 360 : 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
+              <path d="M15 12L9 8V16L15 12Z" fill="currentColor" />
+            </svg>
+          </motion.div>
+          
+          <h3 className="text-2xl font-bold text-[#425F70] mb-2">Clique aqui e veja</h3>
+          <h4 className="text-xl font-semibold text-[#731C13] mb-4">a transformação completa!</h4>
+          
+          <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+            Descubra o resultado incrível desta {title.toLowerCase()} com nossa ferramenta interativa de comparação
+          </p>
+          
+          <div className="inline-flex items-center text-[#731C13] font-semibold text-sm">
+            <span>Visualizar antes e depois</span>
+            <motion.svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              className="ml-2"
+              animate={{ x: isHovered ? 5 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </motion.svg>
+          </div>
+        </div>
+      </motion.div>
+      
+      {/* Labels discretas nos cantos */}
+      <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+        Preview
+      </div>
+      
+      {/* Título no rodapé */}
+      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent pt-12 pb-6 px-6">
+        <h4 className="text-white text-lg font-bold text-center opacity-80">{title}</h4>
+      </div>
+    </motion.div>
+  );
+};
+
+// Componente do slider interativo (para uso no modal)
 const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; afterImg: string; title: string }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -140,71 +231,70 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
       </motion.div>
       
       {/* Labels animadas "Antes" e "Depois" */}
-      <AnimatePresence>
-        <motion.div 
-          className="absolute top-6 left-6 bg-[#425F70] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <span className="text-sm font-semibold flex items-center">
-            <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
-            Antes
-          </span>
-        </motion.div>
-        
-        <motion.div 
-          className="absolute top-6 right-6 bg-[#731C13] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7 }}
-        >
-          <span className="text-sm font-semibold flex items-center">
-            <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
-            Depois
-          </span>
-        </motion.div>
-      </AnimatePresence>
+      <motion.div 
+        className="absolute top-6 left-6 bg-[#425F70] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+        key="antes-label"
+      >
+        <span className="text-sm font-semibold flex items-center">
+          <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+          Antes
+        </span>
+      </motion.div>
+      
+      <motion.div 
+        className="absolute top-6 right-6 bg-[#731C13] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.7 }}
+        key="depois-label"
+      >
+        <span className="text-sm font-semibold flex items-center">
+          <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+          Depois
+        </span>
+      </motion.div>
       
       {/* Indicador de interação */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div 
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-          >
-            <span className="text-sm flex items-center">
-              <svg 
-                width="16" 
-                height="16" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                className="mr-2"
-              >
-                <path 
-                  d="M8 12L12 8L16 12" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  transform="rotate(90 12 12)"
-                />
-                <path 
-                  d="M8 12L12 16L16 12" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  transform="rotate(90 12 12)"
-                />
-              </svg>
-              Arraste para comparar
-            </span>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isHovered && (
+        <motion.div 
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          key="interaction-hint"
+        >
+          <span className="text-sm flex items-center">
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              className="mr-2"
+            >
+              <path 
+                d="M8 12L12 8L16 12" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                transform="rotate(90 12 12)"
+              />
+              <path 
+                d="M8 12L12 16L16 12" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                transform="rotate(90 12 12)"
+              />
+            </svg>
+            Arraste para comparar
+          </span>
+        </motion.div>
+      )}
       
       {/* Título do caso */}
       {title && (
@@ -314,48 +404,30 @@ export default function BeforeAfter() {
           </p>
         </motion.div>
         
-        {/* Slider principal interativo */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <BeforeAfterSlider 
+        {/* Preview principal com CTA */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <BeforeAfterPreview 
             beforeImg={cases[0].before}
             afterImg={cases[0].after}
             title={cases[0].title}
+            onOpenModal={() => openModal(cases[0].id)}
           />
+          
           <motion.div 
-            className="text-center mt-6 flex flex-col items-center space-y-2"
+            className="text-center mt-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <div className="flex items-center text-[#425F70] font-medium">
-              <svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                className="mr-3 text-[#731C13]"
-              >
-                <path 
-                  d="M8 12L12 8L16 12" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  transform="rotate(90 12 12)"
-                />
-                <path 
-                  d="M8 12L12 16L16 12" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  transform="rotate(90 12 12)"
-                />
-              </svg>
-              Arraste horizontalmente para comparar o antes e depois
+            <div className="bg-gradient-to-r from-[#425F70]/5 to-[#731C13]/5 rounded-2xl p-6 border border-gray-200">
+              <p className="text-gray-700 font-medium mb-2">
+                🎯 Resultados reais e personalizados
+              </p>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Cada transformação é única. Clique na imagem acima para explorar interativamente os resultados antes e depois desta {cases[0].title.toLowerCase()}.
+              </p>
             </div>
-            <p className="text-sm text-gray-600">Passe o mouse sobre a imagem e arraste o controle central</p>
           </motion.div>
         </div>
         
@@ -457,15 +529,20 @@ export default function BeforeAfter() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Cabeçalho do modal */}
-            <div className="p-4 bg-gradient-to-r from-[#425F70] to-[#731C13] text-white flex items-center justify-between">
-              <h3 className="text-xl font-bold">
-                {cases.find(c => c.id === activeCase)?.title}
-              </h3>
+            <div className="p-6 bg-gradient-to-r from-[#425F70] to-[#731C13] text-white flex items-center justify-between">
+              <div>
+                <h3 className="text-2xl font-bold mb-1">
+                  {cases.find(c => c.id === activeCase)?.title}
+                </h3>
+                <p className="text-white/80 text-sm">Arraste o controle para comparar</p>
+              </div>
               <button 
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors group"
                 onClick={closeModal}
               >
-                <i className="fas fa-times"></i>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white group-hover:scale-110 transition-transform">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
             </div>
             
