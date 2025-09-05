@@ -163,7 +163,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
         <img 
           src={afterImg} 
           alt="Resultado após procedimento"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-center"
           loading="lazy"
         />
       </div>
@@ -176,7 +176,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
         <img 
           src={beforeImg} 
           alt="Antes do procedimento"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-center"
           loading="lazy"
         />
       </div>
