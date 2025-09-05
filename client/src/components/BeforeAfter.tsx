@@ -144,6 +144,25 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
     setImageModalOpen(true);
   };
   
+  // Função para lidar com clique na imagem
+  const handleImageClick = (e: React.MouseEvent) => {
+    // Se está arrastando, não processa o clique
+    if (isDragging || !containerRef.current) return;
+    
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const containerWidth = containerRect.width;
+    const containerLeft = containerRect.left;
+    const clickX = e.clientX - containerLeft;
+    const clickPosition = (clickX / containerWidth) * 100;
+    
+    // Se clicou do lado esquerdo (antes) ou direito (depois) baseado na posição do slider
+    if (clickPosition < sliderPosition) {
+      openImageModal(beforeImg, "Imagem antes do procedimento");
+    } else {
+      openImageModal(afterImg, "Imagem após o procedimento");
+    }
+  };
+  
   // Função para lidar com o movimento do mouse
   const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isDragging || !containerRef.current) return;
@@ -193,7 +212,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
   
   return (
     <motion.div 
-      className="relative w-full aspect-[4/3] max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden group bg-gray-100"
+      className="relative w-full aspect-[4/3] max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden group bg-gray-100 cursor-pointer"
       ref={containerRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -202,6 +221,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
       whileHover={{ boxShadow: "0 30px 60px -12px rgba(0, 0, 0, 0.3)" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleImageClick}
     >
       {/* Imagem de fundo (depois) */}
       <div className="absolute inset-0">
@@ -275,19 +295,13 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
         </motion.div>
       </motion.div>
       
-      {/* Labels clicáveis "Antes" e "Depois" */}
-      <motion.button 
-        className="absolute top-6 left-6 bg-[#425F70] hover:bg-[#425F70]/90 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer"
+      {/* Labels indicativas "Antes" e "Depois" */}
+      <motion.div 
+        className="absolute top-6 left-6 bg-[#425F70] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm pointer-events-none"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}
         key="antes-label"
-        onClick={(e) => {
-          e.stopPropagation();
-          openImageModal(beforeImg, "Imagem antes do procedimento");
-        }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
       >
         <span className="text-sm font-semibold flex items-center">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="mr-2">
@@ -296,20 +310,14 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
           </svg>
           Antes
         </span>
-      </motion.button>
+      </motion.div>
       
-      <motion.button 
-        className="absolute top-6 right-6 bg-[#731C13] hover:bg-[#731C13]/90 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer"
+      <motion.div 
+        className="absolute top-6 right-6 bg-[#731C13] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm pointer-events-none"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.7 }}
         key="depois-label"
-        onClick={(e) => {
-          e.stopPropagation();
-          openImageModal(afterImg, "Imagem após o procedimento");
-        }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
       >
         <span className="text-sm font-semibold flex items-center">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="mr-2">
@@ -318,7 +326,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
           </svg>
           Depois
         </span>
-      </motion.button>
+      </motion.div>
       
       {/* Indicador de interação */}
       {isHovered && (
@@ -354,7 +362,7 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
                 transform="rotate(90 12 12)"
               />
             </svg>
-            Arraste para comparar
+            Arraste para comparar • Clique para ampliar
           </span>
         </motion.div>
       )}
