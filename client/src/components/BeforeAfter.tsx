@@ -88,12 +88,61 @@ const BeforeAfterPreview = ({ beforeImg, afterImg, title, onOpenModal }: {
   );
 };
 
+// Modal para visualizar imagem individual em tamanho original
+const ImageModal = ({ src, alt, isOpen, onClose }: { src: string; alt: string; isOpen: boolean; onClose: () => void }) => {
+  if (!isOpen) return null;
+
+  return (
+    <motion.div 
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div 
+        className="relative max-w-[90vw] max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
+        initial={{ scale: 0.8, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.8, y: 20 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="absolute top-4 right-4 z-10">
+          <button 
+            className="w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors"
+            onClick={onClose}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <img 
+          src={src} 
+          alt={alt}
+          className="w-full h-full object-contain"
+        />
+      </motion.div>
+    </motion.div>
+  );
+};
+
 // Componente do slider interativo (para uso no modal)
 const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; afterImg: string; title: string }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [imageModalOpen, setImageModalOpen] = useState(false);
+  const [modalImageSrc, setModalImageSrc] = useState("");
+  const [modalImageAlt, setModalImageAlt] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Função para abrir modal de imagem individual
+  const openImageModal = (src: string, alt: string) => {
+    setModalImageSrc(src);
+    setModalImageAlt(alt);
+    setImageModalOpen(true);
+  };
   
   // Função para lidar com o movimento do mouse
   const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
@@ -226,32 +275,50 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
         </motion.div>
       </motion.div>
       
-      {/* Labels animadas "Antes" e "Depois" */}
-      <motion.div 
-        className="absolute top-6 left-6 bg-[#425F70] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
+      {/* Labels clicáveis "Antes" e "Depois" */}
+      <motion.button 
+        className="absolute top-6 left-6 bg-[#425F70] hover:bg-[#425F70]/90 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}
         key="antes-label"
+        onClick={(e) => {
+          e.stopPropagation();
+          openImageModal(beforeImg, "Imagem antes do procedimento");
+        }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
         <span className="text-sm font-semibold flex items-center">
-          <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="mr-2">
+            <path d="M15 3H6A3 3 0 003 6v9a3 3 0 003 3h9a3 3 0 003-3V6a3 3 0 00-3-3z" stroke="currentColor" strokeWidth="2"/>
+            <path d="M9 9l6 6M15 9v6h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
           Antes
         </span>
-      </motion.div>
+      </motion.button>
       
-      <motion.div 
-        className="absolute top-6 right-6 bg-[#731C13] text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm"
+      <motion.button 
+        className="absolute top-6 right-6 bg-[#731C13] hover:bg-[#731C13]/90 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 cursor-pointer"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.7 }}
         key="depois-label"
+        onClick={(e) => {
+          e.stopPropagation();
+          openImageModal(afterImg, "Imagem após o procedimento");
+        }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
         <span className="text-sm font-semibold flex items-center">
-          <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="mr-2">
+            <path d="M15 3H6A3 3 0 003 6v9a3 3 0 003 3h9a3 3 0 003-3V6a3 3 0 00-3-3z" stroke="currentColor" strokeWidth="2"/>
+            <path d="M9 9l6 6M15 9v6h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
           Depois
         </span>
-      </motion.div>
+      </motion.button>
       
       {/* Indicador de interação */}
       {isHovered && (
@@ -298,6 +365,14 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, title }: { beforeImg: string; 
           <h4 className="text-white text-xl font-bold text-center">{title}</h4>
         </div>
       )}
+      
+      {/* Modal para visualização individual das imagens */}
+      <ImageModal 
+        src={modalImageSrc}
+        alt={modalImageAlt}
+        isOpen={imageModalOpen}
+        onClose={() => setImageModalOpen(false)}
+      />
     </motion.div>
   );
 };
