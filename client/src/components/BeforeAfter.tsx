@@ -44,32 +44,32 @@ const BeforeAfterPreview = ({ beforeImg, afterImg, title, onOpenModal }: {
         animate={{ scale: isHovered ? 1.05 : 1 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="bg-white/95 backdrop-blur-md rounded-2xl p-8 text-center shadow-2xl border border-white/20 max-w-md">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 text-center shadow-2xl border border-white/20 max-w-xs sm:max-w-sm md:max-w-md mx-4">
           <motion.div 
-            className="w-16 h-16 bg-gradient-to-r from-[#731C13] to-[#425F70] rounded-full mx-auto mb-4 flex items-center justify-center"
+            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-[#731C13] to-[#425F70] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center"
             animate={{ rotate: isHovered ? 360 : 0 }}
             transition={{ duration: 0.8 }}
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white sm:w-6 sm:h-6 md:w-7 md:h-7">
               <path d="M15 12L9 8V16L15 12Z" fill="currentColor" />
             </svg>
           </motion.div>
           
-          <h3 className="text-2xl font-bold text-[#425F70] mb-2">Clique aqui e veja</h3>
-          <h4 className="text-xl font-semibold text-[#731C13] mb-4">a transformação completa!</h4>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#425F70] mb-1 sm:mb-2 leading-tight">Clique aqui e veja</h3>
+          <h4 className="text-base sm:text-lg md:text-xl font-semibold text-[#731C13] mb-3 sm:mb-4 leading-tight">a transformação completa!</h4>
           
-          <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+          <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
             Descubra o resultado incrível desta {title.toLowerCase()} com nossa ferramenta interativa de comparação
           </p>
           
-          <div className="inline-flex items-center text-[#731C13] font-semibold text-sm">
+          <div className="inline-flex items-center text-[#731C13] font-semibold text-xs sm:text-sm">
             <span>Visualizar antes e depois</span>
             <motion.svg 
-              width="16" 
-              height="16" 
+              width="14" 
+              height="14" 
               viewBox="0 0 24 24" 
               fill="none" 
-              className="ml-2"
+              className="ml-1 sm:ml-2 sm:w-4 sm:h-4"
               animate={{ x: isHovered ? 5 : 0 }}
               transition={{ duration: 0.3 }}
             >
